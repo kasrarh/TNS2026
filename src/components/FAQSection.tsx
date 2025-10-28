@@ -9,11 +9,11 @@ export default function FAQSection() {
 				<div className="accordion" data-accordion>
 					<details className="item" open>
 						<summary>Where is the conference hosted?</summary>
-						<p className="muted-light">Downtown conference center. Exact address shared upon registration.</p>
+						<p className="muted-light">MaRS Discovery District, 101 College St, Toronto, ON M5G 0A3.</p>
 					</details>
 					<details className="item">
 						<summary>Will sessions be recorded?</summary>
-						<p className="muted-light">Yes. All talks and workshops will be available to attendees after the event.</p>
+						<p className="muted-light">Our first summit will be fully in-person and there will be no session recordings.</p>
 					</details>
 					<details className="item">
 						<summary>Do you offer student pricing?</summary>
