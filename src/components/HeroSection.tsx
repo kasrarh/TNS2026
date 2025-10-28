@@ -4,8 +4,10 @@ export default function HeroSection() {
 			<div className="container hero-inner">
 				<div className="hero-content">
 					<h1>True North Spatial 2026
-						Hosted by Panoramics – A Vision Inc.
 					</h1>
+					<h3>
+						Hosted by Panoramics – A Vision Inc.
+					</h3>
 					<p>
 						Discover the latest breakthroughs in single cell and spatial biology at True North Spatial 2026, 
 						Canada’s first summit for spatial biology innovators. Connect with academic and industry leaders 

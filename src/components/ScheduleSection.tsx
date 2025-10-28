@@ -17,7 +17,7 @@ export default function ScheduleSection() {
 			{
 				time: "09:00 — 09:30",
 				title: "Opening Speech",
-				description: "A warm welcome from the CEO and founder of Panoramics – A Vision Inc. Hear about Dr. Ayyadhury’s vision for the Canadian spatial biology landscape, and how she intends to help shape.",
+				description: "A warm welcome from the CEO and founder of Panoramics – A Vision Inc. Hear about Dr. Ayyadhury’s vision for the Canadian spatial biology landscape, and how she intends to help shape it.",
 				speaker: "Shamini Ayyadhury (CEO, Founder of Panoramics - A Vision, Canada)",
 				venue: "MaRS Auditorium"
 			},
@@ -159,7 +159,7 @@ export default function ScheduleSection() {
 			{
 				time: "18:30",
 				title: "Summit dinner",
-				description: "Join us for a networking dinner to discuss the day's events and connect with fellow attendees.",
+				description: "Mingle with fellow attendees over dinner as we celebrate our first single cell and spatial biology summit.",
 				speaker: null,
 				venue: null
 			},
@@ -196,7 +196,7 @@ export default function ScheduleSection() {
 			{
 				time: "12:15 — 13:00",
 				title: "Pioneers in Artificial Intelligence",
-				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and it’s uses in the single cell and spatial field.",
+				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and spatial field.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
@@ -210,7 +210,7 @@ export default function ScheduleSection() {
 		]
 	};
 
-
+	
 	return (
 		<section className="schedule" id="schedule">
 			<div className="schedule-bg" aria-hidden="true"></div>
@@ -222,7 +222,7 @@ export default function ScheduleSection() {
 							<div className="schedule-header">
 								<div className="section-title">
 									<span className="tag">Agenda Highlights</span>
-									<h2>Three days for dynamic sessions</h2>
+									<h2>Three days of dynamic sessions</h2>
 									<p>Here are some of the talks, workshops and panels led by academic and industry leaders that you can look forward to.</p>
 								</div>
 								<div className="tab-list" role="tablist">
