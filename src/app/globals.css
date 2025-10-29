@@ -517,7 +517,7 @@ ul li {
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .avatar {
-	height: 395px;
+	height: 355px;
 	background: linear-gradient(135deg, #23273a, #11141c)
 }
 
@@ -540,7 +540,8 @@ ul li {
 }
 
 .socials a {
-	color: var(--muted);
+	color: var(--text-light);
+	background: var(--primary);
 	text-decoration: none;
 	border: 1px solid var(--brand);
 	padding: 6px 8px;
