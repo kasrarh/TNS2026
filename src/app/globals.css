@@ -454,7 +454,7 @@ ul li {
 .subsection-title {
 	font-size: 24px;
 	font-weight: 600;
-	color: var(--text-light);
+	color: var(--tx-dark);
 	margin: 0 0 24px;
 	text-align: center;
 }
