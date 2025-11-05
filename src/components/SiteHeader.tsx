@@ -23,7 +23,7 @@ export default function SiteHeader() {
 			<nav className="navbar container" aria-label="Primary">
 				<a className="logo" href="#top" aria-label="Home">
 					<span className="logo-mark" aria-hidden="true"></span>
-					<span className="logo-text">Company</span>
+					<span className="tx-light">Company</span>
 				</a>
 
 				<button
