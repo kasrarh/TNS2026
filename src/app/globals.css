@@ -5,10 +5,10 @@
 	--muted-light: #dfdfdf;
 	--text: #12141a;
 	--text-light: #eef0f3;
-	--primary: #007A8C;
-	--secondary: #4CC9F0;
-	--brand: #A4FF9E;
-	--brand-2: #8E7CC3;
+	--primary: #252859;
+	--secondary: #F28157;
+	--brand: #F2B279;
+	--brand-2: #F28585;
 	--card: linear-gradient(135deg, var(--primary), var(--secondary));
 	;
 	--border: #C3CBD3;
