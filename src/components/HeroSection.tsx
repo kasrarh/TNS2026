@@ -23,7 +23,7 @@ export default function HeroSection() {
 					</div>
 				</div>
 				{/* <figure className="hero-media" aria-label="Conference preview image" role="img"></figure> */}
-					<img src="/TNS2026_logo_V12.PNG" alt="True North Spatial 2026" style={{ height: 'auto', maxWidth: '70%' }} />
+					<img src="/TNS2026_logo_V12.png" alt="True North Spatial 2026" style={{ height: 'auto', maxWidth: '70%' }} />
 			</div>
 		</section>
 	);
