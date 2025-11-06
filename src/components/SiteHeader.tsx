@@ -22,8 +22,9 @@ export default function SiteHeader() {
 		<header className="site-header" id="top">
 			<nav className="navbar container" aria-label="Primary">
 				<a className="logo" href="#top" aria-label="Home">
-					<span className="logo-mark" aria-hidden="true"></span>
-					<span className="tx-light">Company</span>
+					<img src="/TNS2026-logo.png" alt="TNS 2026 Logo" style={{ width: '60px', height: '60px' }} />
+					{/* <span className="logo-mark" aria-hidden="true"></span> */}
+					{/* <span className="tx-light">Company</span> */}
 				</a>
 
 				<button
