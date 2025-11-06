@@ -2,11 +2,26 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function TeamSection() {
-	const [showAllSpeakers, setShowAllSpeakers] = useState(false);
-	const [showAllOrganizers, setShowAllOrganizers] = useState(false);
+	const speakersTrackRef = useRef<HTMLDivElement | null>(null);
+	const organizersTrackRef = useRef<HTMLDivElement | null>(null);
+	
+	// Touch/drag state for speakers
+	const [speakersTouchStart, setSpeakersTouchStart] = useState(0);
+	const [speakersTouchStartY, setSpeakersTouchStartY] = useState(0);
+	const [speakersTouchScrollLeft, setSpeakersTouchScrollLeft] = useState(0);
+	const [speakersIsDragging, setSpeakersIsDragging] = useState(false);
+	const [speakersIsHorizontalDrag, setSpeakersIsHorizontalDrag] = useState(false);
+	
+	// Touch/drag state for organizers
+	const [organizersTouchStart, setOrganizersTouchStart] = useState(0);
+	const [organizersTouchStartY, setOrganizersTouchStartY] = useState(0);
+	const [organizersTouchScrollLeft, setOrganizersTouchScrollLeft] = useState(0);
+	const [organizersIsDragging, setOrganizersIsDragging] = useState(false);
+	const [organizersIsHorizontalDrag, setOrganizersIsHorizontalDrag] = useState(false);
+
 	const speakers = [
 		{ name: 'Dr. Morag Park', image: null, role: 'Director at Goodman Cancer research Centre', desc: null, linkedin: 'https://www.linkedin.com/in/morag-park-169084136/' },
 		{ name: 'Dr. Michael Doyle', image: "/team-members/michael-doyle.jpeg", role: 'Professor, and Chair of Biology at New Mexico Tech', desc: 'Scientist, educator and entrepreneur.  Pioneer in spatial biology, cryptography, decentralized & mobile AI, quantum, and Web tech (and dabbler in cosmology).  Expert in university innovation management.  Deep experience in university/industry collaborations, intellectual property strategy & management, tech industry corporate management, government relations, business development, & strategic planning.', linkedin: 'https://www.linkedin.com/in/mikefios/' },
@@ -35,10 +50,160 @@ export default function TeamSection() {
 		{ name: 'Kam Lo', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 	];
 
-	const visibleSpeakers = showAllSpeakers ? speakers : speakers.slice(0, 3);
-	const visibleOrganizers = showAllOrganizers ? organizers : organizers.slice(0, 3);
-	const hasMoreSpeakers = speakers.length > 3;
-	const hasMoreOrganizers = organizers.length > 3;
+	const step = (trackRef: { current: HTMLDivElement | null }) => {
+		if (!trackRef.current) return 800;
+		const firstCard = trackRef.current.firstElementChild as HTMLElement;
+		if (!firstCard) return 800;
+		const cardWidth = firstCard.offsetWidth;
+		const gap = 24; // gap between cards from CSS
+		return (cardWidth + gap) * 2; // Two full cards
+	};
+
+	// Touch/drag handlers for speakers carousel
+	const handleSpeakersTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+		if (!speakersTrackRef.current) return;
+		const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+		const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+		setSpeakersTouchStart(clientX);
+		setSpeakersTouchStartY(clientY);
+		setSpeakersTouchScrollLeft(speakersTrackRef.current.scrollLeft);
+		setSpeakersIsDragging(true);
+		setSpeakersIsHorizontalDrag(false);
+		speakersTrackRef.current.style.scrollBehavior = 'auto';
+	};
+
+	const handleSpeakersTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
+		if (!speakersIsDragging || !speakersTrackRef.current) return;
+		const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+		const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+		const deltaX = Math.abs(clientX - speakersTouchStart);
+		const deltaY = Math.abs(clientY - speakersTouchStartY);
+		
+		// Determine if this is a horizontal or vertical drag
+		// Only lock to horizontal if we haven't already determined direction and movement is significant
+		if (!speakersIsHorizontalDrag && deltaX > 10 && deltaX > deltaY) {
+			setSpeakersIsHorizontalDrag(true);
+		}
+		
+		// Only prevent default and handle carousel if it's a horizontal drag
+		if (speakersIsHorizontalDrag) {
+			e.preventDefault();
+			const x = clientX - speakersTouchStart;
+			speakersTrackRef.current.scrollLeft = speakersTouchScrollLeft - x;
+		}
+		// If vertical movement is dominant, don't interfere - allow page scroll
+	};
+
+	const handleSpeakersTouchEnd = () => {
+		if (!speakersTrackRef.current) return;
+		setSpeakersIsDragging(false);
+		setSpeakersIsHorizontalDrag(false);
+		speakersTrackRef.current.style.scrollBehavior = 'smooth';
+	};
+
+	// Touch/drag handlers for organizers carousel
+	const handleOrganizersTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+		if (!organizersTrackRef.current) return;
+		const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+		const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+		setOrganizersTouchStart(clientX);
+		setOrganizersTouchStartY(clientY);
+		setOrganizersTouchScrollLeft(organizersTrackRef.current.scrollLeft);
+		setOrganizersIsDragging(true);
+		setOrganizersIsHorizontalDrag(false);
+		organizersTrackRef.current.style.scrollBehavior = 'auto';
+	};
+
+	const handleOrganizersTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
+		if (!organizersIsDragging || !organizersTrackRef.current) return;
+		const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+		const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+		const deltaX = Math.abs(clientX - organizersTouchStart);
+		const deltaY = Math.abs(clientY - organizersTouchStartY);
+		
+		// Determine if this is a horizontal or vertical drag
+		// Only lock to horizontal if we haven't already determined direction and movement is significant
+		if (!organizersIsHorizontalDrag && deltaX > 10 && deltaX > deltaY) {
+			setOrganizersIsHorizontalDrag(true);
+		}
+		
+		// Only prevent default and handle carousel if it's a horizontal drag
+		if (organizersIsHorizontalDrag) {
+			e.preventDefault();
+			const x = clientX - organizersTouchStart;
+			organizersTrackRef.current.scrollLeft = organizersTouchScrollLeft - x;
+		}
+		// If vertical movement is dominant, don't interfere - allow page scroll
+	};
+
+	const handleOrganizersTouchEnd = () => {
+		if (!organizersTrackRef.current) return;
+		setOrganizersIsDragging(false);
+		setOrganizersIsHorizontalDrag(false);
+		organizersTrackRef.current.style.scrollBehavior = 'smooth';
+	};
+
+	// Handle mouse leave and mouse up events globally
+	useEffect(() => {
+		const handleMouseMove = (e: MouseEvent) => {
+			if (speakersIsDragging && speakersTrackRef.current) {
+				const deltaX = Math.abs(e.clientX - speakersTouchStart);
+				const deltaY = Math.abs(e.clientY - speakersTouchStartY);
+				
+				// Determine direction if not already set
+				if (!speakersIsHorizontalDrag && deltaX > 10 && deltaX > deltaY) {
+					setSpeakersIsHorizontalDrag(true);
+				}
+				
+				// Only handle carousel if it's a horizontal drag
+				if (speakersIsHorizontalDrag) {
+					e.preventDefault();
+					const x = e.clientX - speakersTouchStart;
+					speakersTrackRef.current.scrollLeft = speakersTouchScrollLeft - x;
+				}
+			}
+			if (organizersIsDragging && organizersTrackRef.current) {
+				const deltaX = Math.abs(e.clientX - organizersTouchStart);
+				const deltaY = Math.abs(e.clientY - organizersTouchStartY);
+				
+				// Determine direction if not already set
+				if (!organizersIsHorizontalDrag && deltaX > 10 && deltaX > deltaY) {
+					setOrganizersIsHorizontalDrag(true);
+				}
+				
+				// Only handle carousel if it's a horizontal drag
+				if (organizersIsHorizontalDrag) {
+					e.preventDefault();
+					const x = e.clientX - organizersTouchStart;
+					organizersTrackRef.current.scrollLeft = organizersTouchScrollLeft - x;
+				}
+			}
+		};
+
+		const handleMouseUp = () => {
+			if (speakersIsDragging && speakersTrackRef.current) {
+				setSpeakersIsDragging(false);
+				setSpeakersIsHorizontalDrag(false);
+				speakersTrackRef.current.style.scrollBehavior = 'smooth';
+			}
+			if (organizersIsDragging && organizersTrackRef.current) {
+				setOrganizersIsDragging(false);
+				setOrganizersIsHorizontalDrag(false);
+				organizersTrackRef.current.style.scrollBehavior = 'smooth';
+			}
+		};
+
+		if (speakersIsDragging || organizersIsDragging) {
+			document.addEventListener('mousemove', handleMouseMove);
+			document.addEventListener('mouseup', handleMouseUp);
+		}
+
+		return () => {
+			document.removeEventListener('mousemove', handleMouseMove);
+			document.removeEventListener('mouseup', handleMouseUp);
+		};
+	}, [speakersIsDragging, organizersIsDragging, speakersTouchStart, organizersTouchStart, speakersTouchStartY, organizersTouchStartY, speakersTouchScrollLeft, organizersTouchScrollLeft, speakersIsHorizontalDrag, organizersIsHorizontalDrag]);
+
 	return (
 		<section className="team bg-light" id="team">
 			<div className="container">
@@ -49,85 +214,107 @@ export default function TeamSection() {
 				</div>
 				<div className="team-subsection">
 					<h3 className="subsection-title tx-dark">Speakers</h3>
-					<div className="team-grid">
-						{visibleSpeakers.map((p, index) => (
-							<article
-								key={p.name}
-								className={`person ${showAllSpeakers ? 'animate-in' : ''}`}
-								style={{ animationDelay: `${index * 0.1}s` }}
-							>
-								<div className="avatar" aria-hidden="true">
-									{p.image && 
-									<img src={p.image} alt={p.name} style={{
-										width: "100%",
-										height: "355px",
-										objectFit: "cover", // or "contain", "fill", "scale-down"
-										borderRadius: "8px"
-									}} />}
-								</div>
-								<div className="person-body">
-									<h3>{p.name}</h3>
-									<p className="muted">{p.role}</p>
-									<p>{p.desc}</p>
-									<div className="socials">
-										<a href={p.linkedin} aria-label="LinkedIn">in</a>
+					<div className="carousel" data-carousel>
+						<div 
+							className="carousel-track team-carousel-track" 
+							ref={speakersTrackRef}
+							onTouchStart={handleSpeakersTouchStart}
+							onTouchMove={handleSpeakersTouchMove}
+							onTouchEnd={handleSpeakersTouchEnd}
+							onMouseDown={handleSpeakersTouchStart}
+							style={{ cursor: speakersIsDragging ? 'grabbing' : 'grab', userSelect: 'none' }}
+						>
+							{speakers.map((p) => (
+								<article key={p.name} className="person">
+									<div className="avatar" aria-hidden="true">
+										{p.image && 
+										<img src={p.image} alt={p.name} style={{
+											width: "100%",
+											height: "355px",
+											objectFit: "cover",
+											borderRadius: "8px"
+										}} />}
 									</div>
-								</div>
-							</article>
-						))}
-					</div>
-					{hasMoreSpeakers && (
-						<div className="team-toggle">
+									<div className="person-body">
+										<h3>{p.name}</h3>
+										<p className="muted">{p.role}</p>
+										{p.desc && <p>{p.desc}</p>}
+										<div className="socials">
+											<a href={p.linkedin} aria-label="LinkedIn">in</a>
+										</div>
+									</div>
+								</article>
+							))}
+						</div>
+						<div className="carousel-controls">
 							<button
-								onClick={() => setShowAllSpeakers(!showAllSpeakers)}
-								className="see-more-btn"
-								aria-expanded={showAllSpeakers}
+								className="prev"
+								aria-label="Previous speakers"
+								onClick={() => speakersTrackRef.current?.scrollBy({ left: -step(speakersTrackRef), behavior: 'smooth' })}
 							>
-								{showAllSpeakers ? 'See Less' : 'See More'}
+								‹
+							</button>
+							<button
+								className="next"
+								aria-label="Next speakers"
+								onClick={() => speakersTrackRef.current?.scrollBy({ left: step(speakersTrackRef), behavior: 'smooth' })}
+							>
+								›
 							</button>
 						</div>
-					)}
+					</div>
 				</div>
 				<div className="team-subsection">
 					<h3 className="subsection-title tx-dark">Organizers</h3>
-					<div className="team-grid">
-						{visibleOrganizers.map((p, index) => (
-							<article
-								key={p.name}
-								className={`person ${showAllOrganizers ? 'animate-in' : ''}`}
-								style={{ animationDelay: `${index * 0.1}s` }}
-							>
-								<div className="avatar" aria-hidden="true">
-									{p.image && 
-									<img src={p.image} alt={p.name} style={{
-										width: "100%",
-										height: "355px",
-										objectFit: "cover", // or "contain", "fill", "scale-down"
-										borderRadius: "8px"
-									}} />}
-								</div>
-								<div className="person-body">
-									<h3>{p.name}</h3>
-									<p className="muted">{p.role}</p>
-									<p>{p.desc}</p>
-									<div className="socials">
-										<a href={p.linkedin} aria-label="LinkedIn">in</a>
+					<div className="carousel" data-carousel>
+						<div 
+							className="carousel-track team-carousel-track" 
+							ref={organizersTrackRef}
+							onTouchStart={handleOrganizersTouchStart}
+							onTouchMove={handleOrganizersTouchMove}
+							onTouchEnd={handleOrganizersTouchEnd}
+							onMouseDown={handleOrganizersTouchStart}
+							style={{ cursor: organizersIsDragging ? 'grabbing' : 'grab', userSelect: 'none' }}
+						>
+							{organizers.map((p) => (
+								<article key={p.name} className="person">
+									<div className="avatar" aria-hidden="true">
+										{p.image && 
+										<img src={p.image} alt={p.name} style={{
+											width: "100%",
+											height: "355px",
+											objectFit: "cover",
+											borderRadius: "8px"
+										}} />}
 									</div>
-								</div>
-							</article>
-						))}
-					</div>
-					{hasMoreOrganizers && (
-						<div className="team-toggle">
+									<div className="person-body">
+										<h3>{p.name}</h3>
+										<p className="muted">{p.role}</p>
+										{p.desc && <p>{p.desc}</p>}
+										<div className="socials">
+											<a href={p.linkedin} aria-label="LinkedIn">in</a>
+										</div>
+									</div>
+								</article>
+							))}
+						</div>
+						<div className="carousel-controls">
 							<button
-								onClick={() => setShowAllOrganizers(!showAllOrganizers)}
-								className="see-more-btn"
-								aria-expanded={showAllOrganizers}
+								className="prev"
+								aria-label="Previous organizers"
+								onClick={() => organizersTrackRef.current?.scrollBy({ left: -step(organizersTrackRef), behavior: 'smooth' })}
 							>
-								{showAllOrganizers ? 'See Less' : 'See More'}
+								‹
+							</button>
+							<button
+								className="next"
+								aria-label="Next organizers"
+								onClick={() => organizersTrackRef.current?.scrollBy({ left: step(organizersTrackRef), behavior: 'smooth' })}
+							>
+								›
 							</button>
 						</div>
-					)}
+					</div>
 				</div>
 			</div>
 		</section>
