@@ -5,11 +5,12 @@
 	--muted-light: #dfdfdf;
 	--text: #12141a;
 	--text-light: #eef0f3;
-	--primary: #252859;
-	--secondary: #F28157;
-	--brand: #F2B279;
-	--brand-2: #F28585;
-	--card: linear-gradient(135deg, var(--primary), var(--secondary));
+	--primary: #082733;
+	--secondary: #BDE3F2;
+	--brand: #4193A6;
+	--bg-light: #a8b6bb;
+	--brand-2: #DB7207;
+	--card: linear-gradient(135deg, var(--primary), var(--brand));
 	;
 	--border: #C3CBD3;
 	--gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--brand-2) 100%);
@@ -55,6 +56,10 @@ p {
 	color: var(--text-light);
 }
 
+.bg-light {
+	background: var(--bg-light) !important;
+}
+
 .tx-dark {
 	color: var(--text);
 }
@@ -96,7 +101,7 @@ p {
 	display: none;
 	background: transparent;
 	border: 1px solid var(--border);
-	color: var(--text);
+	color: var(--text-light);
 	padding: 8px 12px;
 	border-radius: 8px
 }
@@ -174,8 +179,8 @@ p {
 }
 
 .btn-primary {
-	background: var(--brand);
-	color: var(--primary);
+	background: var(--brand-2);
+	color: var(--text-light);
 	border-color: var(--border)
 }
 
@@ -205,7 +210,23 @@ p {
 .hero {
 	padding: 72px 0 40px;
 	border-bottom: 1px solid var(--border);
-	background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--brand-2) 100%);
+	background-image: url('/Toronto.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative; /* allow overlay positioning */
+	color: white;
+}
+.hero::before {
+	content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-inner {
@@ -238,6 +259,47 @@ p {
 .actions {
 	display: flex;
 	gap: 12px
+}
+
+/* overlay helpers (desktop layout unaffected) */
+.hero-overlay {
+	width: 100%;
+}
+
+/* Mobile: place headings at top of image and main paragraph at bottom */
+@media (max-width: 480px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        min-height: 420px; /* match hero visual area */
+        padding: 0;
+    }
+
+    /* place overlay absolutely over the background image area */
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .hero-overlay-top {
+        /* keep headings readable over image */
+        color: var(--text-light);
+        text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+    }
+
+    .hero-overlay-bottom {
+        color: var(--muted-light);
+        text-shadow: 0 4px 18px rgba(0,0,0,0.5);
+    }
+
+    /* reduce hero paddings for small screens */
+    .hero {
+        padding: 24px 0 24px;
+    }
 }
 
 /* Sections */
@@ -421,7 +483,7 @@ ul li {
 }
 
 .session-speaker {
-	color: var(--brand);
+	color: var(--secondary);
 	font-size: 14px;
 	margin-top: 8px;
 }
@@ -768,7 +830,7 @@ blockquote {
 	height: 516px;
 	border: 1px solid var(--border);
 	border-radius: 16px;
-	background: linear-gradient(135deg, #1a1e2d, #0e1017)
+	/* background: linear-gradient(135deg, #1a1e2d, #0e1017) */
 }
 
 /* Newsletter/Footer */

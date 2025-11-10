@@ -44,7 +44,6 @@ export default function TeamSection() {
 		{ name: 'Sarah Ebert', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 		{ name: 'Smrithi Dhanasekar', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 		{ name: 'Nikol', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
-		{ name: 'Mackenzie Collins', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 		{ name: 'Iz Rose', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 		{ name: 'Anurag Das', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 		{ name: 'Kam Lo', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
