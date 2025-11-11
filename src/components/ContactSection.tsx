@@ -12,13 +12,13 @@ export default function ContactSection() {
                     <div className="contact-card">
                         <div className="icon" aria-hidden="true">📞</div>
                         <h3>Phone</h3>
-                        <p>+1 (555) 010-2026</p>
-                        <a className="text-link" href="tel:+15550102026">Call us</a>
+                        <p>+1 (514) 965-2782</p>
+                        <a className="text-link" href="tel:+15149652782">Call us</a>
                     </div>
                     <div className="contact-card">
                         <div className="icon" aria-hidden="true">📍</div>
                         <h3>Location</h3>
-                        <p>Toronto, ON, CA</p>
+                        <p>Toronto, ON, Canada</p>
                         <a className="text-link" href="https://maps.app.goo.gl/Y5ZPKtdFjtcrJCtZ7">Get directions</a>
                     </div>
                 </div>
