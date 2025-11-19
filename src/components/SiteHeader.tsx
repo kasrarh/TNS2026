@@ -6,6 +6,7 @@ export default function SiteHeader() {
 	const [navOpen, setNavOpen] = useState(false);
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const dropdownRef = useRef<HTMLLIElement | null>(null);
+	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
 		function onWindowClick(e: MouseEvent) {
@@ -18,8 +19,19 @@ export default function SiteHeader() {
 		return () => window.removeEventListener('click', onWindowClick);
 	}, []);
 
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10); // trigger after scrolling 10px
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+
 	return (
-		<header className="site-header" id="top">
+		<header className={`site-header ${scrolled ? 'scrolled' : ''}`} id="top">
 			<nav className="navbar container" aria-label="Primary">
 				<a className="logo" href="#top" aria-label="Home">
 					<img src="/TNS2026-logo.png" alt="TNS 2026 Logo" style={{ width: '60px', height: '60px' }} />

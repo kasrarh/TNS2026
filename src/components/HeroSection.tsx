@@ -7,7 +7,7 @@ export default function HeroSection() {
 					<div className="hero-overlay">
 						<div className="hero-overlay-top">
 							<h1>True North Spatial 2026</h1>
-							<h3>Hosted by Panoramics – A Vision Inc.</h3>
+							<h3>Hosted by <span>Panoramics– A Vision Inc.</span> </h3>
 						</div>
 
 						<div className="hero-overlay-bottom">
@@ -17,8 +17,8 @@ export default function HeroSection() {
 								for three days of groundbreaking research, thought-provoking discussions, and hands-on workshops designed 
 								to spark new ideas and collaborations.
 							</p>
-							<p>
-								<span className="tx-light">Register now and explore the future of spatial biology!</span>
+							<p className="tx-accent">
+								Register now and explore the future of spatial biology!
 							</p>
 							<div className="actions">
 								<a className="btn btn-secondary" href="#tickets">Register</a>

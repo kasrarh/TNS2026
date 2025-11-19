@@ -210,6 +210,12 @@ export default function ScheduleSection() {
 		]
 	};
 
+	const dayImages = {
+        0: '/Inspire-me-banner.png', // Day 1 image
+        1: '/Enlighten-me-banner.png', // Day 2 image
+        2: '/Challenge-me-banner.png', // Day 3 image
+    };
+
 	
 	return (
 		<section className="schedule" id="schedule">
@@ -251,7 +257,9 @@ export default function ScheduleSection() {
 										27th March
 									</button>
 								</div>
-								<div className="schedule-banner" aria-hidden="true"></div>
+								<div className="schedule-banner" aria-hidden="true">
+									<img src={dayImages[active as keyof typeof dayImages]} alt={`Schedule for day ${active + 1}`} />
+								</div>
 							</div>
 						</div>
 

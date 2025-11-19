@@ -6,8 +6,8 @@ export default function ContactSection() {
                     <div className="contact-card">
                         <div className="icon" aria-hidden="true">✉️</div>
                         <h3>Email</h3>
-                        <p>panoramics@panoramics-a-vision.com</p>
-                        <a className="text-link" href="mailto:panoramics@panoramics-a-vision.com">Send mail</a>
+                        <p>true-north-2026@panoramics-a-vision.com</p>
+                        <a className="text-link" href="mailto:true-north-2026@panoramics-a-vision.com">Send mail</a>
                     </div>
                     <div className="contact-card">
                         <div className="icon" aria-hidden="true">📞</div>

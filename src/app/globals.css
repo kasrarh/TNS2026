@@ -14,12 +14,22 @@
 	;
 	--border: #C3CBD3;
 	--gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--brand-2) 100%);
+	--card-shadow: 0 8px 24px rgba(2, 6, 23, 0.18);
+    --card-shadow-strong: 0 18px 48px rgba(2, 6, 23, 0.26);
 
 }
 
 * {
 	box-sizing: border-box
 }
+
+@font-face {
+	font-family: "FinalSix";
+	src: url("/fonts/") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
 
 html,
 body {
@@ -37,7 +47,7 @@ img {
 }
 
 .container {
-	max-width: 1280px;
+	max-width: 1325px;
 	margin: 0 auto;
 	padding: 0 20px
 }
@@ -64,6 +74,32 @@ p {
 	color: var(--text);
 }
 
+.card,
+.person,
+.session-card,
+.contact-card,
+.quote-card,
+.side-card,
+.logo-slab,
+.schedule-banner,
+.hero-media {
+    box-shadow: var(--card-shadow);
+    transition: box-shadow .25s ease, transform .18s ease;
+    /* ensure shadow doesn't get clipped */
+    overflow: visible;
+}
+.card:hover,
+.person:hover,
+.session-card:hover,
+.contact-card:hover,
+.quote-card:hover,
+.side-card:hover,
+.logo-slab:hover,
+.schedule-banner:hover,
+.hero-media:hover {
+    box-shadow: var(--card-shadow-strong);
+    transform: translateY(-4px);
+}
 /* Header */
 .site-header {
 	position: sticky;
@@ -210,7 +246,7 @@ p {
 .hero {
 	padding: 72px 0 40px;
 	border-bottom: 1px solid var(--border);
-	background-image: url('/Toronto.jpeg');
+	background-image: url('/Toronto-new.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -234,9 +270,8 @@ p {
 
 .hero-inner {
 	display: grid;
-	grid-template-columns: 1.2fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	gap: 40px;
-	align-items: center
 }
 
 .hero-media {
@@ -252,20 +287,31 @@ p {
 	line-height: 1.1;
 	margin: 0 0 16px;
 	color: var(--text-light);
-	font-family: 'Bebas Neue', sans-serif;
+	/* replace 'YourTypekitFontName' with the font-family name from the kit CSS */
+	font-family: 'FinalSix';
 	letter-spacing: 1px;
 	text-transform: uppercase;
 }
 
 .hero h3 {
-	font-family: 'Bebas Neue', sans-serif;
+	font-family: 'FinalSix';
 	letter-spacing: 1px;
 	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.hero span {
+	color: var(--secondary);
 }
 
 .hero p {
 	color: var(--muted-light);
 	margin: 0 0 20px;
+}
+
+.tx-accent {
+	color: var(--secondary) !important;
+	font-weight: 600;
 }
 
 .actions {
@@ -276,6 +322,46 @@ p {
 /* overlay helpers (desktop layout unaffected) */
 .hero-overlay {
 	width: 100%;
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+
+	/* Prevent text from overflowing horizontally */
+	.hero-overlay,
+	.hero-overlay * {
+		overflow-wrap: break-word;
+		word-break: break-word;
+	}
+
+	/* Reduce title sizes */
+	.hero-overlay-top h1 {
+		font-size: 1.8rem;
+		line-height: 1.1;
+	}
+
+	.hero-overlay-top h3 {
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+	.hero-overlay-top h3 span {
+		display: inline;
+		overflow-wrap: break-word;
+	}
+
+	/* Body text */
+	.hero-overlay-bottom p {
+		font-size: 0.9rem;
+		line-height: 1.3;
+	}
+
+	/* Reduce padding inside hero section */
+	.hero-inner {
+		padding: 0 12px;
+	}
+	.hero-inner span {
+		font-size: 0.9rem;
+	}
 }
 
 /* Mobile: place headings at top of image and main paragraph at bottom */
@@ -410,6 +496,13 @@ p {
 	border: 1px solid var(--border)
 }
 
+.schedule-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
 
 .tabs {
 	display: flex;
