@@ -1,7 +1,8 @@
 import { RefObject, useEffect } from "react";
 
-export const useAutoScroll = (
-  ref: RefObject<HTMLElement>,
+/* Allow any HTMLElement subtype (e.g. HTMLDivElement) as the ref target */
+export const useAutoScroll = <T extends HTMLElement = HTMLElement>(
+  ref: RefObject<T | null>,
   speed: number = 10,
   startDelay: number = 1000
 ) => {
@@ -28,11 +29,11 @@ export const useAutoScroll = (
       if (stopped) return;
       stopped = true;
       clearTimers();
-      // remove listeners below via cleanup (they will be removed in return cleanup too)
     }
 
     function step() {
       if (stopped) return;
+      if (!el) return;
       // wrap when reaching end
       if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
         el.scrollLeft = 0;
@@ -65,5 +66,6 @@ export const useAutoScroll = (
       el.removeEventListener("wheel", onInterrupt);
       el.removeEventListener("mouseenter", onInterrupt);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref, speed, startDelay]);
 };
