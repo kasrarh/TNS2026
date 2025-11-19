@@ -2,7 +2,7 @@ import { RefObject, useEffect } from "react";
 
 /* Allow any HTMLElement subtype (e.g. HTMLDivElement) as the ref target */
 export const useAutoScroll = <T extends HTMLElement = HTMLElement>(
-  ref: RefObject<T | null>,
+  ref: RefObject<HTMLElement | null>,
   speed: number = 10,
   startDelay: number = 1000
 ) => {
