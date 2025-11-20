@@ -102,10 +102,12 @@ p {
 }
 /* Header */
 .site-header {
-	position: sticky;
+	position: fixed;
+	width: 100%;
 	top: 0;
 	z-index: 50;
-	background: var(--primary);
+	/* background: var(--primary); */
+	background: rgba(255, 255, 255, 0.0); /* fully transparent */
 	backdrop-filter: saturate(140%) blur(10px);
 	border-bottom: 1px solid var(--border)
 }
@@ -115,7 +117,8 @@ p {
 	align-items: center;
 	justify-content: space-between;
 	height: 72px;
-	gap: 16px
+	gap: 16px;
+	/* position: absolute; */
 }
 
 .logo {
@@ -244,6 +247,7 @@ p {
 
 /* Hero */
 .hero {
+	margin-top: 45px;
 	padding: 72px 0 40px;
 	border-bottom: 1px solid var(--border);
 	background-image: url('/Toronto-new.png');
@@ -272,7 +276,13 @@ p {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 40px;
+	align-items: 
+	center;
 }
+
+.hero-globe {
+	justify-self: end; /* Push the globe to the far right */
+  }
 
 .hero-media {
 	height: 420px;
