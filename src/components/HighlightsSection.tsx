@@ -15,7 +15,7 @@ export default function HighlightsSection() {
 						<div className="card-body">
 							<span className="tag">March 25th</span>
 							<h3>Be Inspired</h3>
-							<p>Gain insight and inspiration from a diverse line-up of distinguished speakers as we map out the single cell and spatial biology landscape in Canada. Discover the innovative ways that researchers are using a single cell and spatial techniques to drive breakthroughs across basic, investigative, and translational science.</p>
+							<p>Gain insight and inspiration from a diverse line-up of distinguished speakers as we map out the single cell and spatial biology landscape in Canada. Discover the innovative ways that researchers are using single cell and spatial techniques to drive breakthroughs across basic, investigative, and translational science.</p>
 							{/* <a className="text-link" href="#">Read more</a> */}
 						</div>
 					</article>

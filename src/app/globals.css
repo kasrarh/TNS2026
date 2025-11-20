@@ -127,6 +127,11 @@ p {
 	gap: 10px;
 	color: var(--text);
 	text-decoration: none
+	
+}
+.logo img {
+	width: 300px;
+	height: 50px;
 }
 
 .logo-mark {
@@ -372,43 +377,66 @@ p {
 	.hero-inner span {
 		font-size: 0.9rem;
 	}
+
+    
+
 }
 
 /* Mobile: place headings at top of image and main paragraph at bottom */
 @media (max-width: 480px) {
 	.hero-inner {
-		grid-template-columns: 1fr;
-		min-height: 420px;
-		/* match hero visual area */
-		padding: 0;
-	}
+        grid-template-columns: 1fr;
+        /* match hero visual area */
+        padding: 0;
+    }
 
-	/* place overlay absolutely over the background image area */
-	.hero-overlay {
-		position: absolute;
-		inset: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 18px;
-		gap: 12px;
-	}
+    /* Make overlay participate in document flow so it pushes the globe below it.
+       Keep top/bottom placement by giving the overlay a min-height and flex layout. */
+    .hero-overlay {
+        position: relative;        /* was absolute */
+        min-height: 360px;        /* reserve vertical space so overlay spans the hero area */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 14px;
+        gap: 12px;
+        z-index: 1;
+    }
 
-	.hero-overlay-top {
-		/* keep headings readable over image */
-		color: var(--text-light);
-		text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-	}
+    .hero-overlay-top {
+        /* keep headings readable over image */
+        color: var(--text-light);
+        text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    }
 
-	.hero-overlay-bottom {
-		color: var(--muted-light);
-		text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
-	}
+    .hero-overlay-bottom {
+        color: var(--muted-light);
+        text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+    }
 
-	/* reduce hero paddings for small screens */
-	.hero {
-		padding: 24px 0 24px;
-	}
+    /* Reduce hero paddings for small screens */
+    .hero {
+        padding: 50px 0 40px;
+    }
+
+    /* Center and shrink globe under the overlay */
+    .hero-globe {
+        justify-self: center;
+        text-align: center;
+        margin: 12px auto 0;
+        width: 220px;      /* smaller square size on mobile */
+        height: 220px;
+        max-width: 60vw;
+        max-height: 60vw;
+    }
+
+    /* Ensure the globe canvas/image scales to the container */
+    .hero-globe > * {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 /* Sections */
@@ -434,7 +462,7 @@ p {
 .card-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 24px
+	gap: 40px
 }
 
 .card {
@@ -1069,6 +1097,11 @@ blockquote {
 	.nav-toggle {
 		display: inline-flex
 	}
+	.logo img {
+        content: url('/TNS2026-logo.png'); 
+        width: 50px;
+        height: 50px;
+    }
 
 	.nav-links {
 		position: absolute;

@@ -72,17 +72,10 @@ export default function ScheduleSection() {
 			},
 			{
 				time: "15:00 — 16:00",
-				title: "Investigative science",
-				description: "Hear from a range of incredible investigative researchers who are developing and utilizing spatial biology techniques to uncover exciting new insights in basic scientific research.",
-				speaker: "Dr. Robert Beattie (University of Manitoba Canada), and more!",
+				title: "Investigative and Translational Science",
+				description: "Hear from a range of incredible investigative researchers who are developing and utilizing spatial biology techniques to uncover exciting new insights in basic scientific research. Learn how scientists from across the country have been employing single cell and spatial biology methods to make discoveries that hold promise in the clinic.",
+				speaker: "Dr. Robert Beattie (University of Manitoba Canada)",
 				venue: "MaRS Auditorium"
-			},
-			{
-				time: "15:00 - 16:00",
-				title: "Translational science",
-				description: "Learn how scientists from across the country have been employing single cell and spatial biology methods to make discoveries that hold promise in the clinic.",
-				speaker: "Speakers to be announced soon!",
-				venue: "Jewel Box"
 			},
 		],
 		day2: [
@@ -96,7 +89,7 @@ export default function ScheduleSection() {
 			{
 				time: "09:00 — 10:00",
 				title: "Enlighten Me - Introduction",
-				description: "Join the Creative Director at Panoramics - A Vision, Dr. Ashleigh Willis, as she walks through the importance of emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc is trying to support them.",
+				description: "Join the Creative Director at Panoramics - A Vision, Dr. Ashleigh Willis, as she walks through how Panoramics - A Vision Inc aim to support and nourish early career scientists in the Canadian single cell and spatial biology community.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
@@ -136,25 +129,11 @@ export default function ScheduleSection() {
 				venue: null
 			},
 			{
-				time: "15:00 — 16:15",
-				title: "Professional skills development: Design thinking in science",
-				description: "Our interactive workshop will guide you through the principles of “design thinking” and apply these concepts to scientific careers of all stages.",
+				time: "15:00 — 17:30",
+				title: "Professional Skills Development for Single Cell and Spatial Biology – Parallel Workshops",
+				description: null,
 				speaker: null,
 				venue: "MaRS Auditorium"
-			},
-			{
-				time: "16:15 — 17:00",
-				title: "Back to basics: spatial biology",
-				description: "This workshop, geared toward biologists, will provide foundational knowledge in single cell and spatial biology methods. From technology selection, experimental design and basic data analysis, participants will leave with a strong knowledge of foundational principles that can be applied in their work.",
-				speaker: null,
-				venue: "MaRS Auditorium"
-			},
-			{
-				time: "16:15 — 17:00",
-				title: "The good, the bad and the ugly: Compute resource management",
-				description: "Understand the computational resources required for single cell and spatial biology datasets. Learn about the useful resources available, along with some of the pitfalls.",
-				speaker: null,
-				venue: "Jewel Box"
 			},
 			{
 				time: "18:30",
@@ -183,21 +162,21 @@ export default function ScheduleSection() {
 				time: "11:00 — 12:00",
 				title: "Spatial Frontiers: The road ahead for spatial biology",
 				description: "Engage in a moderated panel discussion which will focus on the future of single cell and spatial biology. ",
-				speaker: "Dr Shaminin Ayyadhury (CEO, Panoramics - A Vision Inc), Dr. Gary Bader (University of Toronto, Canada), Dr. Michael Doyle (New Mexico Tech, USA)",
+				speaker: "Dr. Gary Bader (University of Toronto, Canada), Dr. Michael Doyle (New Mexico Tech, USA)",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "12:00 — 12:15",
 				title: "Challenge Me - Perspective",
 				description: null,
-				speaker: "Dr. Bo Wang (Chief Artificial Intelligence Officer, UHN, Canada)",
+				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "12:15 — 13:00",
-				title: "Pioneers in Artificial Intelligence",
+				title: "Pioneers in Artificial Intelligence for Single Cell and Spatial Biology",
 				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and spatial field.",
-				speaker: null,
+				speaker: "Dr. Xin Tang (Assistant Professor, University of British Columbia)",
 				venue: "MaRS Auditorium"
 			},
 			{

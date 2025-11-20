@@ -34,7 +34,11 @@ export default function SiteHeader() {
 		<header className={`site-header ${scrolled ? 'scrolled' : ''}`} id="top">
 			<nav className="navbar container" aria-label="Primary">
 				<a className="logo" href="#top" aria-label="Home">
-					<img src="/TNS2026-logo.png" alt="TNS 2026 Logo" style={{ width: '60px', height: '60px' }} />
+					<picture>
+						<source media="(max-width: 800px)" srcSet="/TNS2026-logo-mobile.png" />
+						<img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" />
+
+					</picture>
 					{/* <span className="logo-mark" aria-hidden="true"></span> */}
 					{/* <span className="tx-light">Company</span> */}
 				</a>
