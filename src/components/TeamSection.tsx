@@ -52,7 +52,7 @@ export default function TeamSection() {
 	// 	{ name: 'Anurag Das', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 	// 	{ name: 'Kam Lo', image: null, role: 'Professor', desc: 'Focus on 3D perception and simulation for robotics.', linkedin: '#' },
 
-	const step = (trackRef: { current: HTMLDivElement | null }) => {
+	const step = (trackRef: { current: HTMLElement | null }) => {
 		if (!trackRef.current) return 800;
 		const firstCard = trackRef.current.firstElementChild as HTMLElement;
 		if (!firstCard) return 800;
