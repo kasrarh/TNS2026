@@ -23,7 +23,7 @@ export default function HeroSection() {
 								Register now and explore the future of spatial biology!
 							</p>
 							<div className="actions">
-								<a className="btn btn-secondary" href="#tickets">Register</a>
+								<a className="btn btn-secondary" href="https://www.eventbrite.ca/e/true-north-spatial-2026-tickets-1972675813461?aff=oddtdtcreator">Register</a>
 							</div>
 						</div>
 					</div>

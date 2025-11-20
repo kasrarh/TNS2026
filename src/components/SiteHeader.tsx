@@ -81,7 +81,7 @@ export default function SiteHeader() {
 					</li> */}
 				</ul>
 
-				<a className="btn btn-primary" href="#tickets">Get Tickets</a>
+				<a className="btn btn-primary" href="https://www.eventbrite.ca/e/true-north-spatial-2026-tickets-1972675813461?aff=oddtdtcreator">Get Tickets</a>
 			</nav>
 		</header>
 	);
