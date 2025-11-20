@@ -1,3 +1,5 @@
+import GlobeSection from "./Globe";
+
 export default function HeroSection() {
 	return (
 		<section className="hero" id="about">
@@ -28,6 +30,11 @@ export default function HeroSection() {
 				</div>
 				{/* <figure className="hero-media" aria-label="Conference preview image" role="img"></figure> */}
 					{/* <img src="/TNS2026_logo_V12.png" alt="True North Spatial 2026" style={{ height: 'auto', maxWidth: '70%' }} /> */}
+				
+				{/* Add the Globe floated to the right */}
+				<div className="hero-globe">
+                    <GlobeSection />
+                </div>
 			</div>
 		</section>
 	);
