@@ -82,7 +82,26 @@ function OpenModal(
           <div>
             <h3 className="person-modal-name">Call For Abstracts</h3>
            
-            <p className="person-modal-role">Submit your abstract for True North Spatial 2026. Choose one of the options below to view guidelines or submit.</p>
+            <p className="person-modal-role">Submit your abstract for True North Spatial 2026. Choose one of the options below to view guidelines or submit.
+			<br />
+			<br />
+			Postdoc and Early Career Scientist (ECS) consist of the following:
+			<ul>
+				<li>postdoctoral fellows</li>
+				<li>research associates</li>
+				<li>new principal investigators (within 2 years of opening their lab)</li>
+				<li>industry scientists</li>
+				<li>industry scientists</li>
+			</ul>
+			<br />
+			<br />
+			Trainees and students consist of the following:
+			<ul>
+				<li>PhD candidates</li>
+				<li>Master’s students</li>
+				<li>Undergraduate students</li>
+			</ul>
+			</p>
           </div>
         </div>
 
