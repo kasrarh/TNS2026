@@ -2,7 +2,7 @@ import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
 import HighlightsSection from '@/components/HighlightsSection';
 import ScheduleSection from '@/components/ScheduleSection';
-import TeamSection from '@/components/TeamSection';
+import NewTeamSection from '@/components/NewTeamSection';
 // import BenefitsSection from '@/components/BenefitsSection';
 // import LogosSection from '@/components/LogosSection';
 // import TestimonialsSection from '@/components/TestimonialsSection';
@@ -20,7 +20,7 @@ export default function Page() {
 				<HeroSection />
 				<HighlightsSection />
 				<ScheduleSection />
-				<TeamSection />
+				<NewTeamSection />
 				{/* <BenefitsSection /> */}
 				{/* <LogosSection /> */}
 				{/* <TestimonialsSection /> */}
