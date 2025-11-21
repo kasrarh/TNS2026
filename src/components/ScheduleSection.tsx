@@ -17,7 +17,7 @@ export default function ScheduleSection() {
 			{
 				time: "09:00 — 09:30",
 				title: "Opening Speech",
-				description: "A warm welcome from the CEO and founder of Panoramics – A Vision Inc. Hear about Dr. Ayyadhury’s vision for the Canadian spatial biology landscape, and how she intends to help shape it.",
+				description: "A warm welcome from the CEO and founder of Panoramics - A Vision Inc. Hear about Dr. Ayyadhury’s vision for the Canadian single cell and spatial biology landscape, and how she intends to help shape it.",
 				speaker: "Shamini Ayyadhury (CEO, Founder of Panoramics - A Vision, Canada)",
 				venue: "MaRS Auditorium"
 			},
@@ -73,7 +73,7 @@ export default function ScheduleSection() {
 			{
 				time: "15:00 — 16:00",
 				title: "Investigative and Translational Science",
-				description: "Hear from a range of incredible investigative researchers who are developing and utilizing spatial biology techniques to uncover exciting new insights in basic scientific research. Learn how scientists from across the country have been employing single cell and spatial biology methods to make discoveries that hold promise in the clinic.",
+				description: "Hear from a range of incredible investigative and translational researchers who are developing and utilizing single cell and spatial biology techniques to uncover exciting new insights in basic scientific research.",
 				speaker: "Dr. Robert Beattie (University of Manitoba Canada)",
 				venue: "MaRS Auditorium"
 			},
@@ -97,20 +97,20 @@ export default function ScheduleSection() {
 				time: "10:00 — 11:15",
 				title: "Enlighten Me - Perspective (Virtual)",
 				description: "Gain valuable insight from world-renowned scientist, Prof. Garry Nolan from the University of Stanford. Prof. Nolan will share his unique perspective and experience in taking ideas from initial concept to innovative inventions that can be commercialized for the benefit of the scientific community.",
-				speaker: " Prof. Garry Nolan from the University of Stanford. (USA)",
+				speaker: " Prof. Garry Nolan (University of Stanford, USA)",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "11:15 — 12:00",
 				title: "Innovation in Canada",
 				description: "Discover home-grown innovation in single cell and spatial biology.",
-				speaker: "Dr. Maryam Faiz (University of Calgary, Canada)",
+				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "12:00 — 13:00",
 				title: "Student lunch",
-				description: "We invite students to join us at our roundtable networking. Pick the brains of leaders from academia and industry while enjoying lunch",
+				description: "We invite students to join us at our roundtable networking. Pick the brains of leaders from academia and industry while enjoying lunch.",
 				speaker: null,
 				venue: "Jewel Box"
 			},

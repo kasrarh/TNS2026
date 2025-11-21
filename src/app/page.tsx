@@ -4,12 +4,12 @@ import HighlightsSection from '@/components/HighlightsSection';
 import ScheduleSection from '@/components/ScheduleSection';
 import NewTeamSection from '@/components/NewTeamSection';
 // import BenefitsSection from '@/components/BenefitsSection';
-// import LogosSection from '@/components/LogosSection';
 // import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQSection from '@/components/FAQSection';
 import ContactSection from '@/components/ContactSection';
 import NewsletterSection from '@/components/NewsletterSection';
 import BackToTop from '@/components/BackToTop';
+import LogosSection from '@/components/LogosSection';
 
 export default function Page() {
 	return (
@@ -20,9 +20,9 @@ export default function Page() {
 				<HeroSection />
 				<HighlightsSection />
 				<ScheduleSection />
+				{/* <LogosSection /> */}
 				<NewTeamSection />
 				{/* <BenefitsSection /> */}
-				{/* <LogosSection /> */}
 				{/* <TestimonialsSection /> */}
 				<FAQSection />
 				<ContactSection />
