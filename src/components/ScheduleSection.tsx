@@ -241,10 +241,10 @@ export default function ScheduleSection() {
 								</div>
 							</div>
 						</div>
-
 						<div className="col-xs-12 col-md-6">
 							<div className="tab-panels">
 								<div className={`tab-panel ${active === 0 ? 'is-active' : ''}`}>
+									<h1 className='section-title'>Day 1 - March 25th</h1>
 									{scheduleData.day1.map((session, index) => (
 										<div key={index} className="session-card row">
 											<div className="session-aside col-xs-4 col-md-3">
@@ -271,6 +271,7 @@ export default function ScheduleSection() {
 								</div>
 
 								<div className={`tab-panel ${active === 1 ? 'is-active' : ''}`}>
+								<h1 className='section-title'>Day 2 - March 26th</h1>
 									{scheduleData.day2.map((session, index) => (
 										<div key={index} className="session-card row">
 											<div className="session-aside col-xs-4 col-md-3">
@@ -297,6 +298,8 @@ export default function ScheduleSection() {
 								</div>
 
 								<div className={`tab-panel ${active === 2 ? 'is-active' : ''}`}>
+								<h1 className='section-title'>Day 3 - March 27th</h1>
+
 									{scheduleData.day3.map((session, index) => (
 										<div key={index} className="session-card row">
 											<div className="session-aside col-xs-4 col-md-3">
