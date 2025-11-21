@@ -54,6 +54,7 @@ export default function SiteHeader() {
 
 				<ul className={`nav-links ${navOpen ? 'is-open' : ''}`} id="nav-menu">
 					<li><a href="#about">About</a></li>
+					<li><a id='highlighted-link' href="#vision">Our Vision</a></li>
 					<li><a href="#schedule">Schedule</a></li>
 					<li><a href="#team">Speakers</a></li>
 					<li><a href="#faq">FAQs</a></li>
