@@ -4,12 +4,12 @@ import { useState } from 'react';
 
 type Person = {
   name: string;
-  city?: string;
+  city?: string | null;
   role?: string;
-  desc?: string;
-  image?: string;
-  linkedin?: string;
-  shortRole?: string;
+  desc?: string | null;
+  image?: string | null;
+  linkedin?: string | null;
+  shortRole?: string | null;
 };
 
 const speakers: Person[] = [
