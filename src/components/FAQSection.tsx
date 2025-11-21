@@ -1,6 +1,6 @@
 export default function FAQSection() {
 	return (
-		<section className="faq bg-light" id="faq">
+		<section className="faq" id="faq">
 			<div className="container">
 				<div className="section-title">
 					<h2 className="tx-dark">FAQs</h2>

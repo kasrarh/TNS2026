@@ -1,6 +1,6 @@
 export default function HighlightsSection() {
 	return (
-		<section className="cards-3 bg-light" id="highlights">
+		<section className="cards-3" id="highlights">
 			<div className="container">
 				<div className="section-title">
 					<span className="tag muted-dark">Our three chapters</span>

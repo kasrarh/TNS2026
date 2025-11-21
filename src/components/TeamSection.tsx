@@ -210,7 +210,7 @@ export default function TeamSection() {
 	}, [speakersIsDragging, organizersIsDragging, speakersTouchStart, organizersTouchStart, speakersTouchStartY, organizersTouchStartY, speakersTouchScrollLeft, organizersTouchScrollLeft, speakersIsHorizontalDrag, organizersIsHorizontalDrag]);
 
 	return (
-		<section className="team bg-light" id="team">
+		<section className="team" id="team">
 			<div className="container">
 				<div className="section-title">
 					<span className="tag muted-dark">Meet Our Team</span>
