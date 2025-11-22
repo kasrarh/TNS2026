@@ -20,7 +20,7 @@ export default function Page() {
 				<HeroSection />
 				<HighlightsSection />
 				<ScheduleSection />
-				{/* <LogosSection /> */}
+				<LogosSection />
 				<NewTeamSection />
 				{/* <BenefitsSection /> */}
 				{/* <TestimonialsSection /> */}

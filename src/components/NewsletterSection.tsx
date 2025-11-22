@@ -52,10 +52,9 @@ export default function NewsletterSection() {
 					</div>
 					<div className="col">
 						<h4>Social</h4>
-						<a href="#">Instagram</a>
 						<a href="#">X</a>
 						<a href="#">LinkedIn</a>
-						<a href="#">YouTube</a>
+
 					</div>
 				</div>
 			</div>
