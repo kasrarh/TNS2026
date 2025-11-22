@@ -13,7 +13,7 @@
 	--card: linear-gradient(135deg, var(--primary), var(--brand));
 	;
 	--border: #C3CBD3;
-	--gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--brand-2) 100%);
+	--gradient: linear-gradient(135deg, var(--primary) 20%, var(--secondary) 80%, var(--bg-light) 100%);
 	--card-shadow: 0 8px 24px rgba(2, 6, 23, 0.18);
     --card-shadow-strong: 0 18px 48px rgba(2, 6, 23, 0.26);
 
@@ -1072,7 +1072,7 @@ ul li {
 
 .logo-slab {
 	height: 84px;
-	background: var(--card);
+	background: white;
 	border: 1px solid var(--border);
 	border-radius: 12px
 }
@@ -1282,7 +1282,7 @@ iframe {
 /* Sponsors */
 .sponsors {
     padding: 60px 0;
-    background: var(--bg);
+    background: var(--gradient);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -1291,6 +1291,8 @@ iframe {
     align-items: center;
     justify-items: center;
     margin-top: 40px;
+	justify-content: center;
+
 	
 }
 
@@ -1298,9 +1300,7 @@ iframe {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    min-height: 120px;
-    background: var(--card);
+    min-height: 160px;
     border: 1px solid var(--border);
     border-radius: 12px;
     transition: all 0.3s ease;
@@ -1323,6 +1323,7 @@ iframe {
     .sponsors-grid {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 16px;
+		justify-content: center;
     }
 
     .logo-slab {

@@ -1,30 +1,41 @@
 export default function LogosSection() {
     const sponsors = [
-        { name: 'Sponsor 1', logo: '/sponsor-1.png' },
-        { name: 'Sponsor 2', logo: '/sponsor-2.png' },
-        { name: 'Sponsor 3', logo: '/sponsor-3.png' },
-        { name: 'Sponsor 4', logo: '/sponsor-4.png' },
-        { name: 'Sponsor 5', logo: '/sponsor-5.png' },
-        { name: 'Sponsor 6', logo: '/sponsor-6.png' },
+        { name: 'CBH Ontario', logo: '/sponsors/cbh_logo_whitebg.png' },
+        { name: 'Miltenyi', logo: null },
+        { name: 'StandardBioTools', logo: '/sponsors/standardbio.png' },
+        { name: 'Lunaphore - Biotechne', logo: null },
+        { name: 'Novo Gene', logo: '/sponsors/novogene-logo-01.png' },
+        { name: 'Stellaromics', logo: '/sponsors/stellaromicslogo.png' },
     ];
 
     return (
         <section className="sponsors" id="sponsors">
             <div className="container">
                 <header className="section-title">
-                    <span className="tag">Our Partners</span>
-                    <h2>Proud Sponsors</h2>
-                    <p>Supported by leading organizations in spatial biology and innovation.</p>
+                    <div className="sponsors-header-content">
+                        <span className="tag">Our Partners</span>
+                        <h2>Proud Sponsors</h2>
+                        <p className="sponsors-lead">
+                            Supported by leading organizations driving innovation in spatial biology.
+                            We thank our sponsors for helping make True North Spatial 2026 possible.
+                        </p>
+                    </div>
                 </header>
 
                 <div className="sponsors-grid row">
                     {sponsors.map((sponsor) => (
                         <div key={sponsor.name} className="logo-slab col-3">
-                            <img 
-                                src={sponsor.logo} 
-                                alt={sponsor.name}
-                                loading="lazy"
-                            />
+                            {sponsor.logo ? (
+                                <img
+                                    src={sponsor.logo}
+                                    alt={sponsor.name}
+                                    loading="lazy"
+                                />
+                            ) : (
+                                <div className="logo-placeholder" aria-label={sponsor.name}>
+                                    {sponsor.name}
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
