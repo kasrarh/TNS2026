@@ -104,7 +104,7 @@ export default function ScheduleSection() {
 				time: "09:00 — 10:00",
 				title: "Panoramic Insight",
 				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
-				speaker: null,
+				speaker: "Dr. Ashleigh Willis (	Creative Director, Panoramics - A Vision Inc., Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{

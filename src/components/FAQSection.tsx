@@ -24,7 +24,6 @@ export default function FAQSection() {
 							<li className="muted-light">High-value networking across academia, biotech, hospitals, and industry across Canada and globally.</li>
 							<li className="muted-light">Dedicated academia - industry engagement opportunities</li>
 						</ul>
-						<p className="muted-light">We offer limited student passes. Please contact us with proof of enrollment.</p>
 					</details>
 					<details className="item">
 						<summary>Who should attend?</summary>
