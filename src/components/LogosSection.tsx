@@ -1,9 +1,8 @@
 export default function LogosSection() {
     const sponsors = [
-        { name: 'Miltenyi', logo: '/sponsors/Miltenyi.jpg' },
-        { name: 'CBH Ontario', logo: '/sponsors/cbh_logo_whitebg.png' },
-        { name: 'StandardBioTools', logo: '/sponsors/standardbio.png' },
-        
+        { name: 'Miltenyi', tier: 'CONNECTOME Sponsor', logo: '/sponsors/Miltenyi.jpg' },
+        { name: 'CBH Ontario', tier: 'CELLULAR Sponsor', logo: '/sponsors/cbh_logo_whitebg.png' },
+        { name: 'StandardBioTools', tier: 'ORGANELLE Sponsor', logo: '/sponsors/standardbio.png' },
     ];
     const exhibitors = [
         { name: 'Lunaphore - Biotechne', logo: '/sponsors/luna.png' },
@@ -18,13 +17,13 @@ export default function LogosSection() {
                     <div className="sponsors-header-content">
                         <span className="tag">Sponsors and Exhibitors</span>
                         <h2>Panoramics - A Vision Inc. thanks our sponsors</h2>
-                    
                     </div>
                 </header>
 
-                <div className="sponsors-grid row">
+                <div className="sponsors-grid-vertical">
                     {sponsors.map((sponsor) => (
-                        <div key={sponsor.name} className="logo-slab col-3">
+                        <div key={sponsor.name} className="logo-slab-sponsor">
+                            <h5 className="sponsor-tier">{sponsor.tier}</h5>
                             {sponsor.logo ? (
                                 <img
                                     src={sponsor.logo}
@@ -44,13 +43,12 @@ export default function LogosSection() {
                 <header className="section-title">
                     <div className="sponsors-header-content">
                         <h2>Our Exhibitors</h2>
-                        
                     </div>
                 </header>
 
-                <div className="sponsors-grid row">
+                <div className="sponsors-grid-horizontal">
                     {exhibitors.map((exhibitor) => (
-                        <div key={exhibitor.name} className="logo-slab-2 col-3">
+                        <div key={exhibitor.name} className="logo-slab-exhibitor">
                             {exhibitor.logo ? (
                                 <img
                                     src={exhibitor.logo}
