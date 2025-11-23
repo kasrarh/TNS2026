@@ -13,27 +13,30 @@ export default function HeroSection() {
                     <div className="hero-overlay">
                         <div className="hero-overlay-top">
                             <h1>True North Spatial 2026</h1>
-                            <h3>Hosted by <span>Panoramics– A Vision Inc.</span> </h3>
+                            <h3>Organized by <span>Panoramics– A Vision Inc.</span> </h3>
                         </div>
 
                         <div className="hero-overlay-bottom">
                             <p>
-                                Discover the latest breakthroughs in single cell and spatial biology at True North Spatial 2026, 
-                                Canada's first summit for spatial biology innovators. Connect with academic and industry leaders 
-                                for three days of groundbreaking research, thought-provoking discussions, and hands-on workshops designed 
-                                to spark new ideas and collaborations.
+                              Come experience the Panoramic Chapters collectively through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
+                              <br />
+                              <br />
+                              Set in downtown Toronto,  the Queen City, at the iconic MaRS Discovery District, the beacon of Canada’s innovation, this landmark event opens
+                              the doors to Canada’s first Spatial and Single Cell Summit, where thought leaders, scientists, and innovators unite to share ideas, spark
+                              collaboration, and shape the future of discovery.
+
                             </p>
                             <p className="tx-accent">
-                                Register now and explore the future of single cell and spatial biology!
+                                Register now and explore the future of spatial biology!
                             </p>
                             <div className="actions">
-                                <a className="btn btn-secondary" href="https://www.eventbrite.ca/e/true-north-spatial-2026-tickets-1972675813461?aff=oddtdtcreator">Register</a>
+                                <a className="btn btn-secondary" href="https://luma.com/tns2026">Register</a>
                                 <button 
                                     type="button"
                                     className="btn btn-primary" 
                                     onClick={() => setModalOpen(true)}
                                 >
-                                    Call For Abstract
+                                    Call For Abstracts
                                 </button>
                             </div>
                         </div>
@@ -82,10 +85,8 @@ function OpenModal(
           <div>
             <h3 className="person-modal-name">Call For Abstracts</h3>
            
-            <p className="person-modal-role">Submit your abstract for True North Spatial 2026. Choose one of the options below to view guidelines or submit.
-			<br />
-			<br />
-			Postdoc and Early Career Scientist (ECS) consist of the following:
+            <p className="person-modal-role">Submit your abstract for True North Spatial 2026. Choose one of the options below to view guidelines or submit.</p>
+			<p>Postdoc and Early Career Scientist (ECS) consist of the following:</p>
 			<ul>
 				<li>postdoctoral fellows</li>
 				<li>research associates</li>
@@ -93,15 +94,12 @@ function OpenModal(
 				<li>industry scientists</li>
 				<li>industry scientists</li>
 			</ul>
-			<br />
-			<br />
-			Trainees and students consist of the following:
+			<p>Trainees and students consist of the following:</p>
 			<ul>
 				<li>PhD candidates</li>
 				<li>Master’s students</li>
 				<li>Undergraduate students</li>
 			</ul>
-			</p>
           </div>
         </div>
 

@@ -21,39 +21,42 @@ export default function NewsletterSection() {
 
 	return (
 		<section className="newsletter" id="tickets">
-			<div className="container news-inner">
-				<div className="news-copy">
-					<a className="logo" href="#top" aria-label="Home"><span className="logo-mark"></span></a>
-					<p>Stay updated on the latest research insights and conference developments</p>
-					<form className="subscribe" id="subscribe-form" noValidate ref={formRef} onSubmit={onSubmit}>
-						<label className="sr-only" htmlFor="email">Email</label>
-						<input id="email" type="email" name="email" placeholder="you@example.com" required ref={emailRef} />
-						<button className="btn btn-primary" type="submit">Subscribe</button>
-						<small className="muted">By subscribing, you'll receive exclusive updates about our research initiative.</small>
-						<p className="form-message" role="status" aria-live="polite" style={{ color: message?.color }}>{message?.text}</p>
-					</form>
+			<div className="container row">
+				<div className="news-copy col-4">
+					<a className="logo" href="#top" aria-label="Home"><img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" /></a>
+					{/* <p>Stay updated on the latest research insights and conference developments</p>
+                    <form className="subscribe" id="subscribe-form" noValidate ref={formRef} onSubmit={onSubmit}>
+                        <label className="sr-only" htmlFor="email">Email</label>
+                        <input id="email" type="email" name="email" placeholder="you@example.com" required ref={emailRef} />
+                        <button className="btn btn-primary" type="submit">Subscribe</button>
+                        <small className="muted">By subscribing, you'll receive exclusive updates about our research initiative.</small>
+                        <p className="form-message" role="status" aria-live="polite" style={{ color: message?.color }}>{message?.text}</p>
+                    </form> */}
 				</div>
-				<div className="news-links">
-					<div className="col">
+				<div className="news-links col-8 row">
+					<div className="col-8 col">
 						<h4>Quick Links</h4>
-						<a href="#about">Conference</a>
+						<a href="#about">About</a>
+						<a id='highlighted-link' href="#vision">Our Vision</a>
 						<a href="#schedule">Schedule</a>
+						<a href="#sponsors">Sponsors</a>
 						<a href="#team">Speakers</a>
-						<a href="#benefits">Research</a>
-						<a href="#partners">Partners</a>
+						<a href="#faq">FAQs</a>
+						<a href="#contact">Contact</a>
 					</div>
-					<div className="col">
-						<h4>Resources</h4>
-						<a href="#">Papers</a>
-						<a href="#">Presentations</a>
-						<a href="#">Workshops</a>
-						<a href="#">Publications</a>
-						<a href="#">Follow us</a>
-					</div>
-					<div className="col">
-						<h4>Social</h4>
-						<a href="#">X</a>
-						<a href="#">LinkedIn</a>
+					<div className="col-4 col">
+						<h4>Socials</h4>
+						<a href="#" aria-label="LinkedIn" className="social-link">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+								<circle cx="4" cy="4" r="2" />
+							</svg>
+						</a>
+						<a href="#" aria-label="X" className="social-link">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.654l-5.207-6.807-5.974 6.807H2.426l7.723-8.835L1.254 2.25h6.554l4.886 6.336 5.43-6.336zM17.534 20.766h1.832L6.455 3.812H4.527l13.007 16.954z" />
+							</svg>
+						</a>
 
 					</div>
 				</div>
@@ -64,7 +67,6 @@ export default function NewsletterSection() {
 					<a href="#">Privacy</a>
 					<a href="#">Terms</a>
 					<a href="#">Cookies</a>
-					
 				</div>
 			</div>
 		</section>

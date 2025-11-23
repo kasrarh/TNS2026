@@ -1025,6 +1025,23 @@ ul li {
 	border-radius: 8px
 }
 
+.social-link {
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: color 0.2s ease;
+    padding: 6px;
+}
+
+.social-link:hover {
+    color: var(--brand);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
 /* Benefits two-up */
 .benefits {
 	padding: 56px 0
@@ -1073,6 +1090,12 @@ ul li {
 .logo-slab {
 	height: 84px;
 	background: white;
+	border: 1px solid var(--border);
+	border-radius: 12px
+}
+.logo-slab-2 {
+	height: 84px;
+	background: var(--bg-light);
 	border: 1px solid var(--border);
 	border-radius: 12px
 }
@@ -1306,14 +1329,34 @@ iframe {
     transition: all 0.3s ease;
 	margin: 20px;
 }
+.logo-slab-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+	margin: 20px;
+}
 
 .logo-slab img {
     max-width: 100%;
     max-height: 80px;
     object-fit: contain;
 }
+.logo-slab-2 img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+}
 
 .logo-slab:hover {
+    border-color: var(--brand);
+    box-shadow: var(--card-shadow-strong);
+    transform: translateY(-4px);
+}
+.logo-slab-2:hover {
     border-color: var(--brand);
     box-shadow: var(--card-shadow-strong);
     transform: translateY(-4px);
@@ -1330,8 +1373,15 @@ iframe {
         min-height: 100px;
         padding: 16px;
     }
+    .logo-slab-2 {
+        min-height: 100px;
+        padding: 16px;
+    }
 
     .logo-slab img {
+        max-height: 60px;
+    }
+    .logo-slab-2 img {
         max-height: 60px;
     }
 }
