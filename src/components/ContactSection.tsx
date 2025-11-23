@@ -21,6 +21,12 @@ export default function ContactSection() {
                         <p>Toronto, ON, Canada</p>
                         <a className="text-link" href="https://maps.app.goo.gl/Y5ZPKtdFjtcrJCtZ7">Get directions</a>
                     </div>
+                    <div className="contact-card">
+                        <div className="icon" aria-hidden="true">✉️</div>
+                        <h3>Sponsorship</h3>
+                        <p>for sponsorship enquiries please reach out at sponsorship@panoramics-a-vision.com</p>
+                        <a className="text-link" href="mailto:sponsorship@panoramics-a-vision.com">Send mail</a>
+                    </div>
                 </div>
                 <div role="region" aria-label="Map showing MaRS Discovery District, Toronto">
                     <iframe

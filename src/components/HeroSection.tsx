@@ -13,17 +13,20 @@ export default function HeroSection() {
                     <div className="hero-overlay">
                         <div className="hero-overlay-top">
                             <h1>True North Spatial 2026</h1>
-                            <h3>Organized by <span>Panoramics– A Vision Inc.</span> </h3>
+                            <h3>By <span>Panoramics– A Vision Inc.</span> </h3>
                         </div>
 
                         <div className="hero-overlay-bottom">
                             <p>
-                              Come experience the Panoramic Chapters collectively through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
+                              Come and experience our Panoramic Chapters through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
                               <br />
                               <br />
-                              Set in downtown Toronto,  the Queen City, at the iconic MaRS Discovery District, the beacon of Canada’s innovation, this landmark event opens
-                              the doors to Canada’s first Spatial and Single Cell Summit, where thought leaders, scientists, and innovators unite to share ideas, spark
-                              collaboration, and shape the future of discovery.
+                              Discover the latest breakthroughs in single cell and spatial biology at True North Spatial 2026.
+                               Be part of Canada's first summit for single cell and spatial biology innovators, set in downtown
+                                Toronto at the iconic MaRS Discovery District, the beacon of Canada’s innovation. Connect with
+                                 academic and industry leaders for three days of groundbreaking research, thought-provoking discussions,
+                                  and professional development sessions, designed to spark new ideas, collaborations, and shape the future
+                                   of discovery.
 
                             </p>
                             <p className="tx-accent">

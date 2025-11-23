@@ -66,7 +66,7 @@ export default function ScheduleSection() {
 			{
 				time: "13:30 — 14:30",
 				title: "Sponsor/Exhibitor Scientific Sessions",
-				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights.",
+				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights. Here you will hear from the tech industry and how their latest innovations in spatial and single cell technologies are powering scientific breakthroughs.",
 				speaker: null,
 				venue: "MaRS Auditorium / MaRS Jewel Box"
 			},
@@ -277,8 +277,8 @@ export default function ScheduleSection() {
 							<div className="schedule-header">
 								<div className="section-title">
 									<span className="tag">Agenda Highlights</span>
-									<h2>Three days of dynamic sessions</h2>
-									<p>Here are some of the talks, workshops and panels led by academic and industry leaders that you can look forward to.</p>
+									<h2>Three days of dynamic sessions across our three chapters.</h2>
+									<p>What to expect at True North Spatial</p>
 								</div>
 								<div className="tab-list" role="tablist">
 									<button
@@ -324,17 +324,19 @@ export default function ScheduleSection() {
 												)}
 											</div>
 											<div className="session-content col-xs-8 col-md-9">
+												
 												{session.title && (
 													<h3>{session.title}</h3>
-												)}
-												{session.description && (
-													<p className="session-description">{session.description}</p>
 												)}
 												{session.speaker && (
 													<div className="session-speaker">
 														<strong>Speaker:</strong> {session.speaker}
 													</div>
 												)}
+												{session.description && (
+													<p className="session-description">{session.description}</p>
+												)}
+												
 											</div>
 										</div>
 									))}
@@ -354,14 +356,15 @@ export default function ScheduleSection() {
 												{session.title && (
 													<h3>{session.title}</h3>
 												)}
-												{session.description && (
-													<p className="session-description">{session.description}</p>
-												)}
 												{session.speaker && (
 													<div className="session-speaker">
 														<strong>Speaker:</strong> {session.speaker}
 													</div>
 												)}
+												{session.description && (
+													<p className="session-description">{session.description}</p>
+												)}
+												
 											</div>
 										</div>
 									))}
@@ -382,14 +385,15 @@ export default function ScheduleSection() {
 												{session.title && (
 													<h3>{session.title}</h3>
 												)}
-												{session.description && (
-													<p className="session-description">{session.description}</p>
-												)}
 												{session.speaker && (
 													<div className="session-speaker">
 														<strong>Speaker:</strong> {session.speaker}
 													</div>
 												)}
+												{session.description && (
+													<p className="session-description">{session.description}</p>
+												)}
+												
 											</div>
 										</div>
 									))}

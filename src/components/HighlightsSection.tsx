@@ -37,18 +37,13 @@ export default function HighlightsSection() {
 						<div className="card-body">
 							<span className="tag">March 26th</span>
 							<h3>Be Enlightened</h3>
-							<p>Our "Enlighten-Me" chapter is focused on high quality, 
-								meaningful training and pedagogy. This chapter emphasizes
-								 skills development, encouraging innovation and aims to form
-								  a support structure for creativity and training. Join us on day
-								   2 as we engage with students and future leaders
+							<p>Our "Enlighten-Me" chapter is focused on high quality, meaningful training and pedagogy.
+								 This chapter emphasizes skills development, encouraging innovation and aims to form a
+								  support structure for creativity and training. Join us on day 2 as we engage with students and future leaders.
 								<br />
 								<br />
-								Dive into pedagogy and innovation centered talks where you’ll learn
-								 from experts in spatial biology. Expand your scientific and professional
-								  skillset as our professional development sessions guide you through spatial
-								   biology from the ground up – from experimental basics and computational resources,
-								    to commercialization insights and creative career planning.
+								Dive into pedagogy and innovation centered talks where you’ll learn from experts in spatial biology.
+								 Expand your scientific and professional skillset as our professional development sessions guide you through spatial biology.
 
 							</p>
 							{/* <a className="text-link" href="#">Read more</a> */}
