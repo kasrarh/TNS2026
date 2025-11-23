@@ -56,6 +56,7 @@ export default function SiteHeader() {
 					<li><a href="#about">About</a></li>
 					<li><a id='highlighted-link' href="#vision">Our Vision</a></li>
 					<li><a href="#schedule">Schedule</a></li>
+					<li><a href="#sponsors">Sponsors</a></li>
 					<li><a href="#team">Speakers</a></li>
 					<li><a href="#faq">FAQs</a></li>
 					<li><a href="#contact">Contact</a></li>
@@ -82,7 +83,7 @@ export default function SiteHeader() {
 					</li> */}
 				</ul>
 
-				<a className="btn btn-primary" href="https://www.eventbrite.ca/e/true-north-spatial-2026-tickets-1972675813461?aff=oddtdtcreator">Get Tickets</a>
+				<a className="btn btn-primary" href="https://luma.com/tns2026">Get Tickets</a>
 			</nav>
 		</header>
 	);

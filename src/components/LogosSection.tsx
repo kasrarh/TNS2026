@@ -1,11 +1,14 @@
 export default function LogosSection() {
     const sponsors = [
+        { name: 'Miltenyi', logo: '/sponsors/Miltenyi.jpg' },
         { name: 'CBH Ontario', logo: '/sponsors/cbh_logo_whitebg.png' },
-        { name: 'Miltenyi', logo: null },
         { name: 'StandardBioTools', logo: '/sponsors/standardbio.png' },
-        { name: 'Lunaphore - Biotechne', logo: null },
-        { name: 'Novo Gene', logo: '/sponsors/novogene-logo-01.png' },
+        
+    ];
+    const exhibitors = [
+        { name: 'Lunaphore - Biotechne', logo: '/sponsors/luna.png' },
         { name: 'Stellaromics', logo: '/sponsors/stellaromicslogo.png' },
+        { name: 'Novo Gene', logo: '/sponsors/novogene-logo-01.png' },
     ];
 
     return (
@@ -13,12 +16,9 @@ export default function LogosSection() {
             <div className="container">
                 <header className="section-title">
                     <div className="sponsors-header-content">
-                        <span className="tag">Our Partners</span>
-                        <h2>Proud Sponsors</h2>
-                        <p className="sponsors-lead">
-                            Supported by leading organizations driving innovation in spatial biology.
-                            We thank our sponsors for helping make True North Spatial 2026 possible.
-                        </p>
+                        <span className="tag">Sponsors and Exhibitors</span>
+                        <h2>Panoramics - A Vision Inc. thanks our sponsors</h2>
+                    
                     </div>
                 </header>
 
@@ -34,6 +34,32 @@ export default function LogosSection() {
                             ) : (
                                 <div className="logo-placeholder" aria-label={sponsor.name}>
                                     {sponsor.name}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className="container">
+                <header className="section-title">
+                    <div className="sponsors-header-content">
+                        <h2>Our Exhibitors</h2>
+                        
+                    </div>
+                </header>
+
+                <div className="sponsors-grid row">
+                    {exhibitors.map((exhibitor) => (
+                        <div key={exhibitor.name} className="logo-slab-2 col-3">
+                            {exhibitor.logo ? (
+                                <img
+                                    src={exhibitor.logo}
+                                    alt={exhibitor.name}
+                                    loading="lazy"
+                                />
+                            ) : (
+                                <div className="logo-placeholder" aria-label={exhibitor.name}>
+                                    {exhibitor.name}
                                 </div>
                             )}
                         </div>
