@@ -62,12 +62,12 @@ export default function NewsletterSection() {
 				</div>
 			</div>
 			<div className="container credits">
-				<span>© 2026 Panoramics — A Vision. All rights reserved.</span>
-				<div className="credit-links">
+				<span>© 2026 Panoramics — A Vision Inc. All rights reserved.</span>
+				{/* <div className="credit-links">
 					<a href="#">Privacy</a>
 					<a href="#">Terms</a>
 					<a href="#">Cookies</a>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);
