@@ -236,6 +236,10 @@ p {
 	border: 0.01em solid var(--border);
 }
 
+.btn-sponsors{
+	display: block;
+}
+
 .btn-secondary {
 	background: transparent;
 	color: var(--text-light);
@@ -355,6 +359,10 @@ p {
 	.hero-overlay * {
 		overflow-wrap: break-word;
 		word-break: break-word;
+	}
+
+	.btn-sponsors{
+		display: none;
 	}
 
 	/* Reduce title sizes */
