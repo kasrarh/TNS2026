@@ -40,6 +40,7 @@ export default function LogosSection() {
                 </div>
             </div>
             <div className="container">
+                <br/>
                 <header className="section-title">
                     <div className="sponsors-header-content">
                         <h2>Our Exhibitors</h2>
