@@ -28,7 +28,7 @@ export default function ContactSection() {
                     <div className="contact-card">
                         <div className="icon" aria-hidden="true">✉️</div>
                         <h3>Sponsorship</h3>
-                        <p>for sponsorship enquiries please reach out at sponsorship@panoramics-a-vision.com</p>
+                        <p>sponsorship@panoramics-a-vision.com</p>
                         <a className="text-link" href="mailto:sponsorship@panoramics-a-vision.com">Send mail</a>
                     </div>
                 </div>
