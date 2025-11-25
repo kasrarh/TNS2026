@@ -22,7 +22,7 @@ export default function FAQSection() {
 						<ul>
 							<li className="muted-light">First pan-Canadian spatial & single cell biology meeting in Canada, globally engaging with international tech leaders.</li>
 							<li className="muted-light">High-value networking across academia, biotech, hospitals, and industry across Canada and globally.</li>
-							<li className="muted-light">Dedicated academia - industry engagement opportunities</li>
+							<li className="muted-light">Dedicated academia - industry engagement opportunities.</li>
 						</ul>
 					</details>
 					<details className="item">

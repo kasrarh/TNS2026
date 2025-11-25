@@ -38,12 +38,12 @@ export default function HighlightsSection() {
 							<span className="tag">March 26th</span>
 							<h3>Be Enlightened</h3>
 							<p>Our "Enlighten-Me" chapter is focused on high quality, meaningful training and pedagogy.
-								 This chapter emphasizes skills development, encouraging innovation and aims to form a
-								  support structure for creativity and training. Join us on day 2 as we engage with students and future leaders.
+								 This chapter emphasizes skills development, encourages innovation and aims to form a
+								  support structure for creativity and training. Join us on day two as we engage with students and future leaders.
 								<br />
 								<br />
 								Dive into pedagogy and innovation centered talks where you’ll learn from experts in spatial biology.
-								 Expand your scientific and professional skillset as our professional development sessions guide you through spatial biology.
+								 Expand your scientific and professional skillset as our professional development sessions guide you through single cell and spatial biology.
 
 							</p>
 							{/* <a className="text-link" href="#">Read more</a> */}
@@ -58,7 +58,7 @@ export default function HighlightsSection() {
 							<span className="tag">March 27th</span>
 							<h3>Be Challenged</h3>
 							<p>
-								Our "Challenge-Me" chapter nurtures out-of the box and future-forward thinking in our scientific community. This chapter strives to expand horizons that will shape the future of the field. Join us on day 3 as we tackle bold topics and grand challenges.
+								Our "Challenge-Me" chapter nurtures out-of the box and future-forward thinking in our scientific community. This chapter strives to expand horizons that will shape the future of the field. Join us on day three as we tackle bold topics and grand challenges.
 								<br />
 								<br />
 								
