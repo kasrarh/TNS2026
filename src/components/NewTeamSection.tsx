@@ -55,7 +55,7 @@ export default function TeamSection() {
     <section className="team" id="team">
       <div className="container">
         <header className="section-title">
-          <span className="tag muted-dark">Meet Our People</span>
+          <span className="tag muted-dark">Meet our people</span>
           <h2 className="tx-dark">Speakers &amp; Organizers</h2>
           <p className="muted-dark">
             Leaders across academia, industry, and the spatial community.
@@ -184,7 +184,7 @@ function PersonModal({
             href={person.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="person-modal-link"
+            className="btn btn-secondary"
           >
             View on LinkedIn
           </a>
