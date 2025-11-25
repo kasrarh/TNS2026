@@ -807,48 +807,6 @@ ul li {
 /* MODAL */
 
 
-.person-modal-backdrop {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(2,6,23,0.6);
-  z-index: 300;
-  overflow-y: auto; /* allow page/backdrop scrolling on small viewports */
-}
-
-/* modal container: limit height and use column layout */
-.person-modal {
-  background: radial-gradient(circle at top left, #020617, #020617 40%, #030712);
-  color: var(--text);
-  width: 100%;
-  max-width: 540px;
-  border-radius: 12px;
-  box-shadow: var(--card-shadow-strong);
-  display: flex;
-  flex-direction: column;
-  max-height: calc(100vh - 48px); /* fit inside viewport */
-  overflow: hidden; /* keep footer visible */
-}
-
-/* header/body area becomes the scrollable region */
-.person-modal > .person-modal-header {
-  padding: 20px;
-  overflow-y: auto;
-  flex: 1 1 auto; /* expand to use available vertical space */
-}
-
-/* ensure lists and paragraphs wrap nicely inside the scrollable area */
-.person-modal .person-modal-desc,
-.person-modal ul {
-  margin: 0 0 12px 12px;
-  line-height: 1.45;
-}
-
-/* footer button(s) stay visible and anchored to bottom *
-
 
 /* mobile tweaks */
 @media (max-width: 480px) {
@@ -862,8 +820,32 @@ ul li {
     padding: 12px;
   }
 }
-.person-modal-close {
+/* MODAL */
 
+.person-modal-backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(15, 23, 42, 0.75);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5rem;
+	z-index: 50;
+}
+
+.person-modal {
+	position: relative;
+	max-width: 560px;
+	width: 100%;
+	background: radial-gradient(circle at top left, #020617, #020617 40%, #030712);
+	border-radius: 20px;
+	padding: 1.75rem 1.9rem 1.9rem;
+	color: #e5e7eb;
+	box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.person-modal-close {
+	position: absolute;
 	top: 0.9rem;
 	right: 0.95rem;
 	border: none;
@@ -905,8 +887,6 @@ ul li {
 
 .person-modal-desc {
 	margin-top: 0.6rem;
-	margin-left: 12px;
-	margin-right: 12px;
 	font-size: 0.9rem;
 	line-height: 1.6;
 }
