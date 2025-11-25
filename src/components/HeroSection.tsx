@@ -38,7 +38,8 @@ export default function HeroSection() {
                 Register now and explore the future of spatial biology!
               </p>
               <div className="actions">
-                <a className="btn btn-secondary" type='button' onClick={() => setTicketModal(true)}>Register</a>
+                <a className="btn btn-secondary" type='button' href='/tickets'>Register</a>
+                {/* <a className="btn btn-secondary" type='button' onClick={() => setTicketModal(true)}>Register</a> */}
                 <button
                   type="button"
                   className="btn btn-primary"
