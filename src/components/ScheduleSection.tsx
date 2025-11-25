@@ -10,7 +10,7 @@ export default function ScheduleSection() {
 			{
 				time: "08:00 — 09:00",
 				title: "Breakfast & Registration",
-				description: "Inspire me: A bold introduction",
+				description: "Inspire Me: A bold introduction",
 				speaker: null,
 				venue: "MaRS Auditorium concourse"
 			},
@@ -81,12 +81,12 @@ export default function ScheduleSection() {
 				time: "15:00 — 15:30",
 				title: null,
 				description: null,
-				speaker: "Dr. Robert Beattie (University of Manitoba Canada)",
+				speaker: "Dr. Robert Beattie (University of Manitoba, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "16:00 — 17:30",
-				title: "SCIENTIFIC DEBATE",
+				title: "Scientific Debate",
 				description: "Debaters to be announced soon!",
 				speaker: null,
 				venue: "MaRS Auditorium"
@@ -95,7 +95,7 @@ export default function ScheduleSection() {
 		day2: [
 			{
 				time: "08:00 — 09:00",
-				title: "Enlighten me: Innovation and leadership in single cell and spatial biology",
+				title: "Enlighten Me: Innovation and leadership in single cell and spatial biology",
 				description: "Breakfast & Registration",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
@@ -103,7 +103,7 @@ export default function ScheduleSection() {
 			{
 				time: "09:00 — 10:00",
 				title: "Panoramic Insight",
-				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
+				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of trainees and emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
 				speaker: "Dr. Ashleigh Willis (	Creative Director, Panoramics - A Vision Inc., Canada)",
 				venue: "MaRS Auditorium"
 			},
@@ -116,7 +116,7 @@ export default function ScheduleSection() {
 			},
 			{
 				time: "10:30 — 11:00",
-				title: "BREAK + Networking",
+				title: "Break + Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
@@ -124,14 +124,14 @@ export default function ScheduleSection() {
 			{
 				time: "11:00 — 11:50",
 				title: "Innovation in Spatial and Single Cell Biology",
-				description: "Watch this space for speakers to be announced who will enlighten the audience with their innovative ideas in the spatial and single cell space.",
+				description: "This session will feature speakers who are driving innovation and pushing the boundaries of what’s possible in single cell and spatial biology. Stay tuned for the announcement of these exciting scientists.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "11:50 — 12:50",
-				title: "Postdoc / Early career Scientists’ - selected talks",
-				description: "Watch this space for speakers to be announced who will enlighten the audience with their innovative ideas in the spatial and single cell space.",
+				title: "Postdoctoral Fellow and Early Career Scientist selected talks",
+				description: "Speakers for this session will be chosen from the top abstracts submitted and represent some of the most innovative and impactful work coming from our early career scientist community. These researchers are driving the future of science and discovery. Watch this space for the announcement of these outstanding speakers.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
@@ -152,7 +152,7 @@ export default function ScheduleSection() {
 			{
 				time: "13:50 — 14:40",
 				title: "Sponsor speaking sessions",
-				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights. Here you will hear from our featured speakers from the tech industry and how their latest innovations in spatial and single cell technologies are powering scientific breakthroughs",
+				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights. Here you will hear from our featured speakers from the tech industry about how their latest innovations in spatial and single cell technologies are powering scientific breakthroughs.",
 				speaker: null,
 				venue: "MaRS Auditorium / MaRS Jewel Box"
 			},
@@ -165,7 +165,7 @@ export default function ScheduleSection() {
 			},
 			{
 				time: "15:40 — 16:00",
-				title: "BREAK + Networking",
+				title: "Break + Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
@@ -181,28 +181,28 @@ export default function ScheduleSection() {
 		day3: [
 			{
 				time: "08:00 — 09:00",
-				title: "“Challenge me”: A Panorama of the future",
+				title: "“Challenge Me”: A Panorama of the future",
 				description: "Breakfast & Registration",
 				speaker: null,
 				venue: "MaRS Auditorium concourse"
 			},
 			{
 				time: "09:00 — 09:30",
-				title: "Challenge me - Opinion",
-				description: "We invite you to hear Dr. Morag Park as she delivers our most important introductory speech as we brace to step into the future. Dr. Morag is a well respected scientist, who has truly shown us what it means to think above and beyond and sets the stage for our day 3 agenda.",
+				title: "Challenge Me - Opinion",
+				description: "We invite you to hear Dr. Morag Park as she delivers an important introductory speech as we brace to step into the future. Dr. Morag is a well respected scientist, who has truly shown us what it means to think above and beyond and sets the stage for our day 3 agenda.",
 				speaker: "Dr. Morag Park (McGill University, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "09:30 — 10:30",
 				title: "Crossing Boundaries",
-				description: "Dr. Morag Park will host this important session to pick the brains of scientists and dive deep deep into what it truly means to have meaningful public impact and the challenges that we need to face and ‘cross’ to drive a truly meaningful scientific journey.",
+				description: "Dr. Morag Park will host this important session to pick the brains of scientists and dive deep into what it truly means to have meaningful public impact and the challenges that we need to face and ‘cross’ to drive a truly meaningful scientific journey.",
 				speaker: "TBD",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "10:30 — 11:00",
-				title: "BREAK + Networking",
+				title: "Break & Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
@@ -217,7 +217,7 @@ export default function ScheduleSection() {
 			{
 				time: "12:00 — 13:00",
 				title: "Pioneers in Artificial Intelligence",
-				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and spatial field.",
+				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and its spatial field.",
 				speaker: "Dr. Xin Tang (Assistant Professor, University of British Columbia) + others TBC",
 				venue: "MaRS Auditorium"
 			},
@@ -231,13 +231,13 @@ export default function ScheduleSection() {
 			{
 				time: "13:50 — 15:00",
 				title: "Sponsor/Exhibitor Scientific Sessions",
-				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights. Here you will hear from our featured speakers from the tech industry and how their latest innovations in spatial and single cell technologies are powering scientific breakthroughs.",
+				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights. Here you will hear from our featured speakers from the tech industry about how their latest innovations in spatial and single cell technologies are powering scientific breakthroughs.",
 				speaker: null,
 				venue: "MaRS Auditorium / MaRS Jewel Box"
 			},
 			{
 				time: "15:00 — 15:30",
-				title: "BREAK + Networking",
+				title: "Break & Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"

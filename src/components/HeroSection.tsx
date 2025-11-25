@@ -15,12 +15,15 @@ export default function HeroSection() {
           <div className="hero-overlay">
             <div className="hero-overlay-top">
               <h1>True North Spatial 2026</h1>
-              <h3>By <span>Panoramics– A Vision Inc.</span> </h3>
+              <h3>By <span>Panoramics– A Vision Inc.</span>
+              <br />
+              25th - 27th March, 2026
+               </h3>
             </div>
 
             <div className="hero-overlay-bottom">
               <p>
-                Come and experience our Panoramic Chapters through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
+                Come and experience our Panoramic chapters through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
                 <br />
                 <br />
                 Discover the latest breakthroughs in single cell and spatial biology at True North Spatial 2026.
