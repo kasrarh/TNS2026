@@ -63,6 +63,7 @@ export default function TicketModal({
               <li>Undergraduate Students / Interns</li>
               <li>Core research facilities</li>
             </ul>
+            <a href="/tickets">More details</a>
           </div>
         </div>
           <a

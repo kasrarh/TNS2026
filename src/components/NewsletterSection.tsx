@@ -36,13 +36,13 @@ export default function NewsletterSection() {
 				<div className="news-links col-8 row">
 					<div className="col-8 col">
 						<h4>Quick Links</h4>
-						<a href="#about">About</a>
-						<a id='highlighted-link' href="#vision">Our Vision</a>
-						<a href="#schedule">Schedule</a>
-						<a href="#sponsors">Sponsors</a>
-						<a href="#team">Speakers</a>
-						<a href="#faq">FAQs</a>
-						<a href="#contact">Contact</a>
+						<a href="/#about">About</a>
+						<a id='highlighted-link' href="/#vision">Our Vision</a>
+						<a href="/#schedule">Schedule</a>
+						<a href="/#sponsors">Sponsors</a>
+						<a href="/#team">Speakers</a>
+						<a href="/#faq">FAQs</a>
+						<a href="/#contact">Contact</a>
 					</div>
 					<div className="col-4 col">
 						<h4>Socials</h4>
