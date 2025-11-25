@@ -68,11 +68,11 @@ export default function SiteHeader() {
 					>
 						Our Vision
 					</a></li>
-						<li><a href="#schedule">Schedule</a></li>
-						<li><a href="#sponsors">Sponsors</a></li>
-						<li><a href="#team">Speakers</a></li>
-						<li><a href="#faq">FAQs</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="/#schedule">Schedule</a></li>
+						<li><a href="/#sponsors">Sponsors</a></li>
+						<li><a href="/#team">Speakers</a></li>
+						<li><a href="/#faq">FAQs</a></li>
+						<li><a href="/#contact">Contact</a></li>
 						{/* <li className="nav-dropdown" ref={dropdownRef}>
 							<button
 								className="dropdown-trigger"
@@ -95,7 +95,7 @@ export default function SiteHeader() {
 							</ul>
 						</li> */}
 					</ul>
-				<a className="btn btn-secondary btn-sponsors" href="#sponsors">For Sponsors</a>
+				<a className="btn btn-secondary btn-sponsors" href="/#sponsors">For Sponsors</a>
 					<a className="btn btn-primary" type='button' onClick={() => setTicketModal(true)}>Get Tickets</a>
 
 				</nav>
