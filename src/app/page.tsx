@@ -10,6 +10,7 @@ import ContactSection from '@/components/ContactSection';
 import NewsletterSection from '@/components/NewsletterSection';
 import BackToTop from '@/components/BackToTop';
 import LogosSection from '@/components/LogosSection';
+import LogosSection2 from '@/components/LogoSection2';
 
 export default function Page() {
 	return (
@@ -20,7 +21,8 @@ export default function Page() {
 				<HeroSection />
 				<HighlightsSection />
 				<ScheduleSection />
-				<LogosSection />
+				{/* <LogosSection /> */}
+				<LogosSection2 />
 				<NewTeamSection />
 				{/* <BenefitsSection /> */}
 				{/* <TestimonialsSection /> */}

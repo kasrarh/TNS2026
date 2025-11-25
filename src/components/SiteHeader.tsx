@@ -96,7 +96,8 @@ export default function SiteHeader() {
 						</li> */}
 					</ul>
 				<a className="btn btn-secondary btn-sponsors" href="/#sponsors">For Sponsors</a>
-					<a className="btn btn-primary" type='button' onClick={() => setTicketModal(true)}>Get Tickets</a>
+					<a className="btn btn-primary" type='button' href='/tickets'>Get Tickets</a>
+					{/* <a className="btn btn-primary" type='button' onClick={() => setTicketModal(true)}>Get Tickets</a> */}
 
 				</nav>
 
