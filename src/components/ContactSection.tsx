@@ -1,6 +1,10 @@
 export default function ContactSection() {
     return (
         <section className="contact" id="contact">
+				<div className="section-title">
+					<h2 className="tx-dark">Contact Us</h2>
+					{/* <p className="tag muted-dark">stuff</p> */}
+				</div>
             <div className="container">
                 <div className="contacts">
                     <div className="contact-card">

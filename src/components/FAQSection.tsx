@@ -4,7 +4,7 @@ export default function FAQSection() {
 			<div className="container">
 				<div className="section-title">
 					<h2 className="tx-dark">FAQs</h2>
-					<p className="muted-dark">Answers to common questions.</p>
+					<p className="tag muted-dark">Answers to common questions.</p>
 				</div>
 				<div className="accordion" data-accordion>
 					<details className="item" open>
