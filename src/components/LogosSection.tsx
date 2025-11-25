@@ -15,8 +15,8 @@ export default function LogosSection() {
             <div className="container">
                 <header className="section-title">
                     <div className="sponsors-header-content">
-                        <span className="tag">Sponsors and Exhibitors</span>
-                        <h2>Panoramics - A Vision Inc. thanks our sponsors</h2>
+                        <span className="tag">Sponsors &amp; Exhibitors</span>
+                        <h2>Panoramics - A Vision Inc. thanks our sponsors!</h2>
                     </div>
                 </header>
 
@@ -40,6 +40,7 @@ export default function LogosSection() {
                 </div>
             </div>
             <div className="container">
+                <br/>
                 <br/>
                 <header className="section-title">
                     <div className="sponsors-header-content">

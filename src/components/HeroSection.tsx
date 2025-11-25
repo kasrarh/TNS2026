@@ -113,14 +113,15 @@ function OpenModal(
         </div>
 
 
-        <p className="person-modal-desc">
+        {/* <p className="person-modal-desc">
 
-        </p>
+        </p> */}
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLScRWWEZs4FQynjtVXkOPn1nOjlof8pKxmDQdnrkBPW8jqxTLQ/viewform?usp=sharing&ouid=103366666487005061314"
           target="_blank"
+          style={{ marginRight: '12px' }}
           rel="noreferrer"
-          className="person-modal-link"
+          className="btn btn-secondary"
         >
           Postdoc/ECS
         </a>
@@ -128,7 +129,7 @@ function OpenModal(
           href="https://docs.google.com/forms/d/e/1FAIpQLScfOGTTe7q8XQMfkr6GA7KCVGFR7jbCp3O_pBO8VUUsEgF-3A/viewform"
           target="_blank"
           rel="noreferrer"
-          className="person-modal-link"
+          className="btn btn-primary"
         >
           Students
         </a>
