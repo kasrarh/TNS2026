@@ -39,7 +39,7 @@ export default function SiteHeader() {
 			<>
 		<header className={`site-header ${scrolled ? 'scrolled' : ''}`} id="top">
 				<nav className="navbar container" aria-label="Primary">
-					<a className="logo" href="#top" aria-label="Home">
+					<a className="logo" href="/" aria-label="Home">
 						<picture>
 							<source media="(max-width: 800px)" srcSet="/TNS2026-logo-mobile.png" />
 							<img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" />

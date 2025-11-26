@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "TNS 2026",
   description: "True North Summit 2026 - Embracing the Future of Technology",
    icons: {
-    icon:  "/TNS2026-logo.png"
+    icon:  "/favicon.ico"
     // apple: '/TNS2026-logo.png',
     // You can also define icons based on media queries for dark/light mode:
     // icon: [
