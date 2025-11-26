@@ -6,6 +6,8 @@ export default function NewsletterSection() {
 	const formRef = useRef<HTMLFormElement | null>(null);
 	const emailRef = useRef<HTMLInputElement | null>(null);
 	const [message, setMessage] = useState<{ text: string; color: string } | null>(null);
+	const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+
 
 	function onSubmit(e: React.FormEvent) {
 		e.preventDefault();
@@ -22,7 +24,8 @@ export default function NewsletterSection() {
 	return (
 		<section className="newsletter" id="tickets">
 			<div className="container row">
-				<div className="news-copy col-3">
+				<div className='col-12 col-md-6 row'>
+					<div className="news-copy col-6">
 					<a className="logo" href="/" aria-label="Home"><img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" /></a>
 					{/* <p>Stay updated on the latest research insights and conference developments</p>
                     <form className="subscribe" id="subscribe-form" noValidate ref={formRef} onSubmit={onSubmit}>
@@ -33,13 +36,21 @@ export default function NewsletterSection() {
                         <p className="form-message" role="status" aria-live="polite" style={{ color: message?.color }}>{message?.text}</p>
                     </form> */}
 				</div>
-				<div className="news-links col-5 row">
+				<div className="news-copy col-6">
+					<a className="panoramics" href="https://www.panoramics-a-vision.com/" aria-label="Panoramics"><img src="/panoramics-logo.png" alt="Panoramics-A-Vision Logo" /></a>
+				</div>
+				</div>
+				<div className='col-12 col-md-6 row'>
+					<div className="news-links col-12 col-md-6 row">
 					<div className="col-8 col">
 						<h4>Quick Links</h4>
 						<div className="row">
 							<div className='col-6 col'>
 								<a href="/#about">About</a>
-								<a id='highlighted-link' href="/#vision">Our Vision</a>
+								<a id='highlighted-link' onClick={(e) => {
+									e.preventDefault();
+									setIsModalOpen(true); // Open the modal
+								}}>Our Vision</a>
 								<a href="/#schedule">Schedule</a>
 								<a href="/#sponsors">Sponsors</a>
 							</div>
@@ -68,9 +79,10 @@ export default function NewsletterSection() {
 
 					</div>
 				</div>
-				<div className="news-copy col-4">
-					<a className="panoramics" href="https://www.panoramics-a-vision.com/" aria-label="Panoramics"><img src="/panoramics-logo.png" alt="Panoramics-A-Vision Logo" /></a>
 				</div>
+				
+				
+
 			</div>
 			<div className="container credits">
 				<span>© 2026 Panoramics — A Vision Inc. All rights reserved.</span>
@@ -80,8 +92,71 @@ export default function NewsletterSection() {
 					<a href="#">Cookies</a>
 				</div> */}
 			</div>
+			{isModalOpen && (
+				<OpenModal
+					onClose={() => setIsModalOpen(false)}
+				/>
+			)}
 		</section>
+
+
 	);
 }
 
+function OpenModal(
+	{ onClose }:
+		{ onClose: () => void }
+) {
+	return (
+		<div className="person-modal-backdrop" onClick={onClose}>
+			<div
+				className="person-modal"
+				onClick={(e) => e.stopPropagation()}
+				role="dialog"
+				aria-modal="true"
+				aria-label="What is True North Spatial"
+			>
+				<button
+					type="button"
+					className="person-modal-close"
+					onClick={onClose}
+					aria-label="Close"
+				>
+					✕
+				</button>
+
+				<div className="person-modal-desc" style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+					<img
+						src="/TNS2026-logo.png"      // ← replace with your actual path
+						alt="True North Spatial Logo"
+						style={{
+							width: "100px",                // small + clean
+							height: "100px",
+							objectFit: "contain",
+							marginBottom: "0.75rem",
+							opacity: 0.9,
+							margin: "0 auto",
+						}}
+					/>
+					<h4 style={{ marginTop: "1rem", fontWeight: 600, textAlign: 'center' }}>Our Mission for True North Spatial 2026</h4>
+
+					<p>
+						Our inaugural True North Spatial 2026 is a convergence of our Panoramic Chapters,
+						for global engagement through Canada - our True North. True North Spatial 2026 will
+						set the stage, positioning Panoramics - A Vision Inc. as a pan-Canadian hub for
+						spatial &amp; single cell biology and will assume a yearly occurrence.
+					</p>
+
+					<p>
+						To elevate scientific exposition in spatial and single cell biology by creating a unique
+						nexus, a convergence of minds right here in Canada - our True North that grounds our
+						vision - through the mission statements of our Panoramic Chapters.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+	);
+}
 
