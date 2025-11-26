@@ -137,6 +137,11 @@ p {
 	height: 50px;
 }
 
+.panoramics img {
+		width: 188px;
+		height: 75px;
+	}
+
 .logo-mark {
 	width: 20px;
 	height: 20px;
@@ -1311,8 +1316,7 @@ iframe {
 }
 
 .news-links {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+
 	gap: 16px
 }
 

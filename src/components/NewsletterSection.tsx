@@ -22,8 +22,8 @@ export default function NewsletterSection() {
 	return (
 		<section className="newsletter" id="tickets">
 			<div className="container row">
-				<div className="news-copy col-4">
-					<a className="logo" href="#top" aria-label="Home"><img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" /></a>
+				<div className="news-copy col-3">
+					<a className="logo" href="/" aria-label="Home"><img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" /></a>
 					{/* <p>Stay updated on the latest research insights and conference developments</p>
                     <form className="subscribe" id="subscribe-form" noValidate ref={formRef} onSubmit={onSubmit}>
                         <label className="sr-only" htmlFor="email">Email</label>
@@ -33,18 +33,26 @@ export default function NewsletterSection() {
                         <p className="form-message" role="status" aria-live="polite" style={{ color: message?.color }}>{message?.text}</p>
                     </form> */}
 				</div>
-				<div className="news-links col-8 row">
+				<div className="news-links col-5 row">
 					<div className="col-8 col">
 						<h4>Quick Links</h4>
-						<a href="/#about">About</a>
-						<a id='highlighted-link' href="/#vision">Our Vision</a>
-						<a href="/#schedule">Schedule</a>
-						<a href="/#sponsors">Sponsors</a>
-						<a href="/#team">Speakers</a>
-						<a href="/#faq">FAQs</a>
-						<a href="/#contact">Contact</a>
+						<div className="row">
+							<div className='col-6 col'>
+								<a href="/#about">About</a>
+								<a id='highlighted-link' href="/#vision">Our Vision</a>
+								<a href="/#schedule">Schedule</a>
+								<a href="/#sponsors">Sponsors</a>
+							</div>
+							<div className='col-6 col'>
+								<a href="/#team">Speakers</a>
+								<a href="/#faq">FAQs</a>
+								<a href="/#contact">Contact</a>
+							</div>
+
+						</div>
+
 					</div>
-					<div className="col-4 col">
+					<div className="col-3 col">
 						<h4>Socials</h4>
 						<a href="https://www.linkedin.com/company/panoramics-a-vision/" aria-label="LinkedIn" className="social-link">
 							<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -59,6 +67,9 @@ export default function NewsletterSection() {
 						</a>
 
 					</div>
+				</div>
+				<div className="news-copy col-4">
+					<a className="panoramics" href="https://www.panoramics-a-vision.com/" aria-label="Panoramics"><img src="/panoramics-logo.png" alt="Panoramics-A-Vision Logo" /></a>
 				</div>
 			</div>
 			<div className="container credits">
