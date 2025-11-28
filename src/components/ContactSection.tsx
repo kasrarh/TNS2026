@@ -1,6 +1,10 @@
 export default function ContactSection() {
     return (
         <section className="contact" id="contact">
+				<div className="section-title">
+					<h2 className="tx-dark">Contact Us</h2>
+					{/* <p className="tag muted-dark">stuff</p> */}
+				</div>
             <div className="container">
                 <div className="contacts">
                     <div className="contact-card">
@@ -20,6 +24,12 @@ export default function ContactSection() {
                         <h3>Location</h3>
                         <p>Toronto, ON, Canada</p>
                         <a className="text-link" href="https://maps.app.goo.gl/Y5ZPKtdFjtcrJCtZ7">Get directions</a>
+                    </div>
+                    <div className="contact-card">
+                        <div className="icon" aria-hidden="true">✉️</div>
+                        <h3>Sponsorship</h3>
+                        <p>sponsorship@panoramics-a-vision.com</p>
+                        <a className="text-link" href="mailto:sponsorship@panoramics-a-vision.com">Send mail</a>
                     </div>
                 </div>
                 <div role="region" aria-label="Map showing MaRS Discovery District, Toronto">

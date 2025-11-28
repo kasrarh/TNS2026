@@ -17,10 +17,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TNS 2026",
   description: "True North Summit 2026 - Embracing the Future of Technology",
-   icons: {
-    icon: [
-    { url: "/TNS2026-logo.png", type: "image/png" },
-  ],
+  icons: {
+    icon: "/favicon.ico"
     // apple: '/TNS2026-logo.png',
     // You can also define icons based on media queries for dark/light mode:
     // icon: [
@@ -31,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  
+
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -39,11 +37,32 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-T6GJX9XN');
+            `,
+          }}
+        />
         <link rel="stylesheet" href="https://use.typekit.net/voo2uat.css" />
+
       </head>
       <body
+
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6GJX9XN"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
