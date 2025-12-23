@@ -3,7 +3,7 @@ export default function HighlightsSection() {
 		<section className="cards-3" id="highlights">
 			<div className="container">
 				<div className="section-title">
-					<span className="tag muted-dark">Our three chapters</span>
+					<span className="tag muted-dark">The Panoramics Chapters</span>
 					<h2 className="tx-dark">"Inspire Me", "Enlighten Me", "Challenge Me"</h2>
 					<p className="muted-dark">Re-imagining conversations in science</p>
 				</div>
