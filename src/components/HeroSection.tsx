@@ -23,7 +23,7 @@ export default function HeroSection() {
 
             <div className="hero-overlay-bottom">
               <p>
-                Come and experience our Panoramic chapters through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
+                Come and experience our <span>Panoramic chapters</span>  through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
                 <br />
                 <br />
                 Discover the latest breakthroughs in single cell and spatial biology at True North Spatial 2026.

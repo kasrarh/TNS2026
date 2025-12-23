@@ -4,7 +4,7 @@ export default function HighlightsSection() {
 			<div className="container">
 				<div className="section-title">
 					<span className="tag muted-dark">Our three chapters</span>
-					<h2 className="tx-dark">Inspire, Enlighten, Challenge</h2>
+					<h2 className="tx-dark">"Inspire Me", "Enlighten Me", "Challenge Me"</h2>
 					<p className="muted-dark">Re-imagining conversations in science</p>
 				</div>
 				<div className="card-grid">
