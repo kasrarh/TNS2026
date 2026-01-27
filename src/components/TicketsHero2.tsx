@@ -45,7 +45,7 @@ export default function TicketsHero2() {
                                 <th className="ticket-category-details">
                                     <div className="ticket-category-name">CATEGORY A: TRAINEES & CORE FACILITIES</div>
                                     <ul className="ticket-category-list">
-                                        <li>Cora research facilities (Academia)</li>
+                                        <li>Core research facility managers & executives (Academia)</li>
                                         <li>Graduate Students</li>
                                         <li>Undergraduate Students</li>
                                     </ul>
