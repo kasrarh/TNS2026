@@ -99,7 +99,7 @@ export default function TicketsHero2() {
                                 <th className="ticket-category-details">
                                     <div className="ticket-category-name">CATEGORY D: CORPORATE</div>
                                     <ul className="ticket-category-list">
-                                        <li>Corporate Executives (C-Suite)</li>
+                                        <li>Corporate Executives</li>
                                         <li>Investors</li>
                                         <li>Business owners</li>
                                     </ul>
