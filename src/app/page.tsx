@@ -11,16 +11,17 @@ import NewsletterSection from '@/components/NewsletterSection';
 import BackToTop from '@/components/BackToTop';
 import LogosSection from '@/components/LogosSection';
 import LogosSection2 from '@/components/LogoSection2';
+import IntroVideo from '@/components/IntroVideo';
 
 export default function Page() {
 	return (
 		<>
-
+			<IntroVideo />
 			<SiteHeader />
 			<main>
 				<HeroSection />
 				<HighlightsSection />
-				<ScheduleSection />
+				{/* <ScheduleSection /> */}
 				{/* <LogosSection /> */}
 				<LogosSection2 />
 				<NewTeamSection />
