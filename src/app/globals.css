@@ -553,7 +553,8 @@ p {
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
-	gap: 8px
+	gap: 8px;
+	flex: 1;
 }
 
 /* Highlights */
@@ -751,7 +752,7 @@ ul li {
 	border: none;
 	padding: 0;
 	width: calc((100% - 1.25rem) / 2);
-	height: 420px;
+	height: 300px;
 	/* <- tweak this for taller/shorter tiles */
 	border-radius: 16px;
 	overflow: hidden;
@@ -768,7 +769,7 @@ ul li {
 
 @media (min-width: 1024px) {
 	.person-tile {
-		width: calc((100% - 3.75rem) / 4);
+		width: calc((100% - 5rem) / 5);
 	}
 }
 
@@ -898,6 +899,58 @@ ul li {
 .person-modal-city {
 	font-size: 0.85rem;
 	opacity: 0.8;
+}
+
+/* Intro Video Overlay */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.intro-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.intro-close-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .person-modal-role {

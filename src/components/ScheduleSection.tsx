@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-export default function ScheduleSection() {
+export default function ScheduleSection({ fullPage = false }: { fullPage?: boolean }) {
 	const [active, setActive] = useState(0);
 
 	// Schedule data with time, description, speaker, and venue
@@ -267,20 +267,20 @@ export default function ScheduleSection() {
 
 	
 	return (
-		<section className="schedule" id="schedule">
+		<section className="schedule" id="schedule" style={fullPage ? { borderTop: 'none' } : {}}>
 			<div className="schedule-bg" aria-hidden="true"></div>
 			<div className="container">
 				<div className="schedule-grid">
 					<div className="row">
-						<div className="col-xs-12 col-md-6">
+						<div className={`col-xs-12 ${fullPage ? '' : 'col-md-6'}`} style={fullPage ? { textAlign: 'center', marginBottom: '40px' } : {}}>
 
-							<div className="schedule-header">
+							<div className="schedule-header" style={fullPage ? { position: 'static' } : {}}>
 								<div className="section-title">
 									<span className="tag">Agenda Highlights</span>
 									<h2>Three days of dynamic sessions across our three chapters.</h2>
 									<p>What to expect at True North Spatial</p>
 								</div>
-								<div className="tab-list" role="tablist">
+								<div className="tab-list" role="tablist" style={fullPage ? { justifyContent: 'center' } : {}}>
 									<button
 										role="tab"
 										aria-selected={active === 0}
@@ -306,12 +306,19 @@ export default function ScheduleSection() {
 										27th March
 									</button>
 								</div>
-								<div className="schedule-banner" aria-hidden="true">
-									<img src={dayImages[active as keyof typeof dayImages]} alt={`Schedule for day ${active + 1}`} />
-								</div>
+								{fullPage && (
+									<div className="schedule-banner" aria-hidden="true" style={{ marginTop: '24px', maxWidth: '500px', height: '250px', marginLeft: 'auto', marginRight: 'auto' }}>
+										<img src={dayImages[active as keyof typeof dayImages]} alt={`Schedule for day ${active + 1}`} />
+									</div>
+								)}
+								{!fullPage && (
+									<div className="schedule-banner" aria-hidden="true">
+										<img src={dayImages[active as keyof typeof dayImages]} alt={`Schedule for day ${active + 1}`} />
+									</div>
+								)}
 							</div>
 						</div>
-						<div className="col-xs-12 col-md-6">
+						<div className={`col-xs-12 ${fullPage ? '' : 'col-md-6'}`} style={fullPage ? { marginTop: '32px' } : {}}>
 							<div className="tab-panels">
 								<div className={`tab-panel ${active === 0 ? 'is-active' : ''}`}>
 									<h1 className='section-title'>Day 1 - March 25th</h1>

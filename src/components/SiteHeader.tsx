@@ -68,7 +68,7 @@ export default function SiteHeader() {
 					>
 						Our Vision
 					</a></li>
-						<li><a href="/#schedule">Schedule</a></li>
+						<li><a href="/agenda">Agenda</a></li>
 						<li><a href="/#sponsors">Sponsors</a></li>
 						<li><a href="/#team">Speakers</a></li>
 						<li><a href="/#faq">FAQs</a></li>

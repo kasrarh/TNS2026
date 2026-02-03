@@ -44,7 +44,7 @@ export default function LogosSection() {
                 <br/>
                 <header className="section-title">
                     <div className="sponsors-header-content">
-                        <h2>Our Exhibitors</h2>
+                        <h2><i>Also supported by</i></h2>
                     </div>
                 </header>
 

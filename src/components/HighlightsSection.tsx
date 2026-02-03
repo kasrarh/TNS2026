@@ -27,6 +27,7 @@ export default function HighlightsSection() {
 								  are using a single cell and spatial techniques to drive breakthroughs across basic,
 								   investigative, and translational science.
 							</p>
+							<a className="btn btn-primary" href="/agenda" style={{ marginTop: 'auto' }}>See More</a>
 							{/* <a className="text-link" href="#">Read more</a> */}
 						</div>
 					</article>
@@ -46,6 +47,7 @@ export default function HighlightsSection() {
 								 Expand your scientific and professional skillset as our professional development sessions guide you through single cell and spatial biology.
 
 							</p>
+							<a className="btn btn-primary" href="/agenda" style={{ marginTop: 'auto' }}>See More</a>
 							{/* <a className="text-link" href="#">Read more</a> */}
 						</div>
 					</article>
@@ -63,6 +65,7 @@ export default function HighlightsSection() {
 								<br />
 								
 								Engage with the critical questions and challenges shaping the landscape of spatial biology through panel discussions, fireside chats and debates. Challenge yourself with topics such as open-source data, artificial intelligence, and the evolving economics of single cell and spatial research. Join in with conversations that push the boundaries of what’s possible in the field.</p>
+							<a className="btn btn-primary" href="/agenda" style={{ marginTop: 'auto' }}>See More</a>
 							{/* <a className="text-link" href="#">Read more</a> */}
 						</div>
 					</article>
