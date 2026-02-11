@@ -10,6 +10,7 @@ type Person = {
   image?: string | null;
   linkedin?: string | null;
   shortRole?: string | null;
+  isSponsored?: boolean;
 };
 
 const speakers: Person[] = [
@@ -28,6 +29,7 @@ const speakers: Person[] = [
   { name: 'Dr. Maryam Faiz', city: 'Alberta, Canada', image: "/team-members/Faiz-Maryam.jpg", role: 'Associate Professor, Department of Cell Biology and Anatomy, Cumming School of Medicine, University of Calgary', desc: "Dr. Maryam Faiz is an Associate Professor at the University of Calgary. Her research focuses on astrocyte biology in brain development, injury, and disease, with the goal of identifying new therapeutic strategies. Her work spans astrocyte heterogeneity in the developing cortex, astrocyte responses following stroke, gut-brain signaling, and the direct lineage reprogramming of astrocytes into oligodendrocytes.", linkedin: 'https://www.linkedin.com/in/maryam-faiz-253a9657/' },
   { name: 'Ms. Alyona Ivanova', city: 'Ontario, Canada', image: "/team-members/Alyona.jpg", role: 'PhD Candidate, Institute of Medical Sciences, University of Toronto & Brain Tumour Research Department, The Hospital for Sick Children', desc: "Alyona is a PhD candidate investigating the molecular signature of glioblastoma using spatial -omics technologies and identifying novel therapies for targeting chemo-resistance at the Hospital for Sick Children under the supervision of Dr. Sunit Das. Alyona is a Creative Director of Panoramics - A Vision INC, Executive Editor and the Director of Distribution of the Insitute of Medical Sciences Magazine, and an athlete of the Canadian National Figure Skating team.", linkedin: 'https://www.linkedin.com/in/alyona-ivanova-skate22/' },
 	{ name: 'Dr. Ashleigh Willis', city: 'British Columbia, Canada', image: "/team-members/ashleigh.png", role: "Postdoctoral fellow and PANORAMICS - A vision's executive team member", desc: 'Dr. Ashleigh Willis investigates forebrain neural stem cells respond to injury and how their microenvironment guides their activation, fate and regenerative potential. She combines single cell sequencing and spatial transcriptomics with murine in vivo models of injury and disease to uncover how endogenous neural stem cells might be harnessed to repair the brain. As Program Director of True North Spatial 2026, Dr. Willis is curating a contemporary, unconventional program which unites innovators in single cell and spatial biology while creating meaningful training opportunities for early career scientists. During the summit, Dr. Willis will spotlight the goals of Panoramic - A Vision’s “Enlighten Me” chapter.', linkedin: 'https://www.linkedin.com/in/ashleigh-willis-06a724142/' },
+  //Add isSponsored: true for sponsored speakers and update the CSS to show the badge on the tile and in the modal
 ];
 
 const organizers: Person[] = [
@@ -106,6 +108,9 @@ export default function TeamSection() {
               <div className="person-tile-overlay-base" />
 
               <div className="person-tile-content">
+                {person.isSponsored && (
+                  <span className="sponsor-badge">Sponsor Speaker</span>
+                )}
                 <span className="person-tile-name">{person.name}</span>
                 {person.city ? 
                   <span className="person-tile-city">{person.city}</span>
@@ -176,7 +181,9 @@ function PersonModal({
             )}
           </div>
         </div>
-
+        {person.isSponsored && (
+                  <span className="sponsor-badge">Sponsor Speaker</span>
+                )}
         {person.desc && (
           <p className="person-modal-desc">
             {person.desc}
@@ -193,6 +200,7 @@ function PersonModal({
             View on LinkedIn
           </a>
         )}
+
       </div>
     </div>
   );

@@ -815,6 +815,20 @@ ul li {
 	opacity: 0.85;
 }
 
+.sponsor-badge {
+	display: inline-block;
+	background: var(--brand-2);
+	color: white;
+	padding: 0.35rem 0.7rem;
+	border-radius: 6px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.25rem;
+	width: fit-content;
+}
+
 /* Hover: darken slightly + subtle zoom */
 
 .person-tile:hover .person-tile-image {
