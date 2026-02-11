@@ -80,7 +80,7 @@ export default function IntroVideo() {
                         kind="captions" 
                         label="English" 
                         srcLang="en" 
-                        src="/videos/captions.vtt" 
+                        src="/videos/SUBTITLE_TNS2026_PROMO.vtt" 
                         default 
                     />
                     Your browser does not support the video tag.
