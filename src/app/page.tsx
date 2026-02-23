@@ -1,5 +1,6 @@
 import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
+import NewsSection from '@/components/NewsSection';
 import HighlightsSection from '@/components/HighlightsSection';
 import ScheduleSection from '@/components/ScheduleSection';
 import NewTeamSection from '@/components/NewTeamSection';
@@ -20,6 +21,7 @@ export default function Page() {
 			<SiteHeader />
 			<main>
 				<HeroSection />
+				<NewsSection />
 				<HighlightsSection />
 				{/* <ScheduleSection /> */}
 				{/* <LogosSection /> */}
