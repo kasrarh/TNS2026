@@ -22,7 +22,7 @@ export default function NewsSection() {
             <div className="news-content">
               <span className="news-date">February 25 2026</span>
               <h3>Call For Abstract Closed</h3>
-              <p>The call for abstracts submission for the 2026 Toronto Board of Trade conference has now been closed.</p>
+              <p>The call for abstracts submission for the 2026 True North Spatial conference has now been closed.</p>
             </div>
           </article>
           {/* Article 2 */}
