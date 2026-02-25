@@ -32,7 +32,7 @@ export default function TicketsHero2() {
                                 <th className="ticket-early-reg-header">
                                     Early Registration (CAD)
                                     {/* Note: Using 'div' instead of a separate element for the date text */}
-                                    <div>(Until 25/02/2026)</div>
+                                    <div>(Until 27/02/2026)</div>
                                 </th>
                                 <th className="ticket-regular-reg-header">
                                     Regular Registration (CAD)
