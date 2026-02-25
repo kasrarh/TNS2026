@@ -13,7 +13,19 @@ export default function NewsSection() {
         </div>
         
         <div className="news-grid">
-          {/* Article 1 */}
+
+           {/* Article 1 */}
+          <article className="news-card">
+             {/* <div className="news-image">
+              <img src="/Inspire-me-banner.png" alt="Innovation Award" />
+            </div> */}
+            <div className="news-content">
+              <span className="news-date">February 25 2026</span>
+              <h3>Call For Abstract Closed</h3>
+              <p>The call for abstracts for the 2026 Toronto Board of Trade conference has now been closed.</p>
+            </div>
+          </article>
+          {/* Article 2 */}
           <article className="news-card">
             {/* <div className="news-image">
               <img src="/trbot-pano-logo.png" alt="TRBOT" />
@@ -26,18 +38,7 @@ export default function NewsSection() {
             </div>
           </article>
 
-          {/* Article 2 */}
-          {/* <article className="news-card">
-             <div className="news-image">
-              <img src="/Inspire-me-banner.png" alt="Innovation Award" />
-            </div>
-            <div className="news-content">
-              <span className="news-date">January 2026</span>
-              <h3>Innovation Award 2025</h3>
-              <p>Panoramics receives the prestigious Innovation Award for groundbreaking work in single-cell analysis.</p>
-              <a href="#" className="text-link">Read Article &rarr;</a>
-            </div>
-          </article> */}
+         
 
           {/* Article 3 */}
           {/* <article className="news-card">

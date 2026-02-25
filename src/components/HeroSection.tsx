@@ -40,13 +40,13 @@ export default function HeroSection() {
               <div className="actions">
                 <a className="btn btn-secondary" type='button' href='/tickets'>Register</a>
                 {/* <a className="btn btn-secondary" type='button' onClick={() => setTicketModal(true)}>Register</a> */}
-                <button
+                {/* <button
                   type="button"
                   className="btn btn-primary"
                   onClick={() => setModalOpen(true)}
                 >
                   Call For Abstracts
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
