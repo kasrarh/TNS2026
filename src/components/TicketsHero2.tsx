@@ -36,7 +36,7 @@ export default function TicketsHero2() {
                                 </th>
                                 <th className="ticket-regular-reg-header">
                                     Regular Registration (CAD)
-                                    <div>(26/02/2026 - 27/03/2026)</div>
+                                    <div>(28/02/2026 - 27/03/2026)</div>
                                 </th>
                             </tr>
                         </thead>

@@ -10,6 +10,7 @@ export async function POST(request: NextRequest) {
       studentName,
       email,
       title,
+      backgroundBlobUrl,
       abstractBlobUrl,
       department,
       university,
@@ -35,6 +36,8 @@ export async function POST(request: NextRequest) {
       email,
       title,
       abstractBlobUrl,
+      // optional background image url
+      backgroundBlobUrl: backgroundBlobUrl || null,
       department: department || 'Not specified',
       university: university || 'Not specified',
       phone: phone || 'Not provided',

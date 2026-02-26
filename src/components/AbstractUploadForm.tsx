@@ -21,6 +21,7 @@ interface UploadState {
 
 export default function AbstractUploadForm() {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const bgFileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState<FormData>({
     studentName: '',
     email: '',
@@ -30,6 +31,7 @@ export default function AbstractUploadForm() {
     phone: '',
   });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedBackgroundFile, setSelectedBackgroundFile] = useState<File | null>(null);
   const [uploadState, setUploadState] = useState<UploadState>({
     isUploading: false,
     uploadProgress: 0,
@@ -71,6 +73,32 @@ export default function AbstractUploadForm() {
         return;
       }
       setSelectedFile(file);
+      setUploadState((prev) => ({ ...prev, error: null }));
+    }
+  };
+
+  const handleBackgroundFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate image type
+      if (!file.type.startsWith('image/')) {
+        setUploadState((prev) => ({
+          ...prev,
+          error: 'Only image files are allowed for background',
+        }));
+        setSelectedBackgroundFile(null);
+        return;
+      }
+      // Validate file size (max 10MB)
+      if (file.size > 10 * 1024 * 1024) {
+        setUploadState((prev) => ({
+          ...prev,
+          error: 'Background image must be less than 10MB',
+        }));
+        setSelectedBackgroundFile(null);
+        return;
+      }
+      setSelectedBackgroundFile(file);
       setUploadState((prev) => ({ ...prev, error: null }));
     }
   };
@@ -120,10 +148,29 @@ export default function AbstractUploadForm() {
 
       const { url: abstractBlobUrl } = await uploadResponse.json();
 
-      setUploadState((prev) => ({
-        ...prev,
-        uploadProgress: 100,
-      }));
+      setUploadState((prev) => ({ ...prev, uploadProgress: 50 }));
+
+      // If a background image was selected, upload it the same way
+      let backgroundBlobUrl: string | null = null;
+      if (selectedBackgroundFile) {
+        const bgFormData = new FormData();
+        bgFormData.append('file', selectedBackgroundFile);
+
+        const bgUploadResponse = await fetch('/api/upload-token', {
+          method: 'POST',
+          body: bgFormData,
+        });
+
+        if (!bgUploadResponse.ok) {
+          const errorData = await bgUploadResponse.json();
+          throw new Error(errorData.error || 'Failed to upload background image');
+        }
+
+        const bgJson = await bgUploadResponse.json();
+        backgroundBlobUrl = bgJson.url;
+      }
+
+      setUploadState((prev) => ({ ...prev, uploadProgress: 100 }));
 
       // Step 2: Save metadata to database
       const saveResponse = await fetch('/api/abstracts', {
@@ -134,6 +181,7 @@ export default function AbstractUploadForm() {
         body: JSON.stringify({
           ...formData,
           abstractBlobUrl,
+          backgroundBlobUrl,
         }),
       });
 
@@ -160,8 +208,12 @@ export default function AbstractUploadForm() {
         phone: '',
       });
       setSelectedFile(null);
+      setSelectedBackgroundFile(null);
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
+      }
+      if (bgFileInputRef.current) {
+        bgFileInputRef.current.value = '';
       }
     } catch (error) {
       console.error('Upload error:', error);
@@ -289,6 +341,33 @@ export default function AbstractUploadForm() {
           </div>
 
           {/* File Upload */}
+          {/* Background Image Upload */}
+          <div className={styles.formGroup}>
+            <label htmlFor="backgroundImage" className={styles.label}>
+              Background Image (optional)
+            </label>
+            <div
+              className={styles.fileInputWrapper}
+              onClick={() => !uploadState.isUploading && bgFileInputRef.current?.click()}
+            >
+              <input
+                type="file"
+                id="backgroundImage"
+                ref={bgFileInputRef}
+                onChange={handleBackgroundFileChange}
+                accept="image/*"
+                className={styles.fileInput}
+                disabled={uploadState.isUploading}
+              />
+              <span className={styles.fileName}>
+                {selectedBackgroundFile ? selectedBackgroundFile.name : 'Click to select background image (optional)'}
+              </span>
+            </div>
+            <p className={styles.fileHint}>
+              Recommended max size: 10MB. Common formats: JPG, PNG.
+            </p>
+          </div>
+
           <div className={styles.formGroup}>
             <label htmlFor="abstractFile" className={styles.label}>
               Abstract PDF <span className={styles.required}>*</span>
