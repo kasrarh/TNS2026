@@ -5,6 +5,17 @@ import { useState, useEffect } from 'react';
 export default function IntroVideo() {
     const [isVisible, setIsVisible] = useState(true);
 
+    const VIDEO_STORAGE_KEY = 'introVideoClosedAt';
+
+    const hideAndPersist = () => {
+        setIsVisible(false);
+        try {
+            localStorage.setItem(VIDEO_STORAGE_KEY, new Date().toISOString());
+        } catch {
+            // storage may be unavailable
+        }
+    };
+
     useEffect(() => {
         // Prevent scrolling when the modal is open
         if (isVisible) {
@@ -18,11 +29,26 @@ export default function IntroVideo() {
         };
     }, [isVisible]);
 
+    // On mount check storage to decide visibility
+    useEffect(() => {
+        try {
+            const stored = localStorage.getItem(VIDEO_STORAGE_KEY);
+            if (stored) {
+                const ts = new Date(stored).getTime();
+                if (Date.now() - ts < 3 * 24 * 60 * 60 * 1000) {
+                    setIsVisible(false);
+                }
+            }
+        } catch {
+            // ignore storage errors
+        }
+    }, []);
+
     // Handle Escape key
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
-                setIsVisible(false);
+                hideAndPersist();
             }
         };
 
@@ -44,7 +70,7 @@ export default function IntroVideo() {
                     className="intro-close-btn" 
                     onClick={(e) => {
                          e.stopPropagation();
-                         setIsVisible(false);
+                         hideAndPersist();
                     }}
                     aria-label="Close video"
                 >
@@ -73,7 +99,9 @@ export default function IntroVideo() {
                     playsInline 
                     controls
                     onClick={(e) => e.stopPropagation()}
-                    onEnded={() => setIsVisible(false)}
+                    onEnded={() => {
+                        hideAndPersist();
+                    }}
                 >
                     <source src="/videos/Social_Registration_Draft_Panoramics_TSN_V5.mp4" type="video/mp4" />
                     <track 

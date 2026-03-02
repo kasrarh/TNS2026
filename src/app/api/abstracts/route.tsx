@@ -7,20 +7,28 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     
     const {
-      studentName,
+      firstName,
+      lastName,
       email,
+      institution,
+      position,
+      location,
       title,
+      labSupervisor,
+      authors,
+      affiliations,
+      description,
       backgroundBlobUrl,
       abstractBlobUrl,
-      department,
-      university,
-      phone,
     } = body;
 
     // Validate required fields
-    if (!studentName || !email || !title || !abstractBlobUrl) {
+    if (!firstName || !lastName || !email || !title || !abstractBlobUrl) {
       return NextResponse.json(
-        { error: 'Missing required fields: studentName, email, title, or abstractBlobUrl' },
+        {
+          error:
+            'Missing required fields: firstName, lastName, email, title, or abstractBlobUrl',
+        },
         { status: 400 }
       );
     }
@@ -32,15 +40,20 @@ export async function POST(request: NextRequest) {
 
     // Create abstract document
     const abstractDocument = {
-      studentName,
+      firstName,
+      lastName,
       email,
+      institution: institution || 'Not specified',
+      position: position || 'Not specified',
+      location: location || 'Not specified',
       title,
+      labSupervisor: labSupervisor || null,
+      authors: authors || [],
+      affiliations: affiliations || [],
+      description: description || '',
       abstractBlobUrl,
       // optional background image url
       backgroundBlobUrl: backgroundBlobUrl || null,
-      department: department || 'Not specified',
-      university: university || 'Not specified',
-      phone: phone || 'Not provided',
       submittedAt: new Date(),
       status: 'pending', // Can be pending, approved, rejected
       _id: new ObjectId(),
