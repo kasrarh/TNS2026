@@ -13,6 +13,15 @@ export default function NewsSection() {
         </div>
         
         <div className="news-grid">
+          {/* Article 0 */}
+          <article className="news-card">
+            <div className="news-content">
+              <span className="news-date">February 28 2026</span>
+              <h3>TNS 2026 Featured In: Mapping Life — The Spatial Biology Revolution</h3>
+              <p>In Episode 2 of the podcast hosted by our Day 1 keynote speaker, Dr. Mike Doyle, True North Spatial 2026 was used as a lens to explore the shift from the "gadget phase" to the era of spatial science as infrastructure.</p>
+              <a target='_blank' href="https://open.spotify.com/episode/58gczdonyjY9ZCqDMYoyKs?si=oQMxz37kTB-NuzDlxVBSwQ" className="text-link">Listen to Podcast &rarr;</a>
+            </div>
+          </article>
 
            {/* Article 1 */}
           <article className="news-card">
@@ -21,7 +30,7 @@ export default function NewsSection() {
             </div> */}
             <div className="news-content">
               <span className="news-date">February 25 2026</span>
-              <h3>Call For Abstract Closed</h3>
+              <h3>Call For Abstracts Closed</h3>
               <p>The call for abstracts submission for the 2026 True North Spatial conference has now been closed.</p>
             </div>
           </article>
