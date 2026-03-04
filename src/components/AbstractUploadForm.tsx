@@ -15,6 +15,7 @@ interface FormData {
   authors: string; // comma-separated
   affiliations: string; // comma-separated
   description: string;
+  presentation: 'digital' | 'oral';
 }
 
 interface UploadState {
@@ -39,6 +40,7 @@ export default function AbstractUploadForm() {
     authors: '',
     affiliations: '',
     description: '',
+    presentation: 'digital',
   });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [selectedBackgroundFile, setSelectedBackgroundFile] = useState<File | null>(null);
@@ -49,7 +51,9 @@ export default function AbstractUploadForm() {
     success: null,
   });
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -201,7 +205,7 @@ export default function AbstractUploadForm() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstName: formData.firstName,
+              firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
           institution: formData.institution,
@@ -212,6 +216,7 @@ export default function AbstractUploadForm() {
           authors: formData.authors.split(',').map((a) => a.trim()),
           affiliations: formData.affiliations.split(',').map((a) => a.trim()),
           description: formData.description,
+          presentation: formData.presentation,
           abstractBlobUrl,
           backgroundBlobUrl,
         }),
@@ -243,6 +248,7 @@ export default function AbstractUploadForm() {
         authors: '',
         affiliations: '',
         description: '',
+        presentation: 'digital',
       });
       setSelectedFile(null);
       setSelectedBackgroundFile(null);
@@ -342,6 +348,24 @@ export default function AbstractUploadForm() {
               required
               disabled={uploadState.isUploading}
             />
+          </div>
+
+          {/* Presentation Type */}
+          <div className={styles.formGroup}>
+            <label htmlFor="presentation" className={styles.label}>
+              Presentation Type
+            </label>
+            <select
+              id="presentation"
+              name="presentation"
+              value={formData.presentation}
+              onChange={handleInputChange}
+              className={styles.input}
+              disabled={uploadState.isUploading}
+            >
+              <option value="digital">Digital</option>
+              <option value="oral">Oral</option>
+            </select>
           </div>
 
           {/* Institution */}

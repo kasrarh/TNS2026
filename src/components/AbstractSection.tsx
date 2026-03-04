@@ -19,6 +19,7 @@ interface AbstractItem {
   backgroundBlobUrl?: string | null;
   submittedAt: string;
   status: string;
+  presentation?: 'digital' | 'oral';
 }
 
 export default function AbstractSection() {
@@ -55,37 +56,43 @@ export default function AbstractSection() {
         <div className="news-grid">
           {loading && <p>Loading abstracts...</p>}
           {error && <p className="text-danger">Error: {error}</p>}
-           {/* Article 1 */}
-           {abstracts.map((abstract) => (
-          <article className="news-card" key={abstract._id}>
-            {abstract.backgroundBlobUrl && (
-              <div className="news-image">
-                <img src={abstract.backgroundBlobUrl} alt="Abstract Background" />
-              </div>
-            )}
-            <div className="news-content">
-              <span className="news-date">
-                {abstract.firstName} {abstract.lastName} • {abstract.position || abstract.institution}
-              </span>
-              <h3>{abstract.title}</h3>
-              {abstract.description && <p>{abstract.description}</p>}
-              <p>
-                <strong>Authors:</strong> {abstract.authors?.join(', ')}
-                <br />
-                <strong>Affiliations:</strong> {abstract.affiliations?.join(', ')}
-              </p>
-              <a
-                href={abstract.abstractBlobUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-link"
-              >
-                View Abstract &rarr;
-              </a>
-            </div>
-          </article>
-        ))}
-         
+          {/* only show approved abstracts */}
+          {abstracts
+            .filter((a) => a.status.toLowerCase() === 'approved')
+            .map((abstract) => (
+              <article className="news-card" key={abstract._id}>
+                {abstract.backgroundBlobUrl && (
+                  <div className="news-image">
+                    <img src={abstract.backgroundBlobUrl} alt="Abstract Background" />
+                  </div>
+                )}
+                <div className="news-content">
+                  <span className="news-date">
+                    {abstract.firstName} {abstract.lastName} • {abstract.position || abstract.institution}
+                  </span>
+                  <h3>{abstract.title}</h3>
+                  {abstract.presentation && (
+                    <p>
+                      <strong>Presentation:</strong> {abstract.presentation}
+                    </p>
+                  )}
+                  {abstract.description && <p>{abstract.description}</p>}
+                  <p>
+                    <strong>Authors:</strong> {abstract.authors?.join(', ')}
+                    <br />
+                    <strong>Affiliations:</strong> {abstract.affiliations?.join(', ')}
+                  </p>
+                  <a
+                    href={abstract.abstractBlobUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-link"
+                  >
+                    View Abstract &rarr;
+                  </a>
+                </div>
+              </article>
+            ))}
         </div>
       </div>
     

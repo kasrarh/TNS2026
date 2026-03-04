@@ -20,6 +20,7 @@ export async function POST(request: NextRequest) {
       description,
       backgroundBlobUrl,
       abstractBlobUrl,
+      presentation, // "digital" or "oral"
     } = body;
 
     // Validate required fields
@@ -55,7 +56,11 @@ export async function POST(request: NextRequest) {
       // optional background image url
       backgroundBlobUrl: backgroundBlobUrl || null,
       submittedAt: new Date(),
-      status: 'pending', // Can be pending, approved, rejected
+      status: 'pending', // default pending; can be pending, approved, rejected
+      presentation:
+        presentation === 'oral' || presentation === 'digital'
+          ? presentation
+          : 'digital',
       _id: new ObjectId(),
     };
 
@@ -88,10 +93,14 @@ export async function GET(request: NextRequest) {
     // Get query parameters for filtering
     const { searchParams } = new URL(request.url);
     const status = searchParams.get('status');
+    const presentation = searchParams.get('presentation');
 
     let query: Record<string, unknown> = {};
     if (status) {
       query.status = status;
+    }
+    if (presentation) {
+      query.presentation = presentation;
     }
 
     const abstracts = await collection.find(query).toArray();
