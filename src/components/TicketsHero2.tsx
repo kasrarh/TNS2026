@@ -55,7 +55,7 @@ export default function TicketsHero2() {
                                     <span className="ticket-price-note">(Entry for all 3 days)</span>
                                 </td>
                                 <td>
-                                    <div className="ticket-price">$425 + taxes</div>
+                                    <div className="ticket-price">$400 + taxes</div>
                                     <span className="ticket-price-note">(Entry for all 3 days)</span>
                                 </td>
                             </tr>
