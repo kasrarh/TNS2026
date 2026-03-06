@@ -22,7 +22,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			{
 				time: "08:00 — 09:00",
 				title: "Breakfast & Registration",
-				description: "Inspire Me: A bold introduction",
+				description: null,
 				speaker: null,
 				venue: "MaRS Auditorium concourse"
 			},
@@ -35,7 +35,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "09:30 — 10:30",
-				title: "Inspire-Me Keynote",
+				title: "From Visible Embryos to Spatial Omics",
 				subtitle: "From Visible Embryos to Spatial Omics",
 				abstract: "Spatial biology did not begin as a platform. It began as a goal that was simply “too early.” In the early 1990s, the Visible Embryo Project (VEP) set out to digitize and reconstruct human embryonic development into a navigable, distributed 3D atlas built on the high‑performance computing and communications concepts of its era. In 1993, VEP collaborators articulated an even more ambitious extension: “Spatial Genomics,” a framework to correlate emerging Human Genome Project discoveries with precise location in tissue, turning gene activity into a quantitative layer inside a shared anatomical coordinate space. This keynote traces how those original VEP goals were impossible with the technologies available at the time, and how that gap between vision and capability forced a full-stack invention across imaging, computation, data models, and molecular measurement. At the center is the SAGA system (Spatial Analysis of Genomic Activity), designed in the late 1990s (patent applied for in 2000), which introduced the architectural pattern that defines modern spatial omics: build a 3D morphology, rasterize tissue, preserve coordinate identity via barcoding, perform broad-spectrum assays, then computationally remap signals back into anatomy for visualization and spatial analysis. The talk then explains why spatial omics took years to become dominant: early workflows were technically feasible but too costly and difficult to scale, and broad adoption required enabling innovations (including in situ and array-based approaches) before commercialization and standardization accelerated the field. The talk concludes with the state of the art and the most exciting near-future advances, 3D/4D biology, spatial multiomics, and AI-driven spatial models, followed by Dr. Doyle’s plan to establish a National Center for Spatial Science within the newly formed Institute for Medical Innovation at the University of Dubuque.",
 				description: "Hear about the evolution of the field from its very beginnings to its current state from Dr. Michael Doyle, the father of spatial biology.",
@@ -173,8 +173,8 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 		day2: [
 			{
 				time: "08:00 — 09:00",
-				title: "Enlighten Me: Innovation and leadership in single cell and spatial biology",
-				description: "Breakfast & Registration",
+				title: "Breakfast & Registration",
+				description: null,
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
@@ -259,8 +259,8 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 		day3: [
 			{
 				time: "08:00 — 09:00",
-				title: "“Challenge Me”: A Panorama of the future",
-				description: "Breakfast & Registration",
+				title: "Breakfast & Registration",
+				description: null,
 				speaker: null,
 				venue: "MaRS Auditorium concourse"
 			},
@@ -399,7 +399,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 						<div className={`col-xs-12 ${fullPage ? '' : 'col-md-6'}`} style={fullPage ? { marginTop: '32px' } : {}}>
 							<div className="tab-panels">
 								<div className={`tab-panel ${active === 0 ? 'is-active' : ''}`}>
-									<h1 className='section-title'>Day 1 - March 25th</h1>
+									<h1 className='section-title'>Day 1 - March 25th - Inspire Me: A bold introduction</h1>
 									{scheduleData.day1.map((session, index) => (
 										<div key={index} className="session-card row">
 											<div className="session-aside col-xs-4 col-md-3">
@@ -435,7 +435,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 								</div>
 
 								<div className={`tab-panel ${active === 1 ? 'is-active' : ''}`}>
-								<h1 className='section-title'>Day 2 - March 26th</h1>
+								<h1 className='section-title'>Day 2 - March 26th  - Enlighten Me: Innovation and leadership in single cell and spatial biology</h1>
 									{scheduleData.day2.map((session, index) => (
 										<div key={index} className="session-card row">
 											<div className="session-aside col-xs-4 col-md-3">
@@ -470,7 +470,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 								</div>
 
 								<div className={`tab-panel ${active === 2 ? 'is-active' : ''}`}>
-								<h1 className='section-title'>Day 3 - March 27th</h1>
+								<h1 className='section-title'>Day 3 - March 27th - Challenge Me: A Panorama of the future</h1>
 
 									{scheduleData.day3.map((session, index) => (
 										<div key={index} className="session-card row">
