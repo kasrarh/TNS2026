@@ -2,13 +2,13 @@
 import { useState } from 'react';
 
 type ScheduleSession = {
-  time: string;
-  title: string | null;
-  description?: string | null;
-  speaker?: string | null;
-  venue?: string | null;
-  subtitle?: string | null;
-  abstract?: string | null;
+	time: string;
+	title: string | null;
+	description?: string | null;
+	speaker?: string | null;
+	venue?: string | null;
+	subtitle?: string | null;
+	abstract?: string | null;
 };
 
 
@@ -28,7 +28,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "09:00 — 09:30",
-				title: "Opening Speech",
+				title: "A Panoramic Perspective, A Vision in Time & Space",
 				description: "A warm welcome from the CEO and founder of Panoramics - A Vision Inc. Hear about Dr. Ayyadhury’s vision for the Canadian single cell and spatial biology landscape, and how she intends to help shape it.",
 				speaker: "Shamini Ayyadhury (CEO, Founder of Panoramics - A Vision, Canada)",
 				venue: "MaRS Auditorium"
@@ -69,11 +69,11 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "11:45 — 12:05",
-				title: "Connectome Sponsored Talk (Miltenyi Biotec)",
-				subtitle: null,
-				abstract: null,
+				title: "Hepatocellular Carcinoma: Elucidating its Complexity through Deep Spatial Biology - Supported talk by Miltenyi Biotec",
+				subtitle: "Hepatocellular Carcinoma: Elucidating its Complexity through Deep Spatial Biology - Supported talk by Miltenyi Biotec ",
+				abstract: "Hepatocellular Carcinoma (HCC) remains a premier challenge in precision oncology, standing as a leading cause of global cancer mortality. Its complexity is rooted in a diverse etiology, ranging from viral infections to alcoholic and metabolic disorders, which typically unfolds within the architecturally distorted landscape of a chronically inflamed liver. In these inflammatory backgrounds, the tumor microenvironment (TME) creates 'immune-excluded' or 'immune-cold' niches that not only resist treatment but can paradoxically exacerbate tumorigenesis, highlighting the peculiar nature of HCC.\n The fundamental limitation in overcoming this resistance lies in a 'space-blind' understanding of the tumor. Traditional bulk and single-cell sequencing fail to capture the critical spatial relationships among tumor and TME cells and the metabolic niches within the tumor that regulate such relationships. Despite the recognition of clear histological subtypes of HCC, we lack the resolution to understand how the TME instructs cancer progression. Without this spatial context, the drivers of cancer stem cell selection and therapeutic resistance remain impossible to pinpoint.\n To bridge this gap, we apply spatial proteogenomics to map the complex landscapes of HCC subtypes at an unprecedented depth. Utilizing Xenium® spatial transcriptomics and MACSima™ Imaging and Cyclic Staining (MICS), we integrate gene regulatory networks with ultra-high-plex spatial proteomics insights on a single tissue section. This allows us to characterize cellular subset activation states according to their cellular neighborhoods in distinct geographical niches of the tumor. By shifting to a high-resolution topographical understanding of the tumor-immune-stromal axes, we aim to uncover biomarkers necessary for patient stratification and therapeutic targets for next generation immunotherapies for HCC.",
 				description: null,
-				speaker: null,
+				speaker: "DR. Victor Mullins-Dansereau (Institut national de la recherche scientifique (INRS) Laval, Quebec, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
@@ -82,19 +82,19 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				subtitle: null,
 				abstract: null,
 				description: null,
-				speaker: null,
+				speaker: "TBC",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "12:15 — 12:25",
-				title: "Sponsored Talk (Novogene)",
-				subtitle: null,
-				abstract: null,
+				title: "Empowering Genomic Discovery: Navigating the Technical Landscape of Single-Cell and Spatial Solutions - Supported talk by Novogene",
+				subtitle: "Empowering Genomic Discovery: Navigating the Technical Landscape of Single-Cell and Spatial Solutions - Supported talk by Novogene",
+				abstract: "The rapid evolution of spatial transcriptomics requires more than just access to technology; it requires the 'cognitive weaponry' to select the right methodology for complex biological questions. In an era where data resolution can define the success of a project, the ability to navigate various platforms is a vital skill for the modern scientist. This 'Enlighten-me' session is designed to share the technical instincts and foundational knowledge necessary to architect high-resolution experiments across the ever-expanding single-cell and spatial ecosystem.\n We will provide a pedagogical overview of Novogene’s workflow expertise, beginning with a comparison of single-cell profiling via 10x Genomics Chromium and the streamlined Illumina Single Cell 3’ RNA Prep (Fluent PIPseq). Moving into the spatial domain, we will break down the strategic decision-making process between 10x Visium workflows—differentiating between probe-based methods for FFPE samples and 3’ Gene Expression for fresh frozen tissues—and the high-definition capabilities of Stereo-seq.\n By sharing these technical guiding principles and end-to-end service insights, Novogene aims to empower the community with the skills to transform complex genomic theory into executable research strategies. Our goal is to provide the community with the knowledge to choose the right tool for the right sample, ensuring that every scientist is equipped to push the boundaries of biological discovery and reimagine what is possible in genomic research.",
 				description: null,
-				speaker: null,
+				speaker: "Sarah Goodwin (Senior Account Manager, Novogene, USA)",
 				venue: "MaRS Auditorium"
 			},
-			
+
 			{
 				time: "12:25 — 13:25",
 				title: "Lunch & Networking",
@@ -120,16 +120,20 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "14:25 — 14:35",
-				title: "Sponsored Talk (Lunaphore)",
+				title: "Exploring the Intersection of Immuno-Oncology and Neuroscience with Spatial Multiomics Insights - Supported talk by Bio-techne",
+				subtitle: "Exploring the Intersection of Immuno-Oncology and Neuroscience with Spatial Multiomics Insights - Supported talk by Bio-techne",
+				abstract: "Advances in spatial biology have enabled unprecedented insights into cellular architecture, signaling networks, and microenvironmental interactions at the single-cell level in healthy and disease tissues. As the field moves toward increasingly complex biological questions, scalable and high-performance technologies are essential for resolving molecular heterogeneity at single-cell and subcellular resolution. Bio-Techne’s leading spatial biology brands, Advanced Cell Diagnostics and Lunaphore, are transforming the future of research and precision medicine. Here, we present an integrated, same-section spatial multiomics workflow that combines the RNAscope™ HiPlexPro RNA in situ hybridization assay with Lunaphore’s sequential immunofluorescence (seqIF™) technology on the COMET™ platform. This fully automated approach enables the codetection of up to 12plex RNA and 24plex protein targets, allowing for highly multiplexed, quantitative exploration of cellular states and interactions. Applied across formalin-fixed paraffin-embedded human solid tumors and frozen mouse brain tissues, the workflow demonstrates robustness, sensitivity, and versatility in both immuno-oncology and neuroscience contexts.\n In immuno-oncology samples, RNAscope™ probes for cytokines and immune-relevant transcripts were paired with high-plex protein markers to map the spatial distribution of T-cell and macrophage populations within tumor microenvironments. This integrated analysis revealed patterns of immune activation, infiltration, and cellular crosstalk critical for understanding tumor progression and therapeutic response. In neuroscience applications, RNA probes targeting neurotransmitters, receptors, and glial markers were combined with protein signatures to characterize the molecular organization of neuronal and non-neuronal cell populations in the mouse brain. The same section multiomic readout provided a deeper understanding of neuronal signaling, glial neuronal interactions, and region specific cellular heterogeneity. Overall, this automated spatial multiomics platform—uniting BioTechne’s gold standard RNAscope™ technology with Lunaphore’s highplex COMET™ system—delivers a powerful, scalable solution for decoding complex tissues. By enabling integrated RNA protein profiling with high sensitivity and spatial precision, it opens new avenues for biomarker discovery, mechanistic studies, and translational research in both immuno-oncology and neuroscience. ",
 				description: null,
-				speaker: null,
+				speaker: "Dr. Connor West, Ph.D. Field Application Specialist, Lunaphore, a Bio-techne brand",
 				venue: "MaRS Auditoriumx"
 			},
 			{
 				time: "14:35 — 14:45",
-				title: "Sponsored Talk (AmberGen)",
+				title: "Beyond Proteins and Transcripts: Drug-Inclusive Hyper-Multiomics in Spatial Biology - Supported talk by AmberGen",
+				subtitle: "Beyond Proteins and Transcripts: Drug-Inclusive Hyper-Multiomics in Spatial Biology - Supported talk by AmberGen",
+				abstract: "Spatial biology technologies have rapidly expanded the ability to measure molecular states within intact tissue, enabling new insight into cellular organization and tissue microenvironments. Recent advances in spatial multiomics—particularly the integration of spatial proteomics with spatial transcriptomics—represent an important milestone in the field, allowing researchers to interrogate multiple molecular layers simultaneously within intact tissue context. These advances demonstrate the power of interrogating multiple molecular layers within intact tissue and highlight the opportunity to expand spatial analysis well beyond proteins and transcripts to capture a substantially broader biochemical view of tissue biology. We describe a now-established drug-inclusive hyper-multiomic spatial analysis framework that our lab routinely applies to spatial analysis workflows. This approach extends spatial multiomics beyond proteins and transcripts by enabling measurement of the tissue distribution of multiple therapeutic modalities, including small molecule drugs, antibody-based therapeutics, and oligonucleotide drugs. In parallel, the same tissue section can be interrogated for five complementary molecular layers: proteins, RNA, lipids, metabolites, and glycans. Acquiring these measurements sequentially from a single tissue section and instrument preserves spatial fidelity across data laters and avoids the alignment challenges that arise when measurements are collected from adjacent sections using different analytical platforms.\n Integrating therapeutic localization with these diverse molecular measurements expands spatial biology beyond conventional transcriptomic and proteomic readouts to capture a broader biochemical view of tissue biology. To interpret these high-dimensional datasets, we employ an AI-powered correlative multiomic analysis pipeline that integrates spatial measurements across drug distribution and multiple molecular layers, enabling identification of spatial relationships between drug exposure and disease-associated biological processes such as inflammation, metabolic remodeling, and cellular stress responses.\nIn this presentation we introduce this hyper-multiomic spatial analysis approach and illustrate its capabilities using an example, a spatial study of an Alzheimer’s disease mouse brain model, integrating therapeutic distribution with molecular signatures of pathology and neuroinflammation.",
 				description: null,
-				speaker: null,
+				speaker: "John Gillespie, CEO, AmberGen",
 				venue: "MaRS Auditoriumx"
 			},
 			{
@@ -141,7 +145,9 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "15:00 — 15:10",
-				title: "Sponsored Talk (Stellaromics)",
+				title: "The Next Dimension of Discovery: Advancing Spatial Biology in 3D - supported talk by 10x Stellaromics",
+				subtitle: "The Next Dimension of Discovery: Advancing Spatial Biology in 3D - supported talk by 10x Stellaromics",
+				abstract: "Spatial transcriptomics has emerged as a powerful approach for understanding the organization of complex tissues, providing critical insights into tissue microenvironments, cellular heterogeneity, and cell–cell interactions. However, existing commercial platforms are largely limited to two-dimensional data acquired from thin tissue sections (5–20 µm), often fragmenting cells across planes and providing an inherently incomplete picture of the complex tissue microenvironment.\n Stellaromics’ Pyxa is the world’s first thick tissue high-plex 3D spatial multi-omics platform and allows scientists to investigate biology in its native, three-dimensional context. Pyxa integrates sample preparation, sequencing, data analysis, and visualization into a unified, highly automated workflow. Pyxa overcomes the constraints of traditional 2D spatial biology platforms by enabling high-resolution, subcellular spatial transcriptomics in thick tissue samples up to 100 µm.\n The Pyxa workflow begins with an optimized sample preparation protocol conducted in a well-plate format, followed by 3D sequencing with error-reduction by dynamic annealing and ligation (SEDAL) on a custom-designed volumetric confocal imaging and fluidics system. To support data analysis at scale, a robust computational pipeline converts terabytes of raw image data into standard cell-by-gene matrices, also containing 3D cell metadata to enable biological interpretation through custom 3D visualization software and open-source analysis tools.\n Pyxa represents a major step forward in the evolution of spatial omics tools, particularly for applications in neuroscience, oncology, and drug discovery, where three-dimensional cellular context is critical to biological function. Here, we showcase the development and performance of Pyxa for spatial transcriptomic profiling in 100 µm fresh-frozen mouse brain, as well as the methodology to adapt this system to new species and tissue types.",
 				description: null,
 				speaker: null,
 				venue: "MaRS Auditoriumx"
@@ -179,77 +185,106 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "09:00 — 10:00",
+				time: "09:00 — 09:30",
 				title: "Panoramic Insight",
 				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of trainees and emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
 				speaker: "Dr. Ashleigh Willis (	Creative Director, Panoramics - A Vision Inc., Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "10:00 — 10:30",
-				title: "Enlighten Me - Perspective (Virtual)",
-				description: "Gain valuable insight from world-renowned scientist, Prof. Garry Nolan from the University of Stanford. Prof. Nolan will share his unique perspective and experience in taking ideas from initial concept to innovative inventions that can be commercialized for the benefit of the scientific community.",
-				speaker: " Prof. Garry Nolan (University of Stanford, USA)",
+				time: "09:30 — 10:0",
+				title: "Enlighten-me Scientific Talk ",
+				description: null,
+				speaker: " Dr. Sabrina Leslie (British Columbia, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "10:30 — 11:00",
+				time: "10:00 — 10:50",
+				title: "From Instrument to Insight: DISCO as the Foundation of CellOut Technologies and Translational Stroke Discovery",
+				subtitle: "From Instrument to Insight: DISCO as the Foundation of CellOut Technologies and Translational Stroke Discovery",
+				abstract: "CellOut Technologies was born from a fundamental question: how can we make single-cell biology more precise, more insightful, and more accessible? In this talk, I will share the journey behind the development of the DISCO system (Digital Microfluidic Isolation of Single Cells for –Omics) and how it evolved from an academic concept into a commercial platform. DISCO is a single-cell isolation microscope integrated with digital microfluidic capabilities, designed to enable precise cell capture while preserving downstream molecular integrity. The platform has already demonstrated impactful applications, including work in the cortical stroke space in collaboration with Dr. Faiz. In this study, spatial transcriptomics in combination with DISCO-based isolation was used to examine the astrocyte response to stroke. This application led to the identification of spatially and temporally restricted subpopulation of FABP5⁺ astrocytes, which are important for stroke recovery. ",
+				description: null,
+				speaker: "Dr. Erica Scott (British Columbia, Canada) \n Dr. Maryam Faiz (Alberta, Canada)",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "10:50 — 11:00",
+				title: "Stereo-seq–enabled Spatial Transcriptomic Mapping of the Human Basal Ganglia - Supported talk by Complete Genomics & DMark Biocsiences",
+				subtitle: "Stereo-seq–enabled Spatial Transcriptomic Mapping of the Human Basal Ganglia - Supported talk by Complete Genomics & DMark Biocsiences",
+				abstract: "Basal ganglia, a critical brain structure involved in motor control, learning, and emotion, is much less understood in humans. Comprehensive molecular mapping of the human basal ganglia requires spatial transcriptomic technologies that combine high spatial resolution with large tissue coverage while preserving whole transcriptomic diversity. In this study, Stereo-seq generated dense, spatially indexed whole-transcriptome profiles across the caudate nucleus, putamen, nucleus accumbens, and globus pallidus, encompassing millions of capture cells within intact tissue sections. Neuronal and non-neuronal cell classes, including transcriptionally distinct medium spiny neuron subtypes, interneurons, astrocytes, oligodendrocytes, and vascular-associated populations are identified and spatially resolved. Spatial clustering and gene expression mapping revealed region-specific and domain-specific cellular organization that closely aligns with known anatomical subdivisions of the basal ganglia. Beyond discrete cell-type mapping, Stereo-seq resolved continuous spatial gene expression gradients and localized cellular neighborhoods, highlighting structured molecular heterogeneity within and across nuclei that is not accessible through dissociated single-cell approaches. These data demonstrate the ability of Stereo-seq to support multiscale analysis of complex tissue, from cellular resolution to atlas-level organization, and establish a spatial reference framework for future studies of basal ganglia circuitry and disease-associated spatial dysregulation.",
+				description: null,
+				speaker: "Dr. Yongfu Wang (Senior manager of field and sales support at Complete Genomics)",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "11:00 — 11:15",
 				title: "Break + Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "11:00 — 11:50",
+				time: "11:15 — 12:15",
 				title: "Innovation in Spatial and Single Cell Biology",
 				description: "This session will feature speakers who are driving innovation and pushing the boundaries of what’s possible in single cell and spatial biology. Stay tuned for the announcement of these exciting scientists.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "11:50 — 12:50",
+				time: "12:15 — 12:35",
 				title: "Postdoctoral Fellow and Early Career Scientist selected talks",
 				description: "Speakers for this session will be chosen from the top abstracts submitted and represent some of the most innovative and impactful work coming from our early career scientist community. These researchers are driving the future of science and discovery. Watch this space for the announcement of these outstanding speakers.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "12:50 — 13:50",
-				title: "Student lunch",
+				time: "12:35 — 12:45",
+				title: "Analyzing large scale clinical Imaging Mass Cytometry (IMC) cohorts with Rakaia - Supported talk by Standard Biotools",
+				subtitle: "Analyzing large scale clinical Imaging Mass Cytometry (IMC) cohorts with Rakaia - Supported talk by Standard Biotools",
+				abstract: "Spatial biology data throughput currently outpaces interpretable analysis, limiting large-scale discovery and translation. Here I will present Rakaia, a browser-based platform that scales interactive spatial biology querying, annotation, visualization, and analysis to thousands of images. I show how Rakaia can be used to map cellular predictions from pathologist annotations across > 200 human breast samples profiled using Imaging Mass Cytometry (IMC), demonstrating efficient stratification of a multi-patient cohort based on a hyperplastic-like phenotype.",
+				description: null,
+				speaker: "Dr. Kieran Campbell, Lunenfeld-Tanenbaum Research Institute",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "12:45 — 12:55",
+				title: "Sponsored Talk (Bruker Spatial Biology)",
+				subtitle: null,
+				abstract: null,
+				description: null,
+				speaker: "TBC",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "12:55 — 13:45",
+				title: "Lunch + Networking",
 				description: "We invite students to join us at our roundtable networking. Pick the brains of leaders from academia and industry while enjoying lunch.",
 				speaker: null,
 				venue: "TBD"
 			},
 			{
-				time: "12:50 — 13:50",
-				title: "General lunch + networking",
-				description: null,
-				speaker: null,
-				venue: "MaRS Atrium / MaRS Concourse"
-			},
-			{
-				time: "13:50 — 14:40",
-				title: "Sponsor speaking sessions",
-				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights. Here you will hear from our featured speakers from the tech industry about how their latest innovations in spatial and single cell technologies are powering scientific breakthroughs.",
+				time: "13:45 — 14:45",
+				title: "Innovation Spotlight 2",
+				description: "This session will feature speakers who are driving innovation and pushing the boundaries of what’s possible in single cell and spatial biology. Stay tuned for the announcement of these exciting scientists.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "14:40 — 15:40",
-				title: "Student showcase",
+				time: "14:45 — 15:15",
+				title: "Innovation Spotlight 3",
 				description: "Celebrate the work of our incredible students as they present their single cell and spatial research.",
 				speaker: null,
-				venue: null
+				venue: "MaRS Auditorium"
 			},
 			{
-				time: "15:40 — 16:00",
+				time: "15:15 — 15:45",
 				title: "Break + Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "16:00 — 17:30",
+				time: "15:45 — 17:00",
 				title: "Professional skills development:  TBC",
 				description: null,
 				speaker: null,
@@ -274,61 +309,74 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			{
 				time: "09:30 — 10:30",
 				title: "Crossing Boundaries",
-				description: "Dr. Morag Park will host this important session to pick the brains of scientists and dive deep into what it truly means to have meaningful public impact and the challenges that we need to face and ‘cross’ to drive a truly meaningful scientific journey.",
+				description: "TBD",
 				speaker: "TBD",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "10:30 — 11:00",
+				time: "10:30 — 10:500",
+				title: "Connectome Sponsored Talk (Illumina)",
+				description: null,
+				speaker: "TBC",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "10:50 — 11:15",
 				title: "Break & Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "11:00 — 12:00",
+				time: "11:15 — 12:15",
 				title: "Spatial Frontiers: The road ahead for spatial biology",
 				description: "Engage in a moderated panel discussion which will focus on the future of single cell and spatial biology. ",
 				speaker: "Dr. Shamini Ayyadhury (CEO, Panoramics - A Vision Inc.), Dr. Gary Bader (University of Toronto, Canada), Dr. Michael Doyle (New Mexico Tech, USA)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "12:00 — 13:00",
-				title: "Pioneers in Artificial Intelligence",
-				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and its spatial field.",
-				speaker: "Dr. Xin Tang (Assistant Professor, University of British Columbia) + others TBC",
+				time: "12:15 — 12:25",
+				title: "AVITI24 and Teton chemistry, a transformative approach for simultaneously analyzing RNA, protein, and morphology at single-cell resolution - Supported talk by Element Biosciences",
+				subtitle: "AVITI24 and Teton chemistry, a transformative approach for simultaneously analyzing RNA, protein, and morphology at single-cell resolution - Supported talk by Element Biosciences",
+				abstract: "Discover 5D multiomics enabled by AVITI24 and Teton chemistry—a transformative approach for simultaneously analyzing RNA, protein, and morphology at single-cell resolution. With minimal hands-on time and streamlined workflows, AVITI24 delivers rich, multidimensional data from millions of cells in a single run. Through Direct In Sample Sequencing (DISS), RNA can be sequenced directly from within cells, enabling powerful applications such as CRISPR guide RNA detection and paving the way for future capabilities like whole transcriptome analysis and tissue compatability",
+				description: null,
+				speaker: "Spence Fast (Senior Technical Applications Specialist, Element Biosciences)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "13:00 — 13:50",
-				title: "General lunch + networking",
+				time: "12:25 — 12:35",
+				title: "Single-cell identity and heterogeneity in its environment: Where innovations push the understanding of Spatial Biology - Supported talk by Leica Microsystems",
+				subtitle: "Single-cell identity and heterogeneity in its environment: Where innovations push the understanding of Spatial Biology - Supported talk by Leica Microsystems",
+				abstract: "At Leica Microsystem, teams are passionate about driving innovation in visualization and analysis. We partner with our customers, enabling them to make informed decisions and optimize their workflows.\n In the specific contexts of cancer biology, immunology and neurology, changes to parameters of interest between different samples — for example, healthy vs. diseased, treated vs. untreated – are often complex. Mapping multiple biomarkers at the single cell level in the same tissue section or organoid provides critical insights into the sample microenvironment. We offer an easy and open tissue multiplexing platform with Cell DIVE. With the ability to label up to 60 biomarkers using validated commercial antibodies and a streamlined protocol, this approach enables processing of multiple samples and offers potential for automation. Leveraging Cell DIVE’s capability to scan large tissue regions is especially valuable for understanding tissue heterogeneity. However, biology happens also in a three-dimensional context. Therefore, 3D high-plex imaging has the potential to add the discovery of new cell types, the identification of cell states and the mapping of functional relationships in a 3D spatial context. SpectraPlex for STELLARIS provides an integrated and streamlined workflow that simplifies panel creation and uses advanced, on-the-fly unmixing algorithms to capture high quality 3D data with 15+ markers in one go.\n With both platforms, researchers can then benefit from tailored segmentation and downstream analysis for accurate interpretation of high-resolution, high-plex data, using Aivia, Leica Microsystem’s cutting-edge AI image analysis software.",
+				description: null,
+				speaker: "Dr. Rick Heil-Chapdelaine (Spatial Biology Specialist, Leica Microsystems)",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "12:35 — 13:00",
+				title: "Break & Networking",
 				description: null,
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "13:50 — 15:00",
-				title: "Sponsor/Exhibitor Scientific Sessions",
-				description: "Discover the latest advances in single cell and spatial biology technologies from our sponsor highlights. Here you will hear from our featured speakers from the tech industry about how their latest innovations in spatial and single cell technologies are powering scientific breakthroughs.",
-				speaker: null,
+				time: "13:00 — 14:15",
+				title: "AI for Single-cell Biology",
+				subtitle: "AI for Single-cell Biology",
+				abstract: "Current biotechnologies can simultaneously measure multiple modalities (e.g., gene expression and electrophysiology) from the same cells. AI holds great promise for fully understanding such data, inferring how genes regulate cellular diversity, function, and disorder. This talk will cover my work and vision of how predictive, explainable, and autonomous AI models can enable data-driven single-cell biological insights, including navigating hypotheses for gene-to-function mapping and in silico perturbations of cell behavior that closely mirror the wet lab experiment. Finally, I will expand the definition of multi-modality and present a roadmap for building cellular digital twins.",
+				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and its spatial field.",
+				speaker: "Dr. Xin Tang (Assistant Professor, University of British Columbia)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "15:00 — 15:30",
-				title: "Break & Networking",
-				description: "Connect and interact with fellow attendees.",
-				speaker: null,
-				venue: "MaRS Atrium / MaRS Concourse"
-			},
-			{
-				time: "15:30 — 16:30",
+				time: "14:15 — 15:15",
 				title: "The Economics of Single Cell and Spatial Biology",
 				description: "In this fireside discussion, a diverse range of stakeholders will discuss the current economic state of single cell and spatial biology research in Canada. This discussion will search for ideas on how we might improve feasibility and access for more researchers across the country.",
 				speaker: null,
 				venue: "MaRS Atrium"
 			},
 			{
-				time: "16:30 — 17:00",
+				time: "15:15 — 15:30",
 				title: "Closing speech",
 				description: null,
 				speaker: null,
@@ -338,12 +386,12 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 	};
 
 	const dayImages = {
-        0: '/Inspire-me-banner.png', // Day 1 image
-        1: '/Enlighten-me-banner.png', // Day 2 image
-        2: '/Challenge-me-banner.png', // Day 3 image
-    };
+		0: '/Inspire-me-banner.png', // Day 1 image
+		1: '/Enlighten-me-banner.png', // Day 2 image
+		2: '/Challenge-me-banner.png', // Day 3 image
+	};
 
-	
+
 	return (
 		<section className="schedule" id="schedule" style={fullPage ? { borderTop: 'none' } : {}}>
 			<div className="schedule-bg" aria-hidden="true"></div>
@@ -409,7 +457,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 												)}
 											</div>
 											<div className="session-content col-xs-8 col-md-9">
-												
+
 												{session.title && (
 													<h3>{session.title}</h3>
 												)}
@@ -422,8 +470,8 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 													<p className="session-description">{session.description}</p>
 												)}
 												{(session.subtitle || session.abstract) && (
-													<button 
-														className="btn btn-secondary" 
+													<button
+														className="btn btn-secondary"
 														onClick={() => setSelectedSchedule(session)}
 													>
 														Abstract
@@ -435,7 +483,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 								</div>
 
 								<div className={`tab-panel ${active === 1 ? 'is-active' : ''}`}>
-								<h1 className='section-title'>Day 2 - March 26th  - Enlighten Me: Innovation and leadership in single cell and spatial biology</h1>
+									<h1 className='section-title'>Day 2 - March 26th  - Enlighten Me: Innovation and leadership in single cell and spatial biology</h1>
 									{scheduleData.day2.map((session, index) => (
 										<div key={index} className="session-card row">
 											<div className="session-aside col-xs-4 col-md-3">
@@ -457,8 +505,8 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 													<p className="session-description">{session.description}</p>
 												)}
 												{(session.subtitle || session.abstract) && (
-													<button 
-														className="btn btn-link" 
+													<button
+														className="btn btn-link"
 														onClick={() => setSelectedSchedule(session)}
 													>
 														See More
@@ -470,7 +518,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 								</div>
 
 								<div className={`tab-panel ${active === 2 ? 'is-active' : ''}`}>
-								<h1 className='section-title'>Day 3 - March 27th - Challenge Me: A Panorama of the future</h1>
+									<h1 className='section-title'>Day 3 - March 27th - Challenge Me: A Panorama of the future</h1>
 
 									{scheduleData.day3.map((session, index) => (
 										<div key={index} className="session-card row">
@@ -493,8 +541,8 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 													<p className="session-description">{session.description}</p>
 												)}
 												{(session.subtitle || session.abstract) && (
-													<button 
-														className="btn btn-link" 
+													<button
+														className="btn btn-link"
 														onClick={() => setSelectedSchedule(session)}
 													>
 														See More
@@ -511,73 +559,73 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				</div>
 			</div>
 			{selectedSchedule && (
-        <ScheduleModal
-          session={selectedSchedule}
-          onClose={() => setSelectedSchedule(null)}
-        />
-      )}
+				<ScheduleModal
+					session={selectedSchedule}
+					onClose={() => setSelectedSchedule(null)}
+				/>
+			)}
 		</section>
 	);
 
 	function ScheduleModal({
-  session,
-  onClose,
-}: {
-  session: ScheduleSession;
-  onClose: () => void;
-}) {
-  return (
-    <div className="person-modal-backdrop" onClick={onClose}>
-      <div
-        className="person-modal"
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-label={session.title || 'Session Details'}
-      >
-        <button
-          type="button"
-          className="person-modal-close"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          ✕
-        </button>
+		session,
+		onClose,
+	}: {
+		session: ScheduleSession;
+		onClose: () => void;
+	}) {
+		return (
+			<div className="person-modal-backdrop" onClick={onClose}>
+				<div
+					className="person-modal"
+					onClick={(e) => e.stopPropagation()}
+					role="dialog"
+					aria-modal="true"
+					aria-label={session.title || 'Session Details'}
+				>
+					<button
+						type="button"
+						className="person-modal-close"
+						onClick={onClose}
+						aria-label="Close"
+					>
+						✕
+					</button>
 
-        <div className="person-modal-header">
-          <div>
-            {session.time && (
-              <p className="person-modal-time" style={{ marginBottom: '8px', fontWeight: 'bold' }}>{session.time}</p>
-            )}
-            
-            {session.subtitle && (
-              <h3 className="person-modal-subtitle">{session.subtitle}</h3>
-            )}
-            {session.speaker && (
-              <p className="person-modal-speaker"><strong>Speaker:</strong> {session.speaker}</p>
-            )}
-          </div>
-        </div>
+					<div className="person-modal-header">
+						<div>
+							{session.time && (
+								<p className="person-modal-time" style={{ marginBottom: '8px', fontWeight: 'bold' }}>{session.time}</p>
+							)}
 
-        {session.abstract && (
-          <div style={{ marginTop: '16px' }}>
-            <h4 style={{ marginBottom: '8px' }}>Abstract</h4>
-            <p className="person-modal-desc">
-              {session.abstract}
-            </p>
-          </div>
-        )}
+							{session.subtitle && (
+								<h3 className="person-modal-subtitle">{session.subtitle}</h3>
+							)}
+							{session.speaker && (
+								<p className="person-modal-speaker"><strong>Speaker:</strong> {session.speaker}</p>
+							)}
+						</div>
+					</div>
 
-        {session.description && !session.abstract && (
-          <p className="person-modal-desc">
-            {session.description}
-          </p>
-        )}
+					{session.abstract && (
+						<div style={{ marginTop: '16px' }}>
+							<h4 style={{ marginBottom: '8px' }}>Abstract</h4>
+							<p className="person-modal-desc">
+								{session.abstract}
+							</p>
+						</div>
+					)}
 
-      </div>
-    </div>
-  );
-}
+					{session.description && !session.abstract && (
+						<p className="person-modal-desc">
+							{session.description}
+						</p>
+					)}
+
+				</div>
+			</div>
+		);
+	}
 }
 
 
