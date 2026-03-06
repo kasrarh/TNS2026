@@ -506,7 +506,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 												)}
 												{(session.subtitle || session.abstract) && (
 													<button
-														className="btn btn-link"
+														className="btn btn-secondary"
 														onClick={() => setSelectedSchedule(session)}
 													>
 														See More
@@ -542,7 +542,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 												)}
 												{(session.subtitle || session.abstract) && (
 													<button
-														className="btn btn-link"
+														className="btn btn-secondary"
 														onClick={() => setSelectedSchedule(session)}
 													>
 														See More
