@@ -10,6 +10,7 @@ type ScheduleSession = {
 	chapter?: string | null;
 	sponsor?: string | null;
 	subtitle?: string | null;
+	panelist?: string | null;
 	abstract?: string | null;
 };
 
@@ -343,6 +344,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			{
 				time: "09:30 — 10:30",
 				title: "Crossing Boundaries",
+				panelist: "Dr. Morag Park (McGill University), Dr. Sabrina Leslie (University of British Columbia), Dr. Shreejoy Tripathy (University of Toronto)",
 				venue: "MaRS Auditorium"
 			},
 			{
@@ -364,7 +366,8 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				time: "11:15 — 12:15",
 				title: "Spatial Frontiers: The road ahead for spatial biology",
 				description: "Engage in a moderated panel discussion which will focus on the future of single cell and spatial biology. ",
-				speaker: "Dr. Shamini Ayyadhury (CEO, Panoramics - A Vision Inc.), Dr. Gary Bader (University of Toronto, Canada), Dr. Michael Doyle (New Mexico Tech, USA)",
+				panelist: "Dr. Gary Bader (The Donnelly Centre), Dr. Mike Doyle (University of Dubuque), Dr. Shamini Ayyadhury (Panoramics - A Vision)",
+				// speaker: "Dr. Shamini Ayyadhury (CEO, Panoramics - A Vision Inc.), Dr. Gary Bader (University of Toronto, Canada), Dr. Michael Doyle (New Mexico Tech, USA)",
 				venue: "MaRS Auditorium"
 			},
 			{
@@ -408,6 +411,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			{
 				time: "14:15 — 15:15",
 				title: "The Economics of Single Cell and Spatial Biology",
+				panelist: "Dr. Paul Robson (The Jackson Lab), Mr. Derek Newton (Mitacs)",
 				description: "In this fireside discussion, a diverse range of stakeholders will discuss the current economic state of single cell and spatial biology research in Canada. This discussion will search for ideas on how we might improve feasibility and access for more researchers across the country.",
 				speaker: null,
 				venue: "MaRS Atrium"
@@ -416,7 +420,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				time: "15:15 — 15:30",
 				title: "Closing speech",
 				description: null,
-				speaker: null,
+				speaker: "Ms. Alyona Ivanova (Creative Director, Panoramics - A Vision, Canada)",
 				venue: "MaRS Auditorium"
 			},
 		]
@@ -507,6 +511,11 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 												{session.speaker && (
 													<div className="session-speaker">
 														<strong>Speaker:</strong> {session.speaker}
+													</div>
+												)}
+												{session.panelist && (
+													<div className="session-speaker">
+														<strong>Panelist:</strong> {session.speaker}
 													</div>
 												)}
 												{session.description && (
