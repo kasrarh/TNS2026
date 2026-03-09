@@ -256,14 +256,14 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "11:15 — 12:15",
-				title: "Innovation in Spatial and Single Cell Biology",
+				title: "Innovation Spotlight 2",
 				description: "This session will feature speakers who are driving innovation and pushing the boundaries of what’s possible in single cell and spatial biology. Stay tuned for the announcement of these exciting scientists.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "12:15 — 12:35",
-				title: "Postdoctoral Fellow and Early Career Scientist selected talks",
+				title: "Innovation Spotlight 3",
 				description: "Speakers for this session will be chosen from the top abstracts submitted and represent some of the most innovative and impactful work coming from our early career scientist community. These researchers are driving the future of science and discovery. Watch this space for the announcement of these outstanding speakers.",
 				speaker: null,
 				venue: "MaRS Auditorium"
@@ -298,14 +298,14 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "13:45 — 14:45",
-				title: "Innovation Spotlight 2",
+				title: "Innovation Spotlight 2 Continue",
 				description: "This session will feature speakers who are driving innovation and pushing the boundaries of what’s possible in single cell and spatial biology. Stay tuned for the announcement of these exciting scientists.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "14:45 — 15:15",
-				title: "Innovation Spotlight 3",
+				title: "Innovation Spotlight 3 Continue",
 				description: "Celebrate the work of our incredible students as they present their single cell and spatial research.",
 				speaker: null,
 				venue: "MaRS Auditorium"
