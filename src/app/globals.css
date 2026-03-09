@@ -10,6 +10,7 @@
 	--brand: #4193A6;
 	--bg-light: #a8b6bb;
 	--brand-2: #DB7207;
+	--gold: #d0ae80;
 	--card: linear-gradient(135deg, var(--primary), var(--brand));
 	;
 	--border: #C3CBD3;
@@ -284,6 +285,9 @@ p {
 	border-color: var(--border)
 }
 
+.tx-gold{
+	color: var(--gold);
+}
 .text-link {
 	color: var(--brand);
 	text-decoration: none
