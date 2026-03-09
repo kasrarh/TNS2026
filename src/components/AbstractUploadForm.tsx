@@ -350,24 +350,6 @@ export default function AbstractUploadForm() {
             />
           </div>
 
-          {/* Presentation Type */}
-          <div className={styles.formGroup}>
-            <label htmlFor="presentation" className={styles.label}>
-              Presentation Type
-            </label>
-            <select
-              id="presentation"
-              name="presentation"
-              value={formData.presentation}
-              onChange={handleInputChange}
-              className={styles.input}
-              disabled={uploadState.isUploading}
-            >
-              <option value="digital">Digital</option>
-              <option value="oral">Oral</option>
-            </select>
-          </div>
-
           {/* Institution */}
           <div className={styles.formGroup}>
             <label htmlFor="institution" className={styles.label}>
@@ -516,7 +498,7 @@ export default function AbstractUploadForm() {
 
           <div className={styles.formGroup}>
             <label htmlFor="abstractFile" className={styles.label}>
-              Abstract PDF <span className={styles.required}>*</span>
+              Digital slide deck/poster (PDF)<span className={styles.required}>*</span>
             </label>
             <div
               className={styles.fileInputWrapper}
