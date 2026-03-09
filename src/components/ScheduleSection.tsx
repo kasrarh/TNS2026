@@ -343,8 +343,6 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			{
 				time: "09:30 — 10:30",
 				title: "Crossing Boundaries",
-				description: "TBD",
-				speaker: "TBD",
 				venue: "MaRS Auditorium"
 			},
 			{
