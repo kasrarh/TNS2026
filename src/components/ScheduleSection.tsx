@@ -190,11 +190,16 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "15:50 — 17:15",
+				time: "15:50 — 16:20",
 				title: "Shaping the Spatial Ecosystem",
 				chapter:'"Inspire-me" Scientific Talk',
 				description: "Dr. Jasmine Plummer directs the Center for Spatial OMICs at St. Jude and is an Associate Member of the St. Jude Faculty. Her research applies genomic and spatial technologies to understand disease mechanisms, with an emphasis on diverse populations. She is also a co-founder of GESTALT, the Global Alliance for Spatial Technologies.",
 				speaker: "Dr. Jasmine Plummer (Director, Center for Spatial OMICs, St. Jude Children’s Research Hospital Tennessee, United States)",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "16:20 — 17:15",
+				title: "Scientific Debate",
 				venue: "MaRS Auditorium"
 			},
 		],
