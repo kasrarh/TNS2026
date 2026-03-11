@@ -293,7 +293,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			{
 				time: "12:55 — 13:45",
 				title: "Lunch + Networking",
-				description: "We invite students to join us at our roundtable networking. Pick the brains of leaders from academia and industry while enjoying lunch.",
+				description: null,
 				speaker: null,
 				venue: "TBD"
 			},
