@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1006.0",
+    "@aws-sdk/s3-presigned-post": "^3.1006.0",
     "@vercel/blob": "^2.2.0",
     "bootstrap": "^5.3.8",
     "cobe": "^0.6.5",

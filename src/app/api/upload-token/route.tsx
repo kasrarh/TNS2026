@@ -1,70 +1,70 @@
-import { put } from '@vercel/blob';
+import { S3Client } from '@aws-sdk/client-s3';
+import { createPresignedPost } from '@aws-sdk/s3-presigned-post';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const config = {
   api: {
     bodyParser: {
-      sizeLimit: '100mb',
+      sizeLimit: '1mb', // token request is small
     },
   },
 };
 
+const s3 = new S3Client({
+  region: process.env.AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID ?? '',
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY ?? '',
+  },
+});
+
+function sanitizeKey(fileName: string) {
+  return fileName.replace(/[^a-zA-Z0-9_.-]/g, '_');
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const formData = await request.formData();
-    const file = formData.get('file') as File;
+    const body = await request.json();
+    const fileName = body?.fileName;
+    const contentType = body?.contentType;
 
-    if (!file) {
-      return NextResponse.json({ error: 'No file provided' }, { status: 400 });
-    }
-
-    // Determine file type and apply appropriate validation
-    const isPDF = file.type.includes('pdf');
-    const isImage = file.type.startsWith('image/');
-
-    if (!isPDF && !isImage) {
+    if (!fileName || !contentType) {
       return NextResponse.json(
-        { error: 'Only PDF and image files are allowed' },
+        { error: 'fileName and contentType are required' },
         { status: 400 }
       );
     }
 
-    // Validate file size based on type
-    const maxSizePDF = 50 * 1024 * 1024; // 50MB for PDFs
-    const maxSizeImage = 10 * 1024 * 1024; // 10MB for images
-    const maxSize = isPDF ? maxSizePDF : maxSizeImage;
+    const safeName = sanitizeKey(fileName);
+    const key = `abstracts/${Date.now()}-${safeName}`;
 
-    if (file.size > maxSize) {
-      const sizeLimit = isPDF ? '50MB' : '10MB';
-      return NextResponse.json(
-        { error: `File size must be less than ${sizeLimit}` },
-        { status: 400 }
-      );
-    }
-
-    // Upload to Vercel Blob
-
-    const blob = await put(file.name, file, {
-      access: 'public',
-       allowOverwrite: true,
-       multipart: true,
+    const presignedPost = await createPresignedPost(s3, {
+      Bucket: process.env.AWS_BUCKET_NAME ?? '',
+      Key: key,
+      Conditions: [
+        ['content-length-range', 0, 50 * 1024 * 1024],
+        ['starts-with', '$Content-Type', ''],
+      ],
+      Fields: {
+        'Content-Type': contentType,
+      },
+      Expires: 3600,
     });
 
-    return NextResponse.json(
-      {
-        success: true,
-        url: blob.url,
-      },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error('Error uploading to Vercel Blob:', error);
+    const objectUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+
+    return NextResponse.json({
+      success: true,
+      presignedUrl: presignedPost.url,
+      fields: presignedPost.fields,
+      objectUrl,
+      key,
+    });
+  } catch (error: unknown) {
+    console.error('Error creating S3 presigned post:', error);
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { 
-        error: 'Failed to upload file',
-        details: process.env.NODE_ENV === 'development' ? errorMessage : undefined
-      },
+      { error: 'Failed to create upload token', details: errorMessage },
       { status: 500 }
     );
   }

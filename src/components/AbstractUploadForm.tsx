@@ -158,58 +158,105 @@ export default function AbstractUploadForm() {
         success: null,
       }));
 
-      // Step 1: Upload file to Vercel Blob via our API
-      const formDataToSend = new FormData();
-      formDataToSend.append('file', selectedFile);
-
-      const uploadResponse = await fetch('/api/upload-token', {
+      // Step 1: Get S3 presigned POST payload from our API
+      const tokenResponse = await fetch('/api/upload-token', {
         method: 'POST',
-        body: formDataToSend,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fileName: selectedFile.name,
+          contentType: selectedFile.type,
+        }),
       });
 
-      if (!uploadResponse.ok) {
-        let errorMessage = 'Failed to upload file';
-        const contentType = uploadResponse.headers.get('content-type') || '';
+      if (!tokenResponse.ok) {
+        let errorMessage = 'Failed to get upload token';
+        const contentType = tokenResponse.headers.get('content-type') || '';
         if (contentType.includes('application/json')) {
-          const errorData = await uploadResponse.json();
+          const errorData = await tokenResponse.json();
           errorMessage = errorData?.error || JSON.stringify(errorData) || errorMessage;
         } else {
-          const text = await uploadResponse.text();
+          const text = await tokenResponse.text();
           errorMessage = text || errorMessage;
         }
         throw new Error(errorMessage);
       }
 
-      const { url: abstractBlobUrl } = await uploadResponse.json();
+      const tokenPayload = await tokenResponse.json();
+      const { presignedUrl, fields, objectUrl: abstractBlobUrl } = tokenPayload;
+      if (!presignedUrl || !fields || !abstractBlobUrl) {
+        throw new Error('Invalid upload token response');
+      }
+
+      const s3Data = new FormData();
+      Object.entries(fields).forEach(([key, value]) => {
+        s3Data.append(key, value as string);
+      });
+      s3Data.append('file', selectedFile);
+
+      const s3UploadResponse = await fetch(presignedUrl, {
+        method: 'POST',
+        body: s3Data,
+      });
+
+      if (!s3UploadResponse.ok) {
+        const errText = await s3UploadResponse.text();
+        throw new Error(`Failed to upload file to S3: ${errText || s3UploadResponse.statusText}`);
+      }
 
       setUploadState((prev) => ({ ...prev, uploadProgress: 50 }));
 
       // If a background image was selected, upload it the same way
       let backgroundBlobUrl: string | null = null;
       if (selectedBackgroundFile) {
-        const bgFormData = new FormData();
-        bgFormData.append('file', selectedBackgroundFile);
-
-        const bgUploadResponse = await fetch('/api/upload-token', {
+        const bgTokenResponse = await fetch('/api/upload-token', {
           method: 'POST',
-          body: bgFormData,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            fileName: selectedBackgroundFile.name,
+            contentType: selectedBackgroundFile.type,
+          }),
         });
 
-        if (!bgUploadResponse.ok) {
-          let errorMessage = 'Failed to upload background image';
-          const contentType = bgUploadResponse.headers.get('content-type') || '';
+        if (!bgTokenResponse.ok) {
+          let errorMessage = 'Failed to get background upload token';
+          const contentType = bgTokenResponse.headers.get('content-type') || '';
           if (contentType.includes('application/json')) {
-            const errorData = await bgUploadResponse.json();
+            const errorData = await bgTokenResponse.json();
             errorMessage = errorData?.error || JSON.stringify(errorData) || errorMessage;
           } else {
-            const text = await bgUploadResponse.text();
+            const text = await bgTokenResponse.text();
             errorMessage = text || errorMessage;
           }
           throw new Error(errorMessage);
         }
 
-        const bgJson = await bgUploadResponse.json();
-        backgroundBlobUrl = bgJson.url;
+        const bgTokenPayload = await bgTokenResponse.json();
+        const { presignedUrl: bgUrl, fields: bgFields, objectUrl: bgObjectUrl } = bgTokenPayload;
+        if (!bgUrl || !bgFields || !bgObjectUrl) {
+          throw new Error('Invalid background upload token response');
+        }
+
+        const bgData = new FormData();
+        Object.entries(bgFields).forEach(([key, value]) => {
+          bgData.append(key, value as string);
+        });
+        bgData.append('file', selectedBackgroundFile);
+
+        const bgUploadResponse = await fetch(bgUrl, {
+          method: 'POST',
+          body: bgData,
+        });
+
+        if (!bgUploadResponse.ok) {
+          const errText = await bgUploadResponse.text();
+          throw new Error(`Failed to upload background image to S3: ${errText || bgUploadResponse.statusText}`);
+        }
+
+        backgroundBlobUrl = bgObjectUrl;
       }
 
       setUploadState((prev) => ({ ...prev, uploadProgress: 100 }));
