@@ -168,8 +168,16 @@ export default function AbstractUploadForm() {
       });
 
       if (!uploadResponse.ok) {
-        const errorData = await uploadResponse.json();
-        throw new Error(errorData.error || 'Failed to upload file');
+        let errorMessage = 'Failed to upload file';
+        const contentType = uploadResponse.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          const errorData = await uploadResponse.json();
+          errorMessage = errorData?.error || JSON.stringify(errorData) || errorMessage;
+        } else {
+          const text = await uploadResponse.text();
+          errorMessage = text || errorMessage;
+        }
+        throw new Error(errorMessage);
       }
 
       const { url: abstractBlobUrl } = await uploadResponse.json();
@@ -188,8 +196,16 @@ export default function AbstractUploadForm() {
         });
 
         if (!bgUploadResponse.ok) {
-          const errorData = await bgUploadResponse.json();
-          throw new Error(errorData.error || 'Failed to upload background image');
+          let errorMessage = 'Failed to upload background image';
+          const contentType = bgUploadResponse.headers.get('content-type') || '';
+          if (contentType.includes('application/json')) {
+            const errorData = await bgUploadResponse.json();
+            errorMessage = errorData?.error || JSON.stringify(errorData) || errorMessage;
+          } else {
+            const text = await bgUploadResponse.text();
+            errorMessage = text || errorMessage;
+          }
+          throw new Error(errorMessage);
         }
 
         const bgJson = await bgUploadResponse.json();
