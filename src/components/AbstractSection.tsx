@@ -26,6 +26,16 @@ export default function AbstractSection() {
   const [abstracts, setAbstracts] = useState<AbstractItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
+
+  const toggleDescription = (id: string) => {
+    setExpandedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
 
   useEffect(() => {
     async function fetchAbstracts() {
@@ -76,19 +86,47 @@ export default function AbstractSection() {
                       <strong>Presentation:</strong> {abstract.presentation}
                     </p>
                   )}
-                  {abstract.description && <p>{abstract.description}</p>}
+                  {abstract.description && (() => {
+                    const maxLen = 200;
+                    const isLong = abstract.description.length > maxLen;
+                    const isExpanded = expandedIds.has(abstract._id);
+                    const visibleText = isLong && !isExpanded
+                      ? abstract.description.slice(0, maxLen) + '...'
+                      : abstract.description;
+                    return (
+                      <>
+                        <p>{visibleText}</p>
+                        {isLong && (
+                          <button
+                            type="button"
+                            className="read-more-btn"
+                            onClick={() => toggleDescription(abstract._id)}
+                          >
+                            {isExpanded ? 'Show less' : 'Read more'}
+                          </button>
+                        )}
+                      </>
+                    );
+                  })()}
                   <p>
-                    <strong>Authors:</strong> {abstract.authors?.join(', ')}
+                    {abstract.authors && (
+                      <span>
+                        <strong>Authors:</strong> {abstract.authors?.join(', ')}
+                      </span>
+                    )}
                     <br />
-                    <strong>Affiliations:</strong> {abstract.affiliations?.join(', ')}
+                    {abstract.affiliations && (
+                      <span>
+                        <strong>Affiliations:</strong> {abstract.affiliations?.join(', ')}
+                      </span>
+                    )}
                   </p>
                   <a
                     href={abstract.abstractBlobUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    download
                     className="text-link"
                   >
-                    View Abstract &rarr;
+                    Download Abstract →
                   </a>
                 </div>
               </article>
