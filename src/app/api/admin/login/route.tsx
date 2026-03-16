@@ -11,8 +11,6 @@ export async function POST(request: NextRequest) {
     // Set a simple session cookie
     const cookieStore = await cookies();
     cookieStore.set('admin-session', 'true', {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
       maxAge: 60 * 60 * 24, // 1 day
     });
