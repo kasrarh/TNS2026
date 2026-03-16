@@ -48,6 +48,7 @@ const organizers: Person[] = [
 	{ name: 'Anurag Das', image: "/team-members/anuragdas.jpeg", shortRole: 'Media Production Specialist', role: 'Media Production Specialist | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/anuragdas56964/' },
   { name: 'Kam Lo', image: "/team-members/kamlo.jpeg", shortRole: 'Summit Advisor', role: 'Summit Advisor | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/kam-lo-4b4582113/' },
 	{ name: 'Zeeshan Farooqi', image: "/team-members/zeeshan.jpeg", shortRole: 'Summit Advisor', role: 'Summit Advisor | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/farooqzeeshan/' },
+	{ name: 'Tina Mai', image: "/team-members/Tina Mai.jpg", shortRole: 'Event Operations Assistant', role: 'Event Operations Assistant | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/tinaamai/' },
 ];
 
 const TABS = ['speakers', 'organizers'] as const;
