@@ -108,19 +108,72 @@ export default function AbstractSection() {
                       </>
                     );
                   })()}
-                  <p>
-                    {abstract.authors && (
-                      <span>
-                        <strong>Authors:</strong> {abstract.authors?.join(', ')}
-                      </span>
-                    )}
-                    <br />
-                    {abstract.affiliations && (
-                      <span>
-                        <strong>Affiliations:</strong> {abstract.affiliations?.join(', ')}
-                      </span>
-                    )}
-                  </p>
+                  {abstract.authors && (() => {
+                    const authorsText = abstract.authors.join(', ');
+                    const maxLen = 100;
+                    const isLong = authorsText.length > maxLen;
+                    const isExpanded = expandedIds.has(`${abstract._id}-authors`);
+                    const visibleText = isLong && !isExpanded
+                      ? authorsText.slice(0, maxLen) + '...'
+                      : authorsText;
+                    return (
+                      <div>
+                        <p>
+                          <strong>Authors:</strong> {visibleText}
+                        </p>
+                        {isLong && (
+                          <button
+                            type="button"
+                            className="read-more-btn"
+                            onClick={() => {
+                              const newKey = `${abstract._id}-authors`;
+                              setExpandedIds((prev) => {
+                                const next = new Set(prev);
+                                if (next.has(newKey)) next.delete(newKey);
+                                else next.add(newKey);
+                                return next;
+                              });
+                            }}
+                          >
+                            {isExpanded ? 'Show less' : 'Read more'}
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })()}
+                  {abstract.affiliations && (() => {
+                    const affiliationsText = abstract.affiliations.join(', ');
+                    const maxLen = 100;
+                    const isLong = affiliationsText.length > maxLen;
+                    const isExpanded = expandedIds.has(`${abstract._id}-affiliations`);
+                    const visibleText = isLong && !isExpanded
+                      ? affiliationsText.slice(0, maxLen) + '...'
+                      : affiliationsText;
+                    return (
+                      <div>
+                        <p>
+                          <strong>Affiliations:</strong> {visibleText}
+                        </p>
+                        {isLong && (
+                          <button
+                            type="button"
+                            className="read-more-btn"
+                            onClick={() => {
+                              const newKey = `${abstract._id}-affiliations`;
+                              setExpandedIds((prev) => {
+                                const next = new Set(prev);
+                                if (next.has(newKey)) next.delete(newKey);
+                                else next.add(newKey);
+                                return next;
+                              });
+                            }}
+                          >
+                            {isExpanded ? 'Show less' : 'Read more'}
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })()}
                   <a
                     href={abstract.abstractBlobUrl}
                     download
