@@ -78,7 +78,7 @@ export default function AbstractSection() {
                 )}
                 <div className="news-content">
                   <span className="news-date">
-                    {abstract.firstName} {abstract.lastName} • {abstract.position || abstract.institution}
+                    {abstract.firstName} {abstract.lastName} 
                   </span>
                   <h3>{abstract.title}</h3>
                   {abstract.presentation && (
