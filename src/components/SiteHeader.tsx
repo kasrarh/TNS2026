@@ -73,7 +73,7 @@ export default function SiteHeader() {
 						<li><a href="/#team">Speakers</a></li>
 						<li><a href="/#faq">FAQs</a></li>
 						<li><a href="/#contact">Contact</a></li>
-						<li><a className="btn btn-secondary btn-sponsors" href="/sponsors">For Sponsors</a></li>
+						<li><a className="btn btn-secondary btn-sponsors" href="/abstracts">Abstract Presenters</a></li>
 						{/* <li className="nav-dropdown" ref={dropdownRef}>
 							<button
 								className="dropdown-trigger"

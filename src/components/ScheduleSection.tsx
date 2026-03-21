@@ -14,7 +14,6 @@ type ScheduleSession = {
 	abstract?: string | null;
 };
 
-
 export default function ScheduleSection({ fullPage = false }: { fullPage?: boolean }) {
 	const [active, setActive] = useState(0);
 	const [selectedSchedule, setSelectedSchedule] = useState<ScheduleSession | null>(null);
@@ -621,6 +620,29 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 							</div>
 						</div>
 
+					</div>
+
+					{/* Floor Plan PDF Viewer */}
+					<div className="row" style={{ marginTop: '40px' }}>
+						<div className="col-xs-12">
+							<div className="section-title" style={{ textAlign: 'center', marginBottom: '20px' }}>
+								<h2>Floor Plan</h2>
+								<p>Explore the venue layout for True North Spatial</p>
+							</div>
+							<div style={{ display: 'flex', justifyContent: 'center' }}>
+							<object
+								data="https://kasra-demo-s3-v1.s3.us-east-1.amazonaws.com/media/TNS2026-floor-plan.pdf"
+								type="application/pdf"
+								width="100%"
+								height="600px"
+								style={{ maxWidth: '800px' }}
+							>
+								<p>
+									PDF preview is unavailable in this browser. <a href="https://kasra-demo-s3-v1.s3.us-east-1.amazonaws.com/media/TNS2026-floor-plan.pdf" target="_blank" rel="noopener noreferrer">Open floor plan PDF</a>
+								</p>
+							</object>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
