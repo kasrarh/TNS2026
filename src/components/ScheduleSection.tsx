@@ -57,14 +57,14 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "11:00 — 11:15",
+				time: "11:00 — 11:20",
 				title: "Break",
 				description: null,
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "11:15 — 11:45",
+				time: "11:20 — 11:50",
 				title: "Unconventional species to understand regenerative healing",
 				subtitle: "Unconventional species to understand regenerative healing",
 				chapter: '“Inspire-me”  Scientific Talk',
@@ -74,7 +74,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "11:45 — 12:05",
+				time: "11:50 — 12:10",
 				title: "Hepatocellular Carcinoma: Elucidating its Complexity through Deep Spatial Biology",
 				subtitle: "Hepatocellular Carcinoma: Elucidating its Complexity through Deep Spatial Biology - Supported by Miltenyi Biotec (Connectome Sponsor)",
 				abstract: "Hepatocellular Carcinoma (HCC) remains a premier challenge in precision oncology, standing as a leading cause of global cancer mortality. Its complexity is rooted in a diverse etiology, ranging from viral infections to alcoholic and metabolic disorders, which typically unfolds within the architecturally distorted landscape of a chronically inflamed liver. In these inflammatory backgrounds, the tumor microenvironment (TME) creates 'immune-excluded' or 'immune-cold' niches that not only resist treatment but can paradoxically exacerbate tumorigenesis, highlighting the peculiar nature of HCC.\n The fundamental limitation in overcoming this resistance lies in a 'space-blind' understanding of the tumor. Traditional bulk and single-cell sequencing fail to capture the critical spatial relationships among tumor and TME cells and the metabolic niches within the tumor that regulate such relationships. Despite the recognition of clear histological subtypes of HCC, we lack the resolution to understand how the TME instructs cancer progression. Without this spatial context, the drivers of cancer stem cell selection and therapeutic resistance remain impossible to pinpoint.\n To bridge this gap, we apply spatial proteogenomics to map the complex landscapes of HCC subtypes at an unprecedented depth. Utilizing Xenium® spatial transcriptomics and MACSima™ Imaging and Cyclic Staining (MICS), we integrate gene regulatory networks with ultra-high-plex spatial proteomics insights on a single tissue section. This allows us to characterize cellular subset activation states according to their cellular neighborhoods in distinct geographical niches of the tumor. By shifting to a high-resolution topographical understanding of the tumor-immune-stromal axes, we aim to uncover biomarkers necessary for patient stratification and therapeutic targets for next generation immunotherapies for HCC.",
@@ -85,17 +85,17 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "12:05 — 12:15",
+				time: "12:10 — 12:20",
 				title: "Organelle Sponsored Talk (PMGC)",
 				sponsor: "Supported by PMGC (Organelle Sponsored)",
 				subtitle: null,
 				abstract: null,
 				description: null,
-				speaker: "TBC",
+				speaker: "Dr. Troy Ketela (Staff Scientist, PMGC)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "12:15 — 12:25",
+				time: "12:20 — 12:25",
 				title: "Empowering Genomic Discovery: Navigating the Technical Landscape of Single-Cell and Spatial Solutions",
 				subtitle: "Empowering Genomic Discovery: Navigating the Technical Landscape of Single-Cell and Spatial Solutions - Supported by Novogene",
 				chapter:'"Enlighten-me" Talk',
@@ -200,6 +200,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			{
 				time: "16:20 — 17:15",
 				title: "Scientific Debate",
+				description: "Motion: Integrating multi-omics data (spatial proteomics, transcriptomics, metabolomics) adds more noise than clarity",
 				venue: "MaRS Auditorium"
 			},
 		],
@@ -212,18 +213,29 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "09:00 — 09:30",
+				time: "09:00 — 09:20",
 				title: "Panoramic Insight",
-				chapter:'"Enlighten-me" Scientific Talk',
+				chapter:'"Enlighten-me" Insight',
 				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of trainees and emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
 				speaker: "Dr. Ashleigh Willis (	Creative Director, Panoramics - A Vision Inc., Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
+				time: "09:20 — 09:30",
+				title: "Update from Bioinformatics Canada",
+				chapter:'"Enlighten-me" Insight',
+				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of trainees and emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
+				speaker: "Dr. Michelle Brazas (	Scientific Director, Bioinformatics Canada)",
+				venue: "MaRS Auditorium"
+			},
+			{
 				time: "09:30 — 10:00",
-				title: "Enlighten-me Scientific Talk ",
+				title: " Innovation of single-cell to single-molecule microscopy platform enables nanomedicine optimization",
+				chapter: "Enlighten-me Scientific Talk ",
+				subtitle: "Innovation of single-cell to single-molecule microscopy platform enables nanomedicine optimization",
+				abstract: "Connecting nanoscale structure to therapeutic function requires tools that can probe individual nanoparticles in solution and link those measurements to cellular behaviour. For example, lipid nanoparticles (LNPs) delivering mRNA vaccines and therapeutics are powerful but remain inefficient, in part due to substantial heterogeneity in size, shape, composition, and mRNA loading. In this talk I share our single-cell to single-molecule imaging platform for nanomedicines which combines CLiC (Convex Lens-induced Confinement) microscopy, label-free interferometric scattering (iSCAT) and multi-channel fluorescence detection to enable new measurements of a nanoparticle's functional properties (size, mass, mRNA payload, structure, interaction kinetics) and experience of the intracellular environment (Boateng et al., Nano Lett., 2025; ACS Nano, 2026). Complementary cryo-electron microscopy of identical samples further reveals how formulation parameters shape LNP structure and heterogeneity. By bridging nanoscale biophysical measurements with cellular outcomes, this optical microscopy platform opens new opportunities for data-driven design and optimization of nanomedicines and related bioproducts.",
 				description: null,
-				speaker: " Dr. Sabrina Leslie (British Columbia, Canada)",
+				speaker: " Dr. Sabrina Leslie (Associated Professor, University of British Columbia, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
@@ -276,52 +288,59 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				sponsor: "Supported by Standard Biotools (Organelle Sponsored)",
 				abstract: "Spatial biology data throughput currently outpaces interpretable analysis, limiting large-scale discovery and translation. Here I will present Rakaia, a browser-based platform that scales interactive spatial biology querying, annotation, visualization, and analysis to thousands of images. I show how Rakaia can be used to map cellular predictions from pathologist annotations across > 200 human breast samples profiled using Imaging Mass Cytometry (IMC), demonstrating efficient stratification of a multi-patient cohort based on a hyperplastic-like phenotype.",
 				description: null,
-				speaker: "Dr. Kieran Campbell, Lunenfeld-Tanenbaum Research Institute",
+				speaker: "Dr. Kieran Campbell, (Lunenfeld-Tanenbaum Research Institute, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "12:45 — 12:55",
-				title: "Sponsored Talk (Bruker Spatial Biology)",
+				title: "CellScape XR: The Next Generation of Multiplexed Spatial Proteomics",
 				subtitle: null,
 				abstract: null,
 				sponsor: "Sponsored Talk by Bruker Spatial Biology",
 				description: null,
-				speaker: "TBC",
+				speaker: "Oliver Braubach (Director of Research & Development, Bruker)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "12:55 — 13:45",
+				time: "12:55 — 13:40",
 				title: "Lunch + Networking",
 				description: null,
 				speaker: null,
 				venue: "TBD"
 			},
 			{
-				time: "13:45 — 14:45",
-				title: "Innovation Spotlight 2 Continue",
+				time: "13:40 — 14:40",
+				title: "Innovation Spotlight 2 Continued",
 				description: "This session will feature speakers who are driving innovation and pushing the boundaries of what’s possible in single cell and spatial biology. Stay tuned for the announcement of these exciting scientists.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "14:45 — 15:15",
+				time: "14:40 — 15:10",
 				title: "Innovation Spotlight 3 Continue",
 				description: "Celebrate the work of our incredible students as they present their single cell and spatial research.",
 				speaker: null,
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "15:15 — 15:45",
+				time: "15:10 — 15:30",
 				title: "Break + Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "15:45 — 17:00",
-				title: "Professional skills development:  TBC",
-				description: null,
-				speaker: null,
+				time: "15:30 — 16:45",
+				title: "Professional skills development (Biologist Track)",
+				description: "What Is a Cell-Type?",
+				speaker: "Dr. Tallulah Andrews (Associate Professor, University of Western Ontario)",
+				venue: null
+			},
+			{
+				time: "15:30 — 16:45",
+				title: "Professional skills development (Computational Track)",
+				description: "Beyond the Matrix: A Biologist’s Perspective on Omics Data",
+				speaker: "Dr. Giselle Boukhaled (Scientific Associate, Princess Margaret Cancer Centre, University Health Network) and Dr. Ashleigh Willis (Creative Director, Panoramics – A Vision)",
 				venue: null
 			},
 		],
@@ -342,35 +361,23 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "09:30 — 10:30",
+				chapter: '"Enlighten-me" Talk',
 				title: "Crossing Boundaries",
+				subtitle: "Crossing Boundaries",
+				abstract: "Modern scientific advances don’t just arise within disciplines, but at their intersections. Crossing Boundaries brings together a panel of researchers whose work deliberately crosses traditional boundaries. Our panelists span the intersection between physics and biology, electrophysiology and gene expression, fundamental science and clinical application. Their boundary crossing science tackles complex challenges facing Canada and the world.\nThe panel will reflect on their own journeys and will discuss the risks, hurdles, and moments of uncertainty that accompany work outside established silos. The discussion will explore how boundary crossing science can reshape the life sciences, catalyze innovation and generate novel possibilities to solve critical issues . Our panelists will discuss their experiences which range from next-generation therapeutic delivery technologies to integrative approaches for understanding psychiatric disorders.\nWe will examine the role of collaboration across disciplines and seek to understand how partnerships succeed - The panel will also address broader societal impact of single cell and spatial research, including how scientific insights can influence public understanding and inform policy as well Canada’s role in developing equitable models with global engagement.\nThe session will challenge both panelists and the audience to consider which boundaries, whether they be structural, cultural, or technological, most urgently need to be crossed to deliver meaningful improvements pressing societal issues over the coming decade.",
 				panelist: "Dr. Morag Park (McGill University), Dr. Sabrina Leslie (University of British Columbia), Dr. Shreejoy Tripathy (University of Toronto)",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "10:30 — 10:50",
-				title: "Connectome Sponsored Talk (Illumina)",
+				title: "Illumina Spatial Technology: delivering whole transcriptome coverage, high sensitivity, and cellular resolution over large sections of tissue samples",
 				description: null,
 				sponsor: "Supported by Illumina (Connectome Sponsored)",
-				speaker: "TBC",
+				speaker: "Michael G. Smith (Associate Director, Specialist, Single Cell and Spatial Genomics, Illumina)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "10:50 — 11:15",
-				title: "Break & Networking",
-				description: "Connect and interact with fellow attendees.",
-				speaker: null,
-				venue: "MaRS Atrium / MaRS Concourse"
-			},
-			{
-				time: "11:15 — 12:15",
-				title: "Spatial Frontiers: The road ahead for spatial biology",
-				description: "Engage in a moderated panel discussion which will focus on the future of single cell and spatial biology. ",
-				panelist: "Dr. Gary Bader (The Donnelly Centre), Dr. Mike Doyle (University of Dubuque), Dr. Shamini Ayyadhury (Panoramics - A Vision)",
-				// speaker: "Dr. Shamini Ayyadhury (CEO, Panoramics - A Vision Inc.), Dr. Gary Bader (University of Toronto, Canada), Dr. Michael Doyle (New Mexico Tech, USA)",
-				venue: "MaRS Auditorium"
-			},
-			{
-				time: "12:15 — 12:25",
+				time: "10:50 — 11:00",
 				title: "AVITI24 and Teton chemistry, a transformative approach for simultaneously analyzing RNA, protein, and morphology at single-cell resolution",
 				subtitle: "AVITI24 and Teton chemistry, a transformative approach for simultaneously analyzing RNA, protein, and morphology at single-cell resolution - Supported by Element Biosciences",
 				chapter:'"Enlighten-me" Talk',
@@ -381,7 +388,35 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "12:25 — 12:35",
+				time: "11:00 — 11:20",
+				title: "Break & Networking",
+				description: "Connect and interact with fellow attendees.",
+				speaker: null,
+				venue: "MaRS Atrium / MaRS Concourse"
+			},
+			{
+				time: "11:20 — 11:50",
+				title: "AI for Single-Cell Biology",
+				subtitle: "AI for Single-Cell Biology",
+				chapter: '"Challenge-me" Talk',
+				abstract: "Current biotechnologies can simultaneously measure multiple modalities (e.g., gene expression and electrophysiology) from the same cells. AI holds great promise for fully understanding such data, inferring how genes regulate cellular diversity, function, and disorder. This talk will cover my work and vision of how predictive, explainable, and autonomous AI models can enable data-driven single-cell biological insights, including navigating hypotheses for gene-to-function mapping and in silico perturbations of cell behavior that closely mirror the wet lab experiment. Finally, I will expand the definition of multi-modality and present a roadmap for building cellular digital twins.",
+				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and its spatial field.",
+				speaker: "Dr. Xin Tang (Assistant Professor, University of British Columbia)",
+				venue: "MaRS Auditorium"
+			},
+			{
+				time: "11:50 — 12:50",
+				title: "Spatial Frontiers: The road ahead for spatial biology",
+				subtitle: "Spatial Frontiers: The road ahead for spatial biology",
+				abstract: "Over the past decade, single-cell and spatial biology have revolutionized research into diverse tissues. They have enabled insight into dynamic, multicellular systems with complex environments. From high-resolution cell atlases to multi-omic functional analyses, innovation in the field has allowed researchers to map cellular identity, state, and interactions with fine detail. As the field begins to mature, key questions are emerging: which advances have been truly transformative, which were surprising, and which seemingly promising approaches faded away? Importantly, where do we go next?\n This moderated panel discussion brings together leaders in single-cell and spatial biology to explore the evolving frontier of the field. The session will reflect on the breakthroughs that have defined the last decade and examine how interdisciplinary collaboration, computational innovation, and open science are shaping the next one.\nPanelists will consider critical questions, including: What unspoken challenges is the field overlooking? Which areas require urgent investment? And what mindset will define the leaders of the next era?\nThe audience will play a central role in shaping the discussion and will have the opportunity to raise the questions and share their own thoughts throughout the discussion.",
+				description: "Engage in a moderated panel discussion which will focus on the future of single cell and spatial biology. ",
+				panelist: "Dr. Gary Bader (The Donnelly Centre), Dr. Mike Doyle (University of Dubuque), Dr. Shamini Ayyadhury (Panoramics - A Vision)",
+				// speaker: "Dr. Shamini Ayyadhury (CEO, Panoramics - A Vision Inc.), Dr. Gary Bader (University of Toronto, Canada), Dr. Michael Doyle (New Mexico Tech, USA)",
+				venue: "MaRS Auditorium"
+			},
+			
+			{
+				time: "12:50 — 13:00",
 				title: "Single-cell identity and heterogeneity in its environment: Where innovations push the understanding of Spatial Biology",
 				subtitle: "Single-cell identity and heterogeneity in its environment: Where innovations push the understanding of Spatial Biology - Supported by Leica Microsystems",
 				chapter:'"Enlighten-me" Talk',
@@ -392,31 +427,31 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "12:35 — 13:00",
+				time: "13:00 — 13:40",
 				title: "Break & Networking",
 				description: null,
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "13:00 — 14:15",
-				title: "AI for Single-cell Biology",
-				subtitle: "AI for Single-cell Biology",
-				abstract: "Current biotechnologies can simultaneously measure multiple modalities (e.g., gene expression and electrophysiology) from the same cells. AI holds great promise for fully understanding such data, inferring how genes regulate cellular diversity, function, and disorder. This talk will cover my work and vision of how predictive, explainable, and autonomous AI models can enable data-driven single-cell biological insights, including navigating hypotheses for gene-to-function mapping and in silico perturbations of cell behavior that closely mirror the wet lab experiment. Finally, I will expand the definition of multi-modality and present a roadmap for building cellular digital twins.",
-				description: "Hear from the pioneering scientists working at the frontier of artificial intelligence and its uses in the single cell and its spatial field.",
-				speaker: "Dr. Xin Tang (Assistant Professor, University of British Columbia)",
+				time: "13:40 — 13:50",
+				title: "Sponsored Talk (Vizgen)",
+				chapter:'"Enlighten-me" Talk',
+				sponsor: "Supported by Vizgen",
+				description: null,
+				speaker: "Sayak Mitter (Field Application Scientist, Vizgen)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "14:15 — 15:15",
+				time: "13:50 — 14:50",
 				title: "The Economics of Single Cell and Spatial Biology",
 				panelist: "Dr. Paul Robson (The Jackson Lab), Mr. Derek Newton (Mitacs)",
 				description: "In this fireside discussion, a diverse range of stakeholders will discuss the current economic state of single cell and spatial biology research in Canada. This discussion will search for ideas on how we might improve feasibility and access for more researchers across the country.",
-				speaker: null,
+				speaker: "Elvin de Araujo (Director, Scientific Advisory Committee Chair, Brain Cancer Canada), Derek Newton (Mitacs, Canada), Paul Robson (Professor, The Jackson Laboratory for Genomic Medicine, Connecticut, USA), Erica Scott (Lecturer, Unversity of British Columbia)",
 				venue: "MaRS Atrium"
 			},
 			{
-				time: "15:15 — 15:30",
+				time: "14:50 — 15:15",
 				title: "Closing speech",
 				description: null,
 				speaker: "Ms. Alyona Ivanova (Creative Director, Panoramics - A Vision, Canada)",
