@@ -316,7 +316,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "14:44 — 15:20",
+				time: "14:45 — 15:20",
 				title: "Innovation Spotlight 3",
 				description: "Celebrate the work of our incredible students as they present their single cell and spatial research.",
 				speaker: null,
@@ -331,18 +331,19 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "15:45 — 16:45",
-				title: "Professional skills development (Biologist Track)",
-				description: "What Is a Cell-Type?",
-				speaker: "Dr. Tallulah Andrews (Associate Professor, University of Western Ontario)",
+				title: "Professional skills development for spatial and single-cell biologists",
+				// description: "What Is a Cell-Type?",
+				description: null,
+				speaker: "Dr. Tallulah Andrews (Associate Professor, University of Western Ontario) \n Dr. Giselle Boukhaled (Scientific Associate, Princess Margaret Cancer Centre, University Health Network)",
 				venue: "MaRS Auditorium"
 			},
-			{
-				time: "15:45 — 16:45",
-				title: "Professional skills development (Computational Track)",
-				description: "Beyond the Matrix: A Biologist’s Perspective on Omics Data",
-				speaker: "Dr. Giselle Boukhaled (Scientific Associate, Princess Margaret Cancer Centre, University Health Network) and Dr. Ashleigh Willis (Creative Director, Panoramics – A Vision)",
-				venue: "OICR Classroom"
-			},
+			// {
+			// 	time: "15:45 — 16:45",
+			// 	title: "Professional skills development (Computational Track)",
+			// 	description: "Beyond the Matrix: A Biologist’s Perspective on Omics Data",
+			// 	speaker: "Dr. Giselle Boukhaled (Scientific Associate, Princess Margaret Cancer Centre, University Health Network) and Dr. Ashleigh Willis (Creative Director, Panoramics – A Vision)",
+			// 	venue: "OICR Classroom"
+			// },
 		],
 		day3: [
 			{
@@ -353,14 +354,14 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium concourse"
 			},
 			{
-				time: "09:00 — 09:30",
+				time: "09:00 — 09:35",
 				title: "Challenge Me - Opinion",
 				description: "We invite you to hear Dr. Morag Park as she delivers an important introductory speech as we brace to step into the future. Dr. Morag is a well respected scientist, who has truly shown us what it means to think above and beyond and sets the stage for our day 3 agenda.",
 				speaker: "Dr. Morag Park (McGill University, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "09:30 — 10:30",
+				time: "09:35 — 10:30",
 				chapter: '"Enlighten-me" Talk',
 				title: "Crossing Boundaries",
 				subtitle: "Crossing Boundaries",
@@ -427,14 +428,14 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "13:00 — 13:40",
+				time: "13:00 — 13:55",
 				title: "Break & Networking",
 				description: null,
 				speaker: null,
 				venue: "MaRS Atrium / MaRS Concourse"
 			},
 			{
-				time: "13:40 — 13:50",
+				time: "14:00 — 14:10",
 				title: "Sponsored Talk (Vizgen)",
 				chapter:'"Enlighten-me" Talk',
 				sponsor: "Supported by Vizgen",
@@ -443,7 +444,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "13:50 — 14:50",
+				time: "14:10 — 15:10",
 				title: "The Economics of Single Cell and Spatial Biology",
 				panelist: "Dr. Paul Robson (The Jackson Lab), Mr. Derek Newton (Mitacs)",
 				description: "In this fireside discussion, a diverse range of stakeholders will discuss the current economic state of single cell and spatial biology research in Canada. This discussion will search for ideas on how we might improve feasibility and access for more researchers across the country.",
@@ -451,7 +452,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Atrium"
 			},
 			{
-				time: "14:50 — 15:15",
+				time: "15:10 — 15:30",
 				title: "Closing speech",
 				description: null,
 				speaker: "Ms. Alyona Ivanova (Creative Director, Panoramics - A Vision, Canada)",
