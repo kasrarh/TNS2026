@@ -245,7 +245,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				abstract: "CellOut Technologies was born from a fundamental question: how can we make single-cell biology more precise, more insightful, and more accessible? In this talk, I will share the journey behind the development of the DISCO system (Digital Microfluidic Isolation of Single Cells for –Omics) and how it evolved from an academic concept into a commercial platform. DISCO is a single-cell isolation microscope integrated with digital microfluidic capabilities, designed to enable precise cell capture while preserving downstream molecular integrity. The platform has already demonstrated impactful applications, including work in the cortical stroke space in collaboration with Dr. Faiz. In this study, spatial transcriptomics in combination with DISCO-based isolation was used to examine the astrocyte response to stroke. This application led to the identification of spatially and temporally restricted subpopulation of FABP5⁺ astrocytes, which are important for stroke recovery. ",
 				description: null,
 				chapter:'"Enlighten-me" SPOTLIGHT 1',
-				speaker: "Dr. Erica Scott (British Columbia, Canada) \n Dr. Maryam Faiz (Alberta, Canada)",
+				speaker: "Dr. Erica Scott (British Columbia, Canada) & Dr. Maryam Faiz (Alberta, Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
@@ -331,19 +331,18 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "15:45 — 16:45",
-				title: "Professional skills development for spatial and single-cell biologists",
-				// description: "What Is a Cell-Type?",
-				description: null,
-				speaker: "Dr. Tallulah Andrews (Associate Professor, University of Western Ontario) \n Dr. Giselle Boukhaled (Scientific Associate, Princess Margaret Cancer Centre, University Health Network)",
+				title: "Professional skills development for spatial and single-cell (Biologist Track)",
+				description: "What Is a Cell-Type?",
+				speaker: "Dr. Tallulah Andrews (Associate Professor, University of Western Ontario)",
 				venue: "MaRS Auditorium"
 			},
-			// {
-			// 	time: "15:45 — 16:45",
-			// 	title: "Professional skills development (Computational Track)",
-			// 	description: "Beyond the Matrix: A Biologist’s Perspective on Omics Data",
-			// 	speaker: "Dr. Giselle Boukhaled (Scientific Associate, Princess Margaret Cancer Centre, University Health Network) and Dr. Ashleigh Willis (Creative Director, Panoramics – A Vision)",
-			// 	venue: "OICR Classroom"
-			// },
+			{
+				time: "15:45 — 16:45",
+				title: "Professional skills development for spatial and single-cell (Computational Track)",
+				description: "Beyond the Matrix: A Biologist’s Perspective on Omics Data",
+				speaker: "Dr. Giselle Boukhaled (Scientific Associate, Princess Margaret Cancer Centre, University Health Network) & Dr. Ashleigh Willis (Creative Director, Panoramics – A Vision)",
+				venue: "OICR Classroom"
+			},
 		],
 		day3: [
 			{
