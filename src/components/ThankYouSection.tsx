@@ -1,0 +1,101 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+const allImages = [
+  '/Enlighten-me.png',
+  '/Enlighten-me2.png',
+  '/Inspire-me.png',
+  '/Inspire-me2.png',
+  '/Challenge-me.png',
+  '/Toronto.jpeg',
+  '/TNS2026-logo-new.png',
+  '/sponsors/Miltenyi.jpg',
+  '/sponsors/cbh_logo_whitebg.png',
+  '/sponsors/luna.png',
+  '/sponsors/novogene-logo-01.png',
+  '/sponsors/standardbio.png',
+  '/sponsors/stellaromicslogo.png',
+];
+
+export default function ThankYouSection() {
+    const [tiles, setTiles] = useState<string[]>([]);
+    const [flippingIndex, setFlippingIndex] = useState<number | null>(null);
+    
+    // Desktop: 6 cols x 4 rows = 24 tiles
+    // Mobile: 4 cols x 3 rows = 12 tiles (others hidden via CSS)
+    const TILE_COUNT = 24;
+
+    useEffect(() => {
+        // Initial shuffle to prevent same order every time
+        const shuffled = [...allImages].sort(() => 0.5 - Math.random());
+        // Fill tiles to count, cycling through images
+        const initial = Array.from({ length: TILE_COUNT }).map((_, i) => shuffled[i % shuffled.length]);
+        setTiles(initial);
+
+        // Change one image every 10 seconds
+        const intervalId = setInterval(() => {
+            // Determine visible range based on screen width
+            // If < 768px (mobile), we only show 12 tiles (4x3). If >= 768px, we show 24 (6x4).
+            const isMobile = window.innerWidth < 768;
+            const maxVisible = isMobile ? 12 : 24;
+            
+            const randomIndex = Math.floor(Math.random() * maxVisible);
+            setFlippingIndex(randomIndex);
+
+            // Wait for half rotation (300ms), then swap image
+            setTimeout(() => {
+                setTiles(prev => {
+                    const next = [...prev];
+                    let randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+                    // Ensure different image so flip is meaningful
+                    while (randomImage === next[randomIndex]) {
+                        randomImage = allImages[Math.floor(Math.random() * allImages.length)];
+                    }
+                    next[randomIndex] = randomImage;
+                    return next;
+                });
+            }, 300); 
+
+            // Reset flipping state after full rotation
+            setTimeout(() => {
+                setFlippingIndex(null);
+            }, 600);
+
+        }, 10000); 
+
+        return () => clearInterval(intervalId);
+    }, []);
+
+    if (tiles.length === 0) return <div className="thankyou-container" style={{ height: '300px' }} />;
+
+    return (
+        <section className="thankyou-container" aria-label="Thank You Gallery">
+            <div className="thankyou-grid">
+                {tiles.map((src, i) => (
+                    <div 
+                        key={i} 
+                        className={`thankyou-tile ${flippingIndex === i ? 'is-flipping' : ''}`}
+                    >
+                        <div className="thankyou-tile-inner">
+                            <Image
+                                src={src}
+                                alt="Gallery highlight"
+                                fill
+                                sizes="(max-width: 768px) 33vw, (max-width: 1024px) 33vw, 33vw"
+                                className="thankyou-tile-image"
+                            />
+                        </div>
+                    </div>
+                ))}
+            </div>
+            
+            <div className="thankyou-overlay">
+                  <h1 style={{ fontFamily: 'FinalSix', fontSize: '500%', color: 'rgba(255, 255, 255, 0.75)', textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+                    TNS 2026
+                  </h1>
+            </div>
+        </section>
+    );
+}
