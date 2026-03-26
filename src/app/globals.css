@@ -32,6 +32,15 @@
 }
 
 
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.8s ease-in-out;
+}
+
 html,
 body {
 	scroll-behavior: smooth;
@@ -2431,4 +2440,98 @@ table tbody td.category-details {
     .footer-partner {
         align-items: center;
     }
+}
+/* Thank You Section */
+.thankyou-container {
+  width: 100%;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.thankyou-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Mobile: 4 cols */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .thankyou-grid {
+    grid-template-columns: repeat(6, 1fr); /* Desktop: 6 cols */
+  }
+}
+
+/* Hide tiles beyond 12 on mobile to keep 4x3 layout */
+@media (max-width: 767px) {
+  .thankyou-tile:nth-child(n+13) {
+    display: none;
+  }
+}
+
+.thankyou-tile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Aspect Ratio 1:1 */
+  overflow: hidden;
+  background-color: #111;
+  perspective: 1000px;
+}
+
+.thankyou-tile-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.thankyou-tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  backface-visibility: hidden;
+}
+
+.thankyou-tile.is-flipping .thankyou-tile-inner {
+  transform: rotateY(90deg);
+}
+
+.thankyou-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.thankyou-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+@media (min-width: 768px) {
+  .thankyou-title {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .thankyou-title {
+    font-size: 7rem;
+  }
 }
