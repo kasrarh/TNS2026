@@ -184,7 +184,9 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 			},
 			{
 				time: "15:20 — 15:50",
-				title: "“Inspire-me” Scientific Talk",
+				title: "“A Sub-cellular Resolved Human Pancreas Atlas Reveals Extensive Age-Dependent Alterations in Morphology and Function",
+				subtitle: "“A Sub-cellular Resolved Human Pancreas Atlas Reveals Extensive Age-Dependent Alterations in Morphology and Function",
+				abstract: "Age-associated changes in the human pancreas are implicated in dysfunction and disease. We built a comprehensive, sub-cellularly resolved atlas of the human pancreas across lifespan collecting sixteen whole human pancreases from healthy donors spanning in age from 21 to 71 years of age. Initially we generated scRNAseq, Visium, and VisiumHD data. This informed the design of a 40-antibody panel and a 300 gene probe set for use in high-plex immunofluorescence imaging via CODEX and RNA in situ analysis via Xenium, respectively. Xenium followed by CODEX were run on the same tissue sections across all 16 donors generating a rich data set to uncover the biology of the aging pancreas capturing all component structures (acinar, ducts, islets, vasculature, adipose, mesenchyme, neural innervation, and resident immune cells). This data, and the biological insights it provides into the aging human pancreas, will be discussed.",
 				description: null,
 				speaker: "Dr. Paul Robson (Professor at the Jackson Laboratory for Genomic Medicine Connecticut, USA)",
 				venue: "MaRS Auditorium"
