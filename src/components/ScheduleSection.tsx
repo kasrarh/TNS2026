@@ -336,7 +336,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				title: "Professional skills development for spatial and single-cell (Biologist Track)",
 				description: "What Is a Cell-Type?",
 				speaker: "Dr. Tallulah Andrews (Associate Professor, University of Western Ontario)",
-				venue: "MaRS Auditorium"
+				venue: "OICR Classroom"
 			},
 			{
 				time: "15:45 — 16:45",
