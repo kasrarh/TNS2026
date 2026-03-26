@@ -241,7 +241,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "10:00 — 10:50",
+				time: "10:00 — 10:40",
 				title: "From Instrument to Insight: DISCO as the Foundation of CellOut Technologies and Translational Stroke Discovery",
 				subtitle: "From Instrument to Insight: DISCO as the Foundation of CellOut Technologies and Translational Stroke Discovery",
 				abstract: "CellOut Technologies was born from a fundamental question: how can we make single-cell biology more precise, more insightful, and more accessible? In this talk, I will share the journey behind the development of the DISCO system (Digital Microfluidic Isolation of Single Cells for –Omics) and how it evolved from an academic concept into a commercial platform. DISCO is a single-cell isolation microscope integrated with digital microfluidic capabilities, designed to enable precise cell capture while preserving downstream molecular integrity. The platform has already demonstrated impactful applications, including work in the cortical stroke space in collaboration with Dr. Faiz. In this study, spatial transcriptomics in combination with DISCO-based isolation was used to examine the astrocyte response to stroke. This application led to the identification of spatially and temporally restricted subpopulation of FABP5⁺ astrocytes, which are important for stroke recovery. ",
@@ -251,7 +251,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "10:50 — 11:00",
+				time: "10:40 — 10:50",
 				title: "Stereo-seq–enabled Spatial Transcriptomic Mapping of the Human Basal Ganglia",
 				subtitle: "Stereo-seq–enabled Spatial Transcriptomic Mapping of the Human Basal Ganglia - Supported by Complete Genomics & DMark Biocsiences",
 				chapter:'"Enlighten-me" Talk',
@@ -262,7 +262,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "11:00 — 11:20",
+				time: "10:50 — 11:20",
 				title: "Break + Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
@@ -304,14 +304,14 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "13:00 — 13:45",
+				time: "13:00 — 14:00",
 				title: "Lunch + Networking",
 				description: null,
 				speaker: null,
-				venue: "TBD"
+				venue: null
 			},
 			{
-				time: "13:45 — 14:45",
+				time: "14:00 — 14:45",
 				title: "Innovation Spotlight 1 Continued",
 				description: "This session will feature speakers who are driving innovation and pushing the boundaries of what’s possible in single cell and spatial biology. Stay tuned for the announcement of these exciting scientists.",
 				speaker: null,
@@ -325,7 +325,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				venue: "MaRS Auditorium"
 			},
 			{
-				time: "15:20 — 15:40",
+				time: "15:20 — 15:45",
 				title: "Break + Networking",
 				description: "Connect and interact with fellow attendees.",
 				speaker: null,
