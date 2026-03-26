@@ -218,16 +218,16 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 				time: "09:00 — 09:20",
 				title: "Panoramic Insight",
 				chapter:'"Enlighten-me" Insight',
-				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of trainees and emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
+				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she opens our Enlighten Me day and highlights how Panoramics - A Vision is trying to support high quality and meaningful training for early career researchers.",
 				speaker: "Dr. Ashleigh Willis (	Creative Director, Panoramics - A Vision Inc., Canada)",
 				venue: "MaRS Auditorium"
 			},
 			{
 				time: "09:20 — 09:30",
-				title: "Update from Bioinformatics Canada",
+				title: "Update from The Canadian Bioinfromatics Hub",
 				chapter:'"Enlighten-me" Insight',
-				description: "Join the Creative Director at Panoramics - A Vision Inc., Dr. Ashleigh Willis, as she walks through the importance of trainees and emerging leaders in the Canadian spatial biology space and highlights how Panoramics - A Vision Inc. is trying to support them.",
-				speaker: "Dr. Michelle Brazas (	Scientific Director, Bioinformatics Canada)",
+				description: null,
+				speaker: "Nia Hughes (Platform Training Manager, The Canadian Bioinfromatics Hub)",
 				venue: "MaRS Auditorium"
 			},
 			{
