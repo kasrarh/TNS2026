@@ -15,7 +15,7 @@ type ScheduleSession = {
 };
 
 export default function ScheduleSection({ fullPage = false }: { fullPage?: boolean }) {
-	const [active, setActive] = useState(1);
+	const [active, setActive] = useState(2);
 	const [selectedSchedule, setSelectedSchedule] = useState<ScheduleSession | null>(null);
 
 	// Schedule data with time, description, speaker, and venue
@@ -498,6 +498,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 										aria-selected={active === 1}
 										className="tab"
 										onClick={() => setActive(1)}
+										style={{ opacity: 0.5 }}
 									>
 										26th March
 									</button>
