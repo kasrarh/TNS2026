@@ -1,11 +1,50 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GlobeSection from "./Globe";
 import TicketModal from './TicketModal';
+
+const HERO_STATS = [
+  { target: 200, suffix: '+', label: 'Registered Attendees' },
+  { target: 55, suffix: '+', label: 'Expert Speakers' },
+  { target: 15, suffix: '', label: 'Leading Industry Sponsors' },
+];
+
+function easeOutCubic(progress: number) {
+  return 1 - Math.pow(1 - progress, 3);
+}
 
 export default function HeroSection() {
   const [modalOpen, setModalOpen] = useState(false);
   const [ticketModal, setTicketModal] = useState(false);
+  const [statCounts, setStatCounts] = useState<number[]>(HERO_STATS.map(() => 0));
+
+  useEffect(() => {
+    const durationMs = 1800;
+    let animationFrameId = 0;
+    let animationStart: number | null = null;
+
+    const animate = (timestamp: number) => {
+      if (animationStart === null) {
+        animationStart = timestamp;
+      }
+
+      const rawProgress = (timestamp - animationStart) / durationMs;
+      const progress = Math.min(rawProgress, 1);
+      const easedProgress = easeOutCubic(progress);
+
+      setStatCounts(HERO_STATS.map((stat) => Math.round(stat.target * easedProgress)));
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   return (
     <section className="hero" id="about">
@@ -23,22 +62,28 @@ export default function HeroSection() {
 
             <div className="hero-overlay-bottom">
               <p>
-                Come and experience our <span>Panoramic chapters</span>  through our True North Spatial Summit as we inspire, enlighten, and challenge your mind.
-                <br />
-                <br />
-                Discover the latest breakthroughs in single cell and spatial biology at True North Spatial 2026.
-                Be part of Canada's first summit for single cell and spatial biology innovators, set in downtown
-                Toronto at the iconic MaRS Discovery District, the beacon of Canada’s innovation. Connect with
-                academic and industry leaders for three days of groundbreaking research, thought-provoking discussions,
-                and professional development sessions, designed to spark new ideas, collaborations, and shape the future
-                of discovery.
+                Thank you to everyone who joined us for the <span>inaugural TNS2026</span> ,an incredible three-day journey at the MaRS Discovery District. As <span>North America’s first dedicated single-cell and spatial biology conference</span>, this event marked a historic milestone for the scientific community in Canada and beyond.
+Because of your energy and engagement, we reached new heights:
+              </p>
+
+              <div className="hero-stats-showcase" aria-label="Event statistics">
+                {HERO_STATS.map((stat, index) => (
+                  <div className="hero-stat-pill" key={stat.label}>
+                    <span className="hero-stat-value">{statCounts[index]}{stat.suffix}</span>
+                    <span className="hero-stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <p>
+               The scientific exchange was truly groundbreaking. From exploring the very beginnings of spatial biology to discussing the future of AI in medicine, the sessions highlighted how looking at cells in their natural environment is transforming our understanding of human health. By bridging the gap between complex data and real-world discovery, we are collectively pushing the boundaries of what’s possible in modern science.
 
               </p>
               <p className="tx-accent">
-                Register now and explore the future of spatial biology!
+                Stay tuned! We are already looking ahead to next year and can’t wait to share what’s in store for 2027.
               </p>
               <div className="actions">
-                <a className="btn btn-secondary" type='button' href='/tickets'>Register</a>
+                {/* <a className="btn btn-secondary" type='button' href='/tickets'>Register</a> */}
                 {/* <a className="btn btn-secondary" type='button' onClick={() => setTicketModal(true)}>Register</a> */}
                 {/* <button
                   type="button"

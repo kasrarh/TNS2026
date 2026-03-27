@@ -4,19 +4,21 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const allImages = [
-  '/Enlighten-me.png',
-  '/Enlighten-me2.png',
-  '/Inspire-me.png',
-  '/Inspire-me2.png',
-  '/Challenge-me.png',
-  '/Toronto.jpeg',
-  '/TNS2026-logo-new.png',
-  '/sponsors/Miltenyi.jpg',
-  '/sponsors/cbh_logo_whitebg.png',
-  '/sponsors/luna.png',
-  '/sponsors/novogene-logo-01.png',
-  '/sponsors/standardbio.png',
-  '/sponsors/stellaromicslogo.png',
+  '/tns2026/pic1.jpg',
+  '/tns2026/pic2.jpg',
+  '/tns2026/pic3.jpg',
+  '/tns2026/pic4.jpg',
+  '/tns2026/pic5.jpg',
+  '/tns2026/pic6.jpg',
+  '/tns2026/pic7.jpg',
+  '/tns2026/pic8.jpg',
+  '/tns2026/pic9.jpg',
+  '/tns2026/pic10.jpg',
+  '/tns2026/pic11.jpg',
+  '/tns2026/pic12.jpg',
+  '/tns2026/pic13.jpg',
+  '/tns2026/pic14.jpg',
+  '/tns2026/pic15.jpg',
 ];
 
 export default function ThankYouSection() {

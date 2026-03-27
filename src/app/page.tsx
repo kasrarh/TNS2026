@@ -18,7 +18,7 @@ import IntroVideo from '@/components/IntroVideo';
 export default function Page() {
 	return (
 		<>
-			<IntroVideo />
+			{/* <IntroVideo /> */}
 			<SiteHeader />
 			<main>
 				<HeroSection />
