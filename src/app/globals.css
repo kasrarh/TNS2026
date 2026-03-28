@@ -32,6 +32,15 @@
 }
 
 
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.animate-fade-in {
+	animation: fadeIn 0.8s ease-in-out;
+}
+
 html,
 body {
 	scroll-behavior: smooth;
@@ -384,6 +393,64 @@ p {
 	font-weight: 600;
 }
 
+.hero-stats-showcase {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(120px, 1fr));
+	gap: 12px;
+	margin: 18px 0;
+	padding: 16px;
+	border-radius: 20px;
+	background:
+		radial-gradient(circle at 10% 10%, rgba(255, 184, 77, 0.28), transparent 45%),
+		radial-gradient(circle at 85% 85%, rgba(0, 194, 203, 0.24), transparent 42%),
+		linear-gradient(140deg, rgba(9, 22, 35, 0.9), rgba(23, 41, 59, 0.82));
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+	backdrop-filter: blur(2px);
+}
+
+.hero-stat-pill {
+	position: relative;
+	display: grid;
+	place-items: center;
+	text-align: center;
+	padding: 14px 10px;
+	min-height: 110px;
+	clip-path: polygon(8% 0, 92% 0, 100% 35%, 92% 100%, 8% 100%, 0 35%);
+	background: linear-gradient(160deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.03));
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	overflow: hidden;
+}
+
+.hero-stat-pill::before {
+	content: "";
+	position: absolute;
+	inset: 6px;
+	clip-path: polygon(8% 0, 92% 0, 100% 35%, 92% 100%, 8% 100%, 0 35%);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	pointer-events: none;
+}
+
+.hero-stat-value {
+	display: block;
+	font-family: 'FinalSix';
+	font-size: 2.40rem;
+	line-height: 1;
+	letter-spacing: 1px;
+	color: var(--secondary);
+	text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.hero-stat-label {
+	display: block;
+	font-family: 'FinalSix';
+	margin-top: 7px;
+	font-size: 0.8rem;
+	line-height: 1.25;
+	letter-spacing: 0.3px;
+	color: rgba(238, 242, 246, 0.95);
+}
+
 .actions {
 	display: flex;
 	gap: 12px
@@ -427,6 +494,25 @@ p {
 	.hero-overlay-bottom p {
 		font-size: 0.9rem;
 		line-height: 1.3;
+	}
+
+	.hero-stats-showcase {
+		grid-template-columns: 1fr;
+		padding: 12px;
+		gap: 10px;
+	}
+
+	.hero-stat-pill {
+		min-height: 88px;
+		padding: 12px 10px;
+	}
+
+	.hero-stat-value {
+		font-size: 1.25rem;
+	}
+
+	.hero-stat-label {
+		font-size: 0.76rem;
 	}
 
 	/* Reduce padding inside hero section */
@@ -474,6 +560,10 @@ p {
 	.hero-overlay-bottom {
 		color: var(--muted-light);
 		text-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+	}
+
+	.hero-stats-showcase {
+		margin: 12px 0 14px;
 	}
 
 	/* Reduce hero paddings for small screens */
@@ -2431,4 +2521,98 @@ table tbody td.category-details {
     .footer-partner {
         align-items: center;
     }
+}
+/* Thank You Section */
+.thankyou-container {
+  width: 100%;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.thankyou-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Mobile: 4 cols */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .thankyou-grid {
+    grid-template-columns: repeat(6, 1fr); /* Desktop: 6 cols */
+  }
+}
+
+/* Hide tiles beyond 12 on mobile to keep 4x3 layout */
+@media (max-width: 767px) {
+  .thankyou-tile:nth-child(n+13) {
+    display: none;
+  }
+}
+
+.thankyou-tile {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Aspect Ratio 1:1 */
+  overflow: hidden;
+  background-color: #111;
+  perspective: 1000px;
+}
+
+.thankyou-tile-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.thankyou-tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  backface-visibility: hidden;
+}
+
+.thankyou-tile.is-flipping .thankyou-tile-inner {
+  transform: rotateY(90deg);
+}
+
+.thankyou-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.thankyou-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+@media (min-width: 768px) {
+  .thankyou-title {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .thankyou-title {
+    font-size: 7rem;
+  }
 }

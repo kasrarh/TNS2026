@@ -1,5 +1,6 @@
 import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
+import ThankYouSection from '@/components/ThankYouSection';
 import NewsSection from '@/components/NewsSection';
 import HighlightsSection from '@/components/HighlightsSection';
 import ScheduleSection from '@/components/ScheduleSection';
@@ -17,12 +18,13 @@ import IntroVideo from '@/components/IntroVideo';
 export default function Page() {
 	return (
 		<>
-			<IntroVideo />
+			{/* <IntroVideo /> */}
 			<SiteHeader />
 			<main>
 				<HeroSection />
-				<NewsSection />
-				<HighlightsSection />
+				<ThankYouSection />
+				{/* <NewsSection /> */}
+				{/* <HighlightsSection /> */}
 				{/* <ScheduleSection /> */}
 				{/* <LogosSection /> */}
 				<LogosSection2 />
