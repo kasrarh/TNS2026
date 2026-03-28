@@ -5,8 +5,8 @@ import TicketModal from './TicketModal';
 
 const HERO_STATS = [
   { target: 200, suffix: '+', label: 'Registered Attendees' },
-  { target: 55, suffix: '+', label: 'Expert Speakers' },
-  { target: 15, suffix: '', label: 'Leading Industry Sponsors' },
+  { target: 50, suffix: '+', label: 'Academic and Industry Speakers' },
+  { target: 16, suffix: '', label: 'Expert Sponsors' },
 ];
 
 function easeOutCubic(progress: number) {

@@ -18,7 +18,18 @@ const allImages = [
   '/tns2026/pic12.jpg',
   '/tns2026/pic13.jpg',
   '/tns2026/pic14.jpg',
-  '/tns2026/pic15.jpg',
+  '/tns2026/pic16.jpg',
+  '/tns2026/pic17.jpg',
+  '/tns2026/pic18.jpg',
+  '/tns2026/pic19.jpg',
+  '/tns2026/pic20.jpg',
+  '/tns2026/pic21.jpg',
+  '/tns2026/pic22.jpg',
+  '/tns2026/pic23.jpg',
+  '/tns2026/pic24.jpg',
+  '/tns2026/pic25.jpg',
+  '/tns2026/pic26.jpg',
+  '/tns2026/pic27.jpg',
 ];
 
 export default function ThankYouSection() {
