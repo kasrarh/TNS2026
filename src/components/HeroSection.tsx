@@ -76,11 +76,11 @@ Because of your energy and engagement, we reached new heights:
               </div>
 
               <p>
-               The scientific exchange was truly groundbreaking. From exploring the very beginnings of spatial biology to discussing the future of AI in medicine, the sessions highlighted how looking at cells in their natural environment is transforming our understanding of human health. By bridging the gap between complex data and real-world discovery, we are collectively pushing the boundaries of what’s possible in modern science.
+               The scientific exchange was truly groundbreaking. From exploring the beginnings of spatial biology , to indulging in cross-domain discoveries involving reindeer and polar bear sciences, to discussing the future of AI in medicine and then embarking on thought-provoking discussions on crossing-boundaries, pushing spatial frontiers and delving into economics and business acumen, impact and partnership, the three days revolving around the “inspire-me”, the “enlighten-me” and the “challenge-me” chapters truly lifted us off onto the future.
 
               </p>
               <p className="tx-accent">
-                Stay tuned! We are already looking ahead to next year and can’t wait to share what’s in store for 2027.
+                We welcome you to join us for TNS2027, as we elevate to the next level.
               </p>
               <div className="actions">
                 {/* <a className="btn btn-secondary" type='button' href='/tickets'>Register</a> */}
