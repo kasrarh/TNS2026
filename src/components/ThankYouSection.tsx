@@ -38,7 +38,7 @@ export default function ThankYouSection() {
     
     // Desktop: 6 cols x 4 rows = 24 tiles
     // Mobile: 4 cols x 3 rows = 12 tiles (others hidden via CSS)
-    const TILE_COUNT = 24;
+    const TILE_COUNT = 18;
 
     useEffect(() => {
         // Initial shuffle to prevent same order every time

@@ -15,7 +15,7 @@ type ScheduleSession = {
 };
 
 export default function ScheduleSection({ fullPage = false }: { fullPage?: boolean }) {
-	const [active, setActive] = useState(1);
+	const [active, setActive] = useState(0);
 	const [selectedSchedule, setSelectedSchedule] = useState<ScheduleSession | null>(null);
 
 	// Schedule data with time, description, speaker, and venue
@@ -470,7 +470,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 
 
 	return (
-		<section className="schedule" id="schedule" style={fullPage ? { borderTop: 'none' } : {}}>
+		<section className="schedule" id="agenda" style={fullPage ? { borderTop: 'none' } : {}}>
 			<div className="schedule-bg" aria-hidden="true"></div>
 			<div className="container">
 				<div className="schedule-grid">
@@ -489,7 +489,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 										aria-selected={active === 0}
 										className="tab"
 										onClick={() => setActive(0)}
-										style={{ opacity: 0.5 }}
+										// style={{ opacity: 0.5 }}
 									>
 										25th March
 									</button>
@@ -661,7 +661,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 					</div>
 
 					{/* Floor Plan PDF Viewer */}
-					<div className="row" style={{ marginTop: '40px' }}>
+					{/* <div className="row" style={{ marginTop: '40px' }}>
 						<div className="col-xs-12">
 							<div className="section-title" style={{ textAlign: 'center', marginBottom: '20px' }}>
 								<h2>Floor Plan</h2>
@@ -681,7 +681,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 							</object>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 			{selectedSchedule && (
