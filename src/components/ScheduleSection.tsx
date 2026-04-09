@@ -498,6 +498,7 @@ export default function ScheduleSection({ fullPage = false }: { fullPage?: boole
 										aria-selected={active === 1}
 										className="tab"
 										onClick={() => setActive(1)}
+										style={{ opacity: 0.5 }}
 									>
 										26th March
 									</button>
