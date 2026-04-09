@@ -200,7 +200,9 @@ p {
 	gap: 24px;
 	margin: 0;
 	padding: 0;
-	align-items: center
+	align-items: center;
+	flex: 1;
+	justify-content: center;
 }
 
 .nav-links a {
@@ -1287,6 +1289,75 @@ ul li {
 /* Benefits two-up */
 .benefits {
 	padding: 56px 0
+}
+
+/* Mission Section */
+.mission-section {
+	padding: 72px 0;
+	background: var(--primary);
+}
+
+.mission-section .section-title h2 {
+	font-family: 'FinalSix';
+	letter-spacing: 1px;
+}
+
+.mission-section .muted-light {
+	color: var(--muted-light);
+	opacity: 0.8;
+	line-height: 1.6;
+}
+
+.mission-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+	margin-top: 40px;
+}
+
+.mission-card {
+	background: var(--card);
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	padding: 32px 24px;
+	text-align: center;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mission-card:hover {
+	transform: translateY(-4px);
+	box-shadow: var(--card-shadow-strong);
+}
+
+.mission-icon {
+	font-size: 36px;
+	margin-bottom: 16px;
+}
+
+.mission-card h3 {
+	color: var(--text-light);
+	font-size: 1.1rem;
+	margin: 0 0 12px;
+}
+
+.mission-card p {
+	color: var(--muted-light);
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin: 0;
+	opacity: 0.85;
+}
+
+@media (max-width: 1024px) {
+	.mission-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.mission-grid {
+		grid-template-columns: 1fr;
+	}
 }
 
 .two-cards {

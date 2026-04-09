@@ -34,7 +34,7 @@ export default function HeroSection({
   title,
   subtitle,
   intro,
-  stats,
+  stats= [],
   body,
   accentText,
   actions = [],

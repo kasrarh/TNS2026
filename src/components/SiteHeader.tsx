@@ -68,12 +68,12 @@ export default function SiteHeader() {
 					>
 						Our Vision
 					</a></li>
-						<li><a href="/#agenda">Agenda</a></li>
-						<li><a href="/#sponsors">Sponsors</a></li>
-						<li><a href="/#team">Speakers</a></li>
-						<li><a href="/#faq">FAQs</a></li>
-						<li><a href="/#contact">Contact</a></li>
-						<li><a className="btn btn-secondary btn-sponsors" href="/abstracts">Abstract Presenters</a></li>
+						{/* <li><a href="/#agenda">Agenda</a></li> */}
+						<li><a href="/TNS2026">TNS2026</a></li>
+						{/* <li><a href="/#team">Speakers</a></li> */}
+						{/* <li><a href="/#faq">FAQs</a></li> */}
+						{/* <li><a href="/#contact">Contact</a></li> */}
+						{/* <li><a className="btn btn-secondary btn-sponsors" href="/abstracts">Abstract Presenters</a></li> */}
 						{/* <li className="nav-dropdown" ref={dropdownRef}>
 							<button
 								className="dropdown-trigger"
@@ -97,7 +97,7 @@ export default function SiteHeader() {
 						</li> */}
 					</ul>
 				{/* <a className="btn btn-secondary btn-sponsors" href="/sponsors">For Sponsors</a> */}
-					<a className="btn btn-primary" type='button' href='/tickets'>Get Tickets</a>
+					{/* <a className="btn btn-primary" type='button' href='/tickets'>Get Tickets</a> */}
 					{/* <a className="btn btn-primary" type='button' onClick={() => setTicketModal(true)}>Get Tickets</a> */}
 
 				</nav>
@@ -153,7 +153,7 @@ function OpenModal(
 		margin: "0 auto",
       }}
     />
-      <h4 style={{ marginTop: "1rem", fontWeight: 600, textAlign: 'center' }}>Our Mission for True North Spatial 2026</h4>
+      <h4 style={{ marginTop: "1rem", fontWeight: 600, textAlign: 'center' }}>Our Mission for True North Spatial</h4>
 
       <p>
         Our inaugural True North Spatial 2026 is a convergence of our Panoramic Chapters,
