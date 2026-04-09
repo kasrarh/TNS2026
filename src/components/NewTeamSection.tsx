@@ -57,8 +57,8 @@ const organizers: Person[] = [
 	{ name: 'Thomas Pfister', image: "/team-members/thomas.png", shortRole: 'Event Support Coordinator', role: 'Event Support Coordinator | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/tpfister/' },
 	{ name: 'Canelle Schuhler-Husson', image: "/team-members/Canelle.png", shortRole: 'Translator', role: 'Translator | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/canelle-schuhler-husson/' },
 	{ name: 'Chaitra Sarathy', image: "/team-members/ChaitraS.png", shortRole: 'Speaker Liaison Officer', role: 'Speaker Liaison Officer | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/chaitra-sarathy/' },
-	{ name: 'Andrew Mertens', image: "/team-members/AndrewMertens.png", shortRole: 'Toast Master', role: 'Toast Master | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/andrew-mertens/' },
-	{ name: 'Pandora Chung', image: "/team-members/PanodraChung.png", shortRole: 'Toast Master Assistant', role: 'Toast Master | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/pandora/' },
+	{ name: 'Andrew Mertens', image: "/team-members/AndrewMertens.png", shortRole: 'Toast Master', role: 'Master of Ceremony | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/andrew-mertens/' },
+	{ name: 'Pandora Chung', image: "/team-members/PanodraChung.png", shortRole: 'Toast Master Assistant', role: 'Master of Ceremony | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/pandora/' },
 ];
 
 const TABS = ['speakers', 'organizers'] as const;
