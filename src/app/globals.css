@@ -2688,6 +2688,36 @@ table tbody td.category-details {
   }
 }
 
+.tns-showcase-bg {
+	min-height: 70vh;
+	background-image: url('/TNS-background.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 0;
+}
+
+@media (max-width: 1024px) {
+	.tns-showcase-bg {
+		min-height: 55vh;
+		background-position: center top;
+	}
+}
+
+@media (max-width: 768px) {
+	.tns-showcase-bg {
+		min-height: 45vh;
+		background-position: center top;
+	}
+}
+
+@media (max-width: 480px) {
+	.tns-showcase-bg {
+		min-height: 36vh;
+		background-position: center top;
+	}
+}
+
 /* Engagement CTA */
 .engagement {
 	padding: 72px 0;
@@ -2803,4 +2833,12 @@ table tbody td.category-details {
 
 .engagement-contact a:hover {
 	text-decoration: underline;
+}
+
+.tns-showcase-bg img{
+	min-height: 600px;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	filter: brightness(0.8);
 }

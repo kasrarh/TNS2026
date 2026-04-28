@@ -1,8 +1,6 @@
 import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
 import EngagementSection from '@/components/EngagementSection';
-import MissionSection from '@/components/MissionSection';
-import ThankYouSection from '@/components/ThankYouSection';
 import HighlightsSection from '@/components/HighlightsSection';
 import ContactSection from '@/components/ContactSection';
 import NewsletterSection from '@/components/NewsletterSection';
@@ -43,9 +41,10 @@ export default function ShowcasePage() {
 
 				<EngagementSection />
 
-				<ThankYouSection tileCount={18} overlayText="TNS 2026 Highlights" />
+				<section className="tns-showcase-bg" aria-label="TNS 2026 showcase background" >
+					<img src="/tns2026/TNS-background.png" alt="TNS 2026 showcase background" />
+				</section>
 
-				<MissionSection />
 
 				<HighlightsSection
 					tag="The TNS Experience"
@@ -55,29 +54,26 @@ export default function ShowcasePage() {
 						{
 							image: './Inspire-me.png',
 							imageAlt: 'Inspire',
-							date: 'Chapter 1',
-							cardTitle: 'Inspire Me',
-							description: 'Keynotes and spotlights from trailblazing researchers who are redefining spatial omics and single-cell biology across the globe.',
-							linkHref: '/TNS2026',
-							linkLabel: 'See TNS2026 Agenda',
+							date: 'The "Inspire Me" Chapter',
+							cardTitle: 'Structure, Foundation, and Strength',
+							description: 'Because innovation, intelligence, and creation have no real value without the wisdom of leaders and visionaries who have already walked the path - and who are necessary to guide the field with grounded truth.',
+
 						},
 						{
 							image: './Enlighten-me.png',
 							imageAlt: 'Enlighten',
-							date: 'Chapter 2',
-							cardTitle: 'Enlighten Me',
-							description: 'Hands-on workshops, training sessions, and deep-dive tutorials for scientists at every career stage — from students to PIs.',
-							linkHref: '/TNS2026',
-							linkLabel: 'See TNS2026 Agenda',
+							date: 'The "Enlighten Me" Chapter',
+							cardTitle: 'Perseverance, Knowledge, and Cognitive Weaponry',
+							description: 'Because the future of science will not be built by one kind of thinker alone. It will be built by people who know how to listen across disciplines, learn from one another, and respect what each perspective brings to the table.',
+
 						},
 						{
 							image: './Challenge-me.png',
 							imageAlt: 'Challenge',
-							date: 'Chapter 3',
-							cardTitle: 'Challenge Me',
-							description: 'Bold panel debates, fireside chats, and boundary-pushing discussions on AI, open science, economics, and the spatial frontiers ahead.',
-							linkHref: '/TNS2026',
-							linkLabel: 'See TNS2026 Agenda',
+							date: 'The "Challenge Me" Chapter',
+							cardTitle: 'Architect, Create, and Idea',
+							description: 'The architect who can look far into the future, the creator who can conjure a new construct, the paradigm shifter who can ideate for expansion - thought leadership materializes naturally when gifted with "inspiration" and "enlightenment". Here we live in the future.',
+
 						},
 					]}
 				/>
