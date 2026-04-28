@@ -1,5 +1,6 @@
 import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
+import EngagementSection from '@/components/EngagementSection';
 import MissionSection from '@/components/MissionSection';
 import ThankYouSection from '@/components/ThankYouSection';
 import HighlightsSection from '@/components/HighlightsSection';
@@ -16,33 +17,22 @@ export default function ShowcasePage() {
 					title="True North Spatial"
 					subtitle={
 						<>
-							By <span>Panoramics– A Vision Inc.</span>
+							<span>Pionered</span> by <span>Panoramics– A Vision Inc.</span>
 							<br />
 							{/* North America&apos;s Premier Single-Cell &amp; Spatial Biology Conference */}
 						</>
 					}
 					intro={
 						<p>
-							True North Spatial is a convergence of The Panoramic Chapters, for global engagement from Canada. True North Spatial sets the stage, positioning Panoramics - A Vision Inc. as a pan-Canadian hub for research and pedagogical development as in biological topography.
-							<br />
-							<br />
-							To elevate scientific exposition in biological topography, by integrating spatial and single cell technologies and thus creating a unique nexus, a convergence of minds right here in Canada through the mission statements of our Panoramic Chapters.
-							<br />
-							<br />
-							True North Spatial was founded, pioneered and supported by Panoramics - A Vision, a Canadian corporation focused on research, development and pedagogical initiatives.
+							
 						</p>
 					}
 					stats={[
 					]}
 					body={
 						<>
-							<h3>About Panoramics - A Vision INC.</h3>
-							<p>
-								Panoramics - A Vision INC.,  a nexus that constantly strives in re-imagining conversations in science, infusing cross-disciplinary and inter-disciplinary approaches into the study of biological topography, in order to deliver scientific methodologies and programs to attain the nexus of scientific excellence and goodness through pedagogy and innovation. 
-								<br />
-								<br />
-								True North Spatial 2026 was organized and led  by Panoramics - A Vision and supported by Panoramics - A Vision, world-leading spatial & Single Cell Biology sponsors and attendee-generated ticket sales.
-							</p>
+							<h4>Elevate Scientific Discourse in Biological Topography, Turning Connection into Global Impact; Empowering Canadian Life Sciences Innovation</h4>
+							
 						</>
 					}
 					accentText="TNS2027 is coming — stay tuned for dates and registration."
@@ -50,6 +40,8 @@ export default function ShowcasePage() {
 						{ label: 'TNS 2026 Recap', href: '/TNS2026', variant: 'btn-secondary' },
 					]}
 				/>
+
+				<EngagementSection />
 
 				<ThankYouSection tileCount={18} overlayText="TNS 2026 Highlights" />
 

@@ -59,7 +59,7 @@ export default function SiteHeader() {
 					</button>
 
 					<ul className={`nav-links ${navOpen ? 'is-open' : ''}`} id="nav-menu">
-						<li><a href="/#about">About</a></li>
+						<li><a href="/">Home</a></li>
 						<li><a id='highlighted-link' href="#vision"
 						onClick={(e) => {
 						e.preventDefault();
@@ -69,7 +69,9 @@ export default function SiteHeader() {
 						Our Vision
 					</a></li>
 						{/* <li><a href="/#agenda">Agenda</a></li> */}
-						<li><a href="/TNS2026">TNS2026</a></li>
+						<li><a href="/TNS2026">Previous TNS Editions</a></li>
+						<li><a href="https://www.panoramics-a-vision.com">About Panoramics - A Vision</a></li>
+						<li><a href="/#contact">Contact</a></li>
 						{/* <li><a href="/#team">Speakers</a></li> */}
 						{/* <li><a href="/#faq">FAQs</a></li> */}
 						{/* <li><a href="/#contact">Contact</a></li> */}
