@@ -15,7 +15,7 @@ export default function ShowcasePage() {
 					title="True North Spatial"
 					subtitle={
 						<>
-							<span>Pionered</span> by <span>Panoramics– A Vision Inc.</span>
+							By <span>Panoramics– A Vision Inc.</span>
 							<br />
 							{/* North America&apos;s Premier Single-Cell &amp; Spatial Biology Conference */}
 						</>
@@ -29,11 +29,12 @@ export default function ShowcasePage() {
 					]}
 					body={
 						<>
-							<h4>Elevate Scientific Discourse in Biological Topography, Turning Connection into Global Impact; Empowering Canadian Life Sciences Innovation</h4>
+							<h4>Inspiring Scientific Discourse in Biological Topography, Enlightening Canadian Life Sciences Innovation, Challenging Convention and Turning Connection into Global Impact</h4>
 							
 						</>
 					}
-					accentText="TNS2027 is coming — stay tuned for dates and registration."
+					showGlobe={false}
+					accentText="TNS2027 is coming — Get ready to level up"
 					actions={[
 						{ label: 'TNS 2026 Recap', href: '/TNS2026', variant: 'btn-secondary' },
 					]}
@@ -48,11 +49,10 @@ export default function ShowcasePage() {
 
 				<HighlightsSection
 					tag="The TNS Experience"
-					title="Three Chapters, One Vision"
-					subtitle="Each day of TNS is designed around a distinct theme"
+					title="The Panoramics Chapters"
+					subtitle="Three Chapters, One Vision"
 					cards={[
 						{
-							image: './Inspire-me.png',
 							imageAlt: 'Inspire',
 							date: 'The "Inspire Me" Chapter',
 							cardTitle: 'Structure, Foundation, and Strength',
@@ -60,7 +60,6 @@ export default function ShowcasePage() {
 
 						},
 						{
-							image: './Enlighten-me.png',
 							imageAlt: 'Enlighten',
 							date: 'The "Enlighten Me" Chapter',
 							cardTitle: 'Perseverance, Knowledge, and Cognitive Weaponry',
@@ -68,7 +67,6 @@ export default function ShowcasePage() {
 
 						},
 						{
-							image: './Challenge-me.png',
 							imageAlt: 'Challenge',
 							date: 'The "Challenge Me" Chapter',
 							cardTitle: 'Architect, Create, and Idea',
@@ -78,7 +76,7 @@ export default function ShowcasePage() {
 					]}
 				/>
 				
-				<ContactSection />
+				{/* <ContactSection /> */}
 				<NewsletterSection />
 			</main>
 			<BackToTop />

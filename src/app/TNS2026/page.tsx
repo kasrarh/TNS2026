@@ -24,6 +24,7 @@ export default function Page() {
 			<main>
 				<HeroSection
 					title="True North Spatial 2026"
+					showGlobe={false}
 					subtitle={
 						<>
 							By <span>Panoramics– A Vision Inc.</span>
@@ -48,7 +49,7 @@ export default function Page() {
 					]}
 					body={
 						<p>
-							The scientific exchange was truly groundbreaking. From exploring the beginnings of spatial biology, to indulging in cross-domain discoveries involving reindeer and polar bear sciences, to discussing the future of AI in medicine and then embarking on thought-provoking discussions on crossing-boundaries, pushing spatial frontiers and delving into economics and business acumen, impact and partnership, the three days revolving around the &quot;inspire-me&quot;, the &quot;enlighten-me&quot; and the &quot;challenge-me&quot; chapters truly lifted us off onto the future.
+							The scientific exchange was truly groundbreaking. From exploring the beginnings of spatial biology, to indulging in cross-domain discoveries involving reindeer and polar bear sciences, to discussing the future of Al in medicine and then embarking on thought-provoking discussions on crossing-boundaries, pushing spatial frontiers and delving into economics and I busi business acumen, impact and partne and partnership, the three days revolving around the "inspire-me", the "enlighten-me" and the "challenge-me" chapters truly lifted us off onto the future.
 						</p>
 					}
 					accentText="We welcome you to join us for TNS2027, as we elevate to the next level."

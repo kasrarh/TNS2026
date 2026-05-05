@@ -46,8 +46,13 @@ export default function EngagementSection() {
         <p className="tag">Call to Action</p>
         <h2>Thank You, TNS2026 Attendees</h2>
         <p className="engagement-copy">
-          We are grateful to everyone who joined us at the MaRS Discovery District
-          and helped make True North Spatial 2026 an unforgettable gathering.
+        We are grateful to all our sponsors, partners and attendees who joined us at the
+MaRS Discovery District and in making True North Spatial 2026 an unforgettable
+journey across time and space.
+<br />
+A convergence of thought leaders, re-imagining conversations in science,
+elevating creativity and innovation in biological topography.
+Join us to inspire, enlighten and challenge …. Into True North Spatial 2027
         </p>
 
         <h3 className="engagement-subtitle">Join the TNS2027 Journey</h3>
@@ -96,8 +101,8 @@ export default function EngagementSection() {
             CEO, Panoramics - A Vision Inc.
             <br />
             Email:{" "}
-            <a href="mailto:sponsorship@panoramics-a-vision.com">
-              sponsorship@panoramics-a-vision.com
+            <a href="mailto:shamini.ayyadhury@panoramics-a-vision.com">
+            shamini.ayyadhury@panoramics-a-vision.com
             </a>
             <br />
             Phone: <a href="tel:+15149652782">+1 (514) 965-2782</a>
