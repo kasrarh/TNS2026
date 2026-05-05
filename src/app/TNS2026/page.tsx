@@ -1,26 +1,29 @@
+import TNS2026Header from '@/components/TNS2026Header';
 
-import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
 import ThankYouSection from '@/components/ThankYouSection';
-import NewsSection from '@/components/NewsSection';
-import HighlightsSection from '@/components/HighlightsSection';
-import ScheduleSection from '@/components/ScheduleSection';
+// import NewsSection from '@/components/NewsSection';
+// import HighlightsSection from '@/components/HighlightsSection';
+// import ScheduleSection from '@/components/ScheduleSection';
 import NewTeamSection from '@/components/NewTeamSection';
+import AbstractPresentersPreviewSection from '@/components/AbstractPresentersPreviewSection';
 // import BenefitsSection from '@/components/BenefitsSection';
 // import TestimonialsSection from '@/components/TestimonialsSection';
 import FAQSection from '@/components/FAQSection';
+import ScheduleDaysSection from '@/components/ScheduleDaysSection';
+
 import ContactSection from '@/components/ContactSection';
 import NewsletterSection from '@/components/NewsletterSection';
 import BackToTop from '@/components/BackToTop';
-import LogosSection from '@/components/LogosSection';
+// import LogosSection from '@/components/LogosSection';
 import LogosSection2 from '@/components/LogoSection2';
-import IntroVideo from '@/components/IntroVideo';
+// import IntroVideo from '@/components/IntroVideo';
 
 export default function Page() {
 	return (
 		<>
 			{/* <IntroVideo /> */}
-			<SiteHeader />
+			<TNS2026Header />
 			<main>
 				<HeroSection
 					title="True North Spatial 2026"
@@ -93,10 +96,12 @@ export default function Page() {
 						},
 					]}
 				/> */}
-				<ScheduleSection />
+				{/* <ScheduleSection /> */}
+				<ScheduleDaysSection />
 				{/* <LogosSection /> */}
 				<LogosSection2 />
 				<NewTeamSection />
+				<AbstractPresentersPreviewSection />
 				{/* <BenefitsSection /> */}
 				{/* <TestimonialsSection /> */}
 				<FAQSection />
