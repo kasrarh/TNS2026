@@ -1,18 +1,19 @@
 
 import BackToTop from '@/components/BackToTop';
 import NewsletterSection from '@/components/NewsletterSection';
-import LogosSection2 from '@/components/LogoSection2';
-import TNS2026Header from '@/components/TNS2026Header';
+import SiteHeader from '@/components/SiteHeader';
+import SponsorsSection from '@/components/SponsorsSection';
+import PartnershipSection from '@/components/PartnershipSection';
 
 
 
 export default function SponsorsPage() {
     return (
         <>
-            <TNS2026Header />
+            <SiteHeader />
             <main style={{marginTop: '58px'}}>
-                <LogosSection2 />
-                {/* <PartnershipSection /> */}
+                {/* <SponsorsSection /> */}
+                <PartnershipSection />
                 <NewsletterSection />
             </main>
             <BackToTop />
