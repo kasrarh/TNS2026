@@ -99,7 +99,7 @@ export default function Page() {
 				{/* <ScheduleSection /> */}
 				<ScheduleDaysSection />
 				{/* <LogosSection /> */}
-				<LogosSection2 />
+				{/* <LogosSection2 /> */}
 				<NewTeamSection />
 				<AbstractPresentersPreviewSection />
 				{/* <BenefitsSection /> */}
