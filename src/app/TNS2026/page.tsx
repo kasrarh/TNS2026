@@ -104,8 +104,8 @@ export default function Page() {
 				<AbstractPresentersPreviewSection />
 				{/* <BenefitsSection /> */}
 				{/* <TestimonialsSection /> */}
-				<FAQSection />
-				<ContactSection />
+				{/* <FAQSection /> */}
+				{/* <ContactSection /> */}
 				<NewsletterSection />
 			</main>
 			<BackToTop />
