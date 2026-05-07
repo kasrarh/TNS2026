@@ -75,50 +75,66 @@ const organizers: Person[] = [
 	{ name: 'Pandora Chung', image: "/team-members/PanodraChung.png", shortRole: 'Toast Master Assistant', role: 'Toast Master | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/pandora/' },
 ];
 
-const TABS = ['speakers', 'organizers'] as const;
-type Tab = (typeof TABS)[number];
-
 export default function TeamSection() {
-  const [activeTab, setActiveTab] = useState<Tab>('speakers');
   const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
-
-  const currentList = activeTab === 'speakers' ? speakers : organizers;
 
   return (
     <section className="team" id="team">
       <div className="container">
         <header className="section-title">
           <span className="tag muted-dark">Meet our people</span>
-          <h2 className="tx-dark">Speakers &amp; Organizers</h2>
+          <h2 className="tx-dark">Speakers</h2>
           <p className="muted-dark">
             Leaders across academia, industry, and the spatial community.
           </p>
-
-          <div className="people-tabs">
-            {TABS.map((tab) => {
-              const isActive = tab === activeTab;
-              const label =
-                tab === 'speakers'
-                  ? `Speakers (${speakers.length})`
-                  : `Organizers (${organizers.length})`;
-
-              return (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setActiveTab(tab)}
-                  className={`people-tab ${isActive ? 'is-active' : ''}`}
-                >
-                  
-                  {label}
-                </button>
-              );
-            })}
-          </div>
         </header>
 
         <div className="people-grid">
-          {currentList.map((person) => (
+          {speakers.map((person) => (
+            <button
+              key={person.name}
+              type="button"
+              className="person-tile"
+              onClick={() => setSelectedPerson(person)}
+            >
+              {person.image && (
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  className="person-tile-image"
+                />
+              )}
+
+              <div className="person-tile-overlay-base" />
+
+              <div className="person-tile-content">
+                {person.isSponsored && (
+                  <span className="sponsor-badge">Sponsor Speaker</span>
+                )}
+                <span className="person-tile-name">{person.name}</span>
+                {person.city ? 
+                  <span className="person-tile-city">{person.city}</span>
+                  : person.role ?
+                  person.role.split("\n").map((line, index) => (
+				  <span key={index} className="person-tile-city">{line}</span>
+          ))
+				  : null
+				}
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <header className="section-title">
+          <span className="tag muted-dark">Meet our people</span>
+          <h2 className="tx-dark">Organizers</h2>
+          <p className="muted-dark">
+            Leaders across academia, industry, and the spatial community.
+          </p>
+        </header>
+
+        <div className="people-grid">
+          {organizers.map((person) => (
             <button
               key={person.name}
               type="button"

@@ -24,6 +24,7 @@ export interface HeroSectionProps {
   body: React.ReactNode;
   accentText?: string;
   actions?: HeroAction[];
+  backgroundImage?: string;
   /** When false, the 3D globe column is omitted. Defaults to true. */
   showGlobe?: boolean;
 }
@@ -40,6 +41,7 @@ export default function HeroSection({
   body,
   accentText,
   actions = [],
+  backgroundImage,
   showGlobe = true,
 }: HeroSectionProps) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -74,7 +76,11 @@ export default function HeroSection({
   }, [stats]);
 
   return (
-    <section className="hero" id="about">
+    <section
+      className="hero"
+      id="about"
+      style={backgroundImage ? { backgroundImage: `url('${backgroundImage}')` } : undefined}
+    >
       <div
         className={`container hero-inner${stats.length > 0 || showGlobe ? "" : " hero-inner-no-side"}`}
       >
