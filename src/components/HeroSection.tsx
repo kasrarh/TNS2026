@@ -24,6 +24,9 @@ export interface HeroSectionProps {
   body: React.ReactNode;
   accentText?: string;
   actions?: HeroAction[];
+  backgroundImage?: string;
+  /** When false, the 3D globe column is omitted. Defaults to true. */
+  showGlobe?: boolean;
 }
 
 function easeOutCubic(progress: number) {
@@ -34,10 +37,12 @@ export default function HeroSection({
   title,
   subtitle,
   intro,
-  stats,
+  stats= [],
   body,
   accentText,
   actions = [],
+  backgroundImage,
+  showGlobe = true,
 }: HeroSectionProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [ticketModal, setTicketModal] = useState(false);
@@ -71,8 +76,14 @@ export default function HeroSection({
   }, [stats]);
 
   return (
-    <section className="hero" id="about">
-      <div className="container hero-inner">
+    <section
+      className="hero"
+      id="about"
+      style={backgroundImage ? { backgroundImage: `url('${backgroundImage}')` } : undefined}
+    >
+      <div
+        className={`container hero-inner${stats.length > 0 || showGlobe ? "" : " hero-inner-no-side"}`}
+      >
         <div className="hero-content">
           <div className="hero-overlay">
             <div className="hero-overlay-top">
@@ -82,23 +93,6 @@ export default function HeroSection({
 
             <div className="hero-overlay-bottom">
               <p>{intro}</p>
-
-              {stats.length > 0 && (
-                <div
-                  className="hero-stats-showcase"
-                  aria-label="Event statistics"
-                >
-                  {stats.map((stat, index) => (
-                    <div className="hero-stat-pill" key={stat.label}>
-                      <span className="hero-stat-value">
-                        {statCounts[index]}
-                        {stat.suffix}
-                      </span>
-                      <span className="hero-stat-label">{stat.label}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
 
               {body}
 
@@ -132,9 +126,31 @@ export default function HeroSection({
           </div>
         </div>
 
-        <div className="hero-globe">
-          <GlobeSection />
-        </div>
+        {stats.length > 0 || showGlobe ? (
+          <div className="hero-side">
+            {stats.length > 0 && (
+              <div
+                className="hero-stats-showcase hero-stats-rail"
+                aria-label="Event statistics"
+              >
+                {stats.map((stat, index) => (
+                  <div className="hero-stat-pill" key={stat.label}>
+                    <span className="hero-stat-value">
+                      {statCounts[index]}
+                      {stat.suffix}
+                    </span>
+                    <span className="hero-stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {showGlobe ? (
+              <div className="hero-globe">
+                <GlobeSection />
+              </div>
+            ) : null}
+          </div>
+        ) : null}
       </div>
 
       {modalOpen && <OpenModal onClose={() => setModalOpen(false)} />}

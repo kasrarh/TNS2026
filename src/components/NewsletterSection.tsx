@@ -21,20 +21,20 @@ export default function NewsletterSection() {
 						<div className="footer-nav-group">
 							<h4>Quick Links</h4>
 							<div className="footer-nav-links">
-								<a href="/#about">About</a>
+								<a href="TNS2026/#about">About</a>
 								<a className='highlighted-link' href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}>Our Vision</a>
-								<a href="/#schedule">Schedule</a>
-								<a href="/#sponsors">Sponsors</a>
-								<a href="/#team">Speakers</a>
+								<a href="TNS2026/#schedule">Schedule</a>
+								<a href="TNS2026/#sponsors">Sponsors</a>
+								<a href="TNS2026/#team">Speakers</a>
 							</div>
 						</div>
 						<div className="footer-nav-group">
 							<h4>Resources</h4>
 							<div className="footer-nav-links">
-								<a href="/#faq">FAQs</a>
-								<a href="/#contact">Contact</a>
-								<a href="/sponsors">Sponsorship</a>
-								<a href="/tickets">Tickets</a>
+								<a href="TNS2026/#faq">FAQs</a>
+								<a href="TNS2026/#contact">Contact</a>
+								<a href="TNS2026/#sponsors">Sponsorship</a>
+								{/* <a href="TNS2026/#tickets">Tickets</a> */}
 
 
 							</div>
@@ -70,7 +70,12 @@ export default function NewsletterSection() {
 				</div>
 
 				<div className="credits">
-					<p style={{fontWeight: "lighter", fontSize: "0.8em"}}>© 2026 Panoramics — A Vision Inc. All rights reserved.</p>
+					<p style={{ fontWeight: 'lighter', fontSize: '0.8em' }}>
+						© 2026 Panoramics — A Vision Inc. All rights reserved.
+					</p>
+					<p className="credits-initiative">
+						True North Spatial is a Panoramics - A Vision Inc. Initiative, pioneered, owned and led by Panoramics
+					</p>
 				</div>
 			</div>
 			{isModalOpen && (

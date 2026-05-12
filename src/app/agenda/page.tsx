@@ -1,12 +1,12 @@
 import BackToTop from '@/components/BackToTop';
 import NewsletterSection from '@/components/NewsletterSection';
-import SiteHeader from '@/components/SiteHeader';
 import ScheduleSection from '@/components/ScheduleSection';
+import TNS2026Header from '@/components/TNS2026Header';
 
 export default function AgendaPage() {
     return (
         <>
-            <SiteHeader />
+            <TNS2026Header />
             <main>
                 <div style={{ paddingTop: '80px' }}>
                     <ScheduleSection fullPage={true} />

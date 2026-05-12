@@ -1,0 +1,151 @@
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	overflow: hidden;
+	/* Light fill + gradient on full perimeter (padding-box / border-box) */
+	background:
+		linear-gradient(
+			165deg,
+			color-mix(in srgb, var(--muted-light) 88%, white) 0%,
+			color-mix(in srgb, white 94%, var(--secondary)) 100%
+		)
+			padding-box,
+		linear-gradient(
+			135deg,
+			var(--brand) 0%,
+			var(--secondary) 32%,
+			var(--gold) 62%,
+			color-mix(in srgb, var(--brand-2) 85%, var(--brand)) 100%
+		)
+			border-box;
+	border: 3px solid transparent;
+	box-shadow:
+		0 1px 0 color-mix(in srgb, white 70%, transparent) inset,
+		0 14px 36px rgba(8, 39, 51, 0.12);
+	transition:
+		transform 0.22s ease,
+		box-shadow 0.22s ease;
+}
+
+.card:hover {
+	transform: translateY(-3px);
+	box-shadow:
+		0 1px 0 color-mix(in srgb, white 85%, transparent) inset,
+		0 20px 44px rgba(8, 39, 51, 0.16);
+}
+
+.inner {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+}
+
+.hasMedia .inner {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+	.hasMedia .inner {
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.2fr);
+		align-items: stretch;
+	}
+}
+
+.media {
+	position: relative;
+	min-height: 160px;
+	background: color-mix(in srgb, var(--bg-light) 35%, white);
+}
+
+@media (min-width: 720px) {
+	.hasMedia .media {
+		min-height: 220px;
+	}
+}
+
+.media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.mediaGlow {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: linear-gradient(
+		145deg,
+		color-mix(in srgb, var(--brand) 12%, transparent) 0%,
+		transparent 50%,
+		color-mix(in srgb, var(--secondary) 18%, transparent) 100%
+	);
+}
+
+.body {
+	padding: 1.35rem 1.35rem 1.35rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+	flex: 1;
+}
+
+.day {
+	margin: 0;
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--secondary);
+}
+
+.subtitle {
+	margin: 0;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--brand);
+}
+
+.title {
+	margin: 0;
+	font-size: 1.2rem;
+	font-weight: 600;
+	line-height: 1.25;
+	letter-spacing: -0.02em;
+	color: var(--text);
+	font-family: inherit;
+}
+
+.content {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: color-mix(in srgb, var(--text) 78%, var(--muted));
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+	gap: 0.65rem;
+}
+
+.content :where(p) {
+	margin: 0;
+	color: inherit;
+}
+
+.content :where(a:not(.btn)) {
+	color: var(--brand);
+	text-decoration: underline;
+	text-decoration-color: color-mix(in srgb, var(--brand) 45%, transparent);
+	text-underline-offset: 3px;
+}
+
+.content :where(a:not(.btn):hover) {
+	color: color-mix(in srgb, var(--primary) 55%, var(--brand));
+}

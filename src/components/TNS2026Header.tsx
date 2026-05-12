@@ -69,9 +69,13 @@ export default function SiteHeader() {
 						Our Vision
 					</a></li>
 						{/* <li><a href="/#agenda">Agenda</a></li> */}
+						{/* <li><a href="/TNS2026">TNS2026</a></li> */}
+						{/* <li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li> */}
 						<li><a href="/TNS2026">TNS2026</a></li>
-						<li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li>
-						<li><a href="/#contact">Contact</a></li>
+						<li><a href="/agenda">Agenda</a></li>
+						<li><a href="/sponsors">Sponsors & Partners</a></li>
+						<li><a href="/abstracts">Abstract Presenters</a></li>
+						{/* <li><a href="/TNS2026/#faq">FAQ</a></li> */}
 						{/* <li><a href="/#team">Speakers</a></li> */}
 						{/* <li><a href="/#faq">FAQs</a></li> */}
 						{/* <li><a href="/#contact">Contact</a></li> */}
