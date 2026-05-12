@@ -29,7 +29,7 @@ export default function HighlightsSection({
 		<section className="cards-3" id="highlights">
 			<div className="container">
 				<div className="section-title">
-					<span className="tag muted-dark">{tag}</span>
+					{/* <span className="tag muted-dark">{tag}</span> */}
 					<h2 className="tx-dark">{title}</h2>
 					<p className="muted-dark">{subtitle}</p>
 				</div>

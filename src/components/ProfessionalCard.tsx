@@ -11,6 +11,8 @@ export interface ProfessionalCardProps {
 	/** Defaults to `title` when `picture` is set; pass `""` for decorative images. */
 	pictureAlt?: string;
 	className?: string;
+	/** Optional schedule day to display on the card. */
+	day?: string;
 }
 
 export default function ProfessionalCard({
@@ -20,6 +22,7 @@ export default function ProfessionalCard({
 	picture,
 	pictureAlt,
 	className,
+	day,
 }: ProfessionalCardProps) {
 	const alt = picture ? (pictureAlt ?? title) : undefined;
 
@@ -41,6 +44,7 @@ export default function ProfessionalCard({
 					</div>
 				) : null}
 				<div className={styles.body}>
+					{day && <p className={styles.day}>{day}</p>}
 					<p className={styles.subtitle}>{subtitle}</p>
 					<h3 className={styles.title}>{title}</h3>
 					<div className={styles.content}>{content}</div>

@@ -5,14 +5,17 @@ const scheduleDays = [
 	{
 		title: 'Day 1 - Inspire Me',
 		description: 'Kick off with visionary keynotes and foundational ideas shaping spatial biology.',
+		subtitle: 'March 25, 2026',
 	},
 	{
 		title: 'Day 2 - Enlighten Me',
 		description: 'Dive into innovation spotlights, practical insights, and collaborative learning.',
+		subtitle: 'March 26, 2026',
 	},
 	{
 		title: 'Day 3 - Challenge Me',
 		description: 'Explore bold debates, future-focused talks, and the next frontier of discovery.',
+		subtitle: 'March 27, 2026',
 	},
 ];
 
@@ -31,7 +34,7 @@ export default function ScheduleDaysSection() {
 						<ProfessionalCard
 							key={day.title}
 							title={day.title}
-							subtitle="Schedule Day"
+							subtitle={day.subtitle}
 							content={<p>{day.description}</p>}
 						/>
 					))}

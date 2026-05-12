@@ -43,16 +43,18 @@ export default function EngagementSection() {
   return (
     <section className="engagement" id="engagement">
       <div className="container engagement-inner">
-        <p className="tag">Call to Action</p>
+        {/* <p className="tag">Call to Action</p> */}
         <h2>Thank You, TNS2026 Attendees</h2>
         <p className="engagement-copy">
         We are grateful to all our sponsors, partners and attendees who joined us at the
 MaRS Discovery District and in making True North Spatial 2026 an unforgettable
 journey across time and space.
 <br />
+<br />
 A convergence of thought leaders, re-imagining conversations in science,
 elevating creativity and innovation in biological topography.
-Join us to inspire, enlighten and challenge …. Into True North Spatial 2027
+Join us to inspire, enlighten and challenge …. 
+<br />Into True North Spatial 2027
         </p>
 
         <h3 className="engagement-subtitle">Join the TNS2027 Journey</h3>
@@ -98,7 +100,9 @@ Join us to inspire, enlighten and challenge …. Into True North Spatial 2027
         <div className="engagement-contact">
           <p className="engagement-contact-title">Sponsorship Contact</p>
           <p>
-            CEO, Panoramics - A Vision Inc.
+            Shamini Ayyadhury, PhD
+            <br />
+            CEO, Founder | Panoramics - A Vision INC
             <br />
             Email:{" "}
             <a href="mailto:shamini.ayyadhury@panoramics-a-vision.com">

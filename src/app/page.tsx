@@ -16,7 +16,7 @@ export default function ShowcasePage() {
 					backgroundImage="/TNS.jpg"
 					subtitle={
 						<>
-							By <span>Panoramics– A Vision Inc.</span>
+							Pioneered By <span>Panoramics– A Vision Inc.</span>
 							<br />
 							{/* North America&apos;s Premier Single-Cell &amp; Spatial Biology Conference */}
 						</>
@@ -50,7 +50,7 @@ export default function ShowcasePage() {
 
 				<HighlightsSection
 					tag="The TNS Experience"
-					title="The Panoramics Chapters"
+					title="The Panoramic Chapters"
 					subtitle="Three Chapters, One Vision"
 					cards={[
 						{

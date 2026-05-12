@@ -47,8 +47,11 @@ export default function Page() {
 						{ target: 50, suffix: '+', label: 'Academic and Industry Speakers' },
 						{ target: 16, suffix: '', label: 'Expert Sponsors' },
 						{ target: 30, suffix: '%', label: 'Corporate & Industry Leaders' },
-						{ target: 7, suffix: 'h', label: 'Academic Talks' },
-						{ target: 8, suffix: 'h', label: 'Networking Time' },
+						{ target: 53, suffix: '%', label: 'Academic, Clinical and Core Facility Experts & Leaders' },
+						{ target: 7, suffix: 'hrs', label: 'Academic Talks' },
+						{ target: 8, suffix: 'hrs', label: 'Networking Time' },
+						{ target: 3, suffix: 'hrs', label: 'Innovation & Emerging Leaders Talks' },
+						{ target: 3, suffix: 'hrs', label: 'Though Discussions' },
 					]}
 					body={
 						<p>
@@ -101,7 +104,7 @@ export default function Page() {
 				{/* <LogosSection /> */}
 				{/* <LogosSection2 /> */}
 				<NewTeamSection />
-				<AbstractPresentersPreviewSection />
+				{/* <AbstractPresentersPreviewSection /> */}
 				{/* <BenefitsSection /> */}
 				{/* <TestimonialsSection /> */}
 				{/* <FAQSection /> */}
