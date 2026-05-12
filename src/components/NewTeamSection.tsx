@@ -125,8 +125,7 @@ export default function TeamSection() {
           ))}
         </div>
 
-        <header className="section-title">
-          <span className="tag muted-dark">Meet our people</span>
+        <header className="section-title" style={{ marginTop: '4rem' }}>
           <h2 className="tx-dark">Organizers</h2>
           <p className="muted-dark">
             Leaders across academia, industry, and the spatial community.

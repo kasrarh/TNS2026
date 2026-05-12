@@ -51,7 +51,7 @@ export default function Page() {
 						{ target: 7, suffix: 'hrs', label: 'Academic Talks' },
 						{ target: 8, suffix: 'hrs', label: 'Networking Time' },
 						{ target: 3, suffix: 'hrs', label: 'Innovation & Emerging Leaders Talks' },
-						{ target: 3, suffix: 'hrs', label: 'Though Discussions' },
+						{ target: 3, suffix: 'hrs', label: 'Thought Discussions' },
 					]}
 					body={
 						<p>
