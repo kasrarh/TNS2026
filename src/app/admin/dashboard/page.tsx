@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -116,13 +117,22 @@ export default function AdminDashboard() {
                 <p className="text-sm text-gray-500">Abstract Submissions Management</p>
               </div>
             </div>
-            <button
-              onClick={handleLogout}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white hover:shadow-lg transition-all duration-200"
-              style={{ background: 'var(--brand-2)' }}
-            >
-              Logout
-            </button>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/admin/tns2027-signups"
+                className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
+                style={{ borderColor: 'var(--border)' }}
+              >
+                TNS2027 Emails
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white hover:shadow-lg transition-all duration-200"
+                style={{ background: 'var(--brand-2)' }}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </header>

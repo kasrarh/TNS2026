@@ -82,7 +82,7 @@ export default function HeroSection({
       style={backgroundImage ? { backgroundImage: `url('${backgroundImage}')` } : undefined}
     >
       <div
-        className={`container hero-inner${stats.length > 0 || showGlobe ? "" : " hero-inner-no-side"}`}
+        className={`container hero-inner${showGlobe ? "" : " hero-inner-no-side"}`}
       >
         <div className="hero-content">
           <div className="hero-overlay">
@@ -93,6 +93,23 @@ export default function HeroSection({
 
             <div className="hero-overlay-bottom">
               <p>{intro}</p>
+
+              {stats.length > 0 && (
+                <div
+                  className="hero-stats-showcase hero-stats-grid"
+                  aria-label="Event statistics"
+                >
+                  {stats.map((stat, index) => (
+                    <div className="hero-stat-pill" key={stat.label}>
+                      <span className="hero-stat-value">
+                        {statCounts[index]}
+                        {stat.suffix}
+                      </span>
+                      <span className="hero-stat-label">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {body}
 
@@ -126,29 +143,11 @@ export default function HeroSection({
           </div>
         </div>
 
-        {stats.length > 0 || showGlobe ? (
+        {showGlobe ? (
           <div className="hero-side">
-            {stats.length > 0 && (
-              <div
-                className="hero-stats-showcase hero-stats-rail"
-                aria-label="Event statistics"
-              >
-                {stats.map((stat, index) => (
-                  <div className="hero-stat-pill" key={stat.label}>
-                    <span className="hero-stat-value">
-                      {statCounts[index]}
-                      {stat.suffix}
-                    </span>
-                    <span className="hero-stat-label">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {showGlobe ? (
-              <div className="hero-globe">
-                <GlobeSection />
-              </div>
-            ) : null}
+            <div className="hero-globe">
+              <GlobeSection />
+            </div>
           </div>
         ) : null}
       </div>

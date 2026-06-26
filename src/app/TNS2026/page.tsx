@@ -59,9 +59,9 @@ export default function Page() {
 						</p>
 					}
 					accentText="We welcome you to join us for TNS2027, as we elevate to the next level."
-					actions={[
-						{ label: 'Abstract Presenters', href: '/abstracts', variant: 'btn-secondary' },
-					]}
+					// actions={[
+					// 	{ label: 'Abstract Presenters', href: '/abstracts', variant: 'btn-secondary' },
+					// ]}
 				/>
 				<ThankYouSection />
 				{/* <NewsSection /> */}

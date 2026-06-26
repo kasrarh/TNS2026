@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TNS 2026",
-  description: "True North Summit 2026 - Embracing the Future of Technology",
+  title: "True North Spatial",
+  description: "True North Spatial - Embracing the Future of Technology",
   icons: {
     icon: "/favicon.ico"
     // apple: '/TNS2026-logo.png',

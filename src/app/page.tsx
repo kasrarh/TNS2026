@@ -1,6 +1,7 @@
 import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
 import EngagementSection from '@/components/EngagementSection';
+import SponsorshipSection from '@/components/SponsorshipSection';
 import HighlightsSection from '@/components/HighlightsSection';
 import ContactSection from '@/components/ContactSection';
 import NewsletterSection from '@/components/NewsletterSection';
@@ -42,6 +43,8 @@ export default function ShowcasePage() {
 				/>
 
 				<EngagementSection />
+
+				<SponsorshipSection />
 
 				<section className="tns-showcase-bg" aria-label="TNS 2026 showcase background" >
 					<img src="/tns2026/TNS-background.png" alt="TNS 2026 showcase background" />
