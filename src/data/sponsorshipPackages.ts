@@ -45,7 +45,7 @@ export const sponsorshipDownloads: SponsorshipDownload[] = [
 ];
 
 export const sponsorshipSectionContent = {
-  title: "Partner with True North Spatial 2027",
+  title: "Partner with Panoramics - A Vision for True North Spatial 2027",
   subtitle: "Sponsorship opportunities are now open. Limited tiers available.",
   message: {
     subtitle: "It's not the package. It's the identity - the choice that defines your experience.",

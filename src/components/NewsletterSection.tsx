@@ -23,17 +23,17 @@ export default function NewsletterSection() {
 							<div className="footer-nav-links">
 								<a href="TNS2026/#about">About</a>
 								<a className='highlighted-link' href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}>Our Vision</a>
-								<a href="TNS2026/#schedule">Schedule</a>
-								<a href="TNS2026/#sponsors">Sponsors</a>
-								<a href="TNS2026/#team">Speakers</a>
+								<a href="/agenda">TNS2026 Agenda</a>
+								<a href="/sponsors">TNS2026 Sponsors</a>
+								<a href="TNS2026/#team">TNS2026S peakers</a>
 							</div>
 						</div>
 						<div className="footer-nav-group">
 							<h4>Resources</h4>
 							<div className="footer-nav-links">
-								<a href="TNS2026/#faq">FAQs</a>
-								<a href="TNS2026/#contact">Contact</a>
-								<a href="TNS2026/#sponsors">Sponsorship</a>
+								{/* <a href="TNS2026/#faq">FAQs</a> */}
+								<a href="/#engagement">Contact</a>
+								<a href="/#sponsorship">Sponsorship</a>
 								{/* <a href="TNS2026/#tickets">Tickets</a> */}
 
 
