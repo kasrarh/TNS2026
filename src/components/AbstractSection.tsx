@@ -15,7 +15,7 @@ interface AbstractItem {
   authors?: string[];
   affiliations?: string[];
   description?: string;
-  abstractBlobUrl: string;
+  abstractBlobUrl?: string | null;
   backgroundBlobUrl?: string | null;
   submittedAt: string;
   status: string;
@@ -174,13 +174,15 @@ export default function AbstractSection() {
                       </div>
                     );
                   })()}
-                  <a
-                    href={abstract.abstractBlobUrl}
-                    download
-                    className="text-link"
-                  >
-                    Download Abstract →
-                  </a>
+                  {abstract.abstractBlobUrl ? (
+                    <a
+                      href={abstract.abstractBlobUrl}
+                      download
+                      className="text-link"
+                    >
+                      Download Abstract →
+                    </a>
+                  ) : null}
                 </div>
               </article>
             ))}
