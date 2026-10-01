@@ -1,6 +1,7 @@
 import TNS2026Header from '@/components/TNS2026Header';
 
 import HeroSection from '@/components/HeroSection';
+import ThankYouAttendeesSection from '@/components/ThankYouAttendeesSection';
 import ThankYouSection from '@/components/ThankYouSection';
 // import NewsSection from '@/components/NewsSection';
 // import HighlightsSection from '@/components/HighlightsSection';
@@ -27,6 +28,7 @@ export default function Page() {
 			<main>
 				<HeroSection
 					title="True North Spatial 2026"
+					backgroundImage="/TNS.jpg"
 					showGlobe={false}
 					subtitle={
 						<>
@@ -63,6 +65,7 @@ export default function Page() {
 					// 	{ label: 'Abstract Presenters', href: '/abstracts', variant: 'btn-secondary' },
 					// ]}
 				/>
+				<ThankYouAttendeesSection />
 				<ThankYouSection />
 				{/* <NewsSection /> */}
 				{/* <HighlightsSection

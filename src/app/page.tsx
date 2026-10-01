@@ -14,7 +14,7 @@ export default function ShowcasePage() {
 			<main>
 				<HeroSection
 					title="True North Spatial"
-					backgroundImage="/TNS.jpg"
+					backgroundImage="/Toronto-new.png"
 					subtitle={
 						<>
 							Pioneered By <span>Panoramics– A Vision Inc.</span>
