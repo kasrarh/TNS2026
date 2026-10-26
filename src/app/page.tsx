@@ -1,6 +1,7 @@
 import SiteHeader from '@/components/SiteHeader';
 import HeroSection from '@/components/HeroSection';
 import EngagementSection from '@/components/EngagementSection';
+import SpecialSponsorsSection from '@/components/SpecialSponsorsSection';
 import SponsorshipSection from '@/components/SponsorshipSection';
 import HighlightsSection from '@/components/HighlightsSection';
 import ContactSection from '@/components/ContactSection';
@@ -43,6 +44,8 @@ export default function ShowcasePage() {
 				/>
 
 				<EngagementSection />
+
+				<SpecialSponsorsSection />
 
 				<SponsorshipSection />
 
