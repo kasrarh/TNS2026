@@ -3534,6 +3534,17 @@ table tbody td.category-details {
 		min-height: 170px;
 	}
 
+	.special-sponsors-stack-row[data-tier="cellular"] .special-sponsor-spotlight,
+	.special-sponsors-stack-row[data-tier="organelle"] .special-sponsor-spotlight {
+		grid-template-columns: 1fr;
+		padding: 28px 22px 24px;
+	}
+
+	.special-sponsors-stack-row[data-tier="cellular"] .special-sponsor-logo-panel,
+	.special-sponsors-stack-row[data-tier="organelle"] .special-sponsor-logo-panel {
+		min-height: 120px;
+	}
+
 	.special-sponsors-stack .special-sponsor-logo,
 	.special-sponsors-stack .special-sponsor-logo-fallback {
 		--logo-base: 180px;
