@@ -68,35 +68,38 @@ export default function SiteHeader() {
 					>
 						Our Vision
 					</a></li>
-						{/* <li><a href="/#agenda">Agenda</a></li> */}
-						<li><a href="/TNS2026">TNS2026</a></li>
-						<li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li>
-						<li><a href="/#contact">Contact</a></li>
-						{/* <li><a href="/#team">Speakers</a></li> */}
-						{/* <li><a href="/#faq">FAQs</a></li> */}
-						{/* <li><a href="/#contact">Contact</a></li> */}
-						{/* <li><a className="btn btn-secondary btn-sponsors" href="/abstracts">Abstract Presenters</a></li> */}
-						{/* <li className="nav-dropdown" ref={dropdownRef}>
+						<li><a href="/special-sponsors">Sponsors</a></li>
+						<li
+							className={`nav-dropdown${dropdownOpen ? ' is-open' : ''}`}
+							ref={dropdownRef}
+							onPointerEnter={(e) => {
+								if (e.pointerType === 'mouse') setDropdownOpen(true);
+							}}
+							onPointerLeave={(e) => {
+								if (e.pointerType === 'mouse') setDropdownOpen(false);
+							}}
+						>
 							<button
 								className="dropdown-trigger"
 								aria-expanded={dropdownOpen}
+								aria-haspopup="true"
 								onClick={(e) => {
 									e.preventDefault();
 									setDropdownOpen((v) => !v);
 								}}
 							>
-								More<span className="chevron" aria-hidden="true">▾</span>
+								Previous events<span className="chevron" aria-hidden="true">▾</span>
 							</button>
-							<ul
-								className="dropdown-menu"
-								role="menu"
-								style={{ display: dropdownOpen ? 'block' : 'none' }}
-							>
-								<li role="none"><a role="menuitem" href="#benefits">Research</a></li>
-								<li role="none"><a role="menuitem" href="#faq">FAQs</a></li>
-								<li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+							<ul className="nav-dropdown-menu" role="menu">
+								<li role="none">
+									<a role="menuitem" href="/TNS2026" onClick={() => setNavOpen(false)}>
+										TNS2026
+									</a>
+								</li>
 							</ul>
-						</li> */}
+						</li>
+						<li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li>
+						<li><a href="/#contact">Contact</a></li>
 					</ul>
 				{/* <a className="btn btn-secondary btn-sponsors" href="/sponsors">For Sponsors</a> */}
 					{/* <a className="btn btn-primary" type='button' href='/tickets'>Get Tickets</a> */}
