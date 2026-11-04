@@ -2280,20 +2280,26 @@ iframe {
 	}
 
 	.nav-dropdown {
-		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.nav-dropdown-menu {
 		position: static;
 		display: none;
-		padding: 8px 0 0 12px;
+		min-width: 0;
+		padding: 8px 0 0;
 		opacity: 1;
 		visibility: visible;
 		transform: none;
 	}
 
 	.nav-dropdown.is-open .nav-dropdown-menu {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
 		transform: none;
 	}
 
@@ -2304,14 +2310,22 @@ iframe {
 		background: none;
 		backdrop-filter: none;
 		border: 0;
-		border-left: 1px solid rgba(189, 227, 242, 0.25);
 		border-radius: 0;
 		box-shadow: none;
 	}
 
 	.nav-dropdown-menu a {
 		margin: 0;
-		padding: 6px 12px;
+		padding: 4px 0;
+		border: 0;
+		border-radius: 0;
+		background: none;
+		font-size: 0.95em;
+	}
+
+	.nav-dropdown-menu a:hover,
+	.nav-dropdown-menu a:focus-visible {
+		background: none;
 	}
 
 	#highlighted-link {

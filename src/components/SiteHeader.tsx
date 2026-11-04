@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import TicketModal from './TicketModal';
 
+/** Matches the 800px breakpoint where globals.css switches to the collapsible mobile menu. */
+const isDesktopNav = () => window.matchMedia('(min-width: 801px)').matches;
+
 export default function SiteHeader() {
 	const [navOpen, setNavOpen] = useState(false);
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,7 +56,10 @@ export default function SiteHeader() {
 						className="nav-toggle"
 						aria-expanded={navOpen}
 						aria-controls="nav-menu"
-						onClick={() => setNavOpen((v) => !v)}
+						onClick={() => {
+							setNavOpen((v) => !v);
+							setDropdownOpen(false);
+						}}
 					>
 						Menu
 					</button>
@@ -73,10 +79,10 @@ export default function SiteHeader() {
 							className={`nav-dropdown${dropdownOpen ? ' is-open' : ''}`}
 							ref={dropdownRef}
 							onPointerEnter={(e) => {
-								if (e.pointerType === 'mouse') setDropdownOpen(true);
+								if (e.pointerType === 'mouse' && isDesktopNav()) setDropdownOpen(true);
 							}}
 							onPointerLeave={(e) => {
-								if (e.pointerType === 'mouse') setDropdownOpen(false);
+								if (e.pointerType === 'mouse' && isDesktopNav()) setDropdownOpen(false);
 							}}
 						>
 							<button
@@ -85,7 +91,9 @@ export default function SiteHeader() {
 								aria-haspopup="true"
 								onClick={(e) => {
 									e.preventDefault();
-									setDropdownOpen((v) => !v);
+									// On desktop, hover already opened it; a click shouldn't close it again
+									if (isDesktopNav()) setDropdownOpen(true);
+									else setDropdownOpen((v) => !v);
 								}}
 							>
 								Previous events<span className="chevron" aria-hidden="true">▾</span>
