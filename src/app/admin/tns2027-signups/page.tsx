@@ -63,8 +63,8 @@ export default function Tns2027SignupsPage() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <img
-                src="/TNS2026-logo-new.png"
-                alt="TNS 2026 Logo"
+                src="/Panoramics-transparent-cropped.png"
+                alt="Panoramics - A Vision Logo"
                 className="h-8 w-auto mr-4"
               />
               <div>

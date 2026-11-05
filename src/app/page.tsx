@@ -13,32 +13,27 @@ export default function ShowcasePage() {
 			<SiteHeader />
 			<main>
 				<HeroSection
-					title="True North Spatial"
+					title="True North Spatial 2027"
 					backgroundImage="/Toronto-new.png"
 					subtitle={
 						<>
-							Pioneered By <span>Panoramics– A Vision Inc.</span>
+							April 27-29
 							<br />
-							{/* North America&apos;s Premier Single-Cell &amp; Spatial Biology Conference */}
+							<span>Inspire · Enlighten · Challenge</span>
 						</>
 					}
-					intro={
-						<p>
-							
-						</p>
-					}
-					stats={[
-					]}
+					intro={<></>}
+					stats={[]}
 					body={
 						<>
-							<h4>Inspiring Scientific Discourse in Biological Topography, Enlightening Canadian Life Sciences Innovation, Challenging Convention and Turning Connection into Global Impact</h4>
-							
+							<h4>Honour the past. Master the present. Architect the future.</h4>
+							<p>True North Spatial is the annual summit on biological topography, pioneered by Panoramics – A Vision, where The Panoramic Chapters converge on a single stage - three chapters, three days.</p>
+							<p>Each year, the summit connects our community, Canadian and global, through the vision and mission of The Panoramic Chapters.</p>
 						</>
 					}
 					showGlobe={false}
-					accentText="TNS2027 is coming — Get ready to level up"
 					actions={[
-						{ label: 'TNS 2026 Recap', href: '/TNS2026', variant: 'btn-secondary' },
+						{ label: 'TNS2026', sublabel: 'Recap', href: '/TNS2026', variant: 'btn-secondary' },
 					]}
 				/>
 

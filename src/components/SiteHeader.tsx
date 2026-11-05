@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import TicketModal from './TicketModal';
 
+/** Matches the 800px breakpoint where globals.css switches to the collapsible mobile menu. */
+const isDesktopNav = () => window.matchMedia('(min-width: 801px)').matches;
+
 export default function SiteHeader() {
 	const [navOpen, setNavOpen] = useState(false);
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -40,11 +43,7 @@ export default function SiteHeader() {
 		<header className={`site-header ${scrolled ? 'scrolled' : ''}`} id="top">
 				<nav className="navbar container" aria-label="Primary">
 					<a className="logo" href="/" aria-label="Home">
-						<picture>
-							<source media="(max-width: 800px)" srcSet="/TNS2026-logo-mobile.png" />
-							<img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" />
-
-						</picture>
+						<img src="/Panoramics-transparent-cropped.png" alt="Panoramics - A Vision Logo" />
 						{/* <span className="logo-mark" aria-hidden="true"></span> */}
 						{/* <span className="tx-light">Company</span> */}
 					</a>
@@ -53,7 +52,10 @@ export default function SiteHeader() {
 						className="nav-toggle"
 						aria-expanded={navOpen}
 						aria-controls="nav-menu"
-						onClick={() => setNavOpen((v) => !v)}
+						onClick={() => {
+							setNavOpen((v) => !v);
+							setDropdownOpen(false);
+						}}
 					>
 						Menu
 					</button>
@@ -68,35 +70,40 @@ export default function SiteHeader() {
 					>
 						Our Vision
 					</a></li>
-						{/* <li><a href="/#agenda">Agenda</a></li> */}
-						<li><a href="/TNS2026">TNS2026</a></li>
-						<li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li>
-						<li><a href="/#contact">Contact</a></li>
-						{/* <li><a href="/#team">Speakers</a></li> */}
-						{/* <li><a href="/#faq">FAQs</a></li> */}
-						{/* <li><a href="/#contact">Contact</a></li> */}
-						{/* <li><a className="btn btn-secondary btn-sponsors" href="/abstracts">Abstract Presenters</a></li> */}
-						{/* <li className="nav-dropdown" ref={dropdownRef}>
+						<li><a href="/special-sponsors">Sponsors</a></li>
+						<li
+							className={`nav-dropdown${dropdownOpen ? ' is-open' : ''}`}
+							ref={dropdownRef}
+							onPointerEnter={(e) => {
+								if (e.pointerType === 'mouse' && isDesktopNav()) setDropdownOpen(true);
+							}}
+							onPointerLeave={(e) => {
+								if (e.pointerType === 'mouse' && isDesktopNav()) setDropdownOpen(false);
+							}}
+						>
 							<button
 								className="dropdown-trigger"
 								aria-expanded={dropdownOpen}
+								aria-haspopup="true"
 								onClick={(e) => {
 									e.preventDefault();
-									setDropdownOpen((v) => !v);
+									// On desktop, hover already opened it; a click shouldn't close it again
+									if (isDesktopNav()) setDropdownOpen(true);
+									else setDropdownOpen((v) => !v);
 								}}
 							>
-								More<span className="chevron" aria-hidden="true">▾</span>
+								Previous Editions<span className="chevron" aria-hidden="true">▾</span>
 							</button>
-							<ul
-								className="dropdown-menu"
-								role="menu"
-								style={{ display: dropdownOpen ? 'block' : 'none' }}
-							>
-								<li role="none"><a role="menuitem" href="#benefits">Research</a></li>
-								<li role="none"><a role="menuitem" href="#faq">FAQs</a></li>
-								<li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+							<ul className="nav-dropdown-menu" role="menu">
+								<li role="none">
+									<a role="menuitem" href="/TNS2026" onClick={() => setNavOpen(false)}>
+										TNS2026
+									</a>
+								</li>
 							</ul>
-						</li> */}
+						</li>
+						<li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li>
+						<li><a href="/#contact">Contact</a></li>
 					</ul>
 				{/* <a className="btn btn-secondary btn-sponsors" href="/sponsors">For Sponsors</a> */}
 					{/* <a className="btn btn-primary" type='button' href='/tickets'>Get Tickets</a> */}
@@ -144,8 +151,8 @@ function OpenModal(
 
     <div className="person-modal-desc" style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
     <img
-      src="/TNS2026-logo.png"      // ← replace with your actual path
-      alt="True North Spatial Logo"
+      src="/Panoramics-transparent-cropped.png"
+      alt="Panoramics - A Vision Logo"
       style={{
         width: "100px",                // small + clean
         height: "100px",

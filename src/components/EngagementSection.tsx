@@ -44,6 +44,38 @@ export default function EngagementSection() {
     <section className="engagement" id="engagement">
       <div className="container engagement-inner">
         <h2>Join the TNS2027 Journey</h2>
+
+        <div className="engagement-theme">
+          <p className="engagement-theme-label">True North Spatial 2027 Theme</p>
+          <h3 className="engagement-theme-title">
+            Find your True North. Find your Panorama.
+          </h3>
+          <div className="engagement-theme-body">
+            <p>
+              Panoramics - A Vision invites you to find your True North: the
+              identity you hold as an individual, as a team, as an organization.
+            </p>
+            <p>
+              Your identity is the foundation of your creative individuality -
+              and the responsibility you carry in shaping the experience of
+              those around you. It&apos;s what allows you to move from tunnel
+              vision to panorama: the expansive view that connects your work to
+              the collective, and lets you respond, react, and collaborate
+              meaningfully.
+            </p>
+            <p>
+              In a field as multi-scaled and multi-institutional as spatial and
+              single cell biology, finding your True North is what makes
+              collective vision possible.
+            </p>
+            <p className="engagement-theme-closing">
+              True North Spatial 2027 is built on this idea.
+              <br />
+              In the second edition of True North Spatial, we now level up.
+            </p>
+          </div>
+        </div>
+
         <p className="engagement-copy">
           Sign up by email to receive early announcements, registration updates,
           and speaker news for TNS2027.
@@ -83,21 +115,7 @@ export default function EngagementSection() {
           </p>
         )}
 
-        <div className="engagement-contact">
-          <p className="engagement-contact-title">Sponsorship Contact</p>
-          <p>
-            Shamini Ayyadhury, PhD
-            <br />
-            CEO, Founder | Panoramics - A Vision INC
-            <br />
-            Email:{" "}
-            <a href="mailto:shamini.ayyadhury@panoramics-a-vision.com">
-            shamini.ayyadhury@panoramics-a-vision.com
-            </a>
-            <br />
-            Phone: <a href="tel:+15149652782">+1 (514) 965-2782</a>
-          </p>
-        </div>
+        
       </div>
     </section>
   );

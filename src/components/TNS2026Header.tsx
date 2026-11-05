@@ -40,11 +40,7 @@ export default function SiteHeader() {
 		<header className={`site-header ${scrolled ? 'scrolled' : ''}`} id="top">
 				<nav className="navbar container" aria-label="Primary">
 					<a className="logo" href="/" aria-label="Home">
-						<picture>
-							<source media="(max-width: 800px)" srcSet="/TNS2026-logo-mobile.png" />
-							<img src="/TNS2026-logo-new.png" alt="TNS 2026 Logo" />
-
-						</picture>
+						<img src="/Panoramics-transparent-cropped.png" alt="Panoramics - A Vision Logo" />
 						{/* <span className="logo-mark" aria-hidden="true"></span> */}
 						{/* <span className="tx-light">Company</span> */}
 					</a>
@@ -148,8 +144,8 @@ function OpenModal(
 
     <div className="person-modal-desc" style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
     <img
-      src="/TNS2026-logo.png"      // ← replace with your actual path
-      alt="True North Spatial Logo"
+      src="/Panoramics-transparent-cropped.png"
+      alt="Panoramics - A Vision Logo"
       style={{
         width: "100px",                // small + clean
         height: "100px",

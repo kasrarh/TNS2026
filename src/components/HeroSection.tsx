@@ -11,6 +11,8 @@ export interface HeroStat {
 
 export interface HeroAction {
   label: string;
+  /** Optional second line shown beneath the label. */
+  sublabel?: string;
   href?: string;
   variant?: "btn-primary" | "btn-secondary";
   onClick?: () => void;
@@ -121,19 +123,19 @@ export default function HeroSection({
                     action.href ? (
                       <a
                         key={action.label}
-                        className={`btn ${action.variant ?? "btn-primary"}`}
+                        className={`btn ${action.variant ?? "btn-primary"}${action.sublabel ? " btn-stacked" : ""}`}
                         href={action.href}
                       >
-                        {action.label}
+                        <ActionLabel action={action} />
                       </a>
                     ) : (
                       <button
                         key={action.label}
                         type="button"
-                        className={`btn ${action.variant ?? "btn-primary"}`}
+                        className={`btn ${action.variant ?? "btn-primary"}${action.sublabel ? " btn-stacked" : ""}`}
                         onClick={action.onClick}
                       >
-                        {action.label}
+                        <ActionLabel action={action} />
                       </button>
                     ),
                   )}
@@ -155,6 +157,16 @@ export default function HeroSection({
       {modalOpen && <OpenModal onClose={() => setModalOpen(false)} />}
       {ticketModal && <TicketModal onClose={() => setTicketModal(false)} />}
     </section>
+  );
+}
+
+function ActionLabel({ action }: { action: HeroAction }) {
+  if (!action.sublabel) return <>{action.label}</>;
+  return (
+    <>
+      <span className="btn-stacked-label">{action.label}</span>
+      <span className="btn-stacked-sublabel">{action.sublabel}</span>
+    </>
   );
 }
 
