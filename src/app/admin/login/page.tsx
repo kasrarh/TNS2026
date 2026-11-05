@@ -37,8 +37,8 @@ export default function AdminLogin() {
         <div className="text-center mb-8">
           <div className="mb-4">
             <img
-              src="/TNS2026-logo-new.png"
-              alt="TNS 2026 Logo"
+              src="/Panoramics-transparent-cropped.png"
+              alt="Panoramics - A Vision Logo"
               className="mx-auto h-16 w-auto"
             />
           </div>

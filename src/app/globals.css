@@ -169,8 +169,8 @@ p {
 }
 
 .logo img {
-	width: 200px;
-	height: 50px;
+	width: auto;
+	height: 60px;
 }
 
 .panoramics img {
@@ -328,6 +328,25 @@ p {
 .btn:hover {
 	background: var(--brand-2);
 	border-color: var(--brand)
+}
+
+.btn-stacked {
+	flex-direction: column;
+	gap: 2px;
+	padding: 10px 22px;
+	line-height: 1.15;
+}
+
+.btn-stacked-label {
+	font-weight: 600;
+	letter-spacing: 0.04em;
+}
+
+.btn-stacked-sublabel {
+	font-size: 0.8em;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	opacity: 0.85;
 }
 
 .btn-primary {
@@ -2245,9 +2264,8 @@ iframe {
 	}
 
 	.logo img {
-		content: url('/TNS2026-logo.png');
-		width: 50px;
-		height: 50px;
+		width: auto;
+		height: 46px;
 	}
 
 	.nav-links {
@@ -2650,90 +2668,70 @@ table tbody td.category-details {
     top: 0;
 }
 
-/* Footer Redesign */
+/* Footer */
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 40px;
-    padding-bottom: 40px;
-    flex-wrap: wrap;
-}
-
-.footer-brand {
-    flex: 0 0 auto;
-	vertical-align: middle;
+    padding-bottom: 28px;
 }
 
 .footer-brand img {
-    height: 100px;
+    display: block;
+    height: 92px;
     width: auto;
 }
 
-.footer-nav {
+.footer-links {
     display: flex;
-    gap: 60px;
-    flex: 1;
-    justify-content: center;
+    align-items: center;
+    gap: 28px;
 }
 
-.footer-nav-group h4 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 20px;
-    color: var(--muted-light);
-    font-weight: 600;
-}
-
-.footer-nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.footer-nav-links a {
+.footer-links a {
     color: var(--text-light);
     text-decoration: none;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
-    opacity: 0.8;
+    letter-spacing: 0.03em;
+    opacity: 0.85;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.footer-nav-links a:hover {
-    color: var(--brand);
+.footer-links a:hover {
+    color: var(--secondary);
     opacity: 1;
 }
 
-.footer-partner {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.footer-links .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+    padding: 8px;
+    border: 1px solid rgba(189, 227, 242, 0.35);
+    border-radius: 999px;
+    background: rgba(65, 147, 166, 0.14);
+    opacity: 1;
 }
 
-.footer-partner img {
-    height: 60px;
-    width: auto;
+.footer-links .social-link:hover {
+    background: rgba(65, 147, 166, 0.32);
+    color: var(--secondary);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     .footer-content {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 48px;
-    }
-    
-    .footer-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 40px;
-        width: 100%;
+        gap: 22px;
     }
 
-    .footer-partner {
-        align-items: center;
+    .footer-brand img {
+        height: 84px;
+    }
+
+    .footer-links {
+        gap: 22px;
     }
 }
 /* Thank You Section */
@@ -2895,6 +2893,52 @@ table tbody td.category-details {
 	font-size: 1.75rem;
 	font-weight: 600;
 	margin-top: 8px;
+}
+
+.engagement-theme {
+	width: 100%;
+	max-width: 760px;
+	margin: 10px 0 18px;
+	padding: 28px 0 30px;
+	border-top: 1px solid rgba(189, 227, 242, 0.18);
+	border-bottom: 1px solid rgba(189, 227, 242, 0.18);
+}
+
+.engagement .engagement-theme-label {
+	margin: 0 0 8px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--brand-2);
+}
+
+.engagement .engagement-theme-title {
+	margin: 0 0 22px;
+	font-size: 1.75rem;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--secondary);
+}
+
+.engagement .engagement-theme-body p {
+	margin: 0 0 14px;
+	line-height: 1.7;
+	color: var(--text-light);
+	opacity: 0.9;
+}
+
+.engagement .engagement-theme-body .engagement-theme-closing {
+	margin: 20px 0 0;
+	font-weight: 600;
+	font-style: italic;
+	opacity: 1;
+}
+
+@media (max-width: 600px) {
+	.engagement .engagement-theme-title {
+		font-size: 1.35rem;
+	}
 }
 
 .engagement-copy {
