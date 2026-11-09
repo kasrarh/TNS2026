@@ -13,8 +13,17 @@ type Person = {
   isSponsored?: boolean;
 };
 
+const shaminiAyyadhury: Person = {
+  name: 'Dr. Shamini Ayyadhury',
+  city: 'Ontario, Canada',
+  image: '/team-members/shamini.JPEG',
+  role: 'Founder & CEO, Panoramics – A Vision Inc. | Scientific Associate, University Health Network (UHN)',
+  desc: 'Dr. Shamini Ayyadhury is a computational biologist specializing in single-cell and spatial biology, with expertise spanning computational analysis, machine learning, and biological interpretation. Her work bridges computational approaches and biological discovery to advance our understanding of complex biological systems.\n\nAs the Founder and CEO of Panoramics – A Vision Inc., she leads a pan-Canadian initiative that brings together computational scientists, experimental biologists, clinicians, and industry innovators to foster interdisciplinary collaboration, scientific exchange, and innovation.\n\nDr. Ayyadhury is also the founder and chair of True North Spatial, a scientific summit conceived and established under Panoramics – A Vision Inc. The summit embodies the vision of The Panoramic Chapters, a framework she pioneered to inspire scientific discovery, advance interdisciplinary learning, and encourage critical dialogue. Through her leadership, she has shaped True North Spatial’s conceptual framework, scientific direction, and programme, bringing together diverse perspectives to push the boundaries of single-cell and spatial biology.',
+  linkedin: 'https://www.linkedin.com/in/sayyadhury/',
+};
+
 const speakers: Person[] = [
-  { name: 'Dr. Shamini Ayyadhury', city: 'Ontario, Canada', image: "/team-members/shamini.JPEG", role: 'Founder, CEO of Panoramics - A Vision Inc | Scientific Associate, UHN', desc: 'Dr. Shamini Ayyadhury is a computational biologist who works at the cutting edge of single cell and spatial biology, her work encompasses a deep understanding of analysis methods, machine learning and deep biological insight. As founder and CEO of Panoramics - A Vision Inc, she leads a pan-Canadian effort that unites computational, experimental and clinical expertise in the single cell and spatial biology community. As summit chair, her leadership and vision are at the heart of True North Spatial 2026, where she initiated the idea and has shaped a program that brings innovators together to push the boundaries of the field.', linkedin: 'https://www.linkedin.com/in/sayyadhury/' },
+  shaminiAyyadhury,
 	{ name: 'Dr. Michael Doyle', city: 'New Mexico, USA', image: "/team-members/michael-doyle.jpeg", role: 'Associate Dean of Research, Butler College of Osteopathic Medicine, University of Dubuque', desc: 'Dr. Michael Doyle, often referred to as the “father of spatial biology”, pioneered early work in spatial biology, including the revolutionary Visible Embryo Project through which he invented the first system for spatial transcriptomics. As a scientist, educator, inventor and entrepreneur, Dr. Doyle’s work spans fields that include next generation AI for spatial biology, advanced imaging, cloud computing and data security. In his keynote address, Dr. Doyle will map the evolution of the spatial biology field from its origins to the present day, and share his vision for the innovations that will shape the future.', linkedin: 'https://www.linkedin.com/in/mikefios/' },
 	{ name: 'Dr. Freda Miller', city: 'British Columbia, Canada', image: "/team-members/freda-miller.png", role: 'Professor, Michael Smith Laboratories (Deputy Director), Department of Medical Genetics, School of Biomedical Engineering, ICORD, University of British Columbia', desc: "Dr. Freda Miller is a world leading stem cell biologist and neuroscientist who has transformed our understanding of neural stem cells, brain development, brain repair and the regeneration and healing of other peripheral tissues, including the murine digit tip and nerve. Her lab combines cutting-edge single cell sequencing, spatial transcriptomic and multiomic approaches with in vivo murine models, to understand how stem cells respond to their environment during development and following injury. Through her innovative use of these approaches, Dr. Miller continues to reveal fundamental mechanisms in development and regeneration.", linkedin: 'https://www.msl.ubc.ca/people/dr-freda-miller/' },
 	{ name: 'Dr. Jeffrey Biernaskie', city: 'Alberta, Canada', image: "/team-members/jeff-biernaskie.jpg", role: 'Professor in Regenerative Medicine at Veterinary Medicine, Alberta Children’s Hospital and Hotchkiss Brain Institute, University of Calgary | Calgary Firefighters Burn Treatment Chair in Skin Regeneration and Healing ', desc: "Dr. Jeff Biernaskie is an internationally recognized stem cell and regenerative medicine biologist whose research focuses on the mechanisms that govern tissue repair. His lab uses single cell and spatial transcriptomic approaches to understand the cellular and molecular mechanisms that promote fibrotic vs. regenerative healing with the goal of identifying therapies which limit scar and restore organ function following injury or disease. Working across a remarkable range of mammalian systems, including mouse skin, nerve and brain, along with the reindeer antler, Dr Biernaskie’s work uncovers fundamental mechanisms in tissue repair and regeneration.", linkedin: 'https://www.linkedin.com/in/jeff-biernaskie-29b04940/' },
@@ -54,7 +63,7 @@ const speakers: Person[] = [
 ];
 
 const organizers: Person[] = [
-	{ name: 'Dr. Shamini Ayyadhury', image: "/team-members/shamini.JPEG", shortRole: 'Chair', role: 'Chair | TNS2026 \n CEO, Founder | Panoramics - A Vision', desc: 'Dr. Shamini Ayyadhury is a computational biologist who works at the cutting edge of single cell and spatial biology, her work encompasses a deep understanding of analysis methods, machine learning and deep biological insight. As founder and CEO of Panoramics - A Vision Inc, she leads a pan-Canadian effort that unites computational, experimental and clinical expertise in the single cell and spatial biology community. As summit chair, her leadership and vision are at the heart of True North Spatial 2026, where she initiated the idea and has shaped a program that brings innovators together to push the boundaries of the field. ', linkedin: 'https://www.linkedin.com/in/sayyadhury/' },
+	{ ...shaminiAyyadhury, shortRole: 'Chair' },
 	{ name: 'Alyona Ivanova', image: "/team-members/Alyona.jpg", shortRole: 'Program Director', role: 'Program Director | TNS2026 \n Creative Director | Panoramics - A Vision', desc: 'instrumental in organizing impactful and engaging events and orchestrating content creation.', linkedin: 'https://www.linkedin.com/in/alyona-ivanova-skate22/' },
 	{ name: 'Dr. Ashleigh Willis', image: "/team-members/ashleigh.png", shortRole: 'Program Director', role: "Program Director | TNS2026\nCreative Director | Panoramics - A Vision", desc: 'Dr. Ashleigh Willis investigates forebrain neural stem cells respond to injury and how their microenvironment guides their activation, fate and regenerative potential. She combines single cell sequencing and spatial transcriptomics with murine in vivo models of injury and disease to uncover how endogenous neural stem cells might be harnessed to repair the brain. As Creative Director at Panoramics – A Vision, Dr. Willis works to curate meaningful educational and professional development opportunities to early career scientists.', linkedin: 'https://www.linkedin.com/in/ashleigh-willis-06a724142/' },
 	{ name: 'Ali Douplik', image: "/team-members/alidouplik.jpeg", shortRole: 'Event Operations Advisor', role: 'Event Operations Advisor | TNS2026', desc: null, linkedin: 'https://www.linkedin.com/in/ali-douplik-204440245/' },
@@ -227,11 +236,12 @@ function PersonModal({
         {person.isSponsored && (
                   <span className="sponsor-badge">Sponsor Speaker</span>
                 )}
-        {person.desc && (
-          <p className="person-modal-desc">
-            {person.desc}
-          </p>
-        )}
+        {person.desc &&
+          person.desc.split(/\n\n+/).map((paragraph, index) => (
+            <p key={index} className="person-modal-desc">
+              {paragraph}
+            </p>
+          ))}
 
         {person.linkedin && (
           <a
