@@ -27,6 +27,8 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const fileName = body?.fileName;
     const contentType = body?.contentType;
+    const folder = typeof body?.folder === 'string' ? body.folder : 'abstracts';
+    const allowedFolders = new Set(['abstracts', 'speakers']);
 
     if (!fileName || !contentType) {
       return NextResponse.json(
@@ -35,8 +37,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (!allowedFolders.has(folder)) {
+      return NextResponse.json(
+        { error: 'Invalid upload folder' },
+        { status: 400 }
+      );
+    }
+
     const safeName = sanitizeKey(fileName);
-    const key = `abstracts/${Date.now()}-${safeName}`;
+    const key = `${folder}/${Date.now()}-${safeName}`;
 
     const presignedPost = await createPresignedPost(s3, {
       Bucket: process.env.AWS_BUCKET_NAME ?? '',
