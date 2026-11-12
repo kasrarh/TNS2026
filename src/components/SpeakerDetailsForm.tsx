@@ -352,6 +352,10 @@ export default function SpeakerDetailsForm() {
                   Register on Luma
                 </a>
               </div>
+              <p className={styles.travelNote}>
+                Under the Terms and Conditions, please ignore the ticket price and
+                the non-refundable notice.
+              </p>
             </section>
 
             <section className={styles.section}>
