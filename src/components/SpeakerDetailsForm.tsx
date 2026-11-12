@@ -353,8 +353,8 @@ export default function SpeakerDetailsForm() {
                 </a>
               </div>
               <p className={styles.travelNote}>
-                Under the Terms and Conditions, please ignore the ticket price and
-                the non-refundable notice.
+                Please disregard the ticket price and the non-refundable notice
+                when reviewing the Terms and Conditions.
               </p>
             </section>
 
