@@ -13,34 +13,26 @@ const LUMA_URL = "https://luma.com/tns2027?coupon=INVITED-SPEAKER";
 
 interface FormState {
   fullName: string;
-  position: string;
-  affiliation: string;
-  email: string;
   mobile: string;
   pronunciation: string;
   bio: string;
   accessibilityNeeds: string;
-  socialLinks: string;
   otherNotes: string;
-  dietaryRequirements: string;
   attendVertexDinner: YesNo;
+  needsHotelRoom: YesNo;
   guestSharingRoom: YesNo;
   additionalNightApril29: YesNo;
 }
 
 const initialForm: FormState = {
   fullName: "",
-  position: "",
-  affiliation: "",
-  email: "",
   mobile: "",
   pronunciation: "",
   bio: "",
   accessibilityNeeds: "",
-  socialLinks: "",
   otherNotes: "",
-  dietaryRequirements: "",
   attendVertexDinner: "",
+  needsHotelRoom: "",
   guestSharingRoom: "",
   additionalNightApril29: "",
 };
@@ -70,6 +62,19 @@ export default function SpeakerDetailsForm() {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     const { name, value } = e.target;
+
+    if (name === "needsHotelRoom") {
+      setForm((prev) => ({
+        ...prev,
+        needsHotelRoom: value as YesNo,
+        guestSharingRoom: value === "yes" ? prev.guestSharingRoom : "",
+        additionalNightApril29:
+          value === "yes" ? prev.additionalNightApril29 : "",
+      }));
+      if (error) setError(null);
+      return;
+    }
+
     updateField(name as keyof FormState, value as never);
   }
 
@@ -159,8 +164,12 @@ export default function SpeakerDetailsForm() {
           photoUrl: uploaded.objectUrl,
           photoKey: uploaded.key,
           attendVertexDinner: form.attendVertexDinner === "yes",
-          guestSharingRoom: form.guestSharingRoom === "yes",
-          additionalNightApril29: form.additionalNightApril29 === "yes",
+          needsHotelRoom: form.needsHotelRoom === "yes",
+          guestSharingRoom:
+            form.needsHotelRoom === "yes" && form.guestSharingRoom === "yes",
+          additionalNightApril29:
+            form.needsHotelRoom === "yes" &&
+            form.additionalNightApril29 === "yes",
         }),
       });
 
@@ -201,13 +210,13 @@ export default function SpeakerDetailsForm() {
       done: completion.photoAttached,
     },
     {
-      key: "dietaryAndDinner",
-      label: "Dietary needs and dinner RSVP answered",
-      done: completion.dietaryAndDinner,
+      key: "dinnerAnswered",
+      label: "Vertex Dinner RSVP answered",
+      done: completion.dinnerAnswered,
     },
     {
       key: "hotelAnswered",
-      label: "Hotel questions answered (room sharing / additional night)",
+      label: "Hotel room questions answered",
       done: completion.hotelAnswered,
     },
   ] as const;
@@ -254,50 +263,6 @@ export default function SpeakerDetailsForm() {
 
                 <label className={styles.field}>
                   <span className={styles.label}>
-                    Position<span className={styles.required}>*</span>
-                  </span>
-                  <input
-                    className={styles.input}
-                    name="position"
-                    value={form.position}
-                    onChange={handleInputChange}
-                    required
-                    disabled={isSubmitting}
-                  />
-                </label>
-
-                <label className={styles.field}>
-                  <span className={styles.label}>
-                    Affiliation (institution or company)
-                    <span className={styles.required}>*</span>
-                  </span>
-                  <input
-                    className={styles.input}
-                    name="affiliation"
-                    value={form.affiliation}
-                    onChange={handleInputChange}
-                    required
-                    disabled={isSubmitting}
-                  />
-                </label>
-
-                <label className={styles.field}>
-                  <span className={styles.label}>
-                    Email address<span className={styles.required}>*</span>
-                  </span>
-                  <input
-                    className={styles.input}
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleInputChange}
-                    required
-                    disabled={isSubmitting}
-                  />
-                </label>
-
-                <label className={styles.field}>
-                  <span className={styles.label}>
                     Mobile number (for contact during the summit)
                     <span className={styles.required}>*</span>
                   </span>
@@ -311,7 +276,7 @@ export default function SpeakerDetailsForm() {
                   />
                 </label>
 
-                <label className={`${styles.field} ${styles.fieldFull}`}>
+                <label className={styles.field}>
                   <span className={styles.label}>
                     Name pronunciation (phonetic, for your introduction on stage)
                     <span className={styles.required}>*</span>
@@ -459,40 +424,12 @@ export default function SpeakerDetailsForm() {
                 </label>
 
                 <label className={`${styles.field} ${styles.fieldFull}`}>
-                  <span className={styles.label}>
-                    LinkedIn, X or website, if you want it shown
-                  </span>
-                  <input
-                    className={styles.input}
-                    name="socialLinks"
-                    value={form.socialLinks}
-                    onChange={handleInputChange}
-                    disabled={isSubmitting}
-                  />
-                </label>
-
-                <label className={`${styles.field} ${styles.fieldFull}`}>
                   <span className={styles.label}>Anything else we should know</span>
                   <textarea
                     className={styles.textarea}
                     name="otherNotes"
                     value={form.otherNotes}
                     onChange={handleInputChange}
-                    disabled={isSubmitting}
-                  />
-                </label>
-
-                <label className={`${styles.field} ${styles.fieldFull}`}>
-                  <span className={styles.label}>
-                    Dietary requirements or allergies
-                    <span className={styles.required}>*</span>
-                  </span>
-                  <textarea
-                    className={styles.textarea}
-                    name="dietaryRequirements"
-                    value={form.dietaryRequirements}
-                    onChange={handleInputChange}
-                    required
                     disabled={isSubmitting}
                   />
                 </label>
@@ -532,16 +469,21 @@ export default function SpeakerDetailsForm() {
 
               <fieldset className={styles.field}>
                 <legend className={styles.label}>
-                  Will a partner or guest be sharing your hotel room?
+                  Do you need a hotel room for this event?
                   <span className={styles.required}>*</span>
                 </legend>
+                {form.needsHotelRoom !== "yes" && (
+                  <p className={styles.travelNote}>
+                    If you are based in Toronto, please select No.
+                  </p>
+                )}
                 <div className={styles.radioGroup}>
                   <label className={styles.radio}>
                     <input
                       type="radio"
-                      name="guestSharingRoom"
+                      name="needsHotelRoom"
                       value="yes"
-                      checked={form.guestSharingRoom === "yes"}
+                      checked={form.needsHotelRoom === "yes"}
                       onChange={handleInputChange}
                       required
                       disabled={isSubmitting}
@@ -551,9 +493,9 @@ export default function SpeakerDetailsForm() {
                   <label className={styles.radio}>
                     <input
                       type="radio"
-                      name="guestSharingRoom"
+                      name="needsHotelRoom"
                       value="no"
-                      checked={form.guestSharingRoom === "no"}
+                      checked={form.needsHotelRoom === "no"}
                       onChange={handleInputChange}
                       disabled={isSubmitting}
                     />
@@ -562,43 +504,80 @@ export default function SpeakerDetailsForm() {
                 </div>
               </fieldset>
 
-              <fieldset className={styles.field}>
-                <legend className={styles.label}>
-                  Do you require an additional night on 29 April? (At your own
-                  expense, subject to availability)
-                  <span className={styles.required}>*</span>
-                </legend>
-                <div className={styles.radioGroup}>
-                  <label className={styles.radio}>
-                    <input
-                      type="radio"
-                      name="additionalNightApril29"
-                      value="yes"
-                      checked={form.additionalNightApril29 === "yes"}
-                      onChange={handleInputChange}
-                      required
-                      disabled={isSubmitting}
-                    />
-                    Yes
-                  </label>
-                  <label className={styles.radio}>
-                    <input
-                      type="radio"
-                      name="additionalNightApril29"
-                      value="no"
-                      checked={form.additionalNightApril29 === "no"}
-                      onChange={handleInputChange}
-                      disabled={isSubmitting}
-                    />
-                    No
-                  </label>
-                </div>
-              </fieldset>
+              {form.needsHotelRoom === "yes" && (
+                <>
+                  <fieldset className={styles.field}>
+                    <legend className={styles.label}>
+                      Will a partner or guest be sharing your hotel room?
+                      <span className={styles.required}>*</span>
+                    </legend>
+                    <div className={styles.radioGroup}>
+                      <label className={styles.radio}>
+                        <input
+                          type="radio"
+                          name="guestSharingRoom"
+                          value="yes"
+                          checked={form.guestSharingRoom === "yes"}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
+                        />
+                        Yes
+                      </label>
+                      <label className={styles.radio}>
+                        <input
+                          type="radio"
+                          name="guestSharingRoom"
+                          value="no"
+                          checked={form.guestSharingRoom === "no"}
+                          onChange={handleInputChange}
+                          disabled={isSubmitting}
+                        />
+                        No
+                      </label>
+                    </div>
+                  </fieldset>
 
-              <p className={styles.travelNote}>
-                Travel: Please remember to arrange your own travel plans, within
-                the regional allowance in your Speaker Information Pack.
-              </p>
+                  <fieldset className={styles.field}>
+                    <legend className={styles.label}>
+                      Do you require an additional night on 29 April? (At your
+                      own expense, subject to availability)
+                      <span className={styles.required}>*</span>
+                    </legend>
+                    <div className={styles.radioGroup}>
+                      <label className={styles.radio}>
+                        <input
+                          type="radio"
+                          name="additionalNightApril29"
+                          value="yes"
+                          checked={form.additionalNightApril29 === "yes"}
+                          onChange={handleInputChange}
+                          required
+                          disabled={isSubmitting}
+                        />
+                        Yes
+                      </label>
+                      <label className={styles.radio}>
+                        <input
+                          type="radio"
+                          name="additionalNightApril29"
+                          value="no"
+                          checked={form.additionalNightApril29 === "no"}
+                          onChange={handleInputChange}
+                          disabled={isSubmitting}
+                        />
+                        No
+                      </label>
+                    </div>
+                  </fieldset>
+
+                  <p className={styles.travelNote}>
+                    Travel: Please remember to arrange your own travel plans,
+                    within the regional allowance in your Speaker Information
+                    Pack.
+                  </p>
+                </>
+              )}
             </section>
 
             <section className={styles.section}>
