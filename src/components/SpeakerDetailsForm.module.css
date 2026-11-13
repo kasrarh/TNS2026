@@ -360,9 +360,34 @@
   line-height: 1.5;
 }
 
+.thankYouBody {
+  padding: 40px 36px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.thankYouBody p {
+  margin: 0;
+  color: #5b6b73;
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+.thankYouLead {
+  color: var(--primary) !important;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
 @media (max-width: 760px) {
   .form {
     padding: 26px 18px 30px;
+  }
+
+  .thankYouBody {
+    padding: 30px 18px 34px;
   }
 
   .grid2 {

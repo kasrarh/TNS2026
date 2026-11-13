@@ -1,6 +1,7 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   countWords,
   getSpeakerFormCompletion,
@@ -38,13 +39,13 @@ const initialForm: FormState = {
 };
 
 export default function SpeakerDetailsForm() {
+  const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [form, setForm] = useState<FormState>(initialForm);
   const [photoFile, setPhotoFile] = useState<File | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
 
   const wordCount = useMemo(() => countWords(form.bio), [form.bio]);
 
@@ -139,7 +140,6 @@ export default function SpeakerDetailsForm() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
-    setSuccess(null);
 
     if (!completion.allComplete) {
       setError("Please complete every required section before submitting.");
@@ -178,17 +178,9 @@ export default function SpeakerDetailsForm() {
         throw new Error(result?.error || "Failed to submit speaker details.");
       }
 
-      setSuccess(
-        "Thank you. Your speaker details and photo were submitted successfully."
-      );
-      setForm(initialForm);
-      setPhotoFile(null);
-      if (photoPreview) URL.revokeObjectURL(photoPreview);
-      setPhotoPreview(null);
-      if (fileInputRef.current) fileInputRef.current.value = "";
+      router.push("/speaker-form/thank-you");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
-    } finally {
       setIsSubmitting(false);
     }
   }
@@ -373,7 +365,8 @@ export default function SpeakerDetailsForm() {
                   <li>Maximum file size: 50MB</li>
                   <li>
                     By uploading it you confirm we may use it on the program,
-                    website and social media
+                    website, social media and other branding and marketing
+                    materials (digital and printed).
                   </li>
                 </ul>
 
@@ -610,14 +603,6 @@ export default function SpeakerDetailsForm() {
               {error && (
                 <p className={`${styles.message} ${styles.messageError}`} role="alert">
                   {error}
-                </p>
-              )}
-              {success && (
-                <p
-                  className={`${styles.message} ${styles.messageSuccess}`}
-                  role="status"
-                >
-                  {success}
                 </p>
               )}
               <button
