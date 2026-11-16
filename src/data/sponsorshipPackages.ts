@@ -99,19 +99,6 @@ export const sponsorshipSectionContent = {
 
 export const sponsorshipPackages: SponsorshipPackage[] = [
   {
-    id: "corporate-dinner",
-    name: "Corporate Dinner Sponsorship",
-    tiers: [
-      {
-        id: "the-vertex",
-        name: "The Vertex",
-        price: "$25,000 CAD",
-        subtitle: "The partner who unites the disciplines, allowing connections between science, academia and business.",
-        description: "Taking our inspiration from spatial computing, the vertex is the 3D point where multiple lines, planes or dimensions meet, essential in the formation of complex 3D architecture in space. The Vertex Sponsor therefore personifies that distinctive feature, bolstering the formation of multiple such geometric points, allowing the formation of connections between science, academia and business.",
-      },
-    ],
-  },
-  {
     id: "spatial-technology",
     name: "Spatial Technology Sponsorship",
     tiers: [
@@ -149,6 +136,19 @@ export const sponsorshipPackages: SponsorshipPackage[] = [
         price: "$2,000 CAD",
         subtitle: "The expert partner, whose esoteric knowledge contributes to the greatness of the whole.",
         description: "Organelles are the parts that make up all cells, the busy engines and factories that ensure that all biomolecules are protected, engineered and transported for maximal efficiency. One can say here, that the parts are definitely greater than the whole. Here we acknowledge and honor our Organelle Sponsor, for sometimes, the greatest impact is truly made possible by the smallest of actions.",
+      },
+    ],
+  },
+  {
+    id: "corporate-dinner",
+    name: "Corporate Dinner Sponsorship",
+    tiers: [
+      {
+        id: "the-vertex",
+        name: "The Vertex",
+        price: "$25,000 CAD",
+        subtitle: "The partner who unites the disciplines, allowing connections between science, academia and business.",
+        description: "Taking our inspiration from spatial computing, the vertex is the 3D point where multiple lines, planes or dimensions meet, essential in the formation of complex 3D architecture in space. The Vertex Sponsor therefore personifies that distinctive feature, bolstering the formation of multiple such geometric points, allowing the formation of connections between science, academia and business.",
       },
     ],
   },

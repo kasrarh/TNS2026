@@ -84,13 +84,13 @@ export default function SponsorshipSection() {
 
         <div className="sponsorship-teaser-actions">
           <a className="btn btn-primary" href="/sponsorship">
-            View Sponsorship Tiers &amp; Benefits
+           Become a Sponsor
           </a>
           <a
             className="sponsorship-teaser-contact"
             href="mailto:shamini.ayyadhury@panoramics-a-vision.com"
           >
-            Contact us about sponsoring
+            Contact us about sponsorship
           </a>
         </div>
       </div>

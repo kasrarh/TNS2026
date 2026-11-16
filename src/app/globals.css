@@ -3295,6 +3295,13 @@ iframe {
 	margin-bottom: 32px;
 }
 
+.sponsorship-details .section-title,
+.sponsorship-details .sponsorship-message {
+	margin-left: 0;
+	margin-right: 0;
+	text-align: left;
+}
+
 .sponsorship-section .section-title h1 {
 	font-size: 2rem;
 	line-height: 1.2;
@@ -3541,16 +3548,7 @@ iframe {
 	width: auto;
 	height: auto;
 	object-fit: contain;
-	filter: grayscale(1);
-	opacity: 0.8;
 	mix-blend-mode: multiply;
-	transition: filter 0.25s ease, opacity 0.25s ease;
-}
-
-.partner-strip-link:hover img,
-.partner-strip-link:focus-visible img {
-	filter: grayscale(0);
-	opacity: 1;
 }
 
 .partner-strip-link:focus-visible {

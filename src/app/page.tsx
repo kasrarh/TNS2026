@@ -27,13 +27,14 @@ export default function ShowcasePage() {
 					body={
 						<>
 							<h4>Honour the past. Master the present. Architect the future.</h4>
-							<p>True North Spatial is the annual summit on biological topography, pioneered by Panoramics – A Vision, where The Panoramic Chapters converge on a single stage - three chapters, three days.</p>
-							<p>Each year, the summit connects our community, Canadian and global, through the vision and mission of The Panoramic Chapters.</p>
+							<p>True North Spatial is the annual summit on biological topography, pioneered by Panoramics – A Vision,<br/> where The Panoramic Chapters converge on a single stage - three chapters, three days.</p>
+							<p>Each year, the summit connects our community, Canadian and global, through the vision and mission of <br/> The Panoramic Chapters.</p>
 						</>
 					}
 					showGlobe={false}
 					actions={[
 						{ label: 'Register Now', href: '/tickets', variant: 'btn-primary' },
+						{ label: 'Become a Sponsor', href: '/Sponsorship', variant: 'btn-primary' },
 						{ label: 'TNS2026', sublabel: 'Recap', href: '/TNS2026', variant: 'btn-secondary' },
 					]}
 				/>

@@ -23,7 +23,7 @@ export default function SponsorshipDetails() {
   const { message } = sponsorshipSectionContent;
 
   return (
-    <section className="news-section sponsorship-section">
+    <section className="news-section sponsorship-section sponsorship-details">
       <div className="container">
         <a className="sponsorship-back" href="/">
           Back to home
