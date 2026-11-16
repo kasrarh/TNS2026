@@ -33,12 +33,12 @@ export interface SponsorshipDownload {
 
 export const sponsorshipDownloads: SponsorshipDownload[] = [
   {
-    label: "Spatial Technology Sponsorship",
+    label: "Get the full information on the benefits of being a Spatial Technology Sponsorship",
     href: "https://kasra-demo-s3-v1.s3.us-east-1.amazonaws.com/sponsorship/True+North+Spatial+2027+TechProspectus.pdf",
     fileName: "Spatial Technology Sponsorship.pdf",
   },
   {
-    label: "Blue Chip Sponsorship",
+    label: "Get the full information on the benefits of being a Blue Chip Sponsorship",
     href: "https://kasra-demo-s3-v1.s3.us-east-1.amazonaws.com/sponsorship/True+North+Spatial+2027+BlueChipProspectus.pdf",
     fileName: "Blue Chip Sponsorship.pdf",
   },

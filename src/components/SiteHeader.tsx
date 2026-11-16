@@ -62,7 +62,7 @@ export default function SiteHeader() {
 
 					<ul className={`nav-links ${navOpen ? 'is-open' : ''}`} id="nav-menu">
 						<li><a href="/">Home</a></li>
-						<li><a id='highlighted-link' href="#vision"
+						<li><a href="#vision"
 						onClick={(e) => {
 						e.preventDefault();
 						setIsModalOpen(true); // Open the modal
