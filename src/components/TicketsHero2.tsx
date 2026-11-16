@@ -45,7 +45,10 @@ export default function TicketsHero2() {
             <thead>
               <tr>
                 <th>Ticket</th>
-                <th className="ticket-early-reg-header">{columns.early.label}</th>
+                <th className="ticket-early-reg-header">
+                  {columns.early.label}
+                  <div>{columns.early.note}</div>
+                </th>
                 <th className="ticket-regular-reg-header">{columns.standard.label}</th>
               </tr>
             </thead>
@@ -92,6 +95,7 @@ export default function TicketsHero2() {
               <div className="ticket-card-prices">
                 <div className="ticket-card-price ticket-card-price-early">
                   <span className="ticket-card-price-label">{columns.early.label}</span>
+                  <span className="ticket-card-price-note">{columns.early.note}</span>
                   <div className="ticket-price">{category.earlyPrice}</div>
                 </div>
                 <div className="ticket-card-price">

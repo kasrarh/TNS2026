@@ -11,7 +11,7 @@ export interface TicketCategory {
 export const ticketsPageContent = {
   title: "True North Spatial 2027 Registration Fees",
   intro:
-    "Tickets are on sale from 18 November 2026 until 26 March 2027. Prices are in CAD and listed as Early Bird and Standard.",
+    "Tickets are on sale from 18 November 2026 until 26 March 2027. Prices are in CAD and listed as Early Bird and Standard. Early Bird prices are available until 26 March 2027, 11:59 PM.",
   includesTitle: "Every ticket includes:",
   includes: [
     "The full scientific program (April 27–29)",
@@ -31,7 +31,7 @@ export const ticketsPageContent = {
   columns: {
     early: {
       label: "Early Bird (CAD)",
-      note: "18 Nov 2026 – 26 Mar 2027",
+      note: "Until 26 March 2027, 11:59 PM",
     },
     standard: {
       label: "Standard (CAD)",
@@ -45,7 +45,7 @@ export const ticketCategories: TicketCategory[] = [
     id: "high-school",
     name: "High Schoolers",
     earlyPrice: "$210 + tax",
-    standardPrice: "$275 + tax",
+    standardPrice: "$250 + tax",
     requiresApproval: true,
     eligibility: "High school students aged 16+",
   },
@@ -53,7 +53,7 @@ export const ticketCategories: TicketCategory[] = [
     id: "undergrad",
     name: "Undergrad Students",
     earlyPrice: "$275 + tax",
-    standardPrice: "$350 + tax",
+    standardPrice: "$325 + tax",
     requiresApproval: true,
     eligibility: "Undergraduate students",
   },
@@ -77,8 +77,8 @@ export const ticketCategories: TicketCategory[] = [
   {
     id: "early-career",
     name: "Early Career",
-    earlyPrice: "$475 + tax",
-    standardPrice: "$625 + tax",
+    earlyPrice: "$465 + tax",
+    standardPrice: "$565 + tax",
     requiresApproval: false,
     eligibility:
       "Postdoctoral & clinical fellows, research & technical staff (not in a core), staff & associate scientists, new PIs, startup scientists.",
@@ -86,16 +86,16 @@ export const ticketCategories: TicketCategory[] = [
   {
     id: "scientist-clinician",
     name: "Scientist / Clinician",
-    earlyPrice: "$595 + tax",
-    standardPrice: "$725 + tax",
+    earlyPrice: "$650 + tax",
+    standardPrice: "$775 + tax",
     requiresApproval: false,
     eligibility: "Established academic and clinical scientists.",
   },
   {
     id: "industry",
     name: "Industry",
-    earlyPrice: "$725 + tax",
-    standardPrice: "$850 + tax",
+    earlyPrice: "$775 + tax",
+    standardPrice: "$925 + tax",
     requiresApproval: false,
     eligibility:
       "For professionals at established life sciences, biotechnology, pharmaceutical, diagnostics and technology companies. This includes R&D and application scientists, field and technical specialists, product, marketing, sales and business development staff, and managers and executives. It also covers staff of contract research organizations (CROs) and service providers, as well as consultants and investors.",

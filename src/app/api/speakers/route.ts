@@ -9,19 +9,15 @@ export async function POST(request: NextRequest) {
 
     const {
       fullName,
-      position,
-      affiliation,
-      email,
       mobile,
       pronunciation,
       bio,
       photoUrl,
       photoKey,
       accessibilityNeeds,
-      socialLinks,
       otherNotes,
-      dietaryRequirements,
       attendVertexDinner,
+      needsHotelRoom,
       guestSharingRoom,
       additionalNightApril29,
     } = body;
@@ -35,11 +31,10 @@ export async function POST(request: NextRequest) {
     const db = client.db("conference");
     const collection = db.collection("speaker_submissions");
 
+    const wantsHotel = Boolean(needsHotelRoom);
+
     const document = {
       fullName: String(fullName).trim(),
-      position: String(position).trim(),
-      affiliation: String(affiliation).trim(),
-      email: String(email).trim().toLowerCase(),
       mobile: String(mobile).trim(),
       pronunciation: String(pronunciation).trim(),
       bio: String(bio).trim(),
@@ -49,12 +44,13 @@ export async function POST(request: NextRequest) {
       accessibilityNeeds: accessibilityNeeds
         ? String(accessibilityNeeds).trim()
         : "",
-      socialLinks: socialLinks ? String(socialLinks).trim() : "",
       otherNotes: otherNotes ? String(otherNotes).trim() : "",
-      dietaryRequirements: String(dietaryRequirements).trim(),
       attendVertexDinner: Boolean(attendVertexDinner),
-      guestSharingRoom: Boolean(guestSharingRoom),
-      additionalNightApril29: Boolean(additionalNightApril29),
+      needsHotelRoom: wantsHotel,
+      guestSharingRoom: wantsHotel ? Boolean(guestSharingRoom) : false,
+      additionalNightApril29: wantsHotel
+        ? Boolean(additionalNightApril29)
+        : false,
       submittedAt: new Date(),
       status: "received",
       _id: new ObjectId(),
