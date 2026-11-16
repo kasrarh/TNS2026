@@ -9,9 +9,13 @@ export default function NewsletterSection() {
 						</a>
 					</div>
 
+					<a className="btn btn-primary footer-register" href="/tickets">
+						Register Now
+					</a>
+
 					<nav className="footer-links" aria-label="Footer">
 						<a href="/#engagement">Contact</a>
-						<a href="/#sponsorship">Sponsorship</a>
+						<a href="/sponsorship">Sponsorship</a>
 						<a
 							href="https://www.linkedin.com/company/panoramics-a-vision/"
 							aria-label="LinkedIn"

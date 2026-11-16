@@ -33,6 +33,7 @@ export default function ShowcasePage() {
 					}
 					showGlobe={false}
 					actions={[
+						{ label: 'Register Now', href: '/tickets', variant: 'btn-primary' },
 						{ label: 'TNS2026', sublabel: 'Recap', href: '/TNS2026', variant: 'btn-secondary' },
 					]}
 				/>

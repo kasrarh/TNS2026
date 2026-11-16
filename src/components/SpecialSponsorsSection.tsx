@@ -325,6 +325,12 @@ export default function SpecialSponsorsSection() {
         </div>
         </>
         )}
+
+        <div className="special-sponsors-cta">
+          <a className="btn btn-primary" href="/sponsorship">
+            Become a Sponsor
+          </a>
+        </div>
       </div>
     </section>
   );

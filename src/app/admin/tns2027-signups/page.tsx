@@ -3,6 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import AdminShell, {
+  AdminLoading,
+  adminLogoutClass,
+  adminNavLinkClass,
+} from "@/components/admin/AdminShell";
 
 interface Tns2027Signup {
   _id: string;
@@ -37,130 +42,78 @@ export default function Tns2027SignupsPage() {
   };
 
   if (loading) {
-    return (
-      <div
-        className="min-h-screen flex items-center justify-center"
-        style={{ background: "var(--bg)" }}
-      >
-        <div className="text-center">
-          <div
-            className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4"
-            style={{ borderColor: "var(--brand)" }}
-          />
-          <p style={{ color: "var(--text-light)" }}>Loading signups...</p>
-        </div>
-      </div>
-    );
+    return <AdminLoading label="Loading signups..." />;
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
-      <header
-        className="bg-white shadow-sm border-b"
-        style={{ borderColor: "var(--border)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <img
-                src="/Panoramics-transparent-cropped.png"
-                alt="Panoramics - A Vision Logo"
-                className="h-8 w-auto mr-4"
-              />
-              <div>
-                <h1 className="text-xl font-semibold text-gray-900">
-                  Admin Dashboard
-                </h1>
-                <p className="text-sm text-gray-500">
-                  TNS2027 Email List Signups
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Link
-                href="/admin/dashboard"
-                className="inline-flex items-center px-4 py-2 border text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
-                style={{ borderColor: "var(--border)" }}
-              >
-                Abstracts
-              </Link>
-              <button
-                type="button"
-                onClick={handleLogout}
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white hover:shadow-lg transition-all duration-200"
-                style={{ background: "var(--brand-2)" }}
-              >
-                Logout
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div
-          className="bg-white rounded-lg shadow-sm overflow-hidden border"
-          style={{ borderColor: "var(--border)" }}
-        >
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h3 className="text-lg font-medium tx-dark">
+    <AdminShell
+      subtitle="TNS2027 Email List Signups"
+      actions={
+        <>
+          <Link href="/admin/dashboard" className={adminNavLinkClass()}>
+            Abstracts
+          </Link>
+          <Link href="/admin/speakers" className={adminNavLinkClass()}>
+            Speakers
+          </Link>
+          <button type="button" onClick={handleLogout} className={adminLogoutClass()}>
+            Logout
+          </button>
+        </>
+      }
+    >
+        <div className="admin-panel">
+          <div className="admin-panel-head">
+            <h2 className="tx-dark">
               TNS2027 Email Signups ({signups.length})
-            </h3>
+            </h2>
           </div>
 
           {signups.length === 0 ? (
-            <div className="text-center py-12">
-              <h3 className="mt-2 text-sm font-medium text-gray-900">
-                No signups yet
-              </h3>
-              <p className="mt-1 text-sm text-gray-500">
-                Emails will appear here when users join the TNS2027 list.
-              </p>
+            <div className="admin-empty">
+              <h3>No signups yet</h3>
+              <p>Emails will appear here when users join the TNS2027 list.</p>
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+            <>
+              <div className="admin-cards">
+                {signups.map((signup, index) => (
+                  <article key={signup._id} className="admin-card">
+                    <p className="admin-meta">#{index + 1}</p>
+                    <p className="admin-title">{signup.email}</p>
+                    <p>{new Date(signup.createdAt).toLocaleString()}</p>
+                    <p className="admin-muted">{signup.source}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="admin-table-wrap">
+              <table className="admin-table">
+                <thead>
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      #
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Email
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Signed Up
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Source
-                    </th>
+                    <th>#</th>
+                    <th>Email</th>
+                    <th>Signed Up</th>
+                    <th>Source</th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody>
                   {signups.map((signup, index) => (
-                    <tr key={signup._id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {index + 1}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">
-                          {signup.email}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <tr key={signup._id}>
+                      <td className="admin-muted">{index + 1}</td>
+                      <td className="admin-title">{signup.email}</td>
+                      <td className="admin-muted">
                         {new Date(signup.createdAt).toLocaleString()}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {signup.source}
-                      </td>
+                      <td className="admin-muted">{signup.source}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            </div>
+              </div>
+            </>
           )}
         </div>
-      </div>
-    </div>
+    </AdminShell>
   );
 }

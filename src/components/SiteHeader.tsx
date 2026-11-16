@@ -105,6 +105,9 @@ export default function SiteHeader() {
 						<li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li>
 						<li><a href="/#contact">Contact</a></li>
 					</ul>
+					<a className="btn btn-primary nav-register" href="/tickets">
+						Register Now
+					</a>
 				{/* <a className="btn btn-secondary btn-sponsors" href="/sponsors">For Sponsors</a> */}
 					{/* <a className="btn btn-primary" type='button' href='/tickets'>Get Tickets</a> */}
 					{/* <a className="btn btn-primary" type='button' onClick={() => setTicketModal(true)}>Get Tickets</a> */}
