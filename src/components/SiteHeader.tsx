@@ -103,7 +103,7 @@ export default function SiteHeader() {
 							</ul>
 						</li>
 						<li><a href="https://www.panoramics-a-vision.com">Panoramics - A Vision</a></li>
-						<li><a href="/#contact">Contact</a></li>
+						<li><a href="/contact">Contact</a></li>
 					</ul>
 					<a className="btn btn-primary nav-register" href="/tickets">
 						Register Now
@@ -165,19 +165,34 @@ function OpenModal(
 		margin: "0 auto",
       }}
     />
-      <h4 style={{ marginTop: "1rem", fontWeight: 600, textAlign: 'center' }}>Our Mission for True North Spatial</h4>
+      <h4 style={{ marginTop: "1rem", fontWeight: 600, textAlign: 'center' }}>Honour the past. Master the present. Architect the future.</h4>
 
       <p>
-        Our inaugural True North Spatial 2026 is a convergence of our Panoramic Chapters,
-        for global engagement through Canada - our True North. True North Spatial 2026 will
-        set the stage, positioning Panoramics - A Vision Inc. as a pan-Canadian hub for
-        spatial &amp; single cell biology and will assume a yearly occurrence.
+        True North Spatial is the annual summit on Biological Topography, pioneered and
+        designed by Panoramics – A Vision, where The Panoramic Chapters converge on a single
+        stage - three chapters, three days.
       </p>
 
       <p>
-        To elevate scientific exposition in spatial and single cell biology by creating a unique
-        nexus, a convergence of minds right here in Canada - our True North that grounds our
-        vision - through the mission statements of our Panoramic Chapters.
+        Each year, the summit connects our community, Canadian and global, through the vision
+        and mission of The Panoramic Chapters.
+      </p>
+
+      <p>
+        Our purpose is to facilitate the convergence of leaders, learners, and thinkers in this
+        field - elevating scientific exposition in biological topography and forming a national
+        hub for innovation, science, and technology. Through this, we connect and work with the
+        Canadian life-science ecosystem to launch ideas, partnerships, and discoveries across
+        global scales.
+      </p>
+
+      <p>
+        <strong>Why &ldquo;True North&rdquo;?</strong> True North is the nexus point - the
+        unwavering vertex that guides us when everything around us shifts. Across continents and
+        disciplines, it is the common denominator that unites every navigator, wherever they
+        stand: a shared truth, a quiet force that keeps us oriented toward what truly matters -
+        discovery, collaboration, and the courage to move science forward. It is our guide toward
+        a Nexus of Scientific Excellence - built in Canada.
       </p>
     </div>
   </div>

@@ -33,7 +33,7 @@ export default function SponsorshipSection() {
       <div className="container">
         <div className="partner-strip">
           <h2 className="tx-dark partner-strip-title">
-            Thank you to our 2027 partners
+            Meet Our TNS2027 Early Bird Spnsors
           </h2>
           <ul className="partner-strip-list">
             {partners.map((sponsor) => {
@@ -69,7 +69,7 @@ export default function SponsorshipSection() {
         </div>
 
         <p className="sponsorship-teaser-pitch muted-dark">
-          Canada is well positioned to be the spatial nexus for global scientific engagement.
+          Canada is well positioned to be the spatial nexus for global scientific engagement. <br/>
           Sponsorship opportunities are now open, and tiers are limited.
         </p>
 

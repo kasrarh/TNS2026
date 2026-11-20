@@ -14,7 +14,7 @@ export default function NewsletterSection() {
 					</a>
 
 					<nav className="footer-links" aria-label="Footer">
-						<a href="/#engagement">Contact</a>
+						<a href="/contact">Contact</a>
 						<a href="/sponsorship">Sponsorship</a>
 						<a
 							href="https://www.linkedin.com/company/panoramics-a-vision/"

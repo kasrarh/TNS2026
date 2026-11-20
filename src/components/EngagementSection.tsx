@@ -52,15 +52,15 @@ export default function EngagementSection() {
           </h3>
           <div className="engagement-theme-body">
             <p>
-              Panoramics - A Vision invites you to find your True North: the
+              Panoramics - A Vision invites you to find your <strong><em>True North</em></strong>: the
               identity you hold as an individual, as a team, as an organization.
             </p>
             <p>
               Your identity is the foundation of your creative individuality -
               and the responsibility you carry in shaping the experience of
-              those around you. It&apos;s what allows you to move from tunnel
+              those around you. It is what allows you to move from tunnel
               vision to panorama: the expansive view that connects your work to
-              the collective, and lets you respond, react, and collaborate
+              the collective, and let&apos;s you respond, react, and collaborate
               meaningfully.
             </p>
             <p>
@@ -77,7 +77,7 @@ export default function EngagementSection() {
         </div>
 
         <p className="engagement-copy">
-          Sign up by email to receive early announcements, registration updates,
+          Sign up by email to receive regular announcements, registration updates,
           and speaker news for TNS2027.
         </p>
 

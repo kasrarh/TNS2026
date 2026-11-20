@@ -40,6 +40,13 @@ export default function TicketsHero2() {
           </div>
         </div>
 
+        <a
+          href={ticketsPageContent.buyHref}
+          className="btn btn-primary ticket-buy-button ticket-buy-button-top"
+        >
+          {ticketsPageContent.buyLabel}
+        </a>
+
         <div className="table-responsive ticket-table-responsive">
           <table className="ticket-table">
             <thead>

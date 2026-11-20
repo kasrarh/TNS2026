@@ -11,7 +11,7 @@ export interface TicketCategory {
 export const ticketsPageContent = {
   title: "True North Spatial 2027 Registration Fees",
   intro:
-    "Tickets are on sale from 18 November 2026 until 26 March 2027. Prices are in CAD and listed as Early Bird and Standard. Early Bird prices are available until 26 March 2027, 11:59 PM.",
+    "Tickets are on sale from 18 November 2026 until 26 April 2027. Prices are in CAD and listed as Early Bird and Standard. Early Bird prices are available until 26 March 2027, 11:59 PM.",
   includesTitle: "Every ticket includes:",
   includes: [
     "The full scientific program (April 27–29)",
@@ -21,7 +21,7 @@ export const ticketsPageContent = {
   excludesTitle: "Not included:",
   excludes: [
     "The Vertex Dinner (by invitation only)",
-    "The April 26 pre-summit workshop",
+    "The April 26 pre-summit workshop (separate registration will be announced soon)",
   ],
   closingNote: "We hope to see you there!",
   logo: "/Panoramics-transparent-cropped.png",
