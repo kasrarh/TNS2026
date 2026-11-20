@@ -48,7 +48,7 @@ export const specialSponsors: SpecialSponsor[] = [
     tagline:
       "The bridger, who enables flow and discovery, allowing science to extend beyond its known boundaries.",
     description:
-      "Miltenyi Biotec is a global biomedical company whose technologies span cell separation, cell analysis, cell and gene therapy, and spatial biology. Add a few lines here about their partnership with True North Spatial 2027.",
+      "Miltenyi Biotec is a global biomedical company whose technologies span cell separation, cell analysis, cell and gene therapy, and spatial biology.",
     website: "https://www.miltenyibiotec.com",
   },
   {
