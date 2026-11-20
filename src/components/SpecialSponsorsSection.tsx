@@ -101,7 +101,7 @@ function SponsorCard({ sponsor }: { sponsor: SpecialSponsor }) {
             rel="noreferrer"
             draggable={false}
           >
-            Visit partner
+            Learn more
           </a>
         ) : null}
       </div>
