@@ -58,7 +58,7 @@ export const specialSponsors: SpecialSponsor[] = [
       name: "Zachary Jilesen, MSc",
       title: "Field Application Scientist",
     },
-    website: "https://www.miltenyibiotec.com",
+    website: "https://www.miltenyibiotec.com/US-en/lp/us/new-macsima.html",
   },
   {
     id: "mantalys",
