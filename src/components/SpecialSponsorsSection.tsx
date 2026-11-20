@@ -76,8 +76,23 @@ function SponsorCard({ sponsor }: { sponsor: SpecialSponsor }) {
         <h3 className="tx-dark">{sponsor.name}</h3>
         <p className="special-sponsor-tagline">{sponsor.tagline}</p>
         <p className="muted-dark special-sponsor-description">
-          {sponsor.description}
+          {sponsor.descriptionAuthor ? (
+            <>&ldquo;{sponsor.description}&rdquo;</>
+          ) : (
+            sponsor.description
+          )}
         </p>
+        {sponsor.descriptionAuthor ? (
+          <p className="special-sponsor-author">
+            &mdash; <strong>{sponsor.descriptionAuthor.name}</strong>
+            {sponsor.descriptionAuthor.title ? (
+              <>
+                <br />
+                <span>{sponsor.descriptionAuthor.title}</span>
+              </>
+            ) : null}
+          </p>
+        ) : null}
         {sponsor.website ? (
           <a
             className="btn btn-primary special-sponsor-link"
