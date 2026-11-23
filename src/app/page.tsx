@@ -36,7 +36,7 @@ export default function ShowcasePage() {
 					showGlobe={false}
 					actions={[
 						{ label: 'Register Now', href: '/tickets', variant: 'btn-primary' },
-						{ label: 'Become a Sponsor', href: '/Sponsorship', variant: 'btn-primary' },
+						{ label: 'Become a Sponsor', href: '/sponsorship', variant: 'btn-primary' },
 						{ label: 'TNS2026', sublabel: 'Recap', href: '/TNS2026', variant: 'btn-secondary' },
 					]}
 				/>

@@ -2,8 +2,8 @@ const contactCards = [
   {
     title: "General Enquiries",
     description: "Questions about True North Spatial, registration, or the program.",
-    value: "query@panoramics-a-vision.com",
-    href: "mailto:query@panoramics-a-vision.com",
+    value: "queries@panoramics-a-vision.com",
+    href: "mailto:queries@panoramics-a-vision.com",
     linkLabel: "Send an email",
   },
   {
