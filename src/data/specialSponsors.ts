@@ -32,6 +32,11 @@ export interface SpecialSponsor {
   tier: SponsorTierId;
   tagline: string;
   description: string;
+  /** Optional attribution shown under the description, e.g. who wrote it. */
+  descriptionAuthor?: {
+    name: string;
+    title?: string;
+  } | null;
   website?: string | null;
 }
 
@@ -48,8 +53,12 @@ export const specialSponsors: SpecialSponsor[] = [
     tagline:
       "The bridger, who enables flow and discovery, allowing science to extend beyond its known boundaries.",
     description:
-      "Miltenyi Biotec is a global biomedical company whose technologies span cell separation, cell analysis, cell and gene therapy, and spatial biology. Add a few lines here about their partnership with True North Spatial 2027.",
-    website: "https://www.miltenyibiotec.com",
+      "Working with spatial biology researchers across Canada has shown me that the biggest breakthroughs rarely happen in isolation. Technologies like MACSima can help unlock new insights, but the real momentum comes from a collaborative community of scientists, institutions, and partners working together to advance our understanding of biology.",
+    descriptionAuthor: {
+      name: "Zachary Jilesen, MSc",
+      title: "Field Application Scientist",
+    },
+    website: "https://www.miltenyibiotec.com/US-en/lp/us/new-macsima.html",
   },
   {
     id: "mantalys",
@@ -58,7 +67,11 @@ export const specialSponsors: SpecialSponsor[] = [
     tier: "cellular",
     tagline: "The reliable, self-sufficient partner who provides trust and stability.",
     description:
-      "Mantalys turns complex biomedical imaging data into clear, actionable insights using lightweight, sustainable AI. Its hybrid AI, at the intersection of evolutionary computing and deep learning, powers MantaPlex™, whole-slide-image-compatible software for spatial analysis of multiplex tissue images, alongside custom image-analysis algorithms for academic labs and biotech research teams.",
+      "With co-founders hailing from both Toulouse, France and Toronto, Canada, Mantalys represents a union of Canadian and European scientific values, with a commitment to scientific collaboration, innovation, and accessibility that aligns closely with the mission of Panoramics – A Vision and True North Spatial. As a deeptech start-up focused on AI-powered image analysis, we distinguish ourselves by being rooted in community values and combining innovative AI approaches with pragmatic dedication to solving real scientific problems in human health and disease.",
+    descriptionAuthor: {
+      name: "Brienne McKenzie, PhD",
+      title: "Co-Founder | Chief Product Officer",
+    },
     website: "https://mantalys.fr/",
   },
 ];

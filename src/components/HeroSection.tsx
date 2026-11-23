@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import GlobeSection from "./Globe";
 import TicketModal from "./TicketModal";
 
@@ -27,6 +27,10 @@ export interface HeroSectionProps {
   accentText?: string;
   actions?: HeroAction[];
   backgroundImage?: string;
+  /** Optional looping, muted background video (mp4). */
+  backgroundVideo?: string;
+  /** Poster/fallback image for the background video (also shown for reduced motion & small screens). */
+  backgroundPoster?: string;
   /** When false, the 3D globe column is omitted. Defaults to true. */
   showGlobe?: boolean;
 }
@@ -44,11 +48,49 @@ export default function HeroSection({
   accentText,
   actions = [],
   backgroundImage,
+  backgroundVideo,
+  backgroundPoster,
   showGlobe = true,
 }: HeroSectionProps) {
   const [modalOpen, setModalOpen] = useState(false);
   const [ticketModal, setTicketModal] = useState(false);
   const [statCounts, setStatCounts] = useState<number[]>(stats.map(() => 0));
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  // Video is only rendered client-side once we know the viewer wants motion and
+  // isn't on a small screen, so mobile / reduced-motion users never download it.
+  const [videoEnabled, setVideoEnabled] = useState(false);
+
+  useEffect(() => {
+    if (!backgroundVideo) return;
+    const query = window.matchMedia(
+      "(prefers-reduced-motion: reduce), (max-width: 768px)",
+    );
+    const update = () => setVideoEnabled(!query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, [backgroundVideo]);
+
+  // Pause the background video while the hero is off-screen.
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!videoEnabled || !section || !video) return;
+    video.muted = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0 },
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [videoEnabled]);
 
   useEffect(() => {
     setStatCounts(stats.map(() => 0));
@@ -79,10 +121,34 @@ export default function HeroSection({
 
   return (
     <section
-      className="hero"
+      ref={sectionRef}
+      className={`hero${backgroundVideo ? " hero--video" : ""}`}
       id="about"
-      style={backgroundImage ? { backgroundImage: `url('${backgroundImage}')` } : undefined}
+      style={
+        backgroundVideo
+          ? backgroundPoster
+            ? { backgroundImage: `url('${backgroundPoster}')` }
+            : { backgroundImage: "none" }
+          : backgroundImage
+            ? { backgroundImage: `url('${backgroundImage}')` }
+            : undefined
+      }
     >
+      {backgroundVideo && videoEnabled && (
+        <video
+          ref={videoRef}
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={backgroundPoster}
+          aria-hidden="true"
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      )}
       <div
         className={`container hero-inner${showGlobe ? "" : " hero-inner-no-side"}`}
       >

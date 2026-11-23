@@ -33,12 +33,12 @@ export interface SponsorshipDownload {
 
 export const sponsorshipDownloads: SponsorshipDownload[] = [
   {
-    label: "Spatial Technology Sponsorship",
+    label: "Get the full information on the benefits of being a Spatial Technology Sponsorship",
     href: "https://kasra-demo-s3-v1.s3.us-east-1.amazonaws.com/sponsorship/True+North+Spatial+2027+TechProspectus.pdf",
     fileName: "Spatial Technology Sponsorship.pdf",
   },
   {
-    label: "Blue Chip Sponsorship",
+    label: "Get the full information on the benefits of being a Blue Chip Sponsorship",
     href: "https://kasra-demo-s3-v1.s3.us-east-1.amazonaws.com/sponsorship/True+North+Spatial+2027+BlueChipProspectus.pdf",
     fileName: "Blue Chip Sponsorship.pdf",
   },
@@ -48,7 +48,7 @@ export const sponsorshipSectionContent = {
   title: "Find Your True North at True North Spatial 2027",
   subtitle: "Sponsorship opportunities are now open. Limited tiers available.",
   message: {
-    subtitle: "It's not the package. It's the identity - the choice that defines your experience.",
+    subtitle: "It's not the package.\nIt's the identity - the choice that defines your experience.",
     paragraphs: [
       [
         { text: "Dear Partner," },
@@ -99,19 +99,6 @@ export const sponsorshipSectionContent = {
 
 export const sponsorshipPackages: SponsorshipPackage[] = [
   {
-    id: "corporate-dinner",
-    name: "Corporate Dinner Sponsorship",
-    tiers: [
-      {
-        id: "the-vertex",
-        name: "The Vertex",
-        price: "$25,000 CAD",
-        subtitle: "The partner who unites the disciplines, allowing connections between science, academia and business.",
-        description: "Taking our inspiration from spatial computing, the vertex is the 3D point where multiple lines, planes or dimensions meet, essential in the formation of complex 3D architecture in space. The Vertex Sponsor therefore personifies that distinctive feature, bolstering the formation of multiple such geometric points, allowing the formation of connections between science, academia and business.",
-      },
-    ],
-  },
-  {
     id: "spatial-technology",
     name: "Spatial Technology Sponsorship",
     tiers: [
@@ -152,6 +139,20 @@ export const sponsorshipPackages: SponsorshipPackage[] = [
       },
     ],
   },
+  // Hidden for now — uncomment to show the Corporate Dinner Sponsorship again.
+  // {
+  //   id: "corporate-dinner",
+  //   name: "Corporate Dinner Sponsorship",
+  //   tiers: [
+  //     {
+  //       id: "the-vertex",
+  //       name: "The Vertex",
+  //       price: "$25,000 CAD",
+  //       subtitle: "The partner who unites the disciplines, allowing connections between science, academia and business.",
+  //       description: "Taking our inspiration from spatial computing, the vertex is the 3D point where multiple lines, planes or dimensions meet, essential in the formation of complex 3D architecture in space. The Vertex Sponsor therefore personifies that distinctive feature, bolstering the formation of multiple such geometric points, allowing the formation of connections between science, academia and business.",
+  //     },
+  //   ],
+  // },
   {
     id: "blue-chip",
     name: "Blue Chip Sponsorship",
