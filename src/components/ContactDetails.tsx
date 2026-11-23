@@ -2,22 +2,8 @@ const contactCards = [
   {
     title: "General Enquiries",
     description: "Questions about True North Spatial, registration, or the program.",
-    value: "true-north-2026@panoramics-a-vision.com",
-    href: "mailto:true-north-2026@panoramics-a-vision.com",
-    linkLabel: "Send an email",
-  },
-  {
-    title: "Sponsorship",
-    description: "Sponsorship tiers, exhibitor tables, and partnership opportunities.",
-    value: "sponsorship@panoramics-a-vision.com",
-    href: "mailto:sponsorship@panoramics-a-vision.com",
-    linkLabel: "Send an email",
-  },
-  {
-    title: "Panoramics - A Vision",
-    description: "General questions about Panoramics - A Vision Inc.",
-    value: "panoramics@panoramics-a-vision.com",
-    href: "mailto:panoramics@panoramics-a-vision.com",
+    value: "query@panoramics-a-vision.com",
+    href: "mailto:query@panoramics-a-vision.com",
     linkLabel: "Send an email",
   },
   {

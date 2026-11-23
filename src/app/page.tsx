@@ -5,6 +5,7 @@ import SponsorshipSection from '@/components/SponsorshipSection';
 import HighlightsSection from '@/components/HighlightsSection';
 import ContactSection from '@/components/ContactSection';
 import NewsletterSection from '@/components/NewsletterSection';
+import PhotoStripSection from '@/components/PhotoStripSection';
 import BackToTop from '@/components/BackToTop';
 
 export default function ShowcasePage() {
@@ -14,7 +15,8 @@ export default function ShowcasePage() {
 			<main>
 				<HeroSection
 					title="True North Spatial 2027"
-					backgroundImage="/Toronto-new.png"
+					backgroundVideo="/bg.mp4"
+					backgroundPoster="/bg-poster.jpg"
 					subtitle={
 						<>
 							April 27-29
@@ -40,6 +42,8 @@ export default function ShowcasePage() {
 				/>
 
 				<EngagementSection />
+
+				<PhotoStripSection />
 
 				<SponsorshipSection />
 

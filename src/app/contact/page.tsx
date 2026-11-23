@@ -7,7 +7,7 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata: Metadata = {
   title: "Contact Us | True North Spatial 2027",
   description:
-    "Get in touch with the True North Spatial 2027 team for general enquiries, sponsorship, and partnership opportunities.",
+    "Get in touch with the True North Spatial 2027 team for general enquiries.",
 };
 
 export default function ContactPage() {
