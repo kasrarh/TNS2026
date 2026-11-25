@@ -1,10 +1,16 @@
 "use client";
 
+/*
+ * Every piece of text shown to applicants on this page is copied verbatim
+ * from "01b-ES-TNS2027 Abstract Submission Form Emerging Scientists.docx".
+ * Do not reword it here; change the source document first.
+ */
+
 import Link from "next/link";
 import {
-  ABSTRACT_DEADLINES,
   ES_CATEGORIES,
   ES_DECLARATIONS,
+  ES_UNDER_AGE_MESSAGE,
   emptyEmergingInput,
   getCategoryGroup,
   getExplorerAgeStatus,
@@ -13,6 +19,7 @@ import {
 } from "@/lib/abstractForm";
 import {
   ApplicantSection,
+  CallIntroduction,
   CategoryPicker,
   CheckboxField,
   DeclarationsSection,
@@ -27,7 +34,7 @@ import {
 
 const KEY_DATES: [string, string][] = [
   ["Call opens", "25 November 2026"],
-  ["Submission deadline", ABSTRACT_DEADLINES.emerging.label],
+  ["Submission deadline", "26 January 2027, 11:59 PM ET"],
   ["Decisions sent", "By 10 February 2027"],
   ["Register with discount code", "By 26 February 2027"],
   ["5-slide deck due", "By 26 February 2027"],
@@ -57,10 +64,7 @@ export default function EmergingScientistsAbstractForm() {
     validate: validateEmergingAbstract,
     program: "emerging",
     thankYouPath: "/abstract-form/emerging-scientists/thank-you",
-    blockedMessage: (f) =>
-      isIneligibleExplorer(f)
-        ? "ES Explorers must be at least 16 years old on 25 April 2027."
-        : null,
+    blockedMessage: (f) => (isIneligibleExplorer(f) ? ES_UNDER_AGE_MESSAGE : null),
   });
 
   const group = getCategoryGroup(form.category);
@@ -88,101 +92,236 @@ export default function EmergingScientistsAbstractForm() {
     <section className={base.page}>
       <div className={base.shell}>
         <div className={base.hero}>
-          <p className={base.kicker}>TNS2027 Call for Abstracts</p>
-          <h1>Emerging Scientists Program</h1>
+          <h1>TNS2027 Abstract Submission Form: Emerging Scientists Program</h1>
           <p>
-            This call is for Emerging Scientists: students who want to present
-            their research at True North Spatial 2027 and build the skills to
-            share it. The summit takes place 27 to 29 April 2027 at the MaRS
-            Discovery District in Toronto.
-          </p>
-          <p>
-            <strong>Deadline: {ABSTRACT_DEADLINES.emerging.label}.</strong> No
-            late submissions will be accepted.
+            <strong>Deadline - 26 January 2027</strong>
           </p>
         </div>
 
         <div className={base.card}>
           <form className={base.form} onSubmit={handleSubmit} noValidate>
+            <CallIntroduction />
+
+            {/* General information */}
             <section className={base.section}>
               <div className={base.sectionHeader}>
-                <h2>Before you start</h2>
+                <h2>General Information</h2>
+              </div>
+
+              <div className={styles.prose}>
+                <h3 className={styles.subhead}>Key milestones</h3>
                 <p>
-                  Read the key dates, who can submit and how selection works.
-                  All times are Eastern Time (Toronto).
+                  All times are Eastern Time (Toronto).{" "}
+                  <strong>No late submissions will be accepted.</strong>
+                </p>
+              </div>
+              <KeyDatesTable rows={KEY_DATES} />
+
+              <div className={styles.prose}>
+                <h3 className={styles.subhead}>Who can submit</h3>
+                <p>
+                  Emerging Scientists are students currently enrolled in a
+                  degree program or in high school. Choose the category that
+                  matches your status on the day of submission.
+                </p>
+              </div>
+              <div className={styles.tableWrap}>
+                <table className={styles.infoTable}>
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Who it covers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {ES_CATEGORIES.map((c) => (
+                      <tr key={c.value}>
+                        <td><strong>{c.label}</strong></td>
+                        <td>{c.description}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className={styles.prose}>
+                <p>
+                  <strong>Note:</strong> If you are employed in research (for
+                  example as a technician, research assistant or postdoctoral
+                  fellow), please submit under the{" "}
+                  <Link href="/abstract-form/early-career-scientists">
+                    Early Career Scientists call
+                  </Link>{" "}
+                  instead.
                 </p>
               </div>
 
-              <KeyDatesTable rows={KEY_DATES} />
+              <div className={styles.callout}>
+                <h3 className={styles.subhead} style={{ marginTop: 0 }}>
+                  Important for ES Explorers: additional requirements
+                </h3>
+                <p>
+                  <strong>Age &amp; Consent Requirements:</strong> Applicants
+                  must be at least <strong>16 years old by 25 April 2027</strong>{" "}
+                  to participate.
+                </p>
+                <ul className={styles.infoList}>
+                  <li>
+                    <strong>
+                      Under 18 on 25 April 2027 (ages 16–17 on 25 April 2027,
+                      including 15-year-old applicants turning 16 before this
+                      day):
+                    </strong>{" "}
+                    Must provide an emergency contact upon submission. If
+                    accepted, a parent or legal guardian must sign a consent
+                    form prior to the event.
+                  </li>
+                  <li>
+                    <strong>18 or older on 25 April 2027 (High School):</strong>{" "}
+                    Must provide an emergency contact upon submission.
+                  </li>
+                </ul>
+              </div>
 
-              <details className={styles.details}>
-                <summary>Presentation format, selection and what you receive</summary>
-                <div className={styles.detailsBody}>
-                  <h3>Presentation format</h3>
-                  <p className={base.hint}>
-                    There are no physical posters at TNS2027. Every selected
-                    presenter submits a 5-slide digital pitch deck, hosted on
-                    the TNS website and opened from a QR code on your badge.
-                    You pitch it in person at the Emerging Scientists pitch
-                    lunch. Selected presenters must attend in person.
-                  </p>
-                  <ul className={styles.infoList}>
-                    <li>Title, authors and affiliations</li>
-                    <li>Background and research question</li>
-                    <li>Approach and methods</li>
-                    <li>Key findings (1–2)</li>
-                    <li>Conclusion and future directions</li>
-                  </ul>
+              <div className={styles.prose}>
+                <h3 className={styles.subhead}>Presentation format and selection</h3>
+                <p>
+                  <strong>
+                    There are no physical posters and no poster boards at
+                    TNS2027.
+                  </strong>{" "}
+                  Every selected presenter submits a{" "}
+                  <strong>5-slide digital pitch deck</strong>:
+                </p>
+                <ul className={styles.infoList}>
+                  <li>
+                    Your deck is hosted on the TNS website and opens from a{" "}
+                    <strong>QR code on your badge</strong>, so anyone you meet
+                    can view it on their electronic device.
+                  </li>
+                  <li>
+                    You present it <strong>in person by pitching</strong> at
+                    the Emerging Scientists pitch lunch. The format, style of
+                    presentation will be provided once your abstract is
+                    accepted.
+                  </li>
+                </ul>
+                <p><strong>Selected presenters must attend in person.</strong></p>
+                <p>
+                  <strong>Selection.</strong> Up to <strong>40</strong>{" "}
+                  Emerging Scientist abstracts will be selected. From these, the top scoring
+                  abstract presenters are invited to present on the main stage
+                  on Day 2 Enlighten-me Chapter day:
+                </p>
+              </div>
+              <div className={styles.tableWrap}>
+                <table className={styles.infoTable}>
+                  <thead>
+                    <tr>
+                      <th>Category</th>
+                      <th>Stage format</th>
+                      <th>Spots</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>ES Scholars</td><td>12-minute talk</td><td>Up to 2</td></tr>
+                    <tr><td>ES Scholars</td><td>Pecha Kucha (20 slides × 20 seconds)</td><td>Up to 6</td></tr>
+                    <tr><td>ES Explorers</td><td>3-minute talk with one slide</td><td>Up to 3</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className={styles.prose}>
+                <p>
+                  <strong>
+                    Note: Every selected presenter, whether or not chosen for
+                    the stage, prepares a 5-slide pitch deck and pitches at the
+                    ES lunch on Day 2.
+                  </strong>
+                </p>
 
-                  <h3>Selection</h3>
-                  <p className={base.hint}>
-                    Up to 40 Emerging Scientist abstracts will be selected. The
-                    top-scoring presenters are invited to the main stage on Day
-                    2, Enlighten-me Chapter day:
-                  </p>
-                  <div className={styles.tableWrap}>
-                    <table className={styles.infoTable}>
-                      <thead>
-                        <tr><th>Category</th><th>Stage format</th><th>Spots</th></tr>
-                      </thead>
-                      <tbody>
-                        <tr><td>ES Scholars</td><td>12-minute talk</td><td>Up to 2</td></tr>
-                        <tr><td>ES Scholars</td><td>Pecha Kucha (20 slides × 20 seconds)</td><td>Up to 6</td></tr>
-                        <tr><td>ES Explorers</td><td>3-minute talk with one slide</td><td>Up to 3</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <h3 className={styles.subhead}>Your 5-slide pitch deck</h3>
+                <p>
+                  Selected presenters prepare a 5-slide digital pitch deck, the
+                  business-standard format. There are no physical posters, PDF
+                  posters or printed materials. The following format will be
+                  used for each digital pitch deck.
+                </p>
+                <ol className={styles.infoList} style={{ listStyle: "decimal" }}>
+                  <li>Title, authors and affiliations</li>
+                  <li>Background and research question</li>
+                  <li>Approach and methods</li>
+                  <li>Key findings (1–2)</li>
+                  <li>Conclusion and future directions</li>
+                </ol>
+                <p>
+                  Decks are hosted on the TNS website from March 1, 2027 and
+                  open from the QR code on your badge during the summit.
+                </p>
 
-                  <h3>Registration</h3>
-                  <p className={base.hint}>
-                    Selected presenters must register and pay the registration
-                    fee. Please wait for your decision before registering:
-                    accepted presenters receive a personal code for 10% off.
-                    Register by 26 February 2027 to confirm your place.
-                  </p>
+                <h3 className={styles.subhead}>Registration and presenter discount</h3>
+                <p>
+                  Selected presenters must register for TNS2027 and pay the
+                  registration fee.
+                </p>
+                <p>
+                  <strong>Please wait for your abstract decision before registering.</strong>{" "}
+                  Accepted presenters receive a personal code for{" "}
+                  <strong>10% off</strong> registration with their acceptance
+                  email.
+                </p>
+                <p>
+                  <strong>Register with your code by 26 February 2027</strong>{" "}
+                  to confirm your place. Places not confirmed by then may be offered to
+                  waitlisted applicants.
+                </p>
 
-                  <h3>What selected presenters receive</h3>
-                  <ul className={styles.infoList}>
-                    <li>A pitch workshop (Day 1, lunch &amp; learn)</li>
-                    <li>The Emerging Scientists pitch lunch (Day 2)</li>
-                    <li>Your deck and abstract online from 1 March 2027</li>
-                    <li>Personal written feedback on your pitch</li>
-                    <li>A certificate of selection for your CV and LinkedIn</li>
-                    <li>A chance at the People&apos;s Choice award</li>
-                  </ul>
-                </div>
-              </details>
+                <h3 className={styles.subhead}>What selected presenters receive</h3>
+                <p>
+                  Selected Emerging Scientists join a dedicated program built
+                  around presenting with confidence.
+                </p>
+                <ul className={styles.infoList}>
+                  <li>
+                    <strong>
+                      Participation in a special pitch workshop (Day 1, lunch
+                      &amp; learn).
+                    </strong>{" "}
+                    A presentation and pitching workshop, so you are ready
+                    before you pitch.
+                  </li>
+                  <li>
+                    <strong>Emerging Scientists pitch lunch (Day 2, lunch).</strong>{" "}
+                    Pitch your work directly to invited scientists, industry
+                    leaders and partners.
+                  </li>
+                  <li>
+                    <strong>Your deck online before the summit.</strong> Your
+                    deck and abstract are hosted on the TNS website from March
+                    1, 2027, giving you about two months of visibility.
+                  </li>
+                  <li>
+                    <strong>Written feedback.</strong> Personal written
+                    feedback on your pitch, focused on helping you grow as a
+                    scientist.
+                  </li>
+                  <li>
+                    <strong>Certificate of selection</strong> for your CV and
+                    LinkedIn.
+                  </li>
+                  <li>
+                    <strong>People&apos;s Choice award</strong>, voted by
+                    guests at the pitch lunch.
+                  </li>
+                </ul>
+              </div>
             </section>
 
+            {/* A. Your details */}
             <ApplicantSection {...sectionProps} />
 
+            {/* B. Category and studies */}
             <section className={base.section}>
               <div className={base.sectionHeader}>
                 <h2>B. Category and studies</h2>
-                <p>
-                  Choose the category that matches your status on the day you
-                  submit.
-                </p>
               </div>
 
               <CategoryPicker
@@ -193,89 +332,88 @@ export default function EmergingScientistsAbstractForm() {
                 disabled={isSubmitting}
               />
 
-              <p className={base.travelNote}>
-                If you are employed in research (for example as a technician,
-                research assistant or postdoctoral fellow), please submit under
-                the{" "}
-                <Link href="/abstract-form/early-career-scientists">
-                  Early Career Scientists call
-                </Link>{" "}
-                instead.
-              </p>
-
               {group && (
                 <div className={base.grid2}>
                   {group === "scholars" && (
                     <>
-                      <TextField {...f("programAndYear")} label="Program and year" required hint="For example: PhD, Year 3" />
+                      <TextField {...f("programAndYear")} label="Program and year (e.g. PhD, Year 3)" required />
                       <TextField {...f("universityAndDepartment")} label="University and department" required />
                     </>
                   )}
                   {isExplorer && (
                     <TextField {...f("schoolAndGrade")} label="School name and grade" required full />
                   )}
-                  <TextField
-                    {...f("supervisorName")}
-                    label="Supervisor, teacher or mentor: name"
-                    required
-                    hint="Confirms the work is genuine."
-                  />
-                  <TextField
-                    {...f("supervisorEmail")}
-                    label="Supervisor, teacher or mentor: email"
-                    required
-                    type="email"
-                  />
                 </div>
               )}
+
+              <div className={base.field}>
+                <p className={styles.groupLabel}>
+                  Supervisor, teacher or mentor: name and email
+                  <span className={base.required}>*</span>
+                </p>
+                <p className={base.hint}>Confirms the work is genuine</p>
+                <div className={base.grid2}>
+                  <TextField {...f("supervisorName")} label="Name" required />
+                  <TextField {...f("supervisorEmail")} label="Email" required type="email" />
+                </div>
+              </div>
             </section>
 
+            {/* C. Explorers safeguarding (Explorers only) */}
             {isExplorer && (
               <section className={base.section}>
                 <div className={base.sectionHeader}>
-                  <h2>C. ES Explorers safeguarding</h2>
-                  <p>
-                    ES Explorers must be at least 16 years old on 25 April
-                    2027. Everyone provides an emergency contact. If you are
-                    under 18 on that day, we also need a parent or guardian.
-                  </p>
+                  <h2>C. Explorers safeguarding (Explorers only)</h2>
                 </div>
 
                 <div className={base.grid2}>
-                  <TextField {...f("dateOfBirth")} label="Date of birth" required type="date" full />
+                  <TextField
+                    {...f("dateOfBirth")}
+                    label="Date of birth"
+                    required
+                    type="date"
+                    full
+                    hint="Under 16 on 25 April 2027 = not eligible; 16–17 triggers consent"
+                  />
                 </div>
 
                 {isIneligible && (
                   <div className={styles.blocked} role="alert">
-                    Thank you for your interest in TNS2027. ES Explorers must
-                    be at least 16 years old on 25 April 2027, so we can&apos;t
-                    accept a submission this year. We hope to see you at a
-                    future True North Spatial.
+                    {ES_UNDER_AGE_MESSAGE}
                   </div>
                 )}
 
                 {!isIneligible && ageStatus !== "unknown" && (
                   <>
                     {isMinor && (
-                      <>
-                        <h3 className={base.label}>Parent or guardian</h3>
+                      <div className={base.field}>
+                        <p className={styles.groupLabel}>
+                          Parent or guardian: name, email, phone
+                          <span className={base.required}>*</span>
+                        </p>
                         <div className={base.grid2}>
-                          <TextField {...f("guardianName")} label="Parent or guardian name" required full />
-                          <TextField {...f("guardianEmail")} label="Parent or guardian email" required type="email" />
-                          <TextField {...f("guardianPhone")} label="Parent or guardian phone" required type="tel" />
+                          <TextField {...f("guardianName")} label="Name" required full />
+                          <TextField {...f("guardianEmail")} label="Email" required type="email" />
+                          <TextField {...f("guardianPhone")} label="Phone" required type="tel" />
                         </div>
-                      </>
+                      </div>
                     )}
 
-                    <h3 className={base.label}>Emergency contact</h3>
-                    <div className={base.grid2}>
-                      <TextField {...f("emergencyName")} label="Emergency contact name" required />
-                      <TextField {...f("emergencyRelationship")} label="Relationship to you" required />
-                      <TextField {...f("emergencyPhone")} label="Emergency contact phone" required type="tel" />
+                    <div className={base.field}>
+                      <p className={styles.groupLabel}>
+                        Emergency contact: name, relationship, phone
+                        <span className={base.required}>*</span>
+                      </p>
+                      <div className={base.grid2}>
+                        <TextField {...f("emergencyName")} label="Name" required />
+                        <TextField {...f("emergencyRelationship")} label="Relationship" required />
+                        <TextField {...f("emergencyPhone")} label="Phone" required type="tel" />
+                      </div>
                     </div>
 
                     {isMinor && (
                       <div className={base.field}>
+                        <p className={styles.groupLabel}>Consent acknowledgement</p>
                         <CheckboxField
                           checked={form.guardianConsentAcknowledged}
                           onChange={(checked) =>
@@ -286,8 +424,8 @@ export default function EmergingScientistsAbstractForm() {
                           disabled={isSubmitting}
                         />
                         <p className={base.hint}>
-                          The consent form is emailed to you after acceptance.
-                          You don&apos;t need to upload anything now.
+                          The form itself is emailed after acceptance, not
+                          uploaded here.
                         </p>
                         {errors.guardianConsentAcknowledged && (
                           <p className={styles.fieldError}>
@@ -301,10 +439,12 @@ export default function EmergingScientistsAbstractForm() {
               </section>
             )}
 
-            <ScientificAbstractSection {...sectionProps} letter={isExplorer ? "D" : "C"} />
+            {/* D. Scientific Abstract Submission */}
+            <ScientificAbstractSection {...sectionProps} letter="D" />
 
+            {/* E. Declarations */}
             <DeclarationsSection
-              letter={isExplorer ? "E" : "D"}
+              letter="E"
               declarations={ES_DECLARATIONS}
               values={form.declarations}
               onToggle={setDeclaration}

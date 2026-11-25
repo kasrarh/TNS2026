@@ -54,7 +54,7 @@ const SHARED_DECLARATIONS = {
   sharing: {
     key: "sharing",
     label:
-      "I consent to my abstract and 5-slide digital pitch deck being shared on the TNS website, in Panoramics email updates and on social media.",
+      "I consent to my abstract and 5-slide digital pitch deck to being shared on the TNS website, in Panoramics email updates and on social media.",
   },
   media: {
     key: "media",
@@ -238,6 +238,7 @@ function toCommonInput(
 /** Age is measured on this day (the summit starts 27 April 2027). */
 export const AGE_REFERENCE_DATE = { year: 2027, month: 4, day: 25 };
 
+/** Labels and descriptions are verbatim from the ES call document. */
 export const ES_CATEGORIES = [
   {
     value: "es-scholars-graduate",
@@ -249,16 +250,19 @@ export const ES_CATEGORIES = [
   {
     value: "es-scholars-undergraduate",
     label: "ES Scholars: Undergraduate students",
-    description: "Students enrolled in a bachelor's degree.",
+    description: "Students enrolled in a bachelor's degree",
     group: "scholars",
   },
   {
     value: "es-explorers-high-school",
     label: "ES Explorers: High School students",
-    description: "High school students aged 16 or older on 25 April 2027.",
+    description: "High school students aged 16 or older on 25 April 2027",
     group: "explorers",
   },
 ] as const;
+
+export const ES_UNDER_AGE_MESSAGE =
+  "Applicants must be at least 16 years old by 25 April 2027 to participate.";
 
 export type EsCategoryGroup = (typeof ES_CATEGORIES)[number]["group"];
 
@@ -270,7 +274,7 @@ export const ES_DECLARATIONS: readonly Declaration[] = [
   {
     key: "attendance",
     label:
-      "I will attend TNS2027 in person, submit my 5-slide pitch deck by the deadline and pitch at the lunch if selected.",
+      "I will attend TNS2027 in person and submit my 5-slide pitch deck by the deadline and pitch at the lunch if selected.",
   },
   SHARED_DECLARATIONS.sharing,
   SHARED_DECLARATIONS.media,
@@ -388,8 +392,7 @@ export function validateEmergingAbstract(
     if (!str(input.dateOfBirth) || ageStatus === "unknown") {
       errors.dateOfBirth = "Enter a valid date of birth.";
     } else if (ageStatus === "ineligible") {
-      errors.dateOfBirth =
-        "Thank you for your interest. ES Explorers must be at least 16 years old on 25 April 2027, so we can't accept this submission.";
+      errors.dateOfBirth = ES_UNDER_AGE_MESSAGE;
     }
 
     if (ageStatus === "minor") {
@@ -451,35 +454,36 @@ export const ECS_REFERENCE_YEAR = 2027;
 export const ECS_RESEARCH_WINDOW_YEARS = 10;
 export const ECS_INVESTIGATOR_WINDOW_YEARS = 5;
 
+/** Labels and descriptions are verbatim from the ECS call document. */
 export const ECS_CATEGORIES = [
   {
     value: "ecs-postdoc-clinical-fellow",
     label: "Postdoctoral & Clinical Research Fellows",
     description:
-      "Postdocs and research fellows; residents and clinical fellows doing research.",
+      "Postdocs and research fellows; residents and clinical fellows doing research",
   },
   {
     value: "ecs-research-technical-staff",
     label: "Research & Technical Staff",
     description:
-      "Technicians, research assistants, lab managers and core facility staff.",
+      "Technicians, research assistants, lab managers and core facility staff",
   },
   {
     value: "ecs-staff-associate-scientist",
     label: "Staff & Associate Scientists",
     description:
-      "Staff scientists, research associates, scientific associates and research scientists.",
+      "Staff scientists, research associates, scientific associates and research scientists",
   },
   {
     value: "ecs-early-career-investigator",
     label: "Early-Career Investigators",
     description:
-      "New PIs and clinician-scientists within 5 years of their first independent appointment.",
+      "New PIs and clinician-scientists within 5 years of their first independent appointment",
   },
   {
     value: "ecs-industry-startup",
     label: "Industry & Startup Scientists",
-    description: "R&D scientists, research leads and founding scientists.",
+    description: "R&D scientists, research leads and founding scientists",
   },
 ] as const;
 
@@ -512,7 +516,7 @@ export const ECS_DECLARATIONS: readonly Declaration[] = [
   {
     key: "attendance",
     label:
-      "I will attend TNS2027 in person, submit my 5-slide pitch deck by the deadline and pitch at the session if selected.",
+      "I will attend TNS2027 in person and submit my 5-slide pitch deck by the deadline and pitch at the session if selected.",
   },
   SHARED_DECLARATIONS.sharing,
   SHARED_DECLARATIONS.media,

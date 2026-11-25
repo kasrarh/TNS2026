@@ -156,3 +156,67 @@
 .tableWrap {
   overflow-x: auto;
 }
+
+/* Call text copied from the source documents. */
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prose p {
+  margin: 0;
+  color: #334048;
+  line-height: 1.65;
+}
+
+.prose strong,
+.infoTable strong,
+.callout strong,
+.infoList strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.subhead {
+  margin: 10px 0 0;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+.introLead {
+  margin: 0;
+  color: var(--primary) !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.introTagline {
+  margin: 0;
+  color: var(--brand) !important;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.groupLabel {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(219, 114, 7, 0.08);
+  border: 1px solid rgba(219, 114, 7, 0.22);
+}
+
+.callout p {
+  margin: 0;
+  color: #4a3410;
+  line-height: 1.6;
+}

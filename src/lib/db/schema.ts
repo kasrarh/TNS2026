@@ -154,6 +154,17 @@ export interface AbstractSubmission2027Document {
   declarations: Record<string, boolean>;
 
   status: AbstractSubmissionStatus;
+  /** Internal notes from the review team. Never shown to applicants. */
+  reviewerNotes?: string;
+  /** Last time an admin changed status, notes or consent. */
+  reviewedAt?: Date | null;
   submittedAt: Date;
   updatedAt: Date;
 }
+
+export const ABSTRACT_SUBMISSION_STATUSES: readonly AbstractSubmissionStatus[] = [
+  "pending",
+  "accepted",
+  "waitlisted",
+  "rejected",
+];

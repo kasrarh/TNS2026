@@ -172,8 +172,19 @@ export function TextField(props: TextFieldProps) {
     maxLength: props.maxLength,
     placeholder: props.placeholder,
     "aria-invalid": Boolean(props.error),
+    "aria-describedby": props.hint ? `${id}-hint` : undefined,
     "data-invalid": props.error ? "true" : undefined,
   };
+
+  // Half-width fields sit side by side in a two-column grid. A hint above the
+  // input would push that input lower than its neighbour, so it goes below.
+  // Full-width fields keep instructions above, where they are read first.
+  const hint = props.hint ? (
+    <p id={`${id}-hint`} className={base.hint}>
+      {props.hint}
+    </p>
+  ) : null;
+  const hintAbove = Boolean(props.full);
 
   return (
     <div className={`${base.field} ${props.full ? base.fieldFull : ""}`}>
@@ -181,7 +192,7 @@ export function TextField(props: TextFieldProps) {
         {props.label}
         {props.required && <span className={base.required}>*</span>}
       </label>
-      {props.hint && <p className={base.hint}>{props.hint}</p>}
+      {hintAbove && hint}
       {props.multiline ? (
         <textarea
           {...common}
@@ -195,6 +206,7 @@ export function TextField(props: TextFieldProps) {
           inputMode={props.inputMode}
         />
       )}
+      {!hintAbove && hint}
       {props.extra}
       {props.error && <p className={styles.fieldError}>{props.error}</p>}
     </div>
@@ -363,14 +375,13 @@ export function ApplicantSection({ form, onChange, errors, disabled }: SectionPr
     <section className={base.section}>
       <div className={base.sectionHeader}>
         <h2>A. Your details</h2>
-        <p>We will send your confirmation to the email you enter here.</p>
       </div>
       <div className={base.grid2}>
         <TextField {...f("firstName")} label="First name" required autoComplete="given-name" />
         <TextField {...f("lastName")} label="Last name" required autoComplete="family-name" />
         <TextField {...f("preferredName")} label="Preferred name" hint="For your badge" />
         <TextField {...f("pronouns")} label="Pronouns" />
-        <TextField {...f("email")} label="Email" required type="email" autoComplete="email" />
+        <TextField {...f("email")} label="Email" required type="email" autoComplete="email" hint="Confirmation sent here" />
         <TextField {...f("phone")} label="Phone" required type="tel" autoComplete="tel" />
         <TextField {...f("location")} label="City, province/state, country" required full />
         <TextField
@@ -378,7 +389,7 @@ export function ApplicantSection({ form, onChange, errors, disabled }: SectionPr
           label="LinkedIn profile"
           type="url"
           full
-          hint="Optional. Used for Spotlight features."
+          hint="Used for Spotlight features"
           placeholder="https://www.linkedin.com/in/..."
         />
       </div>
@@ -405,11 +416,7 @@ export function ScientificAbstractSection({
   return (
     <section className={base.section}>
       <div className={base.sectionHeader}>
-        <h2>{letter}. Scientific abstract</h2>
-        <p>
-          The work you present at the summit must reflect the abstract you
-          submit here.
-        </p>
+        <h2>{letter}. Scientific Abstract Submission</h2>
       </div>
 
       <div className={base.grid2}>
@@ -419,6 +426,7 @@ export function ScientificAbstractSection({
           required
           full
           maxLength={TITLE_MAX_CHARS}
+          hint="Max 180 characters, including spaces"
           extra={
             <span className={styles.counter}>
               {form.title.length} / {TITLE_MAX_CHARS} characters
@@ -432,7 +440,7 @@ export function ScientificAbstractSection({
           full
           multiline
           rows={3}
-          hint="All authors in order. You, the applicant, must be the presenting author. Add numbers to match the affiliations, for example: Jane Doe¹, Sam Lee²"
+          hint="All authors in order; presenting author must be the applicant"
         />
         <TextField
           {...f("affiliations")}
@@ -441,7 +449,7 @@ export function ScientificAbstractSection({
           full
           multiline
           rows={3}
-          hint="Numbered to match the authors, one per line."
+          hint="Numbered to match the authors"
         />
         <SelectField
           {...f("scientificArea")}
@@ -461,7 +469,7 @@ export function ScientificAbstractSection({
           full
           multiline
           rows={12}
-          hint={`Up to ${ABSTRACT_MAX_WORDS} words, not counting the title, authors and affiliations. Cover background, aims, methods, results and conclusions without section headers.`}
+          hint="Max 250 words, excluding title, authors and affiliations. Include background, aims, methods, results and conclusions, without section headers. The work presented must reflect the submitted abstract"
           extra={
             <span
               className={`${styles.counter} ${
@@ -477,7 +485,8 @@ export function ScientificAbstractSection({
           label="Keywords"
           required
           full
-          hint="3 to 5 keywords, separated by commas."
+          hint="3–5"
+          placeholder="Separate keywords with commas"
           extra={<span className={styles.counter}>{keywordCount} keywords</span>}
         />
       </div>
@@ -498,7 +507,6 @@ export function DeclarationsSection(props: {
     <section className={base.section}>
       <div className={base.sectionHeader}>
         <h2>{props.letter}. Declarations</h2>
-        <p>Please confirm each statement.</p>
       </div>
       <div className={base.checklist}>
         {props.declarations.map((d) => (
@@ -569,6 +577,61 @@ export function AbstractThankYou(props: { kicker: string }) {
             </Link>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * "Introduction" section. Verbatim from both TNS2027 call documents (ES and
+ * ECS use the same text, including the last line). `callLine` lets a page
+ * override that last line if the source document changes.
+ */
+export function CallIntroduction({ callLine }: { callLine?: ReactNode }) {
+  return (
+    <section className={base.section}>
+      <div className={base.sectionHeader}>
+        <h2>Introduction</h2>
+      </div>
+      <div className={styles.prose}>
+        <p><strong>Panoramics - A Vision is proud to present</strong></p>
+        <p className={styles.introLead}>True North Spatial 2027</p>
+        <p className={styles.introTagline}>
+          Find your True North, Find your Panorama
+        </p>
+        <p>
+          At True North Spatial, Panoramics - A Vision invites you to find your
+          True North - the identity you hold as an individual, as a team, as an
+          organization.
+        </p>
+        <p>
+          Your identity is the foundation of your creative individuality and
+          the responsibility you carry in shaping the experiences of those
+          around you. It is what allows you to move from tunnel vision to
+          panorama - the expansive view that connects your work to the
+          collective, and lets you respond, react, and collaborate
+          meaningfully.
+        </p>
+        <p>
+          In a field as multi-scaled and multi-institutional as spatial and
+          single-cell biology, finding your True North is what makes collective
+          vision possible.
+        </p>
+        <p>True North Spatial 2027 is built on this idea.</p>
+        <p>In the second edition of True North Spatial, we now level up.</p>
+        <p>
+          True North Spatial 2027 takes place <strong>27–29 April 2027</strong>{" "}
+          in Toronto.
+        </p>
+        <p>
+          {callLine ?? (
+            <>
+              This call is for the <strong>Emerging Scientists</strong>:
+              students who want to present their research and build the skills
+              to share it.
+            </>
+          )}
+        </p>
       </div>
     </section>
   );
