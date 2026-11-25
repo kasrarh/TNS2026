@@ -3,85 +3,34 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AdminShell, { AdminLoading, adminLogoutClass, adminNavLinkClass } from '@/components/admin/AdminShell';
+import AdminShell, { adminLogoutClass, adminNavLinkClass } from '@/components/admin/AdminShell';
+import Abstracts2026Panel from '@/components/admin/Abstracts2026Panel';
+import Abstracts2027Panel from '@/components/admin/Abstracts2027Panel';
 
-interface Abstract {
-  _id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  title: string;
-  status: string;
-  submittedAt: string;
-  institution?: string;
-  presentation?: string;
-  abstractBlobUrl: string;
-}
+const YEARS = ['2026', '2027'] as const;
+type Year = (typeof YEARS)[number];
 
 export default function AdminDashboard() {
-  const [abstracts, setAbstracts] = useState<Abstract[]>([]);
-  const [filteredAbstracts, setFilteredAbstracts] = useState<Abstract[]>([]);
-  const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const [year, setYear] = useState<Year>('2026');
 
+  // Remember the chosen year in the URL (?year=2027) so refresh and links keep it.
   useEffect(() => {
-    fetchAbstracts();
+    const fromUrl = new URLSearchParams(window.location.search).get('year');
+    if (fromUrl === '2026' || fromUrl === '2027') setYear(fromUrl);
   }, []);
 
-  useEffect(() => {
-    filterAbstracts();
-  }, [abstracts]);
-
-  const fetchAbstracts = async () => {
-    const res = await fetch('/api/abstracts');
-    if (res.ok) {
-      const data = await res.json();
-      setAbstracts(data.abstracts);
-    } else {
-      router.push('/admin/login');
-    }
-    setLoading(false);
-  };
-
-  const filterAbstracts = () => {
-    let filtered = abstracts;
-
-    // Filter by status
-
-    setFilteredAbstracts(filtered);
-  };
-
-  const updateStatus = async (id: string, status: string) => {
-    const res = await fetch(`/api/abstracts/${id}/status`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status }),
-    });
-    if (res.ok) {
-      fetchAbstracts();
-    } else {
-      alert('Failed to update status');
-    }
+  const chooseYear = (next: Year) => {
+    setYear(next);
+    const url = new URL(window.location.href);
+    url.searchParams.set('year', next);
+    window.history.replaceState(null, '', url);
   };
 
   const handleLogout = async () => {
     await fetch('/api/admin/logout', { method: 'POST' });
     router.push('/admin/login');
   };
-
-  const getStatusBadge = (status: string) => {
-    const statusConfig = {
-      pending: { className: 'admin-badge admin-badge-pending', label: 'Pending Review' },
-      approved: { className: 'admin-badge admin-badge-approved', label: 'Approved' },
-      rejected: { className: 'admin-badge admin-badge-rejected', label: 'Rejected' }
-    };
-    const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.pending;
-    return <span className={config.className}>{config.label}</span>;
-  };
-
-  if (loading) {
-    return <AdminLoading label="Loading dashboard..." />;
-  }
 
   return (
     <AdminShell
@@ -100,127 +49,22 @@ export default function AdminDashboard() {
         </>
       }
     >
-        <div className="admin-panel">
-          <div className="admin-panel-head">
-            <h2 className="tx-dark">
-              Abstract Submissions ({filteredAbstracts.length})
-            </h2>
-          </div>
+      <div className="admin-tabs" role="tablist" aria-label="Summit year">
+        {YEARS.map((y) => (
+          <button
+            key={y}
+            type="button"
+            role="tab"
+            aria-selected={year === y}
+            className={`admin-tab ${year === y ? 'admin-tab-active' : ''}`}
+            onClick={() => chooseYear(y)}
+          >
+            TNS{y}
+          </button>
+        ))}
+      </div>
 
-          {filteredAbstracts.length === 0 ? (
-            <div className="admin-empty">
-              <h3>No abstracts found</h3>
-            </div>
-          ) : (
-            <>
-              <div className="admin-cards">
-                {filteredAbstracts.map((abstract) => (
-                  <article key={abstract._id} className="admin-card">
-                    <div className="admin-card-top">
-                      <h3>{abstract.title}</h3>
-                      {getStatusBadge(abstract.status)}
-                    </div>
-                    <p>{abstract.firstName} {abstract.lastName}</p>
-                    <p className="admin-email">{abstract.email}</p>
-                    <p>{abstract.institution || 'Not specified'}</p>
-                    <p className="admin-meta">
-                      {new Date(abstract.submittedAt).toLocaleDateString()}
-                    </p>
-                    <div className="admin-card-actions">
-                      <a
-                        href={abstract.abstractBlobUrl}
-                        download={`abstract-${abstract._id}.pdf`}
-                        className="admin-doc"
-                        target="_blank"
-                      >
-                        Show
-                      </a>
-                      <button
-                        type="button"
-                        onClick={() => updateStatus(abstract._id, 'approved')}
-                        className="admin-action admin-action-approve"
-                        disabled={abstract.status === 'approved'}
-                      >
-                        Approve
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => updateStatus(abstract._id, 'pending')}
-                        className="admin-action admin-action-pending"
-                        disabled={abstract.status === 'pending'}
-                      >
-                        Pending
-                      </button>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              <div className="admin-table-wrap">
-              <table className="admin-table">
-                <thead>
-                  <tr>
-                    <th>Title & Author</th>
-                    <th>Institution</th>
-                    <th>Status</th>
-                    <th>Submitted</th>
-                    <th>Document</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredAbstracts.map((abstract) => (
-                    <tr key={abstract._id}>
-                      <td>
-                        <div className="admin-title">{abstract.title}</div>
-                        <div className="admin-muted">
-                          {abstract.firstName} {abstract.lastName}
-                        </div>
-                        <div className="admin-email">{abstract.email}</div>
-                      </td>
-                      <td>{abstract.institution || 'Not specified'}</td>
-                      <td>{getStatusBadge(abstract.status)}</td>
-                      <td className="admin-muted">
-                        {new Date(abstract.submittedAt).toLocaleDateString()}
-                      </td>
-                      <td>
-                        <a
-                          href={abstract.abstractBlobUrl}
-                          download={`abstract-${abstract._id}.pdf`}
-                          className="admin-doc"
-                          target="_blank"
-                        >
-                          Show
-                        </a>
-                      </td>
-                      <td>
-                        <div className="admin-card-actions">
-                          <button
-                            type="button"
-                            onClick={() => updateStatus(abstract._id, 'approved')}
-                            className="admin-action admin-action-approve"
-                            disabled={abstract.status === 'approved'}
-                          >
-                            Approve
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => updateStatus(abstract._id, 'pending')}
-                            className="admin-action admin-action-pending"
-                            disabled={abstract.status === 'pending'}
-                          >
-                            Pending
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              </div>
-            </>
-          )}
-        </div>
+      {year === '2026' ? <Abstracts2026Panel /> : <Abstracts2027Panel />}
     </AdminShell>
   );
 }

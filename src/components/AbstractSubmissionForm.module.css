@@ -1,0 +1,222 @@
+/* Extras on top of SpeakerDetailsForm.module.css for the abstract forms. */
+
+.fieldError {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #b42318;
+  line-height: 1.4;
+}
+
+.inputError {
+  border-color: #e0a3a3 !important;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #334048;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.checkbox input {
+  margin-top: 4px;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  accent-color: var(--brand);
+}
+
+.categoryOptions {
+  display: grid;
+  gap: 10px;
+}
+
+.categoryOption {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border: 1px solid #d7e0e5;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.categoryOption:hover {
+  border-color: rgba(65, 147, 166, 0.55);
+}
+
+.categoryOptionActive {
+  border-color: var(--brand);
+  background: rgba(65, 147, 166, 0.08);
+}
+
+.categoryOption input {
+  margin-top: 4px;
+  accent-color: var(--brand);
+}
+
+.categoryTitle {
+  display: block;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.categoryDesc {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.88rem;
+  color: #5b6b73;
+  line-height: 1.45;
+}
+
+.infoTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.infoTable th,
+.infoTable td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid #e8eef1;
+  color: #334048;
+  vertical-align: top;
+}
+
+.infoTable th {
+  color: var(--primary);
+  font-weight: 600;
+  background: #f7fbfc;
+}
+
+.infoList {
+  margin: 0;
+  padding-left: 18px;
+  color: #082733;
+  line-height: 1.6;
+  list-style: disc;
+}
+
+/* Overrides the global `ul li { color: var(--text-light) }` meant for dark sections. */
+.infoList li {
+  margin-bottom: 4px;
+  color: #082733;
+  opacity: 1;
+}
+
+.infoList li::marker {
+  color: var(--brand);
+}
+
+.details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.details[open] summary {
+  margin-bottom: 14px;
+}
+
+.detailsBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailsBody h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.counter {
+  font-size: 0.82rem;
+  color: #6b7780;
+}
+
+.counterOver {
+  color: #b42318;
+  font-weight: 600;
+}
+
+.blocked {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #fdecec;
+  color: #8a1f1f;
+  border: 1px solid #f3c1c1;
+  line-height: 1.5;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+/* Call text copied from the source documents. */
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prose p {
+  margin: 0;
+  color: #334048;
+  line-height: 1.65;
+}
+
+.prose strong,
+.infoTable strong,
+.callout strong,
+.infoList strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.subhead {
+  margin: 10px 0 0;
+  font-size: 1.05rem;
+  color: var(--primary);
+}
+
+.introLead {
+  margin: 0;
+  color: var(--primary) !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.introTagline {
+  margin: 0;
+  color: var(--brand) !important;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.groupLabel {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(219, 114, 7, 0.08);
+  border: 1px solid rgba(219, 114, 7, 0.22);
+}
+
+.callout p {
+  margin: 0;
+  color: #4a3410;
+  line-height: 1.6;
+}
