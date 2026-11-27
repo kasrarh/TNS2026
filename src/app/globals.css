@@ -3194,6 +3194,14 @@ iframe {
 	min-width: 0;
 }
 
+.engagement-video-link {
+	display: inline-flex;
+	min-width: 260px;
+	margin-top: 16px;
+	text-align: center;
+	white-space: normal;
+}
+
 .engagement-video-card {
 	margin: 0;
 	padding: 10px;

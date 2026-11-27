@@ -117,12 +117,12 @@ export default function EngagementSection() {
           )}
         </div>
 
-        <aside className="engagement-media" aria-label="TNS2026 CEO address video">
+        <aside className="engagement-media" aria-label="True North Spatial 2026 videos">
           <figure className="engagement-video-card">
             <div className="engagement-video-frame">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/0DpOyLIvV3k?rel=0&start=100"
-                title="CEO's address at True North Spatial 2026"
+                src="https://www.youtube-nocookie.com/embed/hH7OzeZNJ8I?rel=0"
+                title="True North Spatial 2026 : Emergence"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -131,9 +131,17 @@ export default function EngagementSection() {
             </div>
             <figcaption className="engagement-video-caption">
               <span className="engagement-video-label">From the TNS2026 stage</span>
-              <span className="engagement-video-title">Our CEO&apos;s address at True North Spatial 2026</span>
+              <span className="engagement-video-title">True North Spatial 2026 : Emergence</span>
             </figcaption>
           </figure>
+          <a
+            className="btn btn-secondary engagement-video-link"
+            href="https://www.youtube.com/watch?v=0DpOyLIvV3k&t=100s"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Our CEO&apos;s address at True North Spatial 2026
+          </a>
         </aside>
       </div>
     </section>
